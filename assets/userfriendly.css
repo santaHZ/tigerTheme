@@ -1,0 +1,150 @@
+#userfriendly {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+    width: 1500px;
+    height: 760px;
+    margin-bottom: 100px;
+}
+
+#userfly-wrapper{
+    padding: 0px;
+    margin: 0px;
+    width: 1500px;
+    height: 460px;
+    border: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#imgSlid{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+}
+
+#imgSlid .item{
+    padding: 0px;
+    margin-right: 50px;
+    width: 450px;
+    height: 460px;
+    border: 0px solid #ff23ff;
+    text-align: center;
+    background-color: #ffffff;
+    /* display: inline-block; */
+}
+
+#imgSlid .item ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    position: relative;
+    display: block;
+}
+
+#imgSlid .item ul li{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    display: block;
+    white-space:normal;
+    word-wrap: break-word;
+    text-align: left;
+    
+}
+
+#imgSlid .item ul .titleStyle{
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    white-space:normal;
+    word-wrap: break-word;
+    text-align: left;
+    
+}
+
+#imgSlid .item ul li img{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+#prevBtn1{
+    width: 10px;
+    height: 10px;
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    font-size: 2px;
+    color: #ddd;
+    cursor: pointer;
+}
+#prevBtn1:hover{
+    color: rgb(66, 64, 64);
+}
+
+#nextBtn1{
+    position: relative;
+    padding-top: 20px;
+    font-size: 2px;
+    color: #ddd;
+    cursor: pointer;
+}
+#nextBtn1:hover{
+    color: rgb(66,64,64);
+}
+
+#prevBtn2{
+    width: 10px;
+    height: 10px;
+    position: relative;
+    padding-right: 30px;
+    padding-top: 10px;
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+}
+#prevBtn2:hover{
+    color: rgb(66, 64, 64);
+}
+
+#nextBtn2{
+    position: relative;
+    font-size: 30px;
+    padding-top: 10px;
+    color: #ddd;
+    cursor: pointer;
+}
+#nextBtn2:hover{
+    color: rgb(66,64,64);
+}
+
+#ctlBtn1{
+    padding: 0px;
+    margin: 0px;
+    width: 30px;
+    display: flex;
+    float: left;
+}
+
+#ctlBtn2{
+    padding: 0px;
+    margin: 0px;
+    width: 60px;
+    display: flex;
+    float: right;
+}
+
+.userfriendly-desc{
+    padding-left: 5px;
+    width: 600px;
+    font-size: 18px;
+    margin-bottom: 50px;
+}

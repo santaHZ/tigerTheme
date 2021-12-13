@@ -1,0 +1,135 @@
+#product_main {
+	position:relative;
+	width: 100%;
+}
+#product_main h1 {
+	align-content: center;
+	text-align: center;
+}
+#product_main li {
+	list-style: none;
+	font-size: 22px;
+	display: block;
+	border-width: 0px;
+	border-style: solid;
+	border-color: lightgray;
+	padding: 5px;
+}
+#product_main div {
+	display: block;
+	overflow: hidden;
+	border: 0px;
+}
+#product_main div ul {
+	display: block;
+	direction: ltr;
+	float: left;
+	padding: 0px;
+}
+#product_main .product_list_head {
+	font-size: 27px;
+	font-weight: 400;
+}
+#product_main .rtBoder1px {
+	border-right-width: 1px;
+	padding: 20px;
+}
+#product_main .btBoder1px {
+	border-bottom-width: 1px;
+	padding: 20px;
+}
+#product_main .topBoder1px {
+	border-top-width: 1px;
+	border-top-color: black;
+	padding: 20px;
+}
+
+.add {
+    margin-top: 12px;
+    margin-left: 15px;
+    display: block;
+    float: left;
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    color: #ccc;
+    transition: color .25s;
+    position: relative;
+}
+
+.add::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    margin-left: -13px;
+    margin-top: -2px;
+    border-top: 4px solid;
+}
+
+.add::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 26px;
+    margin-left: -2px;
+    margin-top: -13px;
+    border-left: 4px solid;
+}
+
+.minus {
+    margin-top: 12px;
+    margin-left: 15px;
+    display: block;
+    float: left;
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    color: #ccc;
+    transition: color .25s;
+    position: relative;
+}
+
+.minus::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    margin-left: -13px;
+    margin-top: -2px;
+    border-top: 4px solid;
+}
+
+.speMenu{
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.roundCorner{
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 2px 4px;
+    background: #029789;
+    width: 50px;
+    height: 15px;
+    border-radius: 4px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+.bigMenuStyle{
+	font-size: 40px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+	height: 60px;
+	font-weight: bold;
+	color: black;
+}
+
+.detail_menu_style{
+    cursor: pointer;
+}
+

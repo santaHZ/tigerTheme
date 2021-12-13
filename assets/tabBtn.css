@@ -1,0 +1,122 @@
+#tabBtnBlock .tabBtn {
+    display: block;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+#tabBtnBlock .textTabBtn1 {
+    margin: 0px;
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+#tabBtnBlock .textTabBtn2 {
+    margin: 0px;
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+#tabBtnBlock #overall {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#tabBtnBlock #overall ul{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#tabBtnBlock #overall ul li{
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+    list-style: none;
+}
+
+#tabBtnBlock .overallBtBoder1px{
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+    border-right: 1px solid;
+    border-right-color: gray;
+}
+
+#tabBtnBlock .overallBtmBoder1px{
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+}
+
+#tabBtnBlock .overallTopBoder1px{
+    border-top: 2px solid;
+    border-top-color: black;
+}
+
+#tabBtnBlock .overallBgColor{
+    background-color:rgb(214, 216, 215);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#tabBtnBlock #folded {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#tabBtnBlock #folded ul{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+#tabBtnBlock #folded ul li{
+    display: block;
+    list-style: none;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+#tabBtnBlock .foldedBgColor{
+    background-color:rgb(214, 216, 215);
+}
+
+.tabRoundCorner{
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 2px 4px;
+    background: #029789;
+    width: 50px;
+    height: 15px;
+    border-radius: 4px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+#tabBtnBlock .bigMenuStyle{
+	font-size: 40px;
+    padding-left: 5px;
+	height: 60px;
+	font-weight: bold;
+	color: black;
+}
+
+
