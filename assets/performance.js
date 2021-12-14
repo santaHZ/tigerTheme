@@ -10,6 +10,7 @@ const perf_nextBtn2 = document.querySelector('#perf_nextBtn2');
 
 //Counter
 let perf_counter = 0;
+//const perf_size = perf_slidImages[0].clientWidth;
 const perf_size = perf_slidImages[0].clientWidth;
 
 perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
@@ -121,10 +122,6 @@ function addNum4 (){
 	}
 }
 
-
-
-
-
 var myScrollFunc = function() {
   var y = window.scrollY;
   if (y > 1800) {
@@ -137,11 +134,45 @@ var myScrollFunc = function() {
   }
 };
 
+
+
 window.addEventListener("scroll", myScrollFunc);
 
-let main_banner = document.getElementById("main_banner");
+// resizing the main_banner img when changing the window size
 
-main_banner.setAttribute("class") = "main_banner_02";
+let mainBannerImg = document.getElementById("mainBannerImg");
+let mainBannerName = document.getElementById("mainBannerName");
+let mainBannerF1 = document.getElementById("mainBannerF1");
+let mainBannerF2 = document.getElementById("mainBannerF2");
+let mainBanner = document.querySelector('.main_banner');
 
+window.onload = function() {
+	console.log('imgHeight:' + mainBannerImg.height);
+	mainBanner.style.height = mainBannerImg.height +'px';
+	mainBannerName.style.fontSize = Math.ceil(mainBannerImg.width * 0.04) + 'px';
+	mainBannerF1.style.fontSize = Math.ceil(mainBannerImg.width * 0.03) + 'px';
+	mainBannerF2.style.fontSize = Math.ceil(mainBannerImg.width * 0.01) + 'px';
+  };
 
+window.addEventListener('resize', function(event) {
+	mainBannerName.style.fontSize = Math.ceil(mainBannerImg.width * 0.04) + 'px';
+	mainBannerF1.style.fontSize = Math.ceil(mainBannerImg.width * 0.03) + 'px';
+
+	console.log(mainBannerName.offsetTop);
+	console.log(mainBannerF1.offsetTop);
+
+	mainBannerF2.style.fontSize = Math.ceil(mainBannerImg.width * 0.01) + 'px';
+
+	mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
+	mainBanner.style.height = mainBannerImg.height +'px';
+
+	if (mainBannerImg.width < 600){
+		mainBannerF2.innerHTML = "A small yet wide wheel allows you to get where you want to go safely and easy-to-fold";
+	}else if(mainBannerImg.width >= 600 & mainBannerImg.width < 710){
+		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike...";
+	}else{
+		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!";
+	}
+
+}, true);
 
