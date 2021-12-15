@@ -1,10 +1,10 @@
 // This is tabBtn JavaScript code!
 console.log("start");
 
-let tabDivLeft = document.getElementById("overall");
-let tabDivRight = document.getElementById("folded");
-let tabBtn1 = document.getElementById("tabBtn1");
-let tabBtn2 = document.getElementById("tabBtn2");
+let tabDivLeft = document.querySelector("#tabBtnBlock .tabInfo .overall");
+let tabDivRight = document.querySelector("#tabBtnBlock .tabInfo .folded");
+let tabBtn1 = document.querySelector("#tabBtnBlock .tabBtnDiv .tabBtn1");
+let tabBtn2 = document.querySelector("#tabBtnBlock .tabBtnDiv .tabBtn2");
 
 tabDivLeft.style.display = "block";
 tabDivRight.style.display = "none";

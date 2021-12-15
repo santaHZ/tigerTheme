@@ -411,11 +411,11 @@
     <div class="performance_desc">Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.</div>
 		<div class="performance_main_desc">
       <div class="performance_main_desc_img">
-        <img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-00.png?v=1639133555" width="100%" height="100%">
+        <img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-00.png?v=1639133555" id="performanceMainImg" width="100%" height="100%">
       </div>
-      <div class="performance_main_desc_data">
+      <div id="performanceMainDescData" class="performance_main_desc_data">
         <ul>
-          <li id="gearHub" class="perf_big perf_margin_top">1W</li>
+          <li id="gearHub" class="perf_big">0W</li>
           <li class="perf_bold">Geared Hub Motor</li>
           <li id="milesPerCharge" class="perf_big">22+</li>
           <li class="perf_bold">Miles per Charge</li>
@@ -518,7 +518,7 @@
     <div class="tabRoundCorner"><ul><li></li></ul></div>
     <div class="bigMenuStyle" >User-Friendly</div>
     <div class="userfriendly-desc">Sometimes the simplest solution brings the most comfort. Comfortable suspension, intuitive twist grip throttle and cushy saddle are all standard.</div>
-		<div id="userfly-wrapper">
+		<div id="userfly_wrapper">
 			<div id="imgSlid">
 				<div class="item">
 					<ul>
@@ -553,23 +553,23 @@
 		<div id="ctlBtn1"><i class="fas fa-circle" id="prevBtn1"></i><i class="fas fa-circle" id="nextBtn1"></i></div>
 		<div id="ctlBtn2"><i class="fas fa-chevron-left" id="prevBtn2"></i><i class="fas fa-chevron-right" id="nextBtn2"></i></div>
 	</div>
-  <div id="tabBtnBlock" style="height: 800px;">
+  <div id="tabBtnBlock">
     <div class="tabRoundCorner"><ul><li></li></ul></div>
     <div class="bigMenuStyle" >Geometry</div>
-		<div style="width: 200px; height: 80px;">
-			<div id="tabBtn1" class="tabBtn" onclick="divShowLeft()" style="padding: 0px; margin: 0px; background-color: rgb(214, 216, 215); cursor: pointer;">
-				<ul style="padding: 0px; margin: 0px; width: 100px; background-color: white; margin-bottom: 5px; list-style: none;">
-					<li class="textTabBtn1">Overall</li>
+		<div class="tabBtnDiv">
+			<div class="tabBtn1" onclick="divShowLeft()">
+				<ul>
+					<li>Overall</li>
 				</ul>
 			</div>
-			<div id="tabBtn2" class="tabBtn" onclick="divShowRight()" style="padding: 0px; margin: 0px; cursor: pointer;">
-				<ul style="padding: 0px; margin: 0px; width: 100px; background-color: white; margin-bottom: 5px; list-style: none;">
-					<li class="textTabBtn2">Folded</li>
+			<div class="tabBtn2" onclick="divShowRight()">
+				<ul>
+					<li>Folded</li>
 				</ul>
 			</div>
 		</div>
-		<div style="padding: 0px; margin: 0px; width: 100%;">
-			<div id="overall" style="width: 100%;">
+		<div class="tabInfo">
+			<div class="overall">
 				<div>
 					<ul>
 						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/overall01.jpg?v=1638937485" width="480" height="480" loading="lazy"></li>
@@ -586,7 +586,7 @@
 						<li class="overallBtBoder1px">G - Wheelbase</li>
 						<li class="overallBtBoder1px">H - Rear carrier height</li>
 					</ul>
-					<ul style="width: 50%;">
+					<ul>
 						<li class="overallBtmBoder1px overallTopBoder1px overallBgColor">64" x 44"</li>
 						<li class="overallBtmBoder1px overallBgColor">20" x 4"</li>
 						<li class="overallBtmBoder1px">16.5"</li>
@@ -599,23 +599,23 @@
 						<li class="overallBtmBoder1px">25.5"</li>
 					</ul>
 				</div>
-				<div style="padding: 0px; margin: 0px; width: 100%;"><ul style="position: relative; float: right;"><li style="position: relative; float: right; color: lightslategrey; padding-right: 30px;">All measurements provided in inch unless otherwise noted.</li></ul></div>
+				<div style="padding: 0px; margin: 0px; width: 100%;"><ul style="position: relative; float: right;"><li style="position: relative; float: right; color: lightslategrey; padding-right: 10px;">All measurements provided in inch unless otherwise noted.</li></ul></div>
 			</div>
-			<div id="folded" style="width: 100%;">
+			<div class="folded">
 				<div>
 					<ul>
 						<li class="btBoder1px topBoder1px"><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/folded01.jpg?v=1638937485" width="480" height="480" loading="lazy"></li>
 					</ul>
-					<ul style="width: 15%;">
+					<ul>
 						<li class="overallBtBoder1px overallTopBoder1px foldedBgColor">A - Height</li>
 						<li class="overallBtBoder1px foldedBgColor">B - Width</li>
 					</ul>
-					<ul style="width: 50%;">
+					<ul>
 						<li class="overallBtmBoder1px overallTopBoder1px foldedBgColor">47.6"</li>
 						<li class="overallBtmBoder1px foldedBgColor">37.8"</li>
 					</ul>
 				</div>
-				<div style="padding: 0px; margin: 0px; width: 100%;"><ul style="position: relative; float: right;"><li style="position: relative; float: right; color: lightslategrey; padding-right: 30px;">All measurements provided in inch unless otherwise noted.</li></ul></div>
+				<div style="padding: 0px; margin: 0px; width: 100%;"><ul style="position: relative; float: right;"><li style="position: relative; float: right; color: lightslategrey; padding-right: 10px;">All measurements provided in inch unless otherwise noted.</li></ul></div>
 			</div>
 		</div>
 	</div>

@@ -8,36 +8,39 @@
     margin-bottom: 100px;
 }
 
+
+/*slid section*/
 #perf_wrapper{
+    display: block;
     padding: 0px;
     margin: 0px;
     width: 100%;
-    height: 480px;
-    border: 0px;
+    border: 0px solid coral;
     overflow: hidden;
     white-space: nowrap;
 }
 
+/*slid container*/
 #perf_imgSlid{
     padding: 0px;
     margin: 0px;
     display: flex;
 }
 
+/*slid image div*/
 #perf_imgSlid .item{
     padding: 0px;
-    width: 33%;
-    height: 480px;
-    border: 1px solid #ff23ff;
+    margin-right: 10px;
+    border: 0px solid #ff23ff;
     text-align: center;
     background-color: #ffffff;
     /* display: inline-block; */
 }
 
+/*slid image div ul*/
 #perf_imgSlid .item ul{
     padding: 0px;
     margin: 0px;
-    width: 450px;
     list-style: none;
     position: relative;
     display: block;
@@ -51,15 +54,22 @@
     white-space:normal;
     word-wrap: break-word;
     text-align: left;
+    font-size: 1.5vw;  /*image description body font */
     
+}
+
+#perf_imgSlid .item ul li img{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
 }
 
 #perf_imgSlid .item ul .titleStyle{
     padding: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 1%;
+    padding-bottom: 1%;
     margin: 0px;
-    font-size: 20px;
+    font-size: 2.0vw;  /*image description head font */
     font-weight: bold;
     position: relative;
     display: block;
@@ -69,13 +79,7 @@
     
 }
 
-#perf_imgSlid .item ul li img{
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    width: 100%;
-    height: 100%
-}
+
 
 #perf_prevBtn1{
     width: 10px;
@@ -146,8 +150,8 @@
 
 .performance_desc{
     padding-left: 5px;
-    width: 100%;
-    font-size: 18px;
+    width: 80%;
+    font-size: 1.5vw;  /*Block description head font */
     margin-bottom: 5px;
 
 }
@@ -157,7 +161,7 @@
     padding: 0px;
     margin: 0px;
     display: flex;
-    border: 2px solid cornflowerblue;
+    border: 0px solid cornflowerblue;
     width: 100%;
 }
 
@@ -167,10 +171,13 @@
     width: 50%;
 }
 
+/*performanceMainDescData div */
 .performance_main_desc_data{
+    position: relative;
     padding: 0px;
     margin: 0px;
     width: 50%;
+    border: 0px solid chocolate;
 }
 
 .performance_main_desc_data ul{
@@ -178,28 +185,26 @@
     margin: 0px;
     padding: 0px;
     list-style: none;
-    float:left;
-    margin-left: 20%;
-    border: 2px solid chocolate;
+    border: 0px solid chocolate;
+    margin-left: 30%;
+    
 }
 
 .performance_main_desc_data ul li{
     list-style: none;
+    border: 0px solid chartreuse;
+    padding: 0px;
+    margin: 0px;
 }
 
 .perf_big{
-    font-size: 50px;
+    font-size: 4.0vw;
     color: chartreuse;
 }
 
-.perf_margin_top{
-    margin-top: 100px;
-}
-
 .perf_bold{
-    font-size: 25px;
+    font-size: 1.5vw;
     color: black;
-    font-weight: bold;
 }
 
 .main_banner{
@@ -229,7 +234,7 @@
     position: absolute;
     top: 24%;
     left: 5%;
-    font-size: 30%;
+    font-size: 4.5vmin;
     font-weight: 200px;
     color: darkorange;
     border: 0px solid cornflowerblue;
@@ -239,9 +244,9 @@
     position: absolute;
     margin: 0px;
     padding: 0px;
-    top: 36%;
+    top: 37%;
     left: 5%;
-    font-size: 30px;
+    font-size: 3.0vmin;
     height: 1em;
     border: 0px solid crimson;
 }
@@ -256,24 +261,23 @@
     opacity: 0.5;
     width: 40%;
     left: 5%;
-    font-size: 15px;
+    font-size: 1.5vmin;
     text-align: left;
     padding-left: 10px;
-    border-radius: 8%
+    border-radius: 5%;
 }
 
 .main_top_banner{
-    width: 100%;
-    height: 330px;
+    display: block;
+    overflow: auto;
     background-color: black;
-    padding-top: 1%;
     opacity: 0.9;
 }
 
 .main_top_banner ul{
     position: relative;
     padding: 0px;
-    margin: 4%;
+    margin: 4% 4% 4% 4%;
     width: 17%;
     list-style: none;
     float: left;
@@ -292,12 +296,12 @@
 
  .main_top_bold{
      font-weight: 1200;
-     font-size: 30px;
+     font-size: 2.0vmin;
  }
 
  .main_top_light{
     font-weight: 300;
-    font-size: 15px;
+    font-size: 1.5vmin;
 }
 
 

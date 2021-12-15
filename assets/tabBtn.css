@@ -1,31 +1,61 @@
-#tabBtnBlock .tabBtn {
+#tabBtnBlock{
     display: block;
-    float: left;
+    overflow:auto;
+}
+
+#tabBtnBlock .tabBtnDiv{
+    margin: 0px;
     padding: 0px;
-    margin: 0px;
+    width: 200px;
+    display: flex;
+    border: 0px solid cornflowerblue;
 }
 
-#tabBtnBlock .textTabBtn1 {
+#tabBtnBlock .tabBtnDiv .tabBtn1 ul{
+    display: block;
     margin: 0px;
+    padding: 0px;
     list-style: none;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px;
-    padding-bottom: 5px;
-    background-color: white;
 }
 
-#tabBtnBlock .textTabBtn2 {
+#tabBtnBlock .tabBtnDiv .tabBtn1 ul li{
+    display: block;
     margin: 0px;
+    padding: 0px;
     list-style: none;
-    font-size: 15px;
+    font-size: 1.2vw;
     font-weight: bold;
-    padding: 10px;
-    padding-bottom: 5px;
     background-color: white;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 5px;
 }
 
-#tabBtnBlock #overall {
+#tabBtnBlock .tabBtnDiv .tabBtn2 ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#tabBtnBlock .tabBtnDiv .tabBtn2 ul li{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2vw;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+#tabBtnBlock .tabInfo{
+    display: flex;
+}
+
+#tabBtnBlock .tabInfo .overall {
     padding: 0px;
     margin: 0px;
     display: block;
@@ -33,45 +63,46 @@
     float: left;
 }
 
-#tabBtnBlock #overall ul{
+#tabBtnBlock .tabInfo .overall ul{
     padding: 0px;
     margin: 0px;
+    list-style: none;
     display: block;
     position: relative;
     float: left;
 }
 
-#tabBtnBlock #overall ul li{
+#tabBtnBlock .tabInfo .overall ul li{
     display: block;
     padding: 10px;
     padding-left: 20px;
     list-style: none;
 }
 
-#tabBtnBlock .overallBtBoder1px{
+.overallBtBoder1px{
     border-bottom: 1px solid;
     border-bottom-color: gray;
     border-right: 1px solid;
     border-right-color: gray;
 }
 
-#tabBtnBlock .overallBtmBoder1px{
+.overallBtmBoder1px{
     border-bottom: 1px solid;
     border-bottom-color: gray;
 }
 
-#tabBtnBlock .overallTopBoder1px{
+.overallTopBoder1px{
     border-top: 2px solid;
     border-top-color: black;
 }
 
-#tabBtnBlock .overallBgColor{
+.overallBgColor{
     background-color:rgb(214, 216, 215);
     font-size: 18px;
     font-weight: bold;
 }
 
-#tabBtnBlock #folded {
+#tabBtnBlock .tabInfo .folded {
     padding: 0px;
     margin: 0px;
     display: block;
@@ -79,7 +110,7 @@
     float: left;
 }
 
-#tabBtnBlock #folded ul{
+#tabBtnBlock .tabInfo .folded ul{
     padding: 0px;
     margin: 0px;
     display: block;
@@ -87,7 +118,7 @@
     float: left;
 }
 
-#tabBtnBlock #folded ul li{
+#tabBtnBlock .tabInfo .folded ul li{
     display: block;
     list-style: none;
     padding: 10px;

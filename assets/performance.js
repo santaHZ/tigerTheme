@@ -1,5 +1,27 @@
+const perf_wrapper = document.querySelector('#perf_wrapper');
 const perf_imgSlide = document.querySelector('#perf_imgSlid');
 const perf_slidImages = document.querySelectorAll('#perf_imgSlid .item');
+
+let perf_slidImagesImg = document.querySelectorAll('#perf_imgSlid .item ul li img');
+
+// get objects of mainBanner
+let mainBannerImg = document.getElementById("mainBannerImg");
+let mainBannerName = document.getElementById("mainBannerName");
+let mainBannerF1 = document.getElementById("mainBannerF1");
+let mainBannerF2 = document.getElementById("mainBannerF2");
+let mainBanner = document.querySelector('.main_banner');
+
+// get object of performance
+let performanceMainImg = document.getElementById("performanceMainImg");
+let performanceMainDescData = document.getElementById("performanceMainDescData");
+let performanceMainDescData_ul = performanceMainDescData.firstElementChild;
+
+// get object of performance data
+let gearHub = document.getElementById("gearHub");
+let milesPerCharge = document.getElementById("milesPerCharge");
+let maxTorque = document.getElementById("maxTorque");
+let perdalAssLevel = document.getElementById("perdalAssLevel");
+
 
 //Buttons
 const perf_prevBtn1 = document.querySelector('#perf_prevBtn1');
@@ -8,15 +30,41 @@ const perf_nextBtn1 = document.querySelector('#perf_nextBtn1');
 const perf_prevBtn2 = document.querySelector('#perf_prevBtn2');
 const perf_nextBtn2 = document.querySelector('#perf_nextBtn2');
 
+
+window.onload = function() {
+	//console.log('imgHeight:' + mainBannerImg.height);
+	mainBanner.style.height = mainBannerImg.height +'px';
+
+	for (let i=0; i<5; i++ ){
+		perf_slidImagesImg[i].setAttribute('width', Math.floor(perf_wrapper.clientWidth / 3 - 10));
+		perf_slidImagesImg[i].setAttribute('height', Math.floor(perf_slidImagesImg[i].width * 0.66666));
+	}
+
+	// initialize flexibility block
+	for (let i=0; i<5; i++ ){
+		flex_slidImagesImg[i].setAttribute('width', Math.floor(flex_wrapper.clientWidth / 3 - 10));
+		flex_slidImagesImg[i].setAttribute('height', Math.floor(flex_slidImagesImg[i].width * 0.66666));
+	}
+
+	// initialize userfriendly block
+	for (let i=0; i<4; i++ ){
+		slidImagesImg[i].setAttribute('width', Math.ceil(userfly_wrapper.clientWidth / 3) - 10);
+		//console.log(userfly_wrapper.clientWidth);
+		slidImagesImg[i].setAttribute('height', Math.ceil(slidImagesImg[i].width * 0.66666));
+	}
+  };
+
 //Counter
 let perf_counter = 0;
 //const perf_size = perf_slidImages[0].clientWidth;
-const perf_size = perf_slidImages[0].clientWidth;
+//let perf_size = perf_slidImages[0].getAttribute('width'); 
+//const perf_size = perf_slidImagesImg[0].width;
+let perf_size = Math.round(perf_wrapper.clientWidth / 3);
+//console.log(perf_size);
 
 perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
-
-//Button1 Listeners
+//Button1 Listeners dot button
 perf_nextBtn1.addEventListener('click', ()=>{
 	if (perf_counter == 2){
 		return;
@@ -25,13 +73,16 @@ perf_nextBtn1.addEventListener('click', ()=>{
 	perf_counter ++;
 	//console.log(counter);
 	//console.log(perf_size);
+	perf_size = Math.round(perf_wrapper.clientWidth / 3);
+	//console.log(perf_size);
+
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
 	perf_nextBtn1.style.color = "rgb(66, 64, 64)";
 	perf_prevBtn1.style.color = "#ddd";
 
 });
-
+//Button1 Listeners dot button
 perf_prevBtn1.addEventListener('click', ()=>{
 	if (perf_counter == 0){
 		return;
@@ -39,15 +90,17 @@ perf_prevBtn1.addEventListener('click', ()=>{
 	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
 	perf_counter --;
 	//console.log(counter);
-	//console.log(perf_size);
+	perf_size = Math.round(perf_wrapper.clientWidth / 3);
+
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
 	perf_nextBtn1.style.color = "#ddd";
 	perf_prevBtn1.style.color = "rgb(66, 64, 64)";
+	//console.log(perf_size);
 
 });
 
-//Button2 Listeners
+//Button2 Listeners arrow button
 perf_nextBtn2.addEventListener('click', ()=>{
 	
 	if (perf_counter == 2){
@@ -55,7 +108,8 @@ perf_nextBtn2.addEventListener('click', ()=>{
 	}
 	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
 	perf_counter ++;
-	//console.log(counter);
+
+	perf_size = Math.round(perf_wrapper.clientWidth / 3);
 	//console.log(perf_size);
 	//console.log(perf_counter);
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
@@ -64,13 +118,15 @@ perf_nextBtn2.addEventListener('click', ()=>{
 	perf_prevBtn1.style.color = "#ddd";
 });
 
+//Button2 Listeners arrow button
 perf_prevBtn2.addEventListener('click', ()=>{
 	if (perf_counter == 0){
 		return;
 	}
 	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
 	perf_counter --;
-	//console.log(counter);
+
+	perf_size = Math.round(perf_wrapper.clientWidth / 3);
 	//console.log(perf_size);
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
@@ -80,10 +136,7 @@ perf_prevBtn2.addEventListener('click', ()=>{
 
 
 
-gearHub = document.getElementById("gearHub");
-milesPerCharge = document.getElementById("milesPerCharge");
-maxTorque = document.getElementById("maxTorque");
-perdalAssLevel = document.getElementById("perdalAssLevel");
+
 
 let gearhub_no = 0;
 let milesPerCharge_no = 0;
@@ -122,47 +175,35 @@ function addNum4 (){
 	}
 }
 
+function isScrolledIntoView(el) {
+	var rect = el.getBoundingClientRect();
+	var elemTop = rect.top;
+	var elemBottom = rect.bottom;
+
+	// Only completely visible elements return true:
+	var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+	// Partially visible elements return true:
+	//isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+	return isVisible;
+}
+
 var myScrollFunc = function() {
-  var y = window.scrollY;
-  if (y > 1800) {
-	  setTimeout(addNum1, 5);
-	  setTimeout(addNum2, 15);
-	  setTimeout(addNum3, 25);
-	  setTimeout(addNum4, 25);
-  } else {
-    //myID.className = "bottomMenu hide"
-  }
+
+	//console.log('scrollY : ' + window.scrollY);
+	//var y = window.scrollY;
+
+	if (isScrolledIntoView(performanceMainDescData)) {
+		setTimeout(addNum1, 5);
+		setTimeout(addNum2, 15);
+		setTimeout(addNum3, 25);
+		setTimeout(addNum4, 25);
+	} else {
+	}
 };
-
-
 
 window.addEventListener("scroll", myScrollFunc);
 
-// resizing the main_banner img when changing the window size
-
-let mainBannerImg = document.getElementById("mainBannerImg");
-let mainBannerName = document.getElementById("mainBannerName");
-let mainBannerF1 = document.getElementById("mainBannerF1");
-let mainBannerF2 = document.getElementById("mainBannerF2");
-let mainBanner = document.querySelector('.main_banner');
-
-window.onload = function() {
-	console.log('imgHeight:' + mainBannerImg.height);
-	mainBanner.style.height = mainBannerImg.height +'px';
-	mainBannerName.style.fontSize = Math.ceil(mainBannerImg.width * 0.04) + 'px';
-	mainBannerF1.style.fontSize = Math.ceil(mainBannerImg.width * 0.03) + 'px';
-	mainBannerF2.style.fontSize = Math.ceil(mainBannerImg.width * 0.01) + 'px';
-  };
-
 window.addEventListener('resize', function(event) {
-	mainBannerName.style.fontSize = Math.ceil(mainBannerImg.width * 0.04) + 'px';
-	mainBannerF1.style.fontSize = Math.ceil(mainBannerImg.width * 0.03) + 'px';
-
-	console.log(mainBannerName.offsetTop);
-	console.log(mainBannerF1.offsetTop);
-
-	mainBannerF2.style.fontSize = Math.ceil(mainBannerImg.width * 0.01) + 'px';
-
 	mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
 	mainBanner.style.height = mainBannerImg.height +'px';
 
@@ -174,5 +215,13 @@ window.addEventListener('resize', function(event) {
 		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!";
 	}
 
+	performanceMainImg.height = Math.ceil(performanceMainImg.width * 1);
+	performanceMainDescData.style.height = performanceMainImg.width
+
+	for (let i=0; i<5; i++ ){
+		perf_slidImagesImg[i].setAttribute('width', Math.ceil(perf_wrapper.clientWidth / 3) - 10);
+		perf_slidImagesImg[i].setAttribute('height', Math.ceil(perf_slidImagesImg[i].width * 0.66666));
+	}
+	//console.log(perf_slidImagesImg[0].width);
 }, true);
 
