@@ -1,11 +1,12 @@
 let divSpeHeight = 0;
 let div_Id ="product_main_spe_Tech";
-let objArray = [];
+let objArray = [];  // store last two clicked div Id
 let t = 0;
 let childBtn ="add";
 let divFlag = 0;
 let divDirectionFlag = "inc";
 
+// increase div height
 function incSpeHeightMain(){
     if (divFlag = 1 && divDirectionFlag == "dec"){
         return;
@@ -16,10 +17,13 @@ function incSpeHeightMain(){
 	elem.style.height = divSpeHeight + "px";
 	if (divSpeHeight < elemHeight){
         t = setTimeout(incSpeHeightMain, 5);
-	}
+	}else{
+
+    }
     
 }
 
+// decrease div height
 function decSpeHeightMain(){
     if (divFlag = 1 && divDirectionFlag == "inc"){
         return;
@@ -29,10 +33,13 @@ function decSpeHeightMain(){
 	elem.style.height = divSpeHeight + "px";
 	if (divSpeHeight > 5){
         t = setTimeout(decSpeHeightMain, 5);
-	}
+	}else{
+
+    }
     
 }
 
+// click function with passing div Id in
 let speToggleMain = function(obj_Id) {
 	//let btnA= document.getElementById("product_main_spe_Tech_Menu");
     let btnA= document.getElementById(obj_Id);
@@ -56,10 +63,11 @@ let speToggleMain = function(obj_Id) {
                 divSpeHeight = 0;
                 divFlag = 0; // previous div clicked is different with current one.
             }else{
-                divFlag = 1;
+                divFlag = 1; // previous div clicked is same as current one.
             }
         }
 		console.log(divSpeHeight);
+
 		btnA.firstElementChild.setAttribute("class","minus");
         childBtn = "minus";
         divDirectionFlag = "inc";

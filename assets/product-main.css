@@ -1,5 +1,7 @@
 #product_main {
 	position:relative;
+    display: block;
+    overflow: auto;
 	width: 100%;
 }
 #product_main h1 {
@@ -8,7 +10,7 @@
 }
 #product_main li {
 	list-style: none;
-	font-size: 1.5vw;
+	font-size: 1.3vw;
 	display: block;
 	border-width: 0px;
 	border-style: solid;
@@ -26,10 +28,7 @@
 	float: left;
 	padding: 0px;
 }
-#product_main .product_list_head {
-	font-size: 2.0vw;
-	font-weight: 400;
-}
+
 #product_main .rtBoder1px {
 	border-right-width: 1px;
 	padding: 20px;
@@ -45,14 +44,15 @@
 }
 
 .add {
-    margin-top: 12px;
-    margin-left: 15px;
+    margin-top: 1.0vw;
+    margin-left: 1.2vw;
     display: block;
     float: left;
-    border: 1px solid;
-    width: 30px;
-    height: 30px;
-    color: #ccc;
+    border: 1.0vw solid coral;
+    width: 2.0vw;
+    height: 2.0vw;
+    color: #fff;
+    /* color: #ccc; */
     transition: color .25s;
     position: relative;
 }
@@ -62,10 +62,10 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 26px;
-    margin-left: -13px;
-    margin-top: -2px;
-    border-top: 4px solid;
+    width: 2.6vw;
+    margin-left: -1.3vw;
+    margin-top: -0.2vw;
+    border-top: 0.4vw solid;
 }
 
 .add::after{
@@ -73,21 +73,22 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 26px;
-    margin-left: -2px;
-    margin-top: -13px;
-    border-left: 4px solid;
+    height: 2.6vw;
+    margin-left: -0.2vw;
+    margin-top: -1.3vw;
+    border-left: 0.4vw solid;
 }
 
 .minus {
-    margin-top: 12px;
-    margin-left: 15px;
+    margin-top: 1.0vw;
+    margin-left: 1.2vw;
     display: block;
     float: left;
-    border: 1px solid;
-    width: 30px;
-    height: 30px;
-    color: #ccc;
+    border: 1.0vw solid;
+    width: 2.0vw;
+    height: 2.0vw;
+    /*color: #ccc;*/
+    color: #fff;
     transition: color .25s;
     position: relative;
 }
@@ -97,10 +98,10 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 26px;
-    margin-left: -13px;
-    margin-top: -2px;
-    border-top: 4px solid;
+    width: 2.6vw;
+    margin-left: -1.3vw;
+    margin-top: -0.2vw;
+    border-top: 0.4vw solid;
 }
 
 .speMenu{
@@ -108,7 +109,22 @@
     padding-left: 10px;
 }
 
+
+.product_main_lfUl_with{
+    width: 30%;
+    margin-left: 5%;
+}
+
+.product_main_rtUl_with{
+    width: 62%;
+    margin-right: 3%;
+}
+
+
+
+
 .roundCorner{
+    display: block;
     color:white;
     text-align: center;
     border: 0px solid #a1a1a1;
@@ -121,15 +137,19 @@
 	margin-bottom: 10px;
 }
 .bigMenuStyle{
-	font-size: 5.0vmin;
+	font-size: 3.5vw;
     padding-left: 5px;
     margin-bottom: 10px;
-	height: 60px;
 	font-weight: bold;
 	color: black;
 }
 
 .detail_menu_style{
+    display: block;
+    height: 4vw;
     cursor: pointer;
+    border: 10vw solid rgb(161, 21, 21);
+    background-color: rgb(214, 216, 211);
 }
+
 

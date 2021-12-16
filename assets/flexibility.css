@@ -4,9 +4,9 @@
     overflow: auto;
     padding: 0px;
     margin: 0px;
-    margin-left: 10px;
     width: 100%;
     margin-bottom: 100px;
+    background-color: darkgrey;
 }
 
 #flex_wrapper{
@@ -75,71 +75,71 @@
     border: 0px;
 }
 
-#flex_prevBtn1{
-    width: 10px;
-    height: 10px;
-    position: relative;
-    padding-right: 10px;
-    margin-right: 10px;
-    padding-top: 20px;
-    font-size: 2px;
-    color: #ddd;
-    cursor: pointer;
-}
-#flex_prevBtn1:hover{
-    color: rgb(66, 64, 64);
-}
-
-#flex_nextBtn1{
-    position: relative;
-    padding-top: 20px;
-    font-size: 2px;
-    color: #ddd;
-    cursor: pointer;
-}
-#flex_nextBtn1:hover{
-    color: rgb(66,64,64);
-}
-
-#flex_prevBtn2{
-    width: 10px;
-    height: 10px;
-    position: relative;
-    padding-right: 30px;
-    padding-top: 10px;
-    font-size: 30px;
-    color: #ddd;
-    cursor: pointer;
-}
-#flex_prevBtn2:hover{
-    color: rgb(66, 64, 64);
-}
-
-#flex_nextBtn2{
-    position: relative;
-    font-size: 30px;
-    padding-top: 10px;
-    color: #ddd;
-    cursor: pointer;
-}
-#flex_nextBtn2:hover{
-    color: rgb(66,64,64);
-}
-
+/*定义左侧按钮样式*/
 #flex_ctlBtn1{
+    position: relative;
     padding: 0px;
     margin: 0px;
-    width: 30px;
     display: flex;
     float: left;
+
 }
 
-#flex_ctlBtn2{
+.flex_my-circle-l{
     padding: 0px;
     margin: 0px;
-    width: 60px;
+    cursor: pointer;
+
+}
+
+.flex_my-circle-r{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+
+}
+
+
+
+/*定义右侧按钮样式*/
+#flex_ctlBtn2{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
     display: flex;
-    float: right;
+    float:right;
+}
+
+/*定义右侧左箭头样式 */
+#flex_ctlBtn2 .flex_my-left{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#flex_ctlBtn2 .flex_my-left img{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    margin-bottom: 1px;
+}
+
+#flex_ctlBtn2 .flex_my-left:hover{
+    background-color: darkgray;
+}
+
+/*定义右侧右箭头样式 */
+#flex_ctlBtn2 .flex_myRight{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#flex_ctlBtn2 .flex_myRight img{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    margin-bottom: 1px;
 }
 
 .flexibility_desc{
@@ -147,4 +147,18 @@
     width: 80%;
     font-size: 1.5vw;  /*Block description head font */
     margin-bottom: 50px;
+}
+
+#flexibility .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 2px 4px;
+    background: #029789;
+    width: 50px;
+    height: 15px;
+    border-radius: 4px;
+	margin-left: 5px;
+	margin-bottom: 10px;
 }

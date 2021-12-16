@@ -1,0 +1,228 @@
+#geometry{
+    position: relative;
+    display: block;
+    overflow:auto;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 100px;
+    background-color: rgb(232, 240, 166);
+}
+
+#geometry .tabBtnDiv{
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    display: flex;
+    border: 0px solid cornflowerblue;
+}
+
+#geometry .tabBtnDiv .tabBtn1 {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    background-color: rgb(214, 216, 215);
+}
+
+#geometry .tabBtnDiv .tabBtn1 ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#geometry .tabBtnDiv .tabBtn1 ul li{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.6vw;  /* define font size of tab button 2*/
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+#geometry .tabBtnDiv .tabBtn2 ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#geometry .tabBtnDiv .tabBtn2 ul li{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.6vw; /* define font size of tab button 2*/
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+#geometry .tabInfo{
+    display: block;
+    background-color: darkmagenta;
+}
+
+#geometry .tabInfo .overall {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    width: 100%;
+    float: left;
+    background-color: darksalmon;
+}
+
+#geometry .tabInfo .overall .overallWrapper{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    background-color: darkslateblue;
+}
+
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    width: 100%;
+    float: left;
+}
+
+
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData ul{
+    position: relative;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    /*width: 100%;*/
+}
+
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData ul li{
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+    list-style: none;
+    font-size: 0.8vw; /* define data font*/
+}
+
+.overallBtBoder1px{
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+    border-right: 1px solid;
+    border-right-color: gray;
+}
+
+.overallBtmBoder1px{
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+}
+
+.overallTopBoder1px{
+    border-top: 2px solid;
+    border-top-color: black;
+}
+
+.overallBgColor{
+    background-color:rgb(214, 216, 215);
+    font-size: 1.0vw; /* define bigger font for top 2 rows*/
+    font-weight: bold;
+}
+
+.overallLeftColWith{
+    display: block;
+    width: 60%;
+}
+
+.overallRightColWith{
+    display: block;
+    width: 40%;
+}
+
+
+/*Define folded product data*/
+#geometry .tabInfo{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded .foldedWrapper {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded .foldedWrapper .foldedWrapperData{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    display: flex;
+    float: left;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+    display: block;
+    list-style: none;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 1.0vw; /* define data font*/
+}
+
+.foldedBgColor{
+    background-color: rgb(214, 216, 215);
+}
+
+
+
+#geometry .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 2px 4px;
+    background: #029789;
+    width: 50px;
+    height: 15px;
+    border-radius: 4px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+
+

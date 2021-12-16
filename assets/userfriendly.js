@@ -7,11 +7,24 @@ console.log(userfly_wrapper);
 let slidImagesImg = document.querySelectorAll('#imgSlid .item ul li img');
 
 //Buttons
-const prevBtn1 = document.querySelector('#prevBtn1');
-const nextBtn1 = document.querySelector('#nextBtn1');
 
-const prevBtn2 = document.querySelector('#prevBtn2');
-const nextBtn2 = document.querySelector('#nextBtn2');
+//define my-circle-l div button
+const prevBtn1 = document.querySelector('#ctlBtn1 .my-circle-l');
+const prevBtn1Img = prevBtn1.firstElementChild;
+
+//define my-circle-r div button
+const nextBtn1 = document.querySelector('#ctlBtn1 .my-circle-r');
+const nextBtn1Img = nextBtn1.firstElementChild;
+
+//define the my-left div button
+const prevBtn2 = document.querySelector('#ctlBtn2 .my-left');
+const prevBtn2Img = prevBtn2.firstElementChild;
+
+//define the myRight div button
+const nextBtn2 = document.querySelector('#ctlBtn2 .myRight');
+const nextBtn2Img = nextBtn2.firstElementChild;
+
+
 
 //Counter
 let counter = 0;
@@ -21,24 +34,9 @@ let size = Math.round(perf_wrapper.clientWidth / 3);
 imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
 
 
-//Button1 Listeners
-nextBtn1.addEventListener('click', ()=>{
-	if (counter == 1){
-		return;
-	}
-	imgSlide.style.transition = "transform 0.4s ease-in-out";
-	counter ++;
-	//console.log(counter);
-	//console.log(size);
-	size = Math.round(perf_wrapper.clientWidth / 3);
-	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
 
-	nextBtn1.style.color = "rgb(66, 64, 64)";
-	prevBtn1.style.color = "#ddd";
-
-});
-
-prevBtn1.addEventListener('click', ()=>{
+// Left side Buttons no.1 Listeners
+let fun_prevBtn1 = function(){
 	if (counter == 0){
 		return;
 	}
@@ -49,13 +47,14 @@ prevBtn1.addEventListener('click', ()=>{
 	size = Math.round(perf_wrapper.clientWidth / 3);
 	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
 
-	nextBtn1.style.color = "#ddd";
-	prevBtn1.style.color = "rgb(66, 64, 64)";
+	prevBtn1Img.setAttribute('src', No1ImgSolid);
+	nextBtn1Img.setAttribute('src', No1ImgEmpty);
+	//nextBtn1.style.color = "#ddd";
+	//prevBtn1.style.color = "rgb(66, 64, 64)";
 
-});
+};
 
-//Button2 Listeners
-nextBtn2.addEventListener('click', ()=>{
+let fun_nextBtn1 = function(){
 	if (counter == 1){
 		return;
 	}
@@ -66,11 +65,17 @@ nextBtn2.addEventListener('click', ()=>{
 	size = Math.round(perf_wrapper.clientWidth / 3);
 	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
 
-	nextBtn1.style.color = "rgb(66, 64, 64)";
-	prevBtn1.style.color = "#ddd";
-});
+	nextBtn1Img.setAttribute('src', No1ImgSolid);
+	prevBtn1Img.setAttribute('src', No1ImgEmpty);
+	//nextBtn1.style.color = "rgb(66, 64, 64)";
+	//prevBtn1.style.color = "#ddd";
 
-prevBtn2.addEventListener('click', ()=>{
+};
+
+
+
+// Right side Buttons no.2 Listeners
+let fun_prevBtn2 = function(){
 	if (counter == 0){
 		return;
 	}
@@ -81,9 +86,31 @@ prevBtn2.addEventListener('click', ()=>{
 	size = Math.round(perf_wrapper.clientWidth / 3);
 	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
 
-	nextBtn1.style.color = "#ddd";
-	prevBtn1.style.color = "rgb(66, 64, 64)";
-});
+	prevBtn1Img.setAttribute('src', No1ImgSolid);
+	nextBtn1Img.setAttribute('src', No1ImgEmpty);
+	//nextBtn1.style.color = "#ddd";
+	//prevBtn1.style.color = "rgb(66, 64, 64)";
+};
+
+let fun_nextBtn2 = function(){
+	if (counter == 1){
+		return;
+	}
+	imgSlide.style.transition = "transform 0.4s ease-in-out";
+	counter ++;
+	//console.log(counter);
+	//console.log(size);
+	size = Math.round(perf_wrapper.clientWidth / 3);
+	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+
+	nextBtn1Img.setAttribute('src', No1ImgSolid);
+	prevBtn1Img.setAttribute('src', No1ImgEmpty);
+
+	//nextBtn1.style.color = "rgb(66, 64, 64)";
+	//prevBtn1.style.color = "#ddd";
+};
+
+
 
 
 window.addEventListener('resize', function(event) {

@@ -24,35 +24,22 @@ let perdalAssLevel = document.getElementById("perdalAssLevel");
 
 
 //Buttons
-const perf_prevBtn1 = document.querySelector('#perf_prevBtn1');
-const perf_nextBtn1 = document.querySelector('#perf_nextBtn1');
+//const perf_prevBtn1 = document.querySelector('#perf_prevBtn1');
+const perf_prevBtn1 = document.querySelector('#perf_ctlBtn1 .perf_my-circle-l');
+const perf_prevBtn1Img = perf_prevBtn1.firstElementChild;
 
-const perf_prevBtn2 = document.querySelector('#perf_prevBtn2');
-const perf_nextBtn2 = document.querySelector('#perf_nextBtn2');
+//const perf_nextBtn1 = document.querySelector('#perf_nextBtn1');
+const perf_nextBtn1 = document.querySelector('#perf_ctlBtn1 .perf_my-circle-r');
+const perf_nextBtn1Img = perf_nextBtn1.firstElementChild;
 
+//const perf_prevBtn2 = document.querySelector('#perf_prevBtn2');
+const perf_prevBtn2 = document.querySelector('#perf_ctlBtn2 .perf_my-left');
+const perf_prevBtn2Img = perf_prevBtn2.firstElementChild;
 
-window.onload = function() {
-	//console.log('imgHeight:' + mainBannerImg.height);
-	mainBanner.style.height = mainBannerImg.height +'px';
+//const perf_nextBtn2 = document.querySelector('#perf_nextBtn2');
+const perf_nextBtn2 = document.querySelector('#perf_ctlBtn2 .perf_myRight');
+const perf_nextBtn2Img = perf_nextBtn2.firstElementChild;
 
-	for (let i=0; i<5; i++ ){
-		perf_slidImagesImg[i].setAttribute('width', Math.floor(perf_wrapper.clientWidth / 3 - 10));
-		perf_slidImagesImg[i].setAttribute('height', Math.floor(perf_slidImagesImg[i].width * 0.66666));
-	}
-
-	// initialize flexibility block
-	for (let i=0; i<5; i++ ){
-		flex_slidImagesImg[i].setAttribute('width', Math.floor(flex_wrapper.clientWidth / 3 - 10));
-		flex_slidImagesImg[i].setAttribute('height', Math.floor(flex_slidImagesImg[i].width * 0.66666));
-	}
-
-	// initialize userfriendly block
-	for (let i=0; i<4; i++ ){
-		slidImagesImg[i].setAttribute('width', Math.ceil(userfly_wrapper.clientWidth / 3) - 10);
-		//console.log(userfly_wrapper.clientWidth);
-		slidImagesImg[i].setAttribute('height', Math.ceil(slidImagesImg[i].width * 0.66666));
-	}
-  };
 
 //Counter
 let perf_counter = 0;
@@ -65,7 +52,27 @@ let perf_size = Math.round(perf_wrapper.clientWidth / 3);
 perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
 //Button1 Listeners dot button
-perf_nextBtn1.addEventListener('click', ()=>{
+
+let fun_perf_prevBtn1 = function(){
+	if (perf_counter == 0){
+		return;
+	}
+	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
+	perf_counter --;
+	//console.log(counter);
+	perf_size = Math.round(perf_wrapper.clientWidth / 3);
+
+	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
+
+	perf_prevBtn1Img.setAttribute('src', No1ImgSolid);
+	perf_nextBtn1Img.setAttribute('src', No1ImgEmpty);
+	//perf_nextBtn1.style.color = "#ddd";
+	//perf_prevBtn1.style.color = "rgb(66, 64, 64)";
+	//console.log(perf_size);
+
+};
+
+let fun_perf_nextBtn1 = function(){
 	if (perf_counter == 2){
 		return;
 	}
@@ -78,30 +85,33 @@ perf_nextBtn1.addEventListener('click', ()=>{
 
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
-	perf_nextBtn1.style.color = "rgb(66, 64, 64)";
-	perf_prevBtn1.style.color = "#ddd";
+	perf_nextBtn1Img.setAttribute('src', No1ImgSolid);
+	perf_prevBtn1Img.setAttribute('src', No1ImgEmpty);
+	//perf_nextBtn1.style.color = "rgb(66, 64, 64)";
+	//perf_prevBtn1.style.color = "#ddd";
 
-});
-//Button1 Listeners dot button
-perf_prevBtn1.addEventListener('click', ()=>{
+};
+
+//Button2 Listeners arrow button
+let fun_perf_prevBtn2 = function(){
 	if (perf_counter == 0){
 		return;
 	}
 	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
 	perf_counter --;
-	//console.log(counter);
-	perf_size = Math.round(perf_wrapper.clientWidth / 3);
 
+	perf_size = Math.round(perf_wrapper.clientWidth / 3);
+	//console.log(perf_size);
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
-	perf_nextBtn1.style.color = "#ddd";
-	perf_prevBtn1.style.color = "rgb(66, 64, 64)";
-	//console.log(perf_size);
-
-});
+	perf_prevBtn1Img.setAttribute('src', No1ImgSolid);
+	perf_nextBtn1Img.setAttribute('src', No1ImgEmpty);
+	//perf_nextBtn1.style.color = "#ddd";
+	//perf_prevBtn1.style.color = "rgb(66, 64, 64)";
+};
 
 //Button2 Listeners arrow button
-perf_nextBtn2.addEventListener('click', ()=>{
+let fun_perf_nextBtn2 = function(){
 	
 	if (perf_counter == 2){
 		return;
@@ -114,27 +124,11 @@ perf_nextBtn2.addEventListener('click', ()=>{
 	//console.log(perf_counter);
 	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
 
-	perf_nextBtn1.style.color = "rgb(66, 64, 64)";
-	perf_prevBtn1.style.color = "#ddd";
-});
-
-//Button2 Listeners arrow button
-perf_prevBtn2.addEventListener('click', ()=>{
-	if (perf_counter == 0){
-		return;
-	}
-	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
-	perf_counter --;
-
-	perf_size = Math.round(perf_wrapper.clientWidth / 3);
-	//console.log(perf_size);
-	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
-
-	perf_nextBtn1.style.color = "#ddd";
-	perf_prevBtn1.style.color = "rgb(66, 64, 64)";
-});
-
-
+	perf_nextBtn1Img.setAttribute('src', No1ImgSolid);
+	perf_prevBtn1Img.setAttribute('src', No1ImgEmpty);
+	//perf_nextBtn1.style.color = "rgb(66, 64, 64)";
+	//perf_prevBtn1.style.color = "#ddd";
+};
 
 
 

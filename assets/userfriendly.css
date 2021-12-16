@@ -1,10 +1,12 @@
 #userfriendly {
     position: relative;
+    display: block;
+    overflow: auto;
     padding: 0px;
     margin: 0px;
-    margin-left: 10px;
     width: 100%;
     margin-bottom: 100px;
+    background-color: darkgrey;
 }
 
 #userfly_wrapper{
@@ -73,76 +75,99 @@
     border: 0px;
 }
 
-#prevBtn1{
-    width: 10px;
-    height: 10px;
-    position: relative;
-    padding-right: 10px;
-    margin-right: 10px;
-    padding-top: 20px;
-    font-size: 2px;
-    color: #ddd;
-    cursor: pointer;
-}
-#prevBtn1:hover{
-    color: rgb(66, 64, 64);
-}
-
-#nextBtn1{
-    position: relative;
-    padding-top: 20px;
-    font-size: 2px;
-    color: #ddd;
-    cursor: pointer;
-}
-#nextBtn1:hover{
-    color: rgb(66,64,64);
-}
-
-#prevBtn2{
-    width: 10px;
-    height: 10px;
-    position: relative;
-    padding-right: 30px;
-    padding-top: 10px;
-    font-size: 30px;
-    color: #ddd;
-    cursor: pointer;
-}
-#prevBtn2:hover{
-    color: rgb(66, 64, 64);
-}
-
-#nextBtn2{
-    position: relative;
-    font-size: 30px;
-    padding-top: 10px;
-    color: #ddd;
-    cursor: pointer;
-}
-#nextBtn2:hover{
-    color: rgb(66,64,64);
-}
-
-#ctlBtn1{
-    padding: 0px;
-    margin: 0px;
-    width: 30px;
-    display: flex;
-    float: left;
-}
-
-#ctlBtn2{
-    padding: 0px;
-    margin: 0px;
-    width: 60px;
-    display: flex;
-    float: right;
-}
-
 .userfriendly-desc{
     padding-left: 5px;
     width: 80%;
     font-size: 1.5vw; /*Block description head font */
     margin-bottom: 50px;
 }
+
+/*定义左侧按钮样式*/
+#ctlBtn1{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    float: left;
+
+}
+
+.my-circle-l{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+
+}
+
+.my-circle-r{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+
+}
+
+
+
+/*定义右侧按钮样式*/
+#ctlBtn2{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    float:right;
+}
+
+/*定义右侧左箭头样式 */
+#ctlBtn2 .my-left{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#ctlBtn2 .my-left img{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    margin-bottom: 1px;
+}
+
+#ctlBtn2 .my-left:hover{
+    background-color: darkgray;
+}
+
+/*定义右侧右箭头样式 */
+#ctlBtn2 .myRight{
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+#ctlBtn2 .myRight img{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    margin-bottom: 1px;
+}
+
+
+#ctlBtn2 .myRight:hover{
+    background-color: darkgray;
+}
+
+
+
+#userfriendly .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 2px 4px;
+    background: #029789;
+    width: 50px;
+    height: 15px;
+    border-radius: 4px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+

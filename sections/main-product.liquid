@@ -9,19 +9,19 @@
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'product-main.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'tabBtn.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'geometry.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'userfriendly.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'flexibility.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'performance.css' | asset_url }}" type="text/css">
 
-<script src="https://kit.fontawesome.com/c9849960bd.js" crossorigin="anonymous" defer="defer"></script>
-
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-main.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'tabBtn.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-main-imgUrl.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'geometry.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'userfriendly.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'flexibility.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'performance.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-main-winOnLoad.js' | asset_url }}" defer="defer"></script>
 
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -406,7 +406,7 @@
     <div class="main_banner_f2" id="mainBannerF2">Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!</div>
   </div>
   <div id="performance">
-    <div class="tabRoundCorner"><ul><li></li></ul></div>
+    <div class="tabRoundCorner"></div>
     <div class="bigMenuStyle" >Performance</div>
     <div class="performance_desc">Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.</div>
 		<div class="performance_main_desc">
@@ -465,11 +465,17 @@
 				</div>
 			</div>	
 		</div>
-		<div id="perf_ctlBtn1"><i class="fas fa-circle" id="perf_prevBtn1"></i><i class="fas fa-circle" id="perf_nextBtn1"></i></div>
-		<div id="perf_ctlBtn2"><i class="fas fa-chevron-left" id="perf_prevBtn2"></i><i class="fas fa-chevron-right" id="perf_nextBtn2"></i></div>
+    <div id="perf_ctlBtn1">
+      <div class="perf_my-circle-l" onclick="fun_perf_prevBtn1()"><img src="" width="15" height="15"></div>
+      <div class="perf_my-circle-r" onclick="fun_perf_nextBtn1()"><img src="" width="15" height="15"></div>
+    </div>
+		<div id="perf_ctlBtn2">
+      <div class="perf_my-left" onclick="fun_perf_prevBtn2()"><img src="" width="13" height="20" ></div>
+      <div class="perf_myRight" onclick="fun_perf_nextBtn2()"><img src="" width="13" height="20" ></div>
+    </div>
 	</div>
   <div id="flexibility">
-    <div class="tabRoundCorner"><ul><li></li></ul></div>
+    <div class="tabRoundCorner"></div>
     <div class="bigMenuStyle" >Flexibility</div>
     <div class="flexibility_desc">Designed for riders who want the go-anywhere flexibility. This Folding OX Electric Fat Tire Bike provides a geometry that blends comfort with capability. The low-profile frame is foldable while stiff and strong. It also makes this an easy bike to step in and out of.</div>
 		<div id="flex_wrapper">
@@ -511,11 +517,17 @@
 				</div>
 			</div>	
 		</div>
-		<div id="flex_ctlBtn1"><i class="fas fa-circle" id="flex_prevBtn1"></i><i class="fas fa-circle" id="flex_nextBtn1"></i></div>
-		<div id="flex_ctlBtn2"><i class="fas fa-chevron-left" id="flex_prevBtn2"></i><i class="fas fa-chevron-right" id="flex_nextBtn2"></i></div>
+    <div id="flex_ctlBtn1">
+      <div class="flex_my-circle-l" onclick="fun_flex_prevBtn1()"><img src="" width="15" height="15"></div>
+      <div class="flex_my-circle-r" onclick="fun_flex_nextBtn1()"><img src="" width="15" height="15"></div>
+    </div>
+		<div id="flex_ctlBtn2">
+      <div class="flex_my-left" onclick="fun_flex_prevBtn2()"><img src="" width="13" height="20" ></div>
+      <div class="flex_myRight" onclick="fun_flex_nextBtn2()"><img src="" width="13" height="20" ></div>
+    </div>
 	</div>
   <div id="userfriendly">
-    <div class="tabRoundCorner"><ul><li></li></ul></div>
+    <div class="tabRoundCorner"></div>
     <div class="bigMenuStyle" >User-Friendly</div>
     <div class="userfriendly-desc">Sometimes the simplest solution brings the most comfort. Comfortable suspension, intuitive twist grip throttle and cushy saddle are all standard.</div>
 		<div id="userfly_wrapper">
@@ -550,11 +562,17 @@
 				</div>
 			</div>	
 		</div>
-		<div id="ctlBtn1"><i class="fas fa-circle" id="prevBtn1"></i><i class="fas fa-circle" id="nextBtn1"></i></div>
-		<div id="ctlBtn2"><i class="fas fa-chevron-left" id="prevBtn2"></i><i class="fas fa-chevron-right" id="nextBtn2"></i></div>
+		<div id="ctlBtn1">
+      <div class="my-circle-l" onclick="fun_prevBtn1()"><img src="" width="15" height="15"></div>
+      <div class="my-circle-r" onclick="fun_nextBtn1()"><img src="" width="15" height="15"></div>
+    </div>
+		<div id="ctlBtn2">
+      <div class="my-left" onclick="fun_prevBtn2()"><img src="" width="13" height="20" ></div>
+      <div class="myRight" onclick="fun_nextBtn2()"><img src="" width="13" height="20" ></div>
+    </div>
 	</div>
-  <div id="tabBtnBlock">
-    <div class="tabRoundCorner"><ul><li></li></ul></div>
+  <div id="geometry">
+    <div class="tabRoundCorner"></div>
     <div class="bigMenuStyle" >Geometry</div>
 		<div class="tabBtnDiv">
 			<div class="tabBtn1" onclick="divShowLeft()">
@@ -570,52 +588,56 @@
 		</div>
 		<div class="tabInfo">
 			<div class="overall">
-				<div>
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/overall01.jpg?v=1638937485" width="480" height="480" loading="lazy"></li>
-					</ul>
-					<ul>
-						<li class="overallBtBoder1px overallTopBoder1px overallBgColor" >Overall Size</li>
-						<li class="overallBtBoder1px overallBgColor" >Wheel Size</li>
-						<li class="overallBtBoder1px">A - Seat tube length</li>
-						<li class="overallBtBoder1px">B - Seatpost diamater</li>
-						<li class="overallBtBoder1px">C - Saddle height</li>
-						<li class="overallBtBoder1px">D - Handlebar height</li>
-						<li class="overallBtBoder1px">E - Handlebar width</li>
-						<li class="overallBtBoder1px">F - Crank length</li>
-						<li class="overallBtBoder1px">G - Wheelbase</li>
-						<li class="overallBtBoder1px">H - Rear carrier height</li>
-					</ul>
-					<ul>
-						<li class="overallBtmBoder1px overallTopBoder1px overallBgColor">64" x 44"</li>
-						<li class="overallBtmBoder1px overallBgColor">20" x 4"</li>
-						<li class="overallBtmBoder1px">16.5"</li>
-						<li class="overallBtmBoder1px">1"</li>
-						<li class="overallBtmBoder1px">31.8" - 38.5"</li>
-						<li class="overallBtmBoder1px">44"</li>
-						<li class="overallBtmBoder1px">21.6"</li>
-						<li class="overallBtmBoder1px">6.8"</li>
-						<li class="overallBtmBoder1px">43.3"</li>
-						<li class="overallBtmBoder1px">25.5"</li>
-					</ul>
+				<div class="overallWrapper">
+						<div>
+              <img calss="overallImg" src="" width="480" height="480" loading="lazy">
+            </div>
+            <div class="overallWrapperData">
+              <ul class="overallLeftColWith">
+                <li class="overallBtBoder1px overallTopBoder1px overallBgColor" >Overall Size</li>
+                <li class="overallBtBoder1px overallBgColor" >Wheel Size</li>
+                <li class="overallBtBoder1px">A - Seat tube length</li>
+                <li class="overallBtBoder1px">B - Seatpost diamater</li>
+                <li class="overallBtBoder1px">C - Saddle height</li>
+                <li class="overallBtBoder1px">D - Handlebar height</li>
+                <li class="overallBtBoder1px">E - Handlebar width</li>
+                <li class="overallBtBoder1px">F - Crank length</li>
+                <li class="overallBtBoder1px">G - Wheelbase</li>
+                <li class="overallBtBoder1px">H - Rear carrier height</li>
+              </ul>
+              <ul class="overallRightColWith">
+                <li class="overallBtmBoder1px overallTopBoder1px overallBgColor">64" x 44"</li>
+                <li class="overallBtmBoder1px overallBgColor">20" x 4"</li>
+                <li class="overallBtmBoder1px">16.5"</li>
+                <li class="overallBtmBoder1px">1"</li>
+                <li class="overallBtmBoder1px">31.8" - 38.5"</li>
+                <li class="overallBtmBoder1px">44"</li>
+                <li class="overallBtmBoder1px">21.6"</li>
+                <li class="overallBtmBoder1px">6.8"</li>
+                <li class="overallBtmBoder1px">43.3"</li>
+                <li class="overallBtmBoder1px">25.5"</li>
+              </ul>
+            </div>
 				</div>
-				<div style="padding: 0px; margin: 0px; width: 100%;"><ul style="position: relative; float: right;"><li style="position: relative; float: right; color: lightslategrey; padding-right: 10px;">All measurements provided in inch unless otherwise noted.</li></ul></div>
+				<div><ul><li>All measurements provided in inch unless otherwise noted.</li></ul></div>
 			</div>
 			<div class="folded">
-				<div>
-					<ul>
-						<li class="btBoder1px topBoder1px"><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/folded01.jpg?v=1638937485" width="480" height="480" loading="lazy"></li>
-					</ul>
-					<ul>
-						<li class="overallBtBoder1px overallTopBoder1px foldedBgColor">A - Height</li>
-						<li class="overallBtBoder1px foldedBgColor">B - Width</li>
-					</ul>
-					<ul>
-						<li class="overallBtmBoder1px overallTopBoder1px foldedBgColor">47.6"</li>
-						<li class="overallBtmBoder1px foldedBgColor">37.8"</li>
-					</ul>
+				<div class="foldedWrapper">
+					<div>
+            <img src="" width="480" height="480" loading="lazy">
+          </div>
+          <div class="foldedWrapperData">
+            <ul>
+              <li class="overallBtBoder1px overallTopBoder1px foldedBgColor">A - Height</li>
+              <li class="overallBtBoder1px foldedBgColor">B - Width</li>
+            </ul>
+            <ul>
+              <li class="overallBtmBoder1px overallTopBoder1px foldedBgColor">47.6"</li>
+              <li class="overallBtmBoder1px foldedBgColor">37.8"</li>
+            </ul>
+          </div>
 				</div>
-				<div style="padding: 0px; margin: 0px; width: 100%;"><ul style="position: relative; float: right;"><li style="position: relative; float: right; color: lightslategrey; padding-right: 10px;">All measurements provided in inch unless otherwise noted.</li></ul></div>
+				<div><ul><li>All measurements provided in inch unless otherwise noted.</li></ul></div>
 			</div>
 		</div>
 	</div>
@@ -627,15 +649,14 @@
       <div class="speMenu">Technology</div>
     </div>
     <div id="product_main_spe_Tech" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Motor</li>
         <li class="rtBoder1px btBoder1px">Pedal Assist Levels</li>
         <li class="rtBoder1px btBoder1px">Display</li>
         <li class="rtBoder1px btBoder1px">Battery</li>
         <li class="rtBoder1px btBoder1px">Dive Mode</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">52Nm/500W motor</li>
         <li class="btBoder1px">0~5 level</li>
         <li class="btBoder1px">861 LCD display</li>
@@ -649,13 +670,12 @@
       <div class="speMenu">Frame</div>
     </div>
     <div id="product_main_spe_Frame" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Colors</li>
         <li class="rtBoder1px btBoder1px">Frame</li>
         <li class="rtBoder1px btBoder1px">Fork</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">Gunmetal Black; Metallic White</li>
         <li class="btBoder1px">Nakto steel step-thru frame</li>
         <li class="btBoder1px">Trama 82B sprung fork, 60mm travel</li>
@@ -667,15 +687,14 @@
       <div class="speMenu">Components</div>
     </div>
     <div id="product_main_spe_Components" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Handle bars</li>
         <li class="rtBoder1px btBoder1px">Stem</li>
         <li class="rtBoder1px btBoder1px">Seatpost</li>
         <li class="rtBoder1px btBoder1px">Saddle</li>
         <li class="rtBoder1px btBoder1px">Pedals</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">Hi-rise cruiser bar, aluminium alloy, 25.2" width</li>
         <li class="btBoder1px">Steel</li>
         <li class="btBoder1px">Aluminium alloy dropper post, seat-height adjustability, 1" diameter</li>
@@ -689,8 +708,7 @@
       <div class="speMenu">Drivetrain</div>
     </div>
     <div id="product_main_spe_Drivetrain" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Shifters</li>
         <li class="rtBoder1px btBoder1px">Rear Derailleur</li>
         <li class="rtBoder1px btBoder1px">Brakes</li>
@@ -699,7 +717,7 @@
         <li class="rtBoder1px btBoder1px">Cranket</li>
         <li class="rtBoder1px btBoder1px">Bottom Bracket</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">Shimano Tourney TZ</li>
         <li class="btBoder1px">Shimano, RD-TZ50-GS</li>
         <li class="btBoder1px">Shimano, mechanical disc, steel</li>
@@ -715,14 +733,13 @@
       <div class="speMenu">Wheels</div>
     </div>
     <div id="product_main_spe_Wheels" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Rims</li>
         <li class="rtBoder1px btBoder1px">Hubs</li>
         <li class="rtBoder1px btBoder1px">Spokes</li>
         <li class="rtBoder1px btBoder1px">Types</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">Aluminium alloy</li>
         <li class="btBoder1px">52Nm/500W motor, intergrated into the rear wheel, general brushless hub</li>
         <li class="btBoder1px">Carbon steel, silver</li>
@@ -735,12 +752,11 @@
       <div class="speMenu">Accessories</div>
     </div>
     <div id="product_main_spe_Accessories" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Pack</li>
         <li class="rtBoder1px btBoder1px">Front light</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">Rear rack, steel</li>
         <li class="btBoder1px">LED light</li>
       </ul>
@@ -751,11 +767,10 @@
       <div class="speMenu">Weight</div>
     </div>
     <div id="product_main_spe_Weight" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul style="position: relative; width: 3%;"></ul>
-      <ul style="position: relative; width: 20%;">
+      <ul class="product_main_lfUl_with">
         <li class="rtBoder1px btBoder1px topBoder1px">Weight</li>
       </ul>
-      <ul style="position: relative; width: 77%;">
+      <ul class="product_main_rtUl_with">
         <li class="btBoder1px topBoder1px">751 lbs.</li>
       </ul>
     </div>
