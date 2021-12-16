@@ -1,6 +1,16 @@
 window.onload = function() {
 	//console.log('imgHeight:' + mainBannerImg.height);
+	mainBannerImg.height = Math.ceil(window.innerWidth * 0.5625);
 	mainBanner.style.height = mainBannerImg.height +'px';
+
+	if (mainBannerImg.width < 600){
+		mainBannerF2.innerHTML = "A small yet wide wheel allows you to get where you want to go safely and easy-to-fold";
+	}else if(mainBannerImg.width >= 600 & mainBannerImg.width < 710){
+		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike...";
+	}else{
+		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!";
+	}
+	
 
 	for (let i=0; i<5; i++ ){
 		perf_slidImagesImg[i].setAttribute('width', Math.ceil(perf_wrapper.clientWidth / 3 - 10));

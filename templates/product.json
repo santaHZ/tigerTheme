@@ -51,12 +51,16 @@
         "share"
       ]
     },
+    "main-product-detail":{
+      "type": "main-product-detail"
+    },
     "product-recommendations": {
       "type": "product-recommendations"
     }
   },
   "order": [
     "main",
+    "main-product-detial",
     "product-recommendations"
   ]
 }

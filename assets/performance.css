@@ -192,6 +192,7 @@
 
 .performance_main_desc_data ul{
     position: relative;
+    display: block;
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -201,6 +202,7 @@
 }
 
 .performance_main_desc_data ul li{
+    display: block;
     list-style: none;
     border: 0px solid chartreuse;
     padding: 0px;
@@ -271,7 +273,7 @@
     opacity: 0.5;
     width: 40%;
     left: 5%;
-    font-size: 1.5vmin;
+    font-size: 1.3vmin;
     text-align: left;
     padding-left: 10px;
     border-radius: 5%;
@@ -319,13 +321,13 @@
     color:white;
     text-align: center;
     border: 0px solid #a1a1a1;
-    padding: 2px 4px;
+    padding: 0.2vw 0.4vw;
     background: #029789;
-    width: 50px;
-    height: 15px;
-    border-radius: 4px;
-	margin-left: 5px;
-	margin-bottom: 10px;
+    width: 5vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
 }
 
 

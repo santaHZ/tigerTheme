@@ -128,13 +128,13 @@
     color:white;
     text-align: center;
     border: 0px solid #a1a1a1;
-    padding: 2px 4px;
+    padding: 0.2vw 0.4vw;
     background: #029789;
-    width: 50px;
-    height: 15px;
-    border-radius: 4px;
-	margin-left: 5px;
-	margin-bottom: 10px;
+    width: 5.0vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
 }
 .bigMenuStyle{
 	font-size: 3.5vw;
