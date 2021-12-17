@@ -24,7 +24,7 @@
     display: flex;
 }
 
-#flex_imgSlid .item{
+#flex_imgSlider .item{
     padding: 0px;
     margin-right: 10px;
     border: 0px solid #ff23ff;
@@ -32,7 +32,7 @@
     background-color: #ffffff;
 }
 
-#flex_imgSlid .item ul{
+#flex_imgSlider .item ul{
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -40,7 +40,7 @@
     display: block;
 }
 
-#flex_imgSlid .item ul li{
+#flex_imgSlider .item ul li{
     padding: 0px;
     margin: 0px;
     position: relative;
@@ -52,7 +52,7 @@
     
 }
 
-#flex_imgSlid .item ul .titleStyle{
+#flex_imgSlider .item ul .titleStyle{
     padding: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -67,7 +67,7 @@
     
 }
 
-#flex_imgSlid .item ul li img{
+#flex_imgSlider .item ul li img{
     padding: 0px;
     margin: 0px;
     border: 0px;
