@@ -6,20 +6,20 @@ let flex_slidImagesImg = document.querySelectorAll('#flex_imgSlider .item ul li 
 
 //Buttons
 //const flex_prevBtn1 = document.querySelector('#flex_prevBtn1');
-const flex_prevBtn1 = document.querySelector('#flex_ctlBtn1 .flex_my-circle-l');
-const flex_prevBtn1Img = flex_prevBtn1.firstElementChild;
+const flex_prevBtn1 = document.querySelector('#flex_ctlBtn1 .buttonDotSolid');
+//const flex_prevBtn1Img = flex_prevBtn1.firstElementChild;
 
 //const flex_nextBtn1 = document.querySelector('#flex_nextBtn1');
-const flex_nextBtn1 = document.querySelector('#flex_ctlBtn1 .flex_my-circle-r');
-const flex_nextBtn1Img = flex_nextBtn1.firstElementChild;
+const flex_nextBtn1 = document.querySelector('#flex_ctlBtn1 .buttonDotEmpty');
+//const flex_nextBtn1Img = flex_nextBtn1.firstElementChild;
 
 //const flex_prevBtn2 = document.querySelector('#flex_prevBtn2');
-const flex_prevBtn2 = document.querySelector('#flex_ctlBtn2 .flex_my-left');
-const flex_prevBtn2Img = flex_prevBtn2.firstElementChild;
+const flex_prevBtn2 = document.querySelector('#flex_ctlBtn1 .arrow.left');
+//const flex_prevBtn2Img = flex_prevBtn2.firstElementChild;
 
 //const flex_nextBtn2 = document.querySelector('#flex_nextBtn2');
-const flex_nextBtn2 = document.querySelector('#flex_ctlBtn2 .flex_myRight');
-const flex_nextBtn2Img = flex_nextBtn2.firstElementChild;
+const flex_nextBtn2 = document.querySelector('#flex_ctlBtn1 .arrow.right');
+//const flex_nextBtn2Img = flex_nextBtn2.firstElementChild;
 
 //window.onload = function() {
 // 	for (let i=0; i<5; i++ ){
@@ -56,10 +56,11 @@ let fun_flex_prevBtn1 = function(){
 	//flex_size = Math.round(flex_wrapper.clientWidth / 3);
 	flex_imgSlider.style.transform = 'translateX(' + (- flex_size * flex_counter ) + 'px)';
 
-	flex_prevBtn1Img.setAttribute('src', No1ImgSolid);
-	flex_nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	//flex_nextBtn1.style.color = "#ddd";
-	//flex_prevBtn1.style.color = "rgb(66, 64, 64)";
+	// flex_prevBtn1Img.setAttribute('src', No1ImgSolid);
+	// flex_nextBtn1Img.setAttribute('src', No1ImgEmpty);
+	
+	flex_prevBtn1.style.background = "black";
+	flex_nextBtn1.style.background = "white";
 
 };
 
@@ -74,10 +75,11 @@ let fun_flex_nextBtn1 = function(){
 	//console.log(flex_size);
 	flex_imgSlider.style.transform = 'translateX(' + (- flex_size * flex_counter ) + 'px)';
 
-	flex_nextBtn1Img.setAttribute('src', No1ImgSolid);
-	flex_prevBtn1Img.setAttribute('src', No1ImgEmpty);
-	//flex_nextBtn1.style.color = "rgb(66, 64, 64)";
-	//flex_prevBtn1.style.color = "#ddd";
+	// flex_nextBtn1Img.setAttribute('src', No1ImgSolid);
+	// flex_prevBtn1Img.setAttribute('src', No1ImgEmpty);
+	
+	flex_prevBtn1.style.background = "white";
+	flex_nextBtn1.style.background = "black";
 };
 
 
@@ -94,10 +96,10 @@ let fun_flex_prevBtn2 = function(){
 	//flex_size = Math.round(flex_wrapper.clientWidth / 3);
 	flex_imgSlider.style.transform = 'translateX(' + (- flex_size * flex_counter ) + 'px)';
 
-	flex_nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	flex_prevBtn1Img.setAttribute('src', No1ImgSolid);
-	//flex_nextBtn1.style.color = "#ddd";
-	//flex_prevBtn1.style.color = "rgb(66, 64, 64)";
+	// flex_nextBtn1Img.setAttribute('src', No1ImgEmpty);
+	// flex_prevBtn1Img.setAttribute('src', No1ImgSolid);
+	flex_prevBtn1.style.background = "black";
+	flex_nextBtn1.style.background = "white";
 };
 
 let fun_flex_nextBtn2 = function(){
@@ -113,10 +115,10 @@ let fun_flex_nextBtn2 = function(){
 	//flex_size = Math.round(flex_wrapper.clientWidth / 3);
 	flex_imgSlider.style.transform = 'translateX(' + (- flex_size * flex_counter ) + 'px)';
 
-	flex_prevBtn1Img.setAttribute('src', No1ImgEmpty);
-	flex_nextBtn1Img.setAttribute('src', No1ImgSolid);
-	//flex_nextBtn1.style.color = "rgb(66, 64, 64)";
-	//flex_prevBtn1.style.color = "#ddd";
+	// flex_prevBtn1Img.setAttribute('src', No1ImgEmpty);
+	// flex_nextBtn1Img.setAttribute('src', No1ImgSolid);
+	flex_prevBtn1.style.background = "white";
+	flex_nextBtn1.style.background = "black";
 };
 
 

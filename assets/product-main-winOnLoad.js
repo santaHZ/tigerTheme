@@ -56,11 +56,6 @@ window.onload = function() {
 	prevBtn2Img.setAttribute('src', No2ImgPrev);
 	nextBtn2Img.setAttribute('src', No2ImgNext);
 
-	flex_prevBtn1Img.setAttribute('src', No1ImgSolid);
-	flex_nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	flex_prevBtn2Img.setAttribute('src', No2ImgPrev);
-	flex_nextBtn2Img.setAttribute('src', No2ImgNext);
-
 	perf_prevBtn1Img.setAttribute('src', No1ImgSolid);
 	perf_nextBtn1Img.setAttribute('src', No1ImgEmpty);
 	perf_prevBtn2Img.setAttribute('src', No2ImgPrev);
@@ -81,22 +76,6 @@ window.onload = function() {
 	}
 	nextBtn2.onmouseout =function(){
 		nextBtn2Img.setAttribute('src', No2ImgNext);
-	}
-
-	//// prev arrow
-	flex_prevBtn2.onmouseover = function(){
-		flex_prevBtn2Img.setAttribute('src', No2ImgPrevEt);
-	}
-	flex_prevBtn2.onmouseout =function(){
-		flex_prevBtn2Img.setAttribute('src', No2ImgPrev);
-	}
-
-	//// next arrow
-	flex_nextBtn2.onmouseover = function(){
-		flex_nextBtn2Img.setAttribute('src', No2ImgNextEt);
-	}
-	flex_nextBtn2.onmouseout =function(){
-		flex_nextBtn2Img.setAttribute('src', No2ImgNext);
 	}
 
 
