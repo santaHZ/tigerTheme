@@ -50,6 +50,13 @@ slider-component {
   }
 }
 
+
+
+
+
+
+
+
 /* Scrollbar */
 
 .slider {
@@ -96,13 +103,23 @@ slider-component {
 
 @media screen and (min-width: 990px) {
   .slider-buttons {
-    display: none;
+    display: flex;
+  }
+
+  .slider--mobile{
+    display: flex;
+    overflow: auto;
   }
 }
 
 @media screen and (min-width: 750px) {
   .slider--mobile + .slider-buttons {
-    display: none;
+    display: flex;
+  }
+
+  .slider--mobile{
+    display: flex;
+    overflow: auto;
   }
 }
 

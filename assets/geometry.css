@@ -6,7 +6,6 @@
     padding: 0px;
     margin: 0px;
     margin-bottom: 100px;
-    background-color: rgb(232, 240, 166);
 }
 
 #geometry .tabBtnDiv{
@@ -67,7 +66,6 @@
 
 #geometry .tabInfo{
     display: block;
-    background-color: darkmagenta;
 }
 
 #geometry .tabInfo .overall {
@@ -77,7 +75,6 @@
     position: relative;
     width: 100%;
     float: left;
-    background-color: darksalmon;
 }
 
 #geometry .tabInfo .overall .overallWrapper{
@@ -86,7 +83,6 @@
     width: 100%;
     position: relative;
     display: flex;
-    background-color: darkslateblue;
 }
 
 #geometry .tabInfo .overall .overallWrapper .overallWrapperData{

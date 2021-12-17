@@ -6,7 +6,6 @@
     margin: 0px;
     width: 100%;
     margin-bottom: 100px;
-    background-color: darkgrey;
 }
 
 #userfly_wrapper{
@@ -76,11 +75,13 @@
 }
 
 .userfriendly-desc{
-    padding-left: 5px;
-    width: 80%;
+    padding-left: 2em;
+    width: 50em;
     font-size: 1.5vw; /*Block description head font */
-    margin-bottom: 50px;
+    margin-bottom: 2em;
 }
+
+
 
 /*定义左侧按钮样式*/
 #ctlBtn1{

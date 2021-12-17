@@ -6,7 +6,6 @@
     margin: 0px;
     width: 100%;
     margin-bottom: 100px;
-    background-color: darkgrey;
 }
 
 #flex_wrapper{
@@ -19,7 +18,7 @@
     white-space: nowrap;
 }
 
-#flex_imgSlid{
+#flex_imgSlider{
     padding: 0px;
     margin: 0px;
     display: flex;
@@ -31,7 +30,6 @@
     border: 0px solid #ff23ff;
     text-align: center;
     background-color: #ffffff;
-    /* display: inline-block; */
 }
 
 #flex_imgSlid .item ul{
@@ -143,10 +141,10 @@
 }
 
 .flexibility_desc{
-    padding-left: 5px;
-    width: 80%;
+    padding-left: 2em;
+    width: 50em;
     font-size: 1.5vw;  /*Block description head font */
-    margin-bottom: 50px;
+    margin-bottom: 2em;
 }
 
 #flexibility .tabRoundCorner{

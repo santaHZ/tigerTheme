@@ -6,7 +6,6 @@
     margin: 0px;
     width: 100%;
     margin-bottom: 100px;
-    background-color: darkgrey;
 }
 
 
@@ -151,18 +150,11 @@
     background-color: darkgray;
 }
 
-
-
-
-
-
-
-
 .performance_desc{
-    padding-left: 5px;
-    width: 80%;
+    padding-left: 2em;
+    width: 50em;
     font-size: 1.5vw;  /*Block description head font */
-    margin-bottom: 5px;
+    margin-bottom: 2em;
 
 }
 
@@ -330,4 +322,45 @@
 	margin-bottom: 1.0vw;
 }
 
+/*changing the showcase img size for desktop*/
+@media screen and (min-width: 990px) {
+    .slider.slider--mobile {
+      width: 100%;
+      border: 1px solid chartreuse;
+      display: flex;
+      list-style: none;
+      overflow: auto;
+      padding: 0px;
+      margin: 0px;
+      /* flex-wrap: inherit;
+      overflow-x: auto; */
+      /* scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scroll-padding-left: 1rem;
+      -webkit-overflow-scrolling: touch; */
+      /*margin-bottom: 1rem;*/
+    }
+  
+    .slider.slider--mobile .slider__slide {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  
+    .slider__slide{
+      border: 1px solid crimson;
+      display: block;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+  
+    }
+
+    .product__media-list.grid__item.slider__slide{
+        width: 50%;
+        height: 100%;
+    }
+
+
+
+  }
 

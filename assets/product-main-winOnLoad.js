@@ -1,6 +1,6 @@
 window.onload = function() {
 	//console.log('imgHeight:' + mainBannerImg.height);
-	mainBannerImg.height = Math.ceil(window.innerWidth * 0.5625);
+	mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
 	mainBanner.style.height = mainBannerImg.height +'px';
 
 	if (mainBannerImg.width < 600){
@@ -18,9 +18,22 @@ window.onload = function() {
 	}
 
 	// initialize flexibility block
-	for (let i=0; i<5; i++ ){
-		flex_slidImagesImg[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / 3 - 10));
-		flex_slidImagesImg[i].setAttribute('height', Math.ceil(flex_slidImagesImg[i].width * 0.66666));
+	if (window.innerWidth < 750){
+		colNum = 1;
+		felx_max_counter = 4;
+		for (let i=0; i<5; i++ ){
+			flex_slidImagesImg[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
+			flex_slidImagesImg[i].setAttribute('height', Math.ceil(flex_slidImagesImg[i].width * 0.66666));
+			flex_size = Math.round(flex_wrapper.clientWidth / colNum);
+		}
+	}else{
+		colNum = 3;
+		felx_max_counter = 2;
+		for (let i=0; i<5; i++ ){
+			flex_slidImagesImg[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
+			flex_slidImagesImg[i].setAttribute('height', Math.ceil(flex_slidImagesImg[i].width * 0.66666));
+			flex_size = Math.round(flex_wrapper.clientWidth / colNum);
+		}
 	}
 
 	// initialize userfriendly block

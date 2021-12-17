@@ -283,6 +283,7 @@ a.product__text {
 .product__title {
   word-break: break-word;
   margin-bottom: 1.5rem;
+  font-size: 2.0vw;  /*added to change font size according to window size*/
 }
 
 .product__title + .product__text.caption-with-letter-spacing {
@@ -665,7 +666,15 @@ a.product__text {
     right: 5rem;
     top: 2.2rem;
   }
+
+   /*set all:unset to suit desktop style*/
+  .product__media-list{
+    all:unset;
+  }
 }
+
+
+  /* product media for desktop settings --start */
 
 @media screen and (min-width: 990px) {
   .product-media-modal__content {
@@ -683,7 +692,14 @@ a.product__text {
   .product-media-modal__toggle {
     right: 5rem;
   }
+
+  /*set all:unset to suit desktop style*/
+  .product__media-list{
+    all:unset;
+  }
 }
+
+  /* product media for desktop settings --end */
 
 .product-media-modal__toggle:hover {
   color: rgba(var(--color-foreground), 0.75);

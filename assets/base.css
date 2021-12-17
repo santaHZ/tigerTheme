@@ -2330,3 +2330,35 @@ details-disclosure > details {
   }
 }
 
+/* ---------- CUSTOMIZE FOR DESKTOP ------------------*/
+/* setting gird__item for desktop */
+@media screen and (min-width: 750px) {
+  .grid__item {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    width: calc(100% - 1rem * 3 / 4);
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .grid__item {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    width: 600px;
+    max-width: 100%;
+  }
+}
+
+/* setting gird__item for desktop -begiin*/
+@media screen and (min-width: 990px) {
+  .slider.slier--mobile .grid__item{
+    width: 600px;
+    max-width: 100%;
+  }
+
+  .slider__slide{
+    width: 100%;
+  }
+}
+/* setting gird__item for desktop -end*/

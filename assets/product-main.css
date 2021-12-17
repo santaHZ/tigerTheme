@@ -15,7 +15,7 @@
 	border-width: 0px;
 	border-style: solid;
 	border-color: lightgray;
-	padding: 5px;
+	padding: 1em;
 }
 #product_main div {
 	display: block;
@@ -31,16 +31,13 @@
 
 #product_main .rtBoder1px {
 	border-right-width: 1px;
-	padding: 20px;
 }
 #product_main .btBoder1px {
 	border-bottom-width: 1px;
-	padding: 20px;
 }
 #product_main .topBoder1px {
 	border-top-width: 1px;
 	border-top-color: black;
-	padding: 20px;
 }
 
 .add {
@@ -111,12 +108,12 @@
 
 
 .product_main_lfUl_with{
-    width: 30%;
+    width: 22%;
     margin-left: 5%;
 }
 
 .product_main_rtUl_with{
-    width: 62%;
+    width: 70%;
     margin-right: 3%;
 }
 
