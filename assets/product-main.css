@@ -48,8 +48,8 @@
     border: 1.0vw solid coral;
     width: 2.0vw;
     height: 2.0vw;
-    color: #fff;
-    /* color: #ccc; */
+    /* color: #fff; */
+    color: #ccc;
     transition: color .25s;
     position: relative;
 }
@@ -84,8 +84,8 @@
     border: 1.0vw solid;
     width: 2.0vw;
     height: 2.0vw;
-    /*color: #ccc;*/
-    color: #fff;
+    color: #ccc;
+    /* color: #fff; */
     transition: color .25s;
     position: relative;
 }
@@ -145,8 +145,8 @@
     display: block;
     height: 4vw;
     cursor: pointer;
-    border: 10vw solid rgb(161, 21, 21);
-    background-color: rgb(214, 216, 211);
+    border: 2px solid rgb(161, 21, 21);
+    /* background-color: rgb(214, 216, 211); */
 }
 
 
