@@ -8,8 +8,8 @@
     margin-bottom: 100px;
 }
 
-#flex_wrapper{
-    display: block;
+#flex_wrapper{      /*this is the div outside of uni_imgSlider */
+    display: block; 
     padding: 0px;
     margin: 0px;
     width: 100%;
@@ -18,21 +18,24 @@
     white-space: nowrap;
 }
 
-#flex_imgSlider{
+.uni_imgSlider{
     padding: 0px;
     margin: 0px;
     display: flex;
+    transition: transform 0.6s ease-in-out;
+    
 }
 
-#flex_imgSlider .item{
+.uni_imgSlider .item{
     padding: 0px;
     margin-right: 10px;
     border: 0px solid #ff23ff;
     text-align: center;
     background-color: #ffffff;
+    cursor: grab;
 }
 
-#flex_imgSlider .item ul{
+.uni_imgSlider .item ul{
     padding: 0px;
     margin: 0px;
     list-style: none;
@@ -40,7 +43,7 @@
     display: block;
 }
 
-#flex_imgSlider .item ul li{
+.uni_imgSlider .item ul li{
     padding: 0px;
     margin: 0px;
     position: relative;
@@ -52,7 +55,7 @@
     
 }
 
-#flex_imgSlider .item ul .titleStyle{
+.uni_imgSlider .item ul .titleStyle{
     padding: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -67,11 +70,25 @@
     
 }
 
-#flex_imgSlider .item ul li img{
+.uni_imgSlider .item ul li img{
     padding: 0px;
     margin: 0px;
     border: 0px;
+    transition: transform 0.4s ease-in-out;
+
 }
+
+.grabbing{
+    cursor: grabbing;
+}
+
+.grabbing .item img{
+    transform: scale(0.9);
+}
+
+
+
+
 
 /*定义左侧按钮样式*/
 #flex_ctlBtn1{
@@ -93,7 +110,7 @@
     top: 1rem;
     width: 1vw;
     height: 1vw;
-    background-color:black;
+    background:black;
     cursor: pointer;
     border: 0.2vw solid gray;
     border-radius: 50%;
@@ -109,7 +126,7 @@
     display: block;
     width: 1vw;
     height: 1vw;
-    background-color: #fff;
+    background: #fff;
     cursor: pointer;
     border: 0.2vw solid gray;
     border-radius: 50%;

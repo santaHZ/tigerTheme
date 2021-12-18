@@ -212,10 +212,6 @@ window.addEventListener('resize', function(event) {
 	performanceMainImg.height = Math.ceil(performanceMainImg.width * 1);
 	performanceMainDescData.style.height = performanceMainImg.width
 
-	for (let i=0; i<5; i++ ){
-		perf_slidImagesImg[i].setAttribute('width', Math.ceil(perf_wrapper.clientWidth / 3) - 10);
-		perf_slidImagesImg[i].setAttribute('height', Math.ceil(perf_slidImagesImg[i].width * 0.66666));
-	}
 	//console.log(perf_slidImagesImg[0].width);
 }, true);
 

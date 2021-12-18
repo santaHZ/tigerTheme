@@ -109,16 +109,3 @@ let fun_nextBtn2 = function(){
 	//nextBtn1.style.color = "rgb(66, 64, 64)";
 	//prevBtn1.style.color = "#ddd";
 };
-
-
-
-
-window.addEventListener('resize', function(event) {
-
-	for (let i=0; i<4; i++ ){
-		slidImagesImg[i].setAttribute('width', Math.ceil(userfly_wrapper.clientWidth / 3) - 10);
-		//console.log(userfly_wrapper.clientWidth);
-		slidImagesImg[i].setAttribute('height', Math.ceil(slidImagesImg[i].width * 0.66666));
-	}
-	
-}, true);
