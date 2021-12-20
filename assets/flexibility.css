@@ -22,7 +22,7 @@
     padding: 0px;
     margin: 0px;
     display: flex;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.4s ease-in-out;
     
 }
 
@@ -55,6 +55,8 @@
     
 }
 
+
+
 .uni_imgSlider .item ul .titleStyle{
     padding: 0px;
     padding-top: 5px;
@@ -70,6 +72,17 @@
     
 }
 
+@media screen and (max-width: 749px) {
+    .uni_imgSlider .item ul .titleStyle{
+        font-size: 5.0vw;  /*image description head font */
+        
+    }
+    .uni_imgSlider .item ul li{
+        font-size: 3.5vw;
+    }
+    
+}
+
 .uni_imgSlider .item ul li img{
     padding: 0px;
     margin: 0px;
@@ -82,7 +95,8 @@
     cursor: grabbing;
 }
 
-.grabbing .item img{
+
+.grabbing .item img{        /*don't apply the scale to touch*/
     transform: scale(0.9);
 }
 
@@ -102,12 +116,21 @@
 
 }
 
+#flex_ctlBtn1 .leftBtns{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    width: 60%;
+    height: 100%;
+    padding-top: 1rem;
+    /*background-color: blueviolet;*/
+}
+
 /*此处要加上id选择符，才能正常显示*/
-#flex_ctlBtn1 .buttonDotSolid{
-    position: absolute;
+#flex_ctlBtn1 .leftBtns .buttonDotSolid{
     display: block;
-    left: 5rem;
-    top: 1rem;
+    float: left;
     width: 1vw;
     height: 1vw;
     background:black;
@@ -116,14 +139,22 @@
     border-radius: 50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1vw;
+    margin-left: 2vmax;
+}
+
+@media screen and (max-width: 749px) {
+    #flex_ctlBtn1 .leftBtns .buttonDotSolid{
+        width: 2vmax;
+        height: 2vmax;
+        font-size: 2vmax;
+        border: 0.3vmax solid gray;
+    }
 }
 
 /*此处要加上id选择符，才能正常显示*/
-#flex_ctlBtn1 .buttonDotEmpty{
-    position:absolute;
-    left: 8rem;
-    top: 1rem;
+#flex_ctlBtn1 .leftBtns .buttonDotEmpty{
     display: block;
+    float: left;
     width: 1vw;
     height: 1vw;
     background: #fff;
@@ -132,16 +163,37 @@
     border-radius: 50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1vw;
+    margin-left: 2vmax;
 
 }
+@media screen and (max-width: 749px) {
+    #flex_ctlBtn1 .leftBtns .buttonDotEmpty{
+        width: 2vmax;
+        height: 2vmax;
+        font-size: 2vmax;
+        border: 0.3vmax solid gray;
+    }
+}
+
+#flex_ctlBtn1 .rightBtns{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    float: right;
+    width: 40%;
+    height: 100%;
+    /* background-color:burlywood; */
+}
+
+
 /*定义右侧左箭头样式 */
 .arrow.left{
     position: absolute;
     right: 8rem;
     top: 1rem;
     display: block;
-    border-left: 0.4vw solid gray;
-    border-bottom: 0.4vw solid gray;
+    border-left: 0.4vw solid rgb(240, 238, 238);
+    border-bottom: 0.4vw solid rgb(240, 238, 238);
     width: 1.3vw;
     height: 1.3vw;
     transform: rotate(45deg);
@@ -149,9 +201,20 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 749px) {
+    .arrow.left{
+        display: none;
+        width: 2.0vmax;
+        height: 2.0vmax;
+        border-left: 0.4vmax solid rgb(240, 238, 238);
+        border-bottom: 0.4vmax solid rgb(240, 238, 238);
+    }
+}
+
+
 .arrow.left:hover{
-    border-left: 0.4vw solid rgb(240, 238, 238);
-    border-bottom: 0.4vw solid rgb(240, 238, 238);
+    border-left: 0.4vw solid gray;
+    border-bottom: 0.4vw solid gray;
 }
 
 /*定义右侧右箭头样式 */
@@ -160,8 +223,8 @@
     right: 5rem;
     top: 1rem;
     display: block;
-    border-left: 0.4vw solid gray;
-    border-bottom: 0.4vw solid gray;
+    border-left: 0.4vw solid rgb(240, 238, 238);
+    border-bottom: 0.4vw solid rgb(240, 238, 238);
     width: 1.3vw;
     height: 1.3vw;
     transform: rotate(-135deg);
@@ -169,17 +232,34 @@
     border-radius: 30%;
 }
 
+@media screen and (max-width: 749px) {
+    .arrow.right{
+        display: none;
+        width: 2.0vmax;
+        height: 2.0vmax;
+        border-left: 0.4vmax solid rgb(240, 238, 238);
+        border-bottom: 0.4vmax solid rgb(240, 238, 238);
+    }
+}
+
 .arrow.right:hover{
-    border-left: 0.4vw solid rgb(240, 238, 238);
-    border-bottom: 0.4vw solid rgb(240, 238, 238);
+    border-left: 0.4vw solid gray;
+    border-bottom: 0.4vw solid gray;
 }
 
 
 .flexibility_desc{
-    padding-left: 2em;
-    width: 50em;
-    font-size: 1.5vw;  /*Block description head font */
+    width: 100%;
+    font-size: 2.5vw;  /*Block description head font */
     margin-bottom: 2em;
+}
+
+@media screen and (max-width: 749px) {
+    .flexibility_desc{
+        font-size: 3.5vw;  /*Block description head font */
+
+    }
+    
 }
 
 #flexibility .tabRoundCorner{

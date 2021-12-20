@@ -1,111 +1,144 @@
 const userfly_wrapper = document.querySelector('#userfly_wrapper');
-const imgSlide = document.querySelector('#imgSlid');
-const slidImages = document.querySelectorAll('#imgSlid .item');
 
-console.log(userfly_wrapper);
+//******************/ touch move function - begin *******************//
 
-let slidImagesImg = document.querySelectorAll('#imgSlid .item ul li img');
+const userfly_slider = document.querySelector('#userfly_wrapper').firstElementChild  //this is div with class "uni_imgSlider"
+const userfly_slides = Array.from(userfly_slider.querySelectorAll('.item')); // this is div slides array
+const userfly_btn = document.querySelector('#userfly_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
-//Buttons
+// initialize uniCounter
+if (uniCounter.hasOwnProperty("userfriendly")){
+		
+}else{
+	uniCounter["userfriendly"] = 0;
+	console.log(uniCounter);
+}
 
-//define my-circle-l div button
-const prevBtn1 = document.querySelector('#ctlBtn1 .my-circle-l');
-const prevBtn1Img = prevBtn1.firstElementChild;
-
-//define my-circle-r div button
-const nextBtn1 = document.querySelector('#ctlBtn1 .my-circle-r');
-const nextBtn1Img = nextBtn1.firstElementChild;
-
-//define the my-left div button
-const prevBtn2 = document.querySelector('#ctlBtn2 .my-left');
-const prevBtn2Img = prevBtn2.firstElementChild;
-
-//define the myRight div button
-const nextBtn2 = document.querySelector('#ctlBtn2 .myRight');
-const nextBtn2Img = nextBtn2.firstElementChild;
+let userfly_isDragging = false,
+	userfly_startPos = 0,
+	userfly_currentTranslate = 0,
+	userfly_prevTranslate = 0,
+	userfly_animationID = 0,
+	userfly_currentIndex = 0
 
 
+userfly_slides.forEach((slide, index) => {
+	const userfly_slideImage = slide.querySelector('img');
+	userfly_slideImage.addEventListener('dragstart', (e) => e.preventDefault());
 
-//Counter
-let counter = 0;
-//const size = slidImages[0].clientWidth;
-let size = Math.round(perf_wrapper.clientWidth / 3);
+	//Touch events
+	userfly_slideImage.addEventListener('touchstart', userfly_touchStart(index));
+	userfly_slideImage.addEventListener('touchend', userfly_touchEnd);
+	userfly_slideImage.addEventListener('touchmove', userfly_touchMove);
 
-imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+	//Mouse events
+	userfly_slideImage.addEventListener('mousedown', userfly_touchStart(index));
+	userfly_slideImage.addEventListener('mouseup', userfly_touchEnd);
+	userfly_slideImage.addEventListener('mouseleave', userfly_touchEnd);
+	userfly_slideImage.addEventListener('mousemove', userfly_touchMove);
 
+})
 
+//Disable context menu
+window.oncontextmenu = function(event){
+	event.preventDefault();
+	event.stopPropagation();
+	return false;
+}
 
-// Left side Buttons no.1 Listeners
-let fun_prevBtn1 = function(){
-	if (counter == 0){
-		return;
+function userfly_touchStart(index){
+	return function(event){
+		userfly_currentIndex = index;
+		userfly_startPos = userfly_getPositionX(event);
+		userfly_isDragging = true;
+		userfly_animationID = requestAnimationFrame(userfly_animation);
 	}
-	imgSlide.style.transition = "transform 0.4s ease-in-out";
-	counter --;
-	//console.log(counter);
-	//console.log(size);
-	size = Math.round(perf_wrapper.clientWidth / 3);
-	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+}
 
-	prevBtn1Img.setAttribute('src', No1ImgSolid);
-	nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	//nextBtn1.style.color = "#ddd";
-	//prevBtn1.style.color = "rgb(66, 64, 64)";
-
-};
-
-let fun_nextBtn1 = function(){
-	if (counter == 1){
-		return;
+function userfly_touchEnd(){
+	userfly_isDragging = false;
+	cancelAnimationFrame(userfly_animationID);
+	const userfly_movedBy = userfly_currentTranslate - userfly_prevTranslate;
+	console.log(uniCounter["userfriendly"]);
+	if(userfly_movedBy < -50 && uniCounter["userfriendly"] < (userfly_slides.length - touchColNum)){
+		uniCounter["userfriendly"] += 1;
 	}
-	imgSlide.style.transition = "transform 0.4s ease-in-out";
-	counter ++;
-	//console.log(counter);
-	//console.log(size);
-	size = Math.round(perf_wrapper.clientWidth / 3);
-	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
-
-	nextBtn1Img.setAttribute('src', No1ImgSolid);
-	prevBtn1Img.setAttribute('src', No1ImgEmpty);
-	//nextBtn1.style.color = "rgb(66, 64, 64)";
-	//prevBtn1.style.color = "#ddd";
-
-};
-
-
-
-// Right side Buttons no.2 Listeners
-let fun_prevBtn2 = function(){
-	if (counter == 0){
-		return;
+	if(userfly_movedBy > 50 && uniCounter["userfriendly"] > 0){
+		uniCounter["userfriendly"] -= 1;
 	}
-	imgSlide.style.transition = "transform 0.4s ease-in-out";
-	counter --;
-	//console.log(counter);
-	//console.log(size);
-	size = Math.round(perf_wrapper.clientWidth / 3);
-	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+	userfly_setPositionByIndex();
 
-	prevBtn1Img.setAttribute('src', No1ImgSolid);
-	nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	//nextBtn1.style.color = "#ddd";
-	//prevBtn1.style.color = "rgb(66, 64, 64)";
-};
+	let btnNodes = userfly_btn.children;
 
-let fun_nextBtn2 = function(){
-	if (counter == 1){
-		return;
+	btnNodes.forEach((child, index) =>{
+		if (index != uniCounter["userfriendly"]){
+			child.setAttribute("class","buttonDotEmpty");
+		}else{
+			child.setAttribute("class","buttonDotSolid");
+		}
+	})
+
+
+}
+
+function userfly_touchMove(event){
+	if (userfly_isDragging){
+		const userfly_currentPosition = userfly_getPositionX(event);
+		userfly_currentTranslate = userfly_prevTranslate + userfly_currentPosition - userfly_startPos;
 	}
-	imgSlide.style.transition = "transform 0.4s ease-in-out";
-	counter ++;
-	//console.log(counter);
-	//console.log(size);
-	size = Math.round(perf_wrapper.clientWidth / 3);
-	imgSlide.style.transform = 'translateX(' + (-size * counter ) + 'px)';
+}
 
-	nextBtn1Img.setAttribute('src', No1ImgSolid);
-	prevBtn1Img.setAttribute('src', No1ImgEmpty);
+// get mouse or touch postionX
+function userfly_getPositionX(event) {
+	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+}
 
-	//nextBtn1.style.color = "rgb(66, 64, 64)";
-	//prevBtn1.style.color = "#ddd";
-};
+function userfly_animation(){
+	userfly_setSlidePosition();
+	if (userfly_isDragging) requestAnimationFrame(userfly_animation);
+}
+
+function userfly_setSlidePosition(){
+	userfly_slider.style.transform = `translateX(${userfly_currentTranslate}px)`;
+}
+
+function userfly_setPositionByIndex(){
+	let userfly_size = Math.round(userfly_slider.clientWidth / touchColNum)
+	userfly_currentTranslate = uniCounter["userfriendly"] * (- userfly_size);
+	userfly_prevTranslate = userfly_currentTranslate;
+	userfly_setSlidePosition();
+}
+
+
+
+
+function userfly_dotBtnFunReset(){
+	let curDotClkObj = document.getElementById("userfly_DotBtn-0");
+
+	curDotClkObj.setAttribute("class","buttonDotSolid");
+	let idString = curDotClkObj.getAttribute("id");
+	let idStringIndex = idString.charAt(idString.length-1);
+	console.log(idString);
+	console.log(idStringIndex);
+
+	let btnNodes = userfly_btn.children;
+
+	btnNodes.forEach((child, index) =>{
+		if (index != idStringIndex){
+			child.setAttribute("class","buttonDotEmpty");
+		}
+	})
+
+	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
+
+	uniCounter[counterId] = Number(idStringIndex); // make sure use Number() to convert string to number
+
+	switch(counterId){
+		case "userfriendly":
+			userfly_setPositionByIndex();
+	}
+}
+
+//************** touch move function - end ****************//
+
+

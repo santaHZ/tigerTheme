@@ -10,19 +10,13 @@ window.onload = function() {
 	}else{
 		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!";
 	}
-	
 
-	for (let i=0; i<5; i++ ){
-		perf_slidImagesImg[i].setAttribute('width', Math.ceil(perf_wrapper.clientWidth / 3 - 10));
-		perf_slidImagesImg[i].setAttribute('height', Math.ceil(perf_slidImagesImg[i].width * 0.66666));
-	}
-
-	// initialize flexibility block
+	// initialize flexibility block dot buttons and all slideImg sizes
 	if (window.innerWidth < 750){
 		colNum = 1; //when window size smaller than 750, set all sliders colNum 1
 		touchColNum = 1;
 		//felx_max_counter = 4;
-		for (let i=0; i < (docAllSliderImages.length -1) ; i++ ){
+		for (let i=0; i < (docAllSliderImages.length -0) ; i++ ){
 			docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
 			docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
 			//flex_size = Math.round(flex_wrapper.clientWidth / colNum);
@@ -31,7 +25,7 @@ window.onload = function() {
 		colNum = 2; //when window size smaller than 750, set all sliders colNum 1
 		touchColNum = 2;
 		//felx_max_counter = 4;
-		for (let i=0; i < (docAllSliderImages.length -1) ; i++ ){
+		for (let i=0; i < (docAllSliderImages.length -0) ; i++ ){
 			docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
 			docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
 			//flex_size = Math.round(flex_wrapper.clientWidth / colNum);
@@ -40,19 +34,13 @@ window.onload = function() {
 		colNum = 3; //when window size smaller than 750, set all sliders colNum 3
 		touchColNum = 3;
 		//felx_max_counter = 2;
-		for (let i=0; i < (docAllSliderImages.length -1); i++ ){
+		for (let i=0; i < (docAllSliderImages.length -0); i++ ){
 			docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
 			docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
 			//flex_size = Math.round(flex_wrapper.clientWidth / colNum);
 		}
 	}
-
-	// initialize userfriendly block
-	for (let i=0; i<4; i++ ){
-		slidImagesImg[i].setAttribute('width', Math.ceil(userfly_wrapper.clientWidth / 3) - 10);
-		//console.log(userfly_wrapper.clientWidth);
-		slidImagesImg[i].setAttribute('height', Math.ceil(slidImagesImg[i].width * 0.66666));
-	}
+	
 
 	// initialize geometry block
 	overallImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
@@ -61,51 +49,90 @@ window.onload = function() {
 	foldedImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
 	foldedImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
 
-	// initialize userfriendly block slid controll button, img change
-	prevBtn1Img.setAttribute('src', No1ImgSolid);
-	nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	prevBtn2Img.setAttribute('src', No2ImgPrev);
-	nextBtn2Img.setAttribute('src', No2ImgNext);
 
-	perf_prevBtn1Img.setAttribute('src', No1ImgSolid);
-	perf_nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	perf_prevBtn2Img.setAttribute('src', No2ImgPrev);
-	perf_nextBtn2Img.setAttribute('src', No2ImgNext);
-
-	/// define right sied buttons no.2
-	//// prev arrow
-	prevBtn2.onmouseover = function(){
-		prevBtn2Img.setAttribute('src', No2ImgPrevEt);
+	// initiallize [flexibility] dot buttons
+	for (let i=0; i < (flex_slides.length - colNum + 1); i++){
+		let node = document.createElement("div");
+		node.setAttribute("id", "flex_DotBtn-" +i);
+		if(i== 0){
+			node.setAttribute("class", "buttonDotSolid");
+		}else{
+			node.setAttribute("class", "buttonDotEmpty");
+		}
+		node.setAttribute("onclick","dotBtnFun(this.id)");
+		flex_btn.appendChild(node);
 	}
-	prevBtn2.onmouseout =function(){
-		prevBtn2Img.setAttribute('src', No2ImgPrev);
-	}
-
-	//// next arrow
-	nextBtn2.onmouseover = function(){
-		nextBtn2Img.setAttribute('src', No2ImgNextEt);
-	}
-	nextBtn2.onmouseout =function(){
-		nextBtn2Img.setAttribute('src', No2ImgNext);
-	}
+	console.log(flex_btn);
 
 
-	//// prev arrow
-	perf_prevBtn2.onmouseover = function(){
-		perf_prevBtn2Img.setAttribute('src', No2ImgPrevEt);
+	// initiallize [performance] dot buttons
+	for (let i=0; i < (perf_slides.length - colNum + 1); i++){
+		let node = document.createElement("div");
+		node.setAttribute("id", "perf_DotBtn-" +i);
+		if(i== 0){
+			node.setAttribute("class", "buttonDotSolid");
+		}else{
+			node.setAttribute("class", "buttonDotEmpty");
+		}
+		node.setAttribute("onclick","dotBtnFun(this.id)");
+		perf_btn.appendChild(node);
 	}
-	perf_prevBtn2.onmouseout =function(){
-		perf_prevBtn2Img.setAttribute('src', No2ImgPrev);
-	}
+	console.log(perf_btn);
 
-	//// next arrow
-	perf_nextBtn2.onmouseover = function(){
-		perf_nextBtn2Img.setAttribute('src', No2ImgNextEt);
+	// initiallize [userfriendly] dot buttons
+	for (let i=0; i < (userfly_slides.length - colNum + 1); i++){
+		let node = document.createElement("div");
+		node.setAttribute("id", "userfly_DotBtn-" +i);
+		if(i== 0){
+			node.setAttribute("class", "buttonDotSolid");
+		}else{
+			node.setAttribute("class", "buttonDotEmpty");
+		}
+		node.setAttribute("onclick","dotBtnFun(this.id)");
+		userfly_btn.appendChild(node);
 	}
-	perf_nextBtn2.onmouseout =function(){
-		perf_nextBtn2Img.setAttribute('src', No2ImgNext);
-	}
-
+	console.log(userfly_btn);
 
 
   };
+
+//*************universal funcions ***********//
+
+let dotBtnFun = function(dotBtnId){
+	let curDotClkObj = document.getElementById(dotBtnId);
+
+	curDotClkObj.setAttribute("class","buttonDotSolid");
+	let idString = curDotClkObj.getAttribute("id");
+	let idStringIndex = idString.charAt(idString.length-1);
+	console.log(idString);
+	console.log(idStringIndex);
+
+	let btnNodes = curDotClkObj.parentElement.parentElement.firstElementChild.children;
+
+	btnNodes.forEach((child, index) =>{
+		if (index != idStringIndex){
+			child.setAttribute("class","buttonDotEmpty");
+		}
+	})
+
+	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
+
+	console.log(counterId);
+
+	uniCounter[counterId] = Number(idStringIndex); // make sure use Number() to convert string to number
+	console.log(uniCounter[counterId]);
+
+
+	switch(counterId){
+		case "flexibility":
+			console.log('flex');
+			flex_setPositionByIndex();
+		case "performance":
+			console.log('ok');
+			perf_setPositionByIndex();
+		case "userfriendly":
+			userfly_setPositionByIndex();
+			
+	}
+
+}

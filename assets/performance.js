@@ -1,9 +1,3 @@
-const perf_wrapper = document.querySelector('#perf_wrapper');
-const perf_imgSlide = document.querySelector('#perf_imgSlid');
-const perf_slidImages = document.querySelectorAll('#perf_imgSlid .item');
-
-let perf_slidImagesImg = document.querySelectorAll('#perf_imgSlid .item ul li img');
-
 // get objects of mainBanner
 let mainBannerImg = document.getElementById("mainBannerImg");
 let mainBannerName = document.getElementById("mainBannerName");
@@ -23,112 +17,150 @@ let maxTorque = document.getElementById("maxTorque");
 let perdalAssLevel = document.getElementById("perdalAssLevel");
 
 
-//Buttons
-//const perf_prevBtn1 = document.querySelector('#perf_prevBtn1');
-const perf_prevBtn1 = document.querySelector('#perf_ctlBtn1 .perf_my-circle-l');
-const perf_prevBtn1Img = perf_prevBtn1.firstElementChild;
+const perf_wrapper = document.querySelector('#perf_wrapper');
 
-//const perf_nextBtn1 = document.querySelector('#perf_nextBtn1');
-const perf_nextBtn1 = document.querySelector('#perf_ctlBtn1 .perf_my-circle-r');
-const perf_nextBtn1Img = perf_nextBtn1.firstElementChild;
+//******************/ touch move function - begin *******************//
 
-//const perf_prevBtn2 = document.querySelector('#perf_prevBtn2');
-const perf_prevBtn2 = document.querySelector('#perf_ctlBtn2 .perf_my-left');
-const perf_prevBtn2Img = perf_prevBtn2.firstElementChild;
+const perf_slider = document.querySelector('#perf_wrapper').firstElementChild  //this is div with class "uni_imgSlider"
+const perf_slides = Array.from(perf_slider.querySelectorAll('.item')); // this is div slides array
+const perf_btn = document.querySelector('#perf_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
-//const perf_nextBtn2 = document.querySelector('#perf_nextBtn2');
-const perf_nextBtn2 = document.querySelector('#perf_ctlBtn2 .perf_myRight');
-const perf_nextBtn2Img = perf_nextBtn2.firstElementChild;
+// initialize uniCounter
+if (uniCounter.hasOwnProperty("performance")){
+		
+}else{
+	uniCounter["performance"] = 0;
+	console.log(uniCounter);
+}
+
+let perf_isDragging = false,
+	perf_startPos = 0,
+	perf_currentTranslate = 0,
+	perf_prevTranslate = 0,
+	perf_animationID = 0,
+	perf_currentIndex = 0
 
 
-//Counter
-let perf_counter = 0;
-//const perf_size = perf_slidImages[0].clientWidth;
-//let perf_size = perf_slidImages[0].getAttribute('width'); 
-//const perf_size = perf_slidImagesImg[0].width;
-let perf_size = Math.round(perf_wrapper.clientWidth / 3);
-//console.log(perf_size);
 
-perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
+//console.log(perf_slides);
 
-//Button1 Listeners dot button
+perf_slides.forEach((slide, index) => {
+	const perf_slideImage = slide.querySelector('img');
+	perf_slideImage.addEventListener('dragstart', (e) => e.preventDefault());
 
-let fun_perf_prevBtn1 = function(){
-	if (perf_counter == 0){
-		return;
+	//Touch events
+	perf_slideImage.addEventListener('touchstart', perf_touchStart(index));
+	perf_slideImage.addEventListener('touchend', perf_touchEnd);
+	perf_slideImage.addEventListener('touchmove', perf_touchMove);
+
+	//Mouse events
+	perf_slideImage.addEventListener('mousedown', perf_touchStart(index));
+	perf_slideImage.addEventListener('mouseup', perf_touchEnd);
+	perf_slideImage.addEventListener('mouseleave', perf_touchEnd);
+	perf_slideImage.addEventListener('mousemove', perf_touchMove);
+
+})
+
+function perf_touchStart(index){
+	return function(event){
+		perf_currentIndex = index;
+		perf_startPos = perf_getPositionX(event);
+		perf_isDragging = true;
+		perf_animationID = requestAnimationFrame(perf_animation);
 	}
-	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
-	perf_counter --;
-	//console.log(counter);
-	perf_size = Math.round(perf_wrapper.clientWidth / 3);
+}
 
-	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
-
-	perf_prevBtn1Img.setAttribute('src', No1ImgSolid);
-	perf_nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	//perf_nextBtn1.style.color = "#ddd";
-	//perf_prevBtn1.style.color = "rgb(66, 64, 64)";
-	//console.log(perf_size);
-
-};
-
-let fun_perf_nextBtn1 = function(){
-	if (perf_counter == 2){
-		return;
+function perf_touchEnd(){
+	perf_isDragging = false;
+	cancelAnimationFrame(perf_animationID);
+	const perf_movedBy = perf_currentTranslate - perf_prevTranslate;
+	console.log(uniCounter["performance"]);
+	if(perf_movedBy < -50 && uniCounter["performance"] < (perf_slides.length - touchColNum)){
+		uniCounter["performance"] += 1;
 	}
-	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
-	perf_counter ++;
-	//console.log(counter);
-	//console.log(perf_size);
-	perf_size = Math.round(perf_wrapper.clientWidth / 3);
-	//console.log(perf_size);
-
-	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
-
-	perf_nextBtn1Img.setAttribute('src', No1ImgSolid);
-	perf_prevBtn1Img.setAttribute('src', No1ImgEmpty);
-	//perf_nextBtn1.style.color = "rgb(66, 64, 64)";
-	//perf_prevBtn1.style.color = "#ddd";
-
-};
-
-//Button2 Listeners arrow button
-let fun_perf_prevBtn2 = function(){
-	if (perf_counter == 0){
-		return;
+	if(perf_movedBy > 50 && uniCounter["performance"] > 0){
+		uniCounter["performance"] -= 1;
 	}
-	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
-	perf_counter --;
+	perf_setPositionByIndex();
 
-	perf_size = Math.round(perf_wrapper.clientWidth / 3);
-	//console.log(perf_size);
-	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
+	let btnNodes = perf_btn.children;
 
-	perf_prevBtn1Img.setAttribute('src', No1ImgSolid);
-	perf_nextBtn1Img.setAttribute('src', No1ImgEmpty);
-	//perf_nextBtn1.style.color = "#ddd";
-	//perf_prevBtn1.style.color = "rgb(66, 64, 64)";
-};
+	btnNodes.forEach((child, index) =>{
+		if (index != uniCounter["performance"]){
+			child.setAttribute("class","buttonDotEmpty");
+		}else{
+			child.setAttribute("class","buttonDotSolid");
+		}
+	})
 
-//Button2 Listeners arrow button
-let fun_perf_nextBtn2 = function(){
-	
-	if (perf_counter == 2){
-		return;
+
+}
+
+function perf_touchMove(event){
+	if (perf_isDragging){
+		const perf_currentPosition = perf_getPositionX(event);
+		perf_currentTranslate = perf_prevTranslate + perf_currentPosition - perf_startPos;
 	}
-	perf_imgSlide.style.transition = "transform 0.4s ease-in-out";
-	perf_counter ++;
+}
 
-	perf_size = Math.round(perf_wrapper.clientWidth / 3);
-	//console.log(perf_size);
-	//console.log(perf_counter);
-	perf_imgSlide.style.transform = 'translateX(' + (- perf_size * perf_counter ) + 'px)';
+// get mouse or touch postionX
+function perf_getPositionX(event) {
+	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+}
 
-	perf_nextBtn1Img.setAttribute('src', No1ImgSolid);
-	perf_prevBtn1Img.setAttribute('src', No1ImgEmpty);
-	//perf_nextBtn1.style.color = "rgb(66, 64, 64)";
-	//perf_prevBtn1.style.color = "#ddd";
-};
+function perf_animation(){
+	perf_setSlidePosition();
+	if (perf_isDragging) requestAnimationFrame(perf_animation);
+}
+
+function perf_setSlidePosition(){
+	perf_slider.style.transform = `translateX(${perf_currentTranslate}px)`;
+}
+
+function perf_setPositionByIndex(){
+	let perf_size = Math.round(perf_slider.clientWidth / touchColNum)
+	perf_currentTranslate = uniCounter["performance"] * (- perf_size);
+	perf_prevTranslate = perf_currentTranslate;
+	perf_setSlidePosition();
+}
+
+
+function perf_dotBtnFunReset(){
+	let curDotClkObj = document.getElementById("perf_DotBtn-0");
+
+	curDotClkObj.setAttribute("class","buttonDotSolid");
+	let idString = curDotClkObj.getAttribute("id");
+	let idStringIndex = idString.charAt(idString.length-1);
+	console.log(idString);
+	console.log(idStringIndex);
+
+	let btnNodes = perf_btn.children;
+
+	btnNodes.forEach((child, index) =>{
+		if (index != idStringIndex){
+			child.setAttribute("class","buttonDotEmpty");
+		}
+	})
+
+	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
+
+	uniCounter[counterId] = Number(idStringIndex); // make sure use Number() to convert string to number
+
+	switch(counterId){
+		case "performance":
+			perf_setPositionByIndex();
+	}
+}
+
+//************** touch move function - end ****************//
+
+
+
+
+
+
+
+
 
 
 
@@ -198,6 +230,9 @@ var myScrollFunc = function() {
 window.addEventListener("scroll", myScrollFunc);
 
 window.addEventListener('resize', function(event) {
+
+	perf_dotBtnFunReset();
+
 	mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
 	mainBanner.style.height = mainBannerImg.height +'px';
 
@@ -212,6 +247,6 @@ window.addEventListener('resize', function(event) {
 	performanceMainImg.height = Math.ceil(performanceMainImg.width * 1);
 	performanceMainDescData.style.height = performanceMainImg.width
 
-	//console.log(perf_slidImagesImg[0].width);
+
 }, true);
 

@@ -42,16 +42,5 @@ let divShowRight = function(){
 
 window.addEventListener('resize', function(event) {
 
-	overallImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
-	overallImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
-
-	foldedImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
-	foldedImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
-
-	if (this.window.innerWidth < 1030){
-		
-	}else{
-		//tabDivOverallWrapperData.style.display = "flex";
-	}
 
 }, true);

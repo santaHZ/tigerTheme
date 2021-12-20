@@ -20,86 +20,86 @@
     white-space: nowrap;
 }
 
-/*slid container*/
-#perf_imgSlid{
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-}
-
-/*slid image div*/
-#perf_imgSlid .item{
-    padding: 0px;
-    margin-right: 10px;
-    border: 0px solid #ff23ff;
-    text-align: center;
-    background-color: #ffffff;
-    /* display: inline-block; */
-}
-
-/*slid image div ul*/
-#perf_imgSlid .item ul{
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-    position: relative;
-    display: block;
-}
-
-#perf_imgSlid .item ul li{
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-    display: block;
-    white-space:normal;
-    word-wrap: break-word;
-    text-align: left;
-    font-size: 1.5vw;  /*image description body font */
-    
-}
-
-#perf_imgSlid .item ul li img{
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-}
-
-#perf_imgSlid .item ul .titleStyle{
-    padding: 0px;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin: 0px;
-    font-size: 2.0vw;  /*image description head font */
-    font-weight: bold;
-    position: relative;
-    display: block;
-    white-space:normal;
-    word-wrap: break-word;
-    text-align: left;
-}
 
 /*定义左侧按钮样式*/
 #perf_ctlBtn1{
     position: relative;
     padding: 0px;
     margin: 0px;
-    display: flex;
+    margin-top: 2rem;
+    display: block;
+    height: 50px;
+    width: 100%;
+
+}
+
+#perf_ctlBtn1 .leftBtns{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
     float: left;
-
+    width: 60%;
+    height: 100%;
+    padding-top: 1rem;
+    /*background-color: blueviolet;*/
 }
 
-.perf_my-circle-l{
-    padding: 0px;
-    margin: 0px;
+/*此处要加上id选择符，才能正常显示*/
+#perf_ctlBtn1 .leftBtns .buttonDotSolid{
+    display: block;
+    float: left;
+    width: 1vw;
+    height: 1vw;
+    background:black;
     cursor: pointer;
-
+    border: 0.2vw solid gray;
+    border-radius: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1vw;
+    margin-left: 2vmax;
 }
 
-.perf_my-circle-r{
+@media screen and (max-width: 749px) {
+    #perf_ctlBtn1 .leftBtns .buttonDotSolid{
+        width: 2vmax;
+        height: 2vmax;
+        font-size: 2vmax;
+        border: 0.3vmax solid gray;
+    }
+}
+
+/*此处要加上id选择符，才能正常显示*/
+#perf_ctlBtn1 .leftBtns .buttonDotEmpty{
+    display: block;
+    float: left;
+    width: 1vw;
+    height: 1vw;
+    background: #fff;
+    cursor: pointer;
+    border: 0.2vw solid gray;
+    border-radius: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1vw;
+    margin-left: 2vmax;
+
+}
+@media screen and (max-width: 749px) {
+    #perf_ctlBtn1 .leftBtns .buttonDotEmpty{
+        width: 2vmax;
+        height: 2vmax;
+        font-size: 2vmax;
+        border: 0.3vmax solid gray;
+    }
+}
+
+#perf_ctlBtn1 .rightBtns{
+    position: relative;
     padding: 0px;
     margin: 0px;
-    cursor: pointer;
-
+    float: right;
+    width: 40%;
+    height: 100%;
+    /* background-color:burlywood; */
 }
 
 
@@ -113,49 +113,18 @@
     float:right;
 }
 
-/*定义右侧左箭头样式 */
-#perf_ctlBtn2 .perf_my-left{
-    padding: 0px;
-    margin: 0px;
-    cursor: pointer;
-}
-
-#perf_ctlBtn2 .perf_my-left img{
-    padding: 0px;
-    margin: 0px;
-    display: block;
-    margin-bottom: 1px;
-}
-
-#perf_ctlBtn2 .perf_my-left:hover{
-    background-color: darkgray;
-}
-
-/*定义右侧右箭头样式 */
-#perf_ctlBtn2 .perf_myRight{
-    padding: 0px;
-    margin: 0px;
-    cursor: pointer;
-}
-
-#perf_ctlBtn2 .perf_myRight img{
-    padding: 0px;
-    margin: 0px;
-    display: block;
-    margin-bottom: 1px;
-}
-
-
-#perf_ctlBtn2 .perf_myRight:hover{
-    background-color: darkgray;
-}
-
 .performance_desc{
-    padding-left: 2em;
-    width: 50em;
-    font-size: 1.5vw;  /*Block description head font */
+    width: 100%;
+    font-size: 2.5vw;  /*Block description head font */
     margin-bottom: 2em;
+}
 
+@media screen and (max-width: 749px) {
+    .performance_desc{
+        font-size: 3.5vw;  /*Block description head font */
+
+    }
+    
 }
 
 
@@ -268,7 +237,7 @@
     font-size: 1.3vw;
     text-align: left;
     padding-left: 10px;
-    border-radius: 5%;
+    /*border-radius: 5%;*/
 }
 
 .main_top_banner{
