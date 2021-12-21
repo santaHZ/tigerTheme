@@ -143,8 +143,17 @@
 }
 
 @media screen and (max-width: 749px) {
+    #product_main li {
+        font-size: 1.3vmax;
+    }
+
+    .speMenu{
+        font-size: 1.8vmax;
+        height: 4.8vmax;
+    }
+
     .bigMenuStyle{
-        font-size: 7.0vw;
+        font-size: 2.0vmax;  /* define size of word "Specification" */
     }
     
 }

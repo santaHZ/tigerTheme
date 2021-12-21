@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{ 'flexibility.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'performance.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'userfriendly.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'product-showcase.css' | asset_url }}" type="text/css">
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-main.js' | asset_url }}" defer="defer"></script>
@@ -21,6 +22,7 @@
 <script src="{{ 'flexibility.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'performance.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'userfriendly.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-showcase.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-main-winOnLoad.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -32,53 +34,42 @@
 <section class="page-width">
   <div class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
-      <slider-component class="slider-mobile-gutter">
-        <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-          {{ "accessibility.skip_to_product_info" | t }}
-        </a>
-        <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
-          {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
-          {%- if product.selected_or_first_available_variant.featured_media != null -%}
-            {%- assign media = product.selected_or_first_available_variant.featured_media -%}
-            <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-              {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-            </li>
-          {%- endif -%}
-          {%- for media in product.media -%}
-            {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-              </li>
-            {%- endunless -%}
-          {%- endfor -%}
-        </ul>
-        {%- assign filtered_media_size = product.media.size | minus: variant_images.size | plus: 1 -%}
-        <div class="slider-buttons no-js-hidden{% if product.media.size < 2 or section.settings.hide_variants and filtered_media_size < 2 %} small-hide{% endif %}">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-            <span class="slider-counter--total">{% if section.settings.hide_variants %}{{ filtered_media_size }}{% else %}{{ product.media.size }}{% endif %}</span>
+      <div class="productShowcaseWrapper">
+        <div id="productShowcase">
+          <div id="prod_wrapper">
+            <div class="uni_imgSlider">
+              {%- for image in product.images -%}
+              <div class="item">
+                <ul>
+                  <li>
+                    <img src="{{- image | image_url -}}" alt="{{image.alt}}" /></li>
+                  </li>
+                </ul>
+              </div>
+              {%- endfor -%}
+            </div>
           </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
         </div>
-      </slider-component>
-      <div><button class="showcase-prev"></button><button class="showcase-next"></button></div>
-      {%- if first_3d_model -%}
-        <button
-          class="button button--full-width product__xr-button"
-          type="button"
-          aria-label="{{ 'products.product.xr_button_label' | t }}"
-          data-shopify-xr
-          data-shopify-model3d-id="{{ first_3d_model.id }}"
-          data-shopify-title="{{ product.title | escape }}"
-          data-shopify-xr-hidden
-        >
-          {% render 'icon-3d-model' %}
-          {{ 'products.product.xr_button' | t }}
-        </button>
-      {%- endif -%}
+        <hr>
+        <div id="productPeekShowcase">
+          <div id="prodPeek_wrapper">
+            <div class="uni_imgSlider">
+              {%- for image in product.images -%}
+               {% if forloop.first == true %}
+               {% else %}
+                <div class="item">
+                  <ul>
+                    <li>
+                      <img src="{{- image | image_url -}}" alt="{{image.alt}}" /></li>
+                    </li>
+                  </ul>
+                </div>
+              {% endif %}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="product__info-wrapper grid__item">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
@@ -379,26 +370,34 @@
   </div>
 
   <div class="main_top_banner">
-    <ul>
-      <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_1.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-      <li class="main_top_bold">Motor</li>
-      <li class="main_top_light">500W brushless geared hub motor with max torque of up to 52Nm</li>
-    </ul>
-    <ul>
-      <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_2.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-      <li class="main_top_bold">Range</li>
-      <li class="main_top_light">A fully charged battery can last up to 22 miles and 4 hours to juice up fully</li>
-    </ul>
-    <ul>
-      <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_3.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-      <li class="main_top_bold">Battery</li>
-      <li class="main_top_light">48V/10A Li-ion Battery on frame for better weight distribution</li>
-    </ul>
-    <ul>
-      <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_4.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-      <li class="main_top_bold">Pedal Level</li>
-      <li class="main_top_light">Variable  speed levels from level 1 to level 5 to provide a smoother assistance</li>
-    </ul>
+    <div>
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_1.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Motor</li>
+        <li class="main_top_light">500W brushless geared hub motor with max torque of up to 52Nm</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_2.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Range</li>
+        <li class="main_top_light">A fully charged battery can last up to 22 miles and 4 hours to juice up fully</li>
+      </ul>
+    </div>
+    <div class="topBannerMiddleSpilit">
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_3.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Battery</li>
+        <li class="main_top_light">48V/10A Li-ion Battery on frame for better weight distribution</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_4.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Pedal Level</li>
+        <li class="main_top_light">Variable  speed levels from level 1 to level 5 to provide a smoother assistance</li>
+      </ul>
+    </div>
   </div>
   <div class="main_banner">
     <img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main02.jpg?v=1639139002" id="mainBannerImg" class="main_banner_img" width="1500" loading="lazy">
@@ -415,16 +414,30 @@
         <img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-00.png?v=1639133555" id="performanceMainImg" width="100%" height="100%">
       </div>
       <div id="performanceMainDescData" class="performance_main_desc_data">
-        <ul>
-          <li id="gearHub" class="perf_big">0W</li>
-          <li class="perf_bold">Geared Hub Motor</li>
-          <li id="milesPerCharge" class="perf_big">22+</li>
-          <li class="perf_bold">Miles per Charge</li>
-          <li id="maxTorque" class="perf_big">52Nm</li>
-          <li class="perf_bold">Max Torque</li>
-          <li id="perdalAssLevel" class="perf_big">5</li>
+        <div>
+          <ul>
+            <li id="gearHub" class="perf_big">0W</li>
+            <li class="perf_bold">Geared Hub Motor</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li id="milesPerCharge" class="perf_big">22+</li>
+            <li class="perf_bold">Miles per Charge</li>
+          </ul>
+        </div>
+        <div class="columnSplitMiddle">
+          <ul>
+            <li id="maxTorque" class="perf_big">52Nm</li>
+            <li class="perf_bold">Max Torque</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li id="perdalAssLevel" class="perf_big">5</li>
           <li class="perf_bold">Pedal Assist Levels</li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
     <div id="perf_wrapper">

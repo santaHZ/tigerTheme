@@ -250,7 +250,7 @@ let fun_Uni_nextBtn2 = function(btnId){
 //********** function for window resizing - begin **********//
 window.addEventListener('resize', function(event) {
 
-	flex_dotBtnFunReset();
+	flex_dotBtnFunReset();  //initialize slider position after window resize.
 
 	if (window.innerWidth < 750){
 		colNum = 1; //when window size smaller than 750, set all sliders colNum 1

@@ -69,14 +69,14 @@
 }
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 749px) {
     #geometry .tabInfo img{
         width: 85vw;
         height: 85vw;
     }
 }
 
-@media screen and (max-width: 1200px) and (min-width: 751) {
+@media screen and (min-width: 750) {
     #geometry .tabInfo img{
         width: 50%;
         height: 50%;
@@ -100,7 +100,7 @@
     display: flex;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 749px) {
     #geometry .tabInfo .overall .overallWrapper{
         padding: 0px;
         margin: 0px;

@@ -1,0 +1,97 @@
+.productShowcaseWrapper{
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
+    border: 0px solid cornflowerblue;
+    margin: 2px;
+}
+
+
+
+/*********** the div outside of div with class pro_wrapper **********/
+#productShowcase{
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+/*define big product img slider*/
+#productShowcase #prod_wrapper{
+    padding: 0;
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    border:0px;
+    width: 50.0vmax;
+    height: 33.33vmax;
+    margin-bottom: 5px;
+}
+
+#productShowcase #prod_wrapper .uni_imgSlider img{
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 50.0vmax;
+    height: 33.33vmax;
+    border: 0px solid coral;
+}
+
+#productShowcase #prod_wrapper .uni_imgSlider .item{  /*re adjust margin-right to 0px*/
+    margin-right: 0px;
+}
+
+/*define big product img slider (for mobile max-width 749px)*/
+@media screen and (max-width: 749) {
+    #productShowcase #prod_wrapper{
+        width: 15.0vw;
+        height: 10.0vw;
+    }
+    
+    #productShowcase #prod_wrapper .uni_imgSlider img{
+        width: 15.0vw;
+        height: 10.0vw;
+    }
+    
+}
+
+
+/******define small product img slider*******/
+#prodPeek_wrapper{
+    display: block; 
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0px solid chartreuse;
+    width: 50.0vmax;
+}
+
+#prodPeek_wrapper .uni_imgSlider img{
+    display: block; 
+    padding: 0px;
+    margin: 0px;
+    width: 75px;
+    height: 50px;
+    border: 0px solid chocolate;
+}
+
+#prodPeek_wrapper .uni_imgSlider .item{  /*re adjust margin-right to 0px*/
+    margin-right: 0px;
+}
+
+
+/******define small product img slider(for mobile max-width:749px)*******/
+@media screen and (max-width: 749) {
+    #prodPeek_wrapper{
+        width: 36.0vw;
+    }
+    
+    #prodPeek_wrapper .uni_imgSlider img{
+        width: 75px;
+        height: 50px;
+    }
+}

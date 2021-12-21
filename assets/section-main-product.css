@@ -283,7 +283,8 @@ a.product__text {
 .product__title {
   word-break: break-word;
   margin-bottom: 1.5rem;
-  font-size: 2.0vw;  /*added to change font size according to window size*/
+  font-size: 3.0rem;
+  /* font-size: 2.0vmax;  added to change font size according to window size */
 }
 
 .product__title + .product__text.caption-with-letter-spacing {

@@ -6,6 +6,7 @@
     margin: 0px;
     width: 100%;
     margin-bottom: 100px;
+    clear: both;
 }
 
 
@@ -131,7 +132,7 @@
 .performance_main_desc{
     padding: 0px;
     margin: 0px;
-    display: flex;
+    display: block;
     border: 0px solid cornflowerblue;
     width: 100%;
 }
@@ -139,17 +140,22 @@
 .performance_main_desc_img{
     padding: 0px;
     margin: 0px;
+    display: block;
     width: 50%;
+    float: left;
 }
 
-/*performanceMainDescData div */
+
+/*performance_Main_Desc_Data div (show numbers)*/
 .performance_main_desc_data{
-    position: relative;
+    display: block;
     padding: 0px;
     margin: 0px;
-    width: 50%;
     border: 0px solid chocolate;
+    float: left;
+    margin-bottom: 3.0vmax;
 }
+
 
 .performance_main_desc_data ul{
     position: relative;
@@ -158,8 +164,7 @@
     padding: 0px;
     list-style: none;
     border: 0px solid chocolate;
-    margin-left: 30%;
-    
+    padding-left: 10%;
 }
 
 .performance_main_desc_data ul li{
@@ -175,10 +180,51 @@
     color: chartreuse;
 }
 
+
 .perf_bold{
     font-size: 1.5vw;
     color: black;
 }
+
+@media screen and (max-width: 749px) { /* here must have space between and and (*/
+    .performance_main_desc_img{
+        width: 100%;
+        clear: both;
+    }
+
+    .performance_main_desc_data{
+        width: 100%;
+        clear:left;
+
+    }
+
+    .performance_main_desc_data div{
+        width: 50%;
+        display: block;
+        float: left;
+    
+    }
+
+    .performance_main_desc_data .columnSplitMiddle{
+        display: block;
+        clear: both;
+    
+    }
+
+    .perf_big{
+        font-size: 4.5vmax;
+        color: chartreuse;
+    }
+    
+    
+    .perf_bold{
+        font-size: 2.5vmax;
+        color: black;
+    }
+    
+}
+
+
 
 .main_banner{
     position: relative;
@@ -245,15 +291,23 @@
     overflow: auto;
     background-color: black;
     opacity: 0.9;
+    clear: both;
+}
+
+.main_top_banner div{
+    display: block;
+    float: left;
+    width: 25%;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    /* padding-bottom: 1em; */
 }
 
 .main_top_banner ul{
     position: relative;
     padding: 0px;
-    margin: 4% 4% 4% 4%;
-    width: 17%;
     list-style: none;
-    float: left;
 }
 
 .main_top_banner li{
@@ -262,9 +316,6 @@
     width: 100%;
     list-style: none;
     color: white;
-    margin-right: 1%;
-    margin-left: 1%;
-    margin-top: 1%;
  }
 
  .main_top_bold{
@@ -275,6 +326,16 @@
  .main_top_light{
     font-weight: 300;
     font-size: 1.5vmin;
+}
+
+@media screen and (max-width: 749px) {
+    /* adjust layout of top banner 4 columns*/
+    
+
+    .main_top_banner div{
+        width: 50%;
+    }
+
 }
 
 #performance .tabRoundCorner{
@@ -290,46 +351,3 @@
 	margin-left: 0.5vw;
 	margin-bottom: 1.0vw;
 }
-
-/*changing the showcase img size for desktop*/
-@media screen and (min-width: 990px) {
-    .slider.slider--mobile {
-      width: 100%;
-      border: 1px solid chartreuse;
-      display: flex;
-      list-style: none;
-      overflow: auto;
-      padding: 0px;
-      margin: 0px;
-      /* flex-wrap: inherit;
-      overflow-x: auto; */
-      /* scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      scroll-padding-left: 1rem;
-      -webkit-overflow-scrolling: touch; */
-      /*margin-bottom: 1rem;*/
-    }
-  
-    .slider.slider--mobile .slider__slide {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  
-    .slider__slide{
-      border: 1px solid crimson;
-      display: block;
-      width: 100%;
-      padding: 0px;
-      margin: 0px;
-  
-    }
-
-    .product__media-list.grid__item.slider__slide{
-        width: 50%;
-        height: 100%;
-    }
-
-
-
-  }
-
