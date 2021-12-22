@@ -1,6 +1,6 @@
 window.onload = function() {
 	//console.log('imgHeight:' + mainBannerImg.height);
-	mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
+	/* mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
 	mainBanner.style.height = mainBannerImg.height +'px';
 
 	if (mainBannerImg.width < 600){
@@ -9,7 +9,7 @@ window.onload = function() {
 		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike...";
 	}else{
 		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!";
-	}
+	} */
 
 	// initialize flexibility block dot buttons and all slideImg sizes
 	if (window.innerWidth < 750){
@@ -43,11 +43,11 @@ window.onload = function() {
 	
 
 	// initialize geometry block
-	overallImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
-	overallImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
+	//overallImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
+	//overallImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
 
-	foldedImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
-	foldedImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
+	//foldedImg.setAttribute("width", Math.ceil(this.window.innerWidth / 2.5));
+	//foldedImg.setAttribute("height", Math.ceil(this.window.innerWidth / 2.5));
 
 
 	// initiallize [flexibility] dot buttons
@@ -62,7 +62,7 @@ window.onload = function() {
 		node.setAttribute("onclick","dotBtnFun(this.id)");
 		flex_btn.appendChild(node);
 	}
-	console.log(flex_btn);
+	//console.log(flex_btn);
 
 
 	// initiallize [performance] dot buttons
@@ -77,7 +77,7 @@ window.onload = function() {
 		node.setAttribute("onclick","dotBtnFun(this.id)");
 		perf_btn.appendChild(node);
 	}
-	console.log(perf_btn);
+	//console.log(perf_btn);
 
 	// initiallize [userfriendly] dot buttons
 	for (let i=0; i < (userfly_slides.length - colNum + 1); i++){
@@ -91,10 +91,9 @@ window.onload = function() {
 		node.setAttribute("onclick","dotBtnFun(this.id)");
 		userfly_btn.appendChild(node);
 	}
-	console.log(userfly_btn);
+	//console.log(userfly_btn);
 
-
-  };
+};
 
 //*************universal funcions ***********//
 
@@ -104,8 +103,8 @@ let dotBtnFun = function(dotBtnId){
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	console.log(idString);
-	console.log(idStringIndex);
+	//console.log(idString);
+	//console.log(idStringIndex);
 
 	let btnNodes = curDotClkObj.parentElement.parentElement.firstElementChild.children;
 
@@ -117,18 +116,18 @@ let dotBtnFun = function(dotBtnId){
 
 	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
 
-	console.log(counterId);
+	//console.log(counterId);
 
 	uniCounter[counterId] = Number(idStringIndex); // make sure use Number() to convert string to number
-	console.log(uniCounter[counterId]);
+	//console.log(uniCounter[counterId]);
 
 
 	switch(counterId){
 		case "flexibility":
-			console.log('flex');
+			//console.log('flex');
 			flex_setPositionByIndex();
 		case "performance":
-			console.log('ok');
+			//console.log('ok');
 			perf_setPositionByIndex();
 		case "userfriendly":
 			userfly_setPositionByIndex();

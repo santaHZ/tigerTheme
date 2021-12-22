@@ -5,9 +5,25 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 2vmax;
+    clear: both;
+    border: 1px solid cornflowerblue;
+}
+#performance .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 0.2vw 0.4vw;
+    background: #029789;
+    width: 5vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
     clear: both;
 }
+
 
 
 /*slid section*/
@@ -226,20 +242,25 @@
 
 
 
-.main_banner{
+
+
+.main_banner{   /* set the section showing biggest image */
     position: relative;
     display: block;
     overflow: none;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 2vmax;
     width: 100%;
+    height: auto;
     text-align: center;
+    
 }
 
-.main_banner_img{
-    position: absolute;
-    top:0px;
+.main_banner_img{  /*the biggest image*/
+    position: static;
+    display: block;
+    top: 0px;
     left: 0px;
     margin: 0px;
     padding: 0px;
@@ -286,6 +307,23 @@
     /*border-radius: 5%;*/
 }
 
+.main_banner_f2.LessContent{
+    display: none;
+}
+
+@media screen and (max-width: 749px){
+    .main_banner_f2.MoreContent{
+        display: none;
+    }
+
+
+    .main_banner_f2.LessContent{
+        display: block;
+    }
+    
+}
+
+
 .main_top_banner{
     display: block;
     overflow: auto;
@@ -330,24 +368,10 @@
 
 @media screen and (max-width: 749px) {
     /* adjust layout of top banner 4 columns*/
-    
-
     .main_top_banner div{
         width: 50%;
     }
 
 }
 
-#performance .tabRoundCorner{
-    display: block;
-    color:white;
-    text-align: center;
-    border: 0px solid #a1a1a1;
-    padding: 0.2vw 0.4vw;
-    background: #029789;
-    width: 5vw;
-    height: 1.5vw;
-    border-radius: 0.4vw;
-	margin-left: 0.5vw;
-	margin-bottom: 1.0vw;
-}
+

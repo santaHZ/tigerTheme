@@ -11,7 +11,7 @@ if (uniCounter.hasOwnProperty("productShowcase")){
 		
 }else{
 	uniCounter["productShowcase"] = 0;
-	console.log(uniCounter);
+	//console.log(uniCounter);
 }
 
 let prod_isDragging = false,
@@ -60,7 +60,7 @@ function prod_touchEnd(){
 	prod_isDragging = false;
 	cancelAnimationFrame(prod_animationID);
 	const prod_movedBy = prod_currentTranslate - prod_prevTranslate;
-	console.log(uniCounter["productShowcase"]);
+	//console.log(uniCounter["productShowcase"]);
 	if(prod_movedBy < -50 && uniCounter["productShowcase"] < (prod_slides.length - productShowcaseColNum)){
 		uniCounter["productShowcase"] += 1;
 	}
@@ -107,7 +107,7 @@ function prod_setPositionByIndex(){
 let productPeekShowcaseColNum = 9;
 const prodPeek_wrapper = document.querySelector('#prodPeek_wrapper');
 const prodPeek_AllSliderImages = document.querySelectorAll('#prodPeek_wrapper .uni_imgSlider .item ul li img');
-console.log(prodPeek_AllSliderImages);
+//console.log(prodPeek_AllSliderImages);
 
 //******************/ touch move function - begin *******************//
 
@@ -123,7 +123,7 @@ if (uniCounter.hasOwnProperty("productPeekShowcase")){
 		
 }else{
 	uniCounter["productPeekShowcase"] = 0;
-	console.log(uniCounter);
+	//console.log(uniCounter);
 }
 
 let prodPeek_wrapperisDragging = false,
@@ -169,7 +169,7 @@ function prodPeek_wrappertouchStart(index){
         //set productShowcase position
         uniCounter["productShowcase"] = Number(index) + 1; // here must use Number() to convert string to number
         prod_setPositionByIndex();
-        console.log("productShowcase counter:" + uniCounter["productShowcase"]);
+        //console.log("productShowcase counter:" + uniCounter["productShowcase"]);
 
         
 	}
@@ -179,10 +179,10 @@ function prodPeek_wrappertouchEnd(){
 	prodPeek_wrapperisDragging = false;
 	cancelAnimationFrame(prodPeek_wrapperanimationID);
 	const prodPeek_wrappermovedBy = prodPeek_wrappercurrentTranslate - prodPeek_wrapperprevTranslate;
-	console.log("productPeekShowcase counter:" + uniCounter["productPeekShowcase"]);
+	//console.log("productPeekShowcase counter:" + uniCounter["productPeekShowcase"]);
     
 
-    console.log("maxCounter:" + maxCounter);
+    //console.log("maxCounter:" + maxCounter);
 	//if(prodPeek_wrappermovedBy < -10 && uniCounter["productPeekShowcase"] < (prodPeek_wrapperslides.length - productPeekShowcaseColNum)){
     if(prodPeek_wrappermovedBy < -10 && uniCounter["productPeekShowcase"] < maxCounter){
 		uniCounter["productPeekShowcase"] += 1;
@@ -220,7 +220,7 @@ function prodPeek_wrappersetSlidePosition(){
 function prodPeek_wrappersetPositionByIndex(){
 	//let prodPeek_wrappersize = Math.round(prodPeek_wrapperslider.clientWidth / productPeekShowcaseColNum);
     let prodPeek_wrappersize = Math.round(prodPeek_AllSliderImages[0].clientWidth);
-    console.log(prodPeek_AllSliderImages[0].clientWidth);
+    //console.log(prodPeek_AllSliderImages[0].clientWidth);
     
 	prodPeek_wrappercurrentTranslate = uniCounter["productPeekShowcase"] * (- prodPeek_wrappersize);
 	prodPeek_wrapperprevTranslate = prodPeek_wrappercurrentTranslate;

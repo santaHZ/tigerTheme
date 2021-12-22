@@ -30,7 +30,7 @@ if (uniCounter.hasOwnProperty("performance")){
 		
 }else{
 	uniCounter["performance"] = 0;
-	console.log(uniCounter);
+	//console.log(uniCounter);
 }
 
 let perf_isDragging = false,
@@ -74,7 +74,7 @@ function perf_touchEnd(){
 	perf_isDragging = false;
 	cancelAnimationFrame(perf_animationID);
 	const perf_movedBy = perf_currentTranslate - perf_prevTranslate;
-	console.log(uniCounter["performance"]);
+	//console.log(uniCounter["performance"]);
 	if(perf_movedBy < -50 && uniCounter["performance"] < (perf_slides.length - touchColNum)){
 		uniCounter["performance"] += 1;
 	}
@@ -131,8 +131,8 @@ function perf_dotBtnFunReset(){
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	console.log(idString);
-	console.log(idStringIndex);
+	//console.log(idString);
+	//console.log(idStringIndex);
 
 	let btnNodes = perf_btn.children;
 
@@ -233,19 +233,19 @@ window.addEventListener('resize', function(event) {
 
 	perf_dotBtnFunReset();
 
-	mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
-	mainBanner.style.height = mainBannerImg.height +'px';
+	//mainBannerImg.height = Math.ceil(mainBannerImg.width * 0.5625);
+	//mainBanner.style.height = mainBannerImg.height +'px';
 
-	if (mainBannerImg.width < 600){
+	/* if (mainBannerImg.width < 600){
 		mainBannerF2.innerHTML = "A small yet wide wheel allows you to get where you want to go safely and easy-to-fold";
 	}else if(mainBannerImg.width >= 600 & mainBannerImg.width < 710){
 		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike...";
 	}else{
 		mainBannerF2.innerHTML = "Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!";
-	}
+	} */
 
-	performanceMainImg.height = Math.ceil(performanceMainImg.width * 1);
-	performanceMainDescData.style.height = performanceMainImg.width
+	//performanceMainImg.height = Math.ceil(performanceMainImg.width * 1);
+	//performanceMainDescData.style.height = performanceMainImg.width
 
 
 }, true);

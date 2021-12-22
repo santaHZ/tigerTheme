@@ -16,7 +16,7 @@ if (uniCounter.hasOwnProperty("flexibility")){
 		
 }else{
 	uniCounter["flexibility"] = 0;
-	console.log(uniCounter);
+	//console.log(uniCounter);
 }
 
 let flex_isDragging = false,
@@ -65,7 +65,7 @@ function flex_touchEnd(){
 	flex_isDragging = false;
 	cancelAnimationFrame(flex_animationID);
 	const flex_movedBy = flex_currentTranslate - flex_prevTranslate;
-	console.log(uniCounter["flexibility"]);
+	//console.log(uniCounter["flexibility"]);
 	if(flex_movedBy < -50 && uniCounter["flexibility"] < (flex_slides.length - touchColNum)){
 		uniCounter["flexibility"] += 1;
 	}
@@ -124,8 +124,8 @@ function flex_setPositionByIndex(){
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	console.log(idString);
-	console.log(idStringIndex);
+	//console.log(idString);
+	//console.log(idStringIndex);
 
 	let btnNodes = flex_btn.children;
 
@@ -167,7 +167,7 @@ let fun_Uni_prevBtn2 = function(btnId){
 
 	
 	if (uniCounter.hasOwnProperty(counterId)){
-		console.log(uniCounter);
+		//console.log(uniCounter);
 
 	}else{
 		uniCounter[counterId] = 0;
@@ -178,7 +178,7 @@ let fun_Uni_prevBtn2 = function(btnId){
 	}else{
 		uni_imgSlider.style.transition = "transform 0.4s ease-in-out";
 		uniCounter[counterId] --;
-		console.log('btn:' + uniCounter[counterId]);
+		//console.log('btn:' + uniCounter[counterId]);
 		size = Math.round(uni_imgSlider.clientWidth / colNum)
 
 		uni_imgSlider.style.transform = 'translateX(' + (- size * uniCounter[counterId] ) + 'px)';
@@ -192,7 +192,7 @@ let fun_Uni_prevBtn2 = function(btnId){
 				child.setAttribute("class","buttonDotSolid");
 			}
 		})
-		console.log(uniCounter[counterId]);
+		//console.log(uniCounter[counterId]);
 	}
 };
 
@@ -238,7 +238,7 @@ let fun_Uni_nextBtn2 = function(btnId){
 			}
 		})
 
-		console.log(uniCounter[counterId]);
+		//console.log(uniCounter[counterId]);
 
 	}
 

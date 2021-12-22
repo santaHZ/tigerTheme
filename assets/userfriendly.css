@@ -5,8 +5,24 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 2vmax;
+    border: 1px solid cornflowerblue;
 }
+
+#userfriendly .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 0.2vw 0.4vw;
+    background: #029789;
+    width: 5.0vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
+}
+
 
 #userfly_wrapper{
     display: block;
@@ -115,32 +131,4 @@
     height: 100%;
     /* background-color:burlywood; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#userfriendly .tabRoundCorner{
-    display: block;
-    color:white;
-    text-align: center;
-    border: 0px solid #a1a1a1;
-    padding: 2px 4px;
-    background: #029789;
-    width: 50px;
-    height: 15px;
-    border-radius: 4px;
-	margin-left: 5px;
-	margin-bottom: 10px;
-}
-
 

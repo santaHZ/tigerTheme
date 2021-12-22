@@ -5,7 +5,22 @@
     width: 100%;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 2vmax;
+    border: 1px solid cornflowerblue;
+}
+
+#geometry .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 0.2vw 0.4vw;
+    background: #029789;
+    width: 5.0vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
 }
 
 #geometry .tabBtnDiv{
@@ -68,6 +83,12 @@
     display: block;
 }
 
+#geometry .tabInfo img{
+    display: block;
+    width: 40%;
+    height: 40%;
+}
+
 
 @media screen and (max-width: 749px) {
     #geometry .tabInfo img{
@@ -76,10 +97,10 @@
     }
 }
 
-@media screen and (min-width: 750) {
+@media screen and (min-width: 750px) {
     #geometry .tabInfo img{
-        width: 50%;
-        height: 50%;
+        width: 40vw;
+        height: 40vw;
     }
 }
 
@@ -110,7 +131,7 @@
     }
 }
 
-#geometry .tabInfo .overall .overallWrapper .overallWrapperData{
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData{ /*div  for data*/
     padding: 0px;
     margin: 0px;
     position: relative;
@@ -220,7 +241,7 @@
     display: flex;
     width: 100%;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 749px) {
     #geometry .tabInfo .folded .foldedWrapper {
         padding: 0px;
         margin: 0px;
@@ -236,10 +257,14 @@
     padding: 0px;
     margin: 0px;
     position: relative;
+    list-style: none;
     display: flex;
     float: left;
     width: 100%;
 }
+
+
+
 
 
 
@@ -249,7 +274,6 @@
     display: block;
     position: relative;
     float: left;
-    width: 100%;
 }
 
 
@@ -261,25 +285,24 @@
     font-size: 1.0vw; /* define data font*/
 }
 
+#geometry .foldedLeftColWidth{
+    display: block;
+    width: 60%;
+}
+
+#geometry .foldedRightColWidth{
+    display: block;
+    width: 33%;
+    height: auto;
+}
+
 .foldedBgColor{
     background-color: rgb(214, 216, 215);
 }
 
 
 
-#geometry .tabRoundCorner{
-    display: block;
-    color:white;
-    text-align: center;
-    border: 0px solid #a1a1a1;
-    padding: 0.2vw 0.4vw;
-    background: #029789;
-    width: 5.0vw;
-    height: 1.5vw;
-    border-radius: 0.4vw;
-	margin-left: 0.5vw;
-	margin-bottom: 1.0vw;
-}
+
 
 
 

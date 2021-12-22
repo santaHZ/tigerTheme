@@ -149,7 +149,6 @@
 
     .speMenu{
         font-size: 1.8vmax;
-        height: 4.8vmax;
     }
 
     .bigMenuStyle{
@@ -160,7 +159,7 @@
 
 .detail_menu_style{
     display: block;
-    height: 4vw;
+    height: 4vmax;
     cursor: pointer;
     border: 2px solid rgb(161, 21, 21);
     /* background-color: rgb(214, 216, 211); */
