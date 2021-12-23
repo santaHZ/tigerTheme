@@ -31,7 +31,7 @@ function decSpeHeightMain(){
 	let elem = document.getElementById(div_Id);
 	divSpeHeight -= 5;
 	elem.style.height = divSpeHeight + "px";
-	if (divSpeHeight > 5){
+	if (divSpeHeight > 0){
         t = setTimeout(decSpeHeightMain, 5);
 	}else{
 
@@ -45,7 +45,7 @@ let speToggleMain = function(obj_Id) {
     let btnA= document.getElementById(obj_Id);
     
     div_Id = btnA.nextElementSibling.id;
-	console.log(div_Id);
+	//console.log(div_Id);
 
     if (objArray.length < 2){
         objArray.push(div_Id);
@@ -55,8 +55,8 @@ let speToggleMain = function(obj_Id) {
     }
     
     childBtn = btnA.firstElementChild.getAttribute("class");
-	console.log(childBtn);
-	console.log(btnA.innerHTML);
+	//console.log(childBtn);
+	//console.log(btnA.innerHTML);
 	if (childBtn == "add"){
         if (objArray.length == 2){
             if (objArray[0] != objArray[1]){
@@ -66,7 +66,7 @@ let speToggleMain = function(obj_Id) {
                 divFlag = 1; // previous div clicked is same as current one.
             }
         }
-		console.log(divSpeHeight);
+		//console.log(divSpeHeight);
 
 		btnA.firstElementChild.setAttribute("class","minus");
         childBtn = "minus";
@@ -83,7 +83,7 @@ let speToggleMain = function(obj_Id) {
             }
         }
 		
-		console.log(divSpeHeight);
+		//console.log(divSpeHeight);
 		btnA.firstElementChild.setAttribute("class","add");
         childBtn = "add";
         divDirectionFlag = "dec";
@@ -91,3 +91,18 @@ let speToggleMain = function(obj_Id) {
         
 	}
 }
+
+/* let liListArray = document.querySelectorAll('#product_main div ul li ul li');
+//console.log(liListArray);
+
+for(let i=0; i < liListArray.length; i++){
+    if( i / 2 == 0){
+        console.log(liListArray[i].style.height);
+        if (liListArray[i].style.height < liListArray[i+1].style.height){
+            console.log(liListArray[i].style.height);
+            //liListArray[i].style.height = liListArray[i+1].style.height;
+        }else{
+            //liListArray[i+1].style.height = liListArray[i].style.height;
+        }
+    }
+} */

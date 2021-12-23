@@ -1,3 +1,144 @@
+let colNum = 1;
+let touchColNum = 1;
+let uniCounter ={};  // store flexibility, userfriendly, performance 's slider counter value;
+const prodShowcaseArray = [];
+
+
+let productShowcaseColNum = 1;
+const prod_wrapper = document.querySelector('#prod_wrapper');
+
+//******************/ touch move function - begin *******************//
+
+const prod_slider = document.querySelector('#prod_wrapper').firstElementChild  //this is div with class "uni_imgSlider"
+const prod_slides = Array.from(prod_slider.querySelectorAll('.item')); // this is div slides array
+console.log(prod_slides);
+
+
+
+// initialize uniCounter
+if (uniCounter.hasOwnProperty("productShowcase")){
+		
+}else{
+	uniCounter["productShowcase"] = 0;
+	//console.log(uniCounter);
+}
+
+let prod_isDragging = false,
+	prod_startPos = 0,
+	prod_currentTranslate = 0,
+	prod_prevTranslate = 0,
+	prod_animationID = 0,
+	prod_currentIndex = 0
+
+//console.log(prod_slides);
+
+prod_slides.forEach((slide, index) => {
+	const prod_slideImage = slide.querySelector('img');
+	prod_slideImage.addEventListener('dragstart', (e) => e.preventDefault());
+
+	//Touch events
+	prod_slideImage.addEventListener('touchstart', prod_touchStart(index));
+	prod_slideImage.addEventListener('touchend', prod_touchEnd);
+	prod_slideImage.addEventListener('touchmove', prod_touchMove);
+
+	//Mouse events
+	prod_slideImage.addEventListener('mousedown', prod_touchStart(index));
+	prod_slideImage.addEventListener('mouseup', prod_touchEnd);
+	prod_slideImage.addEventListener('mouseleave', prod_touchEnd);
+	prod_slideImage.addEventListener('mousemove', prod_touchMove);
+
+	let myElement ={};
+	myElement.index = index;
+	myElement.dataId = slide.getAttribute("data-media-id");
+	prodShowcaseArray.push(myElement);
+
+})
+
+console.log(prodShowcaseArray);
+
+//Disable context menu
+window.oncontextmenu = function(event){
+	event.preventDefault();
+	event.stopPropagation();
+	return false;
+}
+
+function prod_touchStart(index){
+	return function(event){
+		prod_currentIndex = index;
+		prod_startPos = prod_getPositionX(event);
+		prod_isDragging = true;
+		prod_animationID = requestAnimationFrame(prod_animation);
+	}
+}
+
+function prod_touchEnd(){
+	prod_isDragging = false;
+	cancelAnimationFrame(prod_animationID);
+	const prod_movedBy = prod_currentTranslate - prod_prevTranslate;
+	//console.log(uniCounter["productShowcase"]);
+	if(prod_movedBy < -50 && uniCounter["productShowcase"] < (prod_slides.length - productShowcaseColNum)){
+		uniCounter["productShowcase"] += 1;
+	}
+	if(prod_movedBy > 50 && uniCounter["productShowcase"] > 0){
+		uniCounter["productShowcase"] -= 1;
+	}
+	prod_setPositionByIndex();
+
+}
+
+function prod_touchMove(event){
+	if (prod_isDragging){
+		const prod_currentPosition = prod_getPositionX(event);
+		prod_currentTranslate = prod_prevTranslate + prod_currentPosition - prod_startPos;
+	}
+}
+
+// get mouse or touch postionX
+function prod_getPositionX(event) {
+	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+}
+
+function prod_animation(){
+	prod_setSlidePosition();
+	if (prod_isDragging) requestAnimationFrame(prod_animation);
+}
+
+function prod_setSlidePosition(){
+	prod_slider.style.transform = `translateX(${prod_currentTranslate}px)`;
+}
+
+function prod_setPositionByIndex(){
+	let prod_size = Math.round(prod_slider.clientWidth / productShowcaseColNum)
+	prod_currentTranslate = uniCounter["productShowcase"] * (- prod_size);
+	prod_prevTranslate = prod_currentTranslate;
+	prod_setSlidePosition();
+}
+
+
+//******************************  above codes are added by developing ******************//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(
@@ -598,6 +739,7 @@ class VariantSelects extends HTMLElement {
   updateMedia() {
     if (!this.currentVariant) return;
     if (!this.currentVariant.featured_media) return;
+    console.log('i am here');  //testing variant selector
     const newMedia = document.querySelector(
       `[data-media-id="${this.dataset.section}-${this.currentVariant.featured_media.id}"]`
     );
@@ -605,23 +747,48 @@ class VariantSelects extends HTMLElement {
     if (!newMedia) return;
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
-    const parent = newMedia.parentElement;
-    if (parent.firstChild == newMedia) return;
+    //const parent = newMedia.parentElement;
+    //console.log(parent);
+    //if (parent.firstChild == newMedia) return;
     modalContent.prepend(newMediaModal);
-    parent.prepend(newMedia);
+    //parent.prepend(newMedia);
     this.stickyHeader = this.stickyHeader || document.querySelector('sticky-header');
     if(this.stickyHeader) {
       this.stickyHeader.dispatchEvent(new Event('preventHeaderReveal'));
     }
-    window.setTimeout(() => {
+
+    console.log("begin shifting image...")
+    let counterId = newMedia.parentElement.parentElement.parentElement.id;
+
+    console.log(counterId);
+
+    if (uniCounter.hasOwnProperty(counterId)){
+      //console.log(uniCounter);
+  
+    }else{
+      uniCounter[counterId] = 0;
+    }
+
+    // scroll to selected variant image.
+    for (let i =0; i < prodShowcaseArray.length; i++){
+      if (prodShowcaseArray[i]['dataId'] == newMedia.getAttribute("data-media-id")){
+        uniCounter[counterId] = prodShowcaseArray[i]['index'];
+        console.log(counterId);
+        console.log(uniCounter[counterId]);
+        console.log(uniCounter);
+        prod_setPositionByIndex();
+      }
+    }
+    /* window.setTimeout(() => {
       parent.scrollLeft = 0;
-      parent.querySelector('li.product__media-item').scrollIntoView({behavior: 'smooth'});
-    });
+      parent.querySelector('div.item').scrollIntoView({behavior: 'smooth'});//here must be the fucntion to show big image of variant
+    }); */
   }
 
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({ }, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+    //console.log('url changed!');
   }
 
   updateShareUrl() {

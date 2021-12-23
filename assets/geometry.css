@@ -6,7 +6,7 @@
     padding: 0px;
     margin: 0px;
     margin-bottom: 2vmax;
-    border: 1px solid cornflowerblue;
+    /* border: 1px solid cornflowerblue; */
 }
 
 #geometry .tabRoundCorner{
@@ -282,8 +282,23 @@
     list-style: none;
     padding: 10px;
     padding-left: 20px;
-    font-size: 1.0vw; /* define data font*/
+    font-size: 1.0vmax; /* define data font*/
 }
+
+@media screen and (max-width: 749px) {
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+        font-size: 3.0vmax;
+    }
+    
+}
+
+@media screen and (min-width: 750px) {
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+        font-size: 3.0vmax;
+    }
+    
+}
+
 
 #geometry .foldedLeftColWidth{
     display: block;

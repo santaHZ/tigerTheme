@@ -7,7 +7,7 @@
     width: 100%;
     margin-bottom: 2vmax;
     clear: both;
-    border: 1px solid cornflowerblue;
+    /* border: 1px solid cornflowerblue; */
 }
 #performance .tabRoundCorner{
     display: block;
@@ -167,9 +167,10 @@
     display: block;
     padding: 0px;
     margin: 0px;
-    border: 0px solid chocolate;
     float: left;
-    margin-bottom: 3.0vmax;
+    margin-left: 10.0vmax;
+    margin-top: 6.0vmax;
+    /* border: 1px solid chocolate; */
 }
 
 
@@ -192,13 +193,15 @@
 }
 
 .perf_big{
-    font-size: 4.0vw;
+    font-size: 4.0vmax;
+    line-height: 4.4vmax;
     color: chartreuse;
 }
 
 
 .perf_bold{
-    font-size: 1.5vw;
+    font-size: 1.5vmax;
+    line-height: 1.6vmax;
     color: black;
 }
 
@@ -211,7 +214,9 @@
     .performance_main_desc_data{
         width: 100%;
         clear:left;
-
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 30px;
     }
 
     .performance_main_desc_data div{
@@ -228,13 +233,15 @@
     }
 
     .perf_big{
-        font-size: 4.5vmax;
+        font-size: 4.0vmax;
+        line-height: 4.8vmax;
         color: chartreuse;
     }
     
     
     .perf_bold{
-        font-size: 2.5vmax;
+        font-size: 1.5vmax;
+        line-height: 1.9vmax;
         color: black;
     }
     

@@ -1,7 +1,3 @@
-let colNum = 0;
-let touchColNum = 0;
-let uniCounter ={};  // store flexibility, userfriendly, performance 's slider counter value;
-
 const flex_wrapper = document.querySelector('#flex_wrapper');
 const docAllSliderImages = document.querySelectorAll('.item ul li img');
 
@@ -25,6 +21,9 @@ let flex_isDragging = false,
 	flex_prevTranslate = 0,
 	flex_animationID = 0,
 	flex_currentIndex = 0
+
+let flex_currentPosition = 0;
+
 
 //console.log(flex_slides);
 
@@ -55,6 +54,7 @@ window.oncontextmenu = function(event){
 function flex_touchStart(index){
 	return function(event){
 		flex_currentIndex = index;
+		
 		flex_startPos = flex_getPositionX(event);
 		flex_isDragging = true;
 		flex_animationID = requestAnimationFrame(flex_animation);
@@ -73,9 +73,7 @@ function flex_touchEnd(){
 		uniCounter["flexibility"] -= 1;
 	}
 	flex_setPositionByIndex();
-
 	let btnNodes = flex_btn.children;
-
 	btnNodes.forEach((child, index) =>{
 		if (index != uniCounter["flexibility"]){
 			child.setAttribute("class","buttonDotEmpty");
@@ -83,38 +81,49 @@ function flex_touchEnd(){
 			child.setAttribute("class","buttonDotSolid");
 		}
 	})
-
-
 }
 
 function flex_touchMove(event){
+
+	
+	
 	if (flex_isDragging){
-		const flex_currentPosition = flex_getPositionX(event);
+		flex_currentPosition = flex_getPositionX(event);
 		flex_currentTranslate = flex_prevTranslate + flex_currentPosition - flex_startPos;
+		
 	}
+	console.log("flex_startPos:" + flex_startPos);
+	console.log("flex_currentPosition:" + flex_currentPosition);
+	console.log('position after moved:' + flex_currentTranslate);
 }
 
 // get mouse or touch postionX
 function flex_getPositionX(event) {
+	console.log("pageX:" + event.pageX);
+	console.log("clientX:" + event.clientX);
 	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
 }
 
 function flex_animation(){
-	flex_setSlidePosition();
+	flex_setSlidePosition(); //after clicked arrow button, then mousedown on image will make image move. a problem.
+	console.log('1 triggered.');  
+	console.log("2 currentTranslate:" + flex_currentTranslate);
 	if (flex_isDragging) requestAnimationFrame(flex_animation);
 }
 
 function flex_setSlidePosition(){
+	console.log('setSlidePosition:' + flex_currentTranslate);
 	flex_slider.style.transform = `translateX(${flex_currentTranslate}px)`;
 }
 
 function flex_setPositionByIndex(){
-	let flex_size = Math.round(flex_slider.clientWidth / touchColNum)
+	let flex_size = Math.round(flex_slider.clientWidth / touchColNum);
+	console.log("touch end size:" + flex_size);
 	flex_currentTranslate = uniCounter["flexibility"] * (- flex_size);
+	console.log("touch end currentTranslate:" + flex_currentTranslate);
 	flex_prevTranslate = flex_currentTranslate;
 	flex_setSlidePosition();
 }
-
 
 
 
@@ -176,12 +185,23 @@ let fun_Uni_prevBtn2 = function(btnId){
 	if (uniCounter[counterId] == 0){
 		return;
 	}else{
-		uni_imgSlider.style.transition = "transform 0.4s ease-in-out";
+		//uni_imgSlider.style.transition = "transform 0.4s ease-in-out";
 		uniCounter[counterId] --;
-		//console.log('btn:' + uniCounter[counterId]);
-		size = Math.round(uni_imgSlider.clientWidth / colNum)
+		console.log('btn:' + uniCounter[counterId]);
+		console.log(counterId);
 
-		uni_imgSlider.style.transform = 'translateX(' + (- size * uniCounter[counterId] ) + 'px)';
+		switch(counterId){
+			case "flexibility":
+				//console.log('flex');
+				flex_setPositionByIndex();
+			case "performance":
+				//console.log('ok');
+				perf_setPositionByIndex();
+			case "userfriendly":
+				userfly_setPositionByIndex();
+				
+		}
+
 	
 		// update dot button bgcolor
 		let dotBtnsForArrow = curClkObj.parentElement.parentElement.querySelector('.leftBtns').children;
@@ -221,13 +241,24 @@ let fun_Uni_nextBtn2 = function(btnId){
 	if (uniCounter[counterId] == maxCounter){
 		return;
 	}else{
-		uni_imgSlider.style.transition = "transform 0.4 ease-in-out";
+		//uni_imgSlider.style.transition = "transform 0.4 ease-in-out";
 		uniCounter[counterId] ++;
-		//console.log(uniCounter[counterId]);
-		size = Math.round(uni_imgSlider.clientWidth / colNum)
+		console.log(uniCounter[counterId]);
+		console.log(counterId);
 
-		uni_imgSlider.style.transform = 'translateX(' + (- size * uniCounter[counterId] ) + 'px)';
-	
+		switch(counterId){
+			case "flexibility":
+				//console.log('flex');
+				flex_setPositionByIndex();
+			case "performance":
+				//console.log('ok');
+				perf_setPositionByIndex();
+			case "userfriendly":
+				userfly_setPositionByIndex();
+				
+		}
+
+
 		// update dot button bgcolor
 		let dotBtnsForArrow = curClkObj.parentElement.parentElement.querySelector('.leftBtns').children;
 		dotBtnsForArrow.forEach((child, index) =>{
@@ -392,12 +423,6 @@ window.addEventListener('resize', function(event) {
 			node.setAttribute("onclick","dotBtnFun(this.id)");
 			perf_btn.appendChild(node);
 		}
-
-
-
-
-
-
 	}
 
 }, true);
