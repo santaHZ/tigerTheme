@@ -361,10 +361,13 @@ window.addEventListener('resize', function(event) {
 
 
 		// reset [performance] dot button no. after window resizing 
+
+		/// remove all the dot buttons
 		while(perf_btn.firstElementChild){
 			perf_btn.removeChild(perf_btn.firstElementChild);
 		}
 
+		/// rebuit the dot buttons according to new colNum
 		for (let i=0; i < (perf_slides.length - colNum + 1); i++){
 			let node = document.createElement("div");
 			node.setAttribute("id", "perf_DotBtn-" +i);
@@ -390,10 +393,13 @@ window.addEventListener('resize', function(event) {
 
 
 		// reset [flexibility] dot button no. after window resizing 
+
+		/// remove all the dot buttons
 		while(flex_btn.firstElementChild){
 			flex_btn.removeChild(flex_btn.firstElementChild);
 		}
 
+		/// rebuit the dot buttons according to new colNum
 		for (let i=0; i < (flex_slides.length - colNum + 1); i++){
 			let node = document.createElement("div");
 			node.setAttribute("id", "flex_DotBtn-" +i);
