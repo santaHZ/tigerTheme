@@ -8,10 +8,22 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'product-extra-info.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'product-main.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'geometry.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'flexibility.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'performance.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'userfriendly.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'product-showcase.css' | asset_url }}" type="text/css">
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-shoes.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-main.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-main-imgUrl.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'geometry.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'flexibility.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'performance.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'userfriendly.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-showcase.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-main-winOnLoad.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
@@ -19,56 +31,65 @@
   <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-
 <section class="page-width">
   <div class="product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
-      <slider-component class="slider-mobile-gutter">
-        <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-          {{ "accessibility.skip_to_product_info" | t }}
-        </a>
-        <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
-          {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
-          {%- if product.selected_or_first_available_variant.featured_media != null -%}
-            {%- assign media = product.selected_or_first_available_variant.featured_media -%}
-            <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-              {% render 'product-thumbnail', media: media, position: 'featured', loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-            </li>
-          {%- endif -%}
-          {%- for media in product.media -%}
-            {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
-              </li>
-            {%- endunless -%}
-          {%- endfor -%}
-        </ul>
-        {%- assign filtered_media_size = product.media.size | minus: variant_images.size | plus: 1 -%}
-        <div class="slider-buttons no-js-hidden{% if product.media.size < 2 or section.settings.hide_variants and filtered_media_size < 2 %} small-hide{% endif %}">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
-            <span class="slider-counter--total">{% if section.settings.hide_variants %}{{ filtered_media_size }}{% else %}{{ product.media.size }}{% endif %}</span>
+      <div class="productShowcaseWrapper">
+        <div id="productShowcase">
+          <div id="prod_wrapper">
+            <div class="uni_imgSlider">
+              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              {%- if product.selected_or_first_available_variant.featured_media != null -%}
+                <div class="item" data-media-id="{{ section.id }}-{{ media.id }}">
+                  <ul>
+                    <li>
+                      <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
+                    </li>
+                  </ul>
+                </div>
+              {%- endif -%}
+              {%- for media in product.media -%}
+                {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                  <div class="item" data-media-id="{{ section.id }}-{{ media.id }}">
+                    <ul>
+                      <li>
+                        <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
+                      </li>
+                    </ul>
+                  </div>
+                {%- endunless -%}
+              {%- endfor -%}
+            </div>
           </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-caret' %}</button>
         </div>
-      </slider-component>
-      {%- if first_3d_model -%}
-        <button
-          class="button button--full-width product__xr-button"
-          type="button"
-          aria-label="{{ 'products.product.xr_button_label' | t }}"
-          data-shopify-xr
-          data-shopify-model3d-id="{{ first_3d_model.id }}"
-          data-shopify-title="{{ product.title | escape }}"
-          data-shopify-xr-hidden
-        >
-          {% render 'icon-3d-model' %}
-          {{ 'products.product.xr_button' | t }}
-        </button>
-      {%- endif -%}
+        <div id="productPeekShowcase">
+          <div id="prodPeek_wrapper">
+            <div class="uni_imgSlider">
+              {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+              {%- if product.selected_or_first_available_variant.featured_media != null -%}
+                <div class="item" prodPeek-data-media-id="{{ section.id }}-{{ media.id }}">
+                  <ul>
+                    <li>
+                      <img src="{{- media | image_url -}}" alt="{{media.alt}}"/>
+                    </li>
+                  </ul>
+                </div>
+              {%- endif -%}
+              {%- for media in product.media -%}
+                {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                <div class="item" prodPeek-data-media-id="{{ section.id }}-{{ media.id }}">
+                  <ul>
+                    <li>
+                      <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
+                    </li>
+                  </ul>
+                </div>
+                {%- endunless -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="product__info-wrapper grid__item">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
@@ -199,8 +220,6 @@
               </details>
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
-            <h1>This is customized content</h1>
-            {{ product.title }}
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
@@ -368,33 +387,613 @@
         {%- endfor -%}
       </div>
     </div>
-    <div id="product-extra-info">
-      <h1>Show or hide product list</h1>
-      <p id="spe_Tech_Menu" onclick="speToggle(this.id)">- Technology</p>
-      <div id="spe_Tech" style="height: 350px;">
-        <ul style="width:50px;"></ul>
-        <ul>
-          <li class="rtBoder1px btBoder1px topBoder1px">Motor</li>
-          <li class="rtBoder1px btBoder1px">Pedal Assist Levels</li>
-          <li class="rtBoder1px btBoder1px">Display</li>
-          <li class="rtBoder1px btBoder1px">Battery</li>
-          <li class="rtBoder1px btBoder1px">Dive Mode</li>
-        </ul>
-        <ul>
-          <li class="btBoder1px topBoder1px">40Nm / 250W motor</li>
-          <li class="btBoder1px">1 level</li>
-          <li class="btBoder1px">LCD display</li>
-          <li class="btBoder1px">Tianneng 48V/12A, removable, supports up to 22 miles</li>
-          <li class="btBoder1px">Pedal-assist and full twist throttle</li>
-        </ul>
+  </div>
+  <div class="main_top_banner">
+    <div>
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_1.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Motor</li>
+        <li class="main_top_light">500W brushless geared hub motor with max torque of up to 52Nm</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_2.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Range</li>
+        <li class="main_top_light">A fully charged battery can last up to 22 miles and 4 hours to juice up fully</li>
+      </ul>
+    </div>
+    <div class="topBannerMiddleSpilit">
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_3.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Battery</li>
+        <li class="main_top_light">48V/10A Li-ion Battery on frame for better weight distribution</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_4.png?v=1639141246" width="50" height="50" loading="lazy"></li>
+        <li class="main_top_bold">Pedal Level</li>
+        <li class="main_top_light">Variable  speed levels from level 1 to level 5 to provide a smoother assistance</li>
+      </ul>
+    </div>
+  </div>
+  <div class="main_banner">
+    <img id="mainBannerImg" class="main_banner_img" width="1500" src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main02.jpg?v=1639139002"  loading="lazy">
+    <div class="main_banner_name" id="mainBannerName">FOLDING OX</div>
+    <div class="main_banner_f1" id="mainBannerF1">Cycling with Stability.</div>
+    <div class="main_banner_f2 MoreContent" id="mainBannerF2">Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!</div>
+    <div class="main_banner_f2 LessContent" id="mainBannerF2">Folding OX with you wherever you go. It truly makes cycling a viable option every day!</div>
+  </div>
+  <div id="performance">
+    <div class="tabRoundCorner"></div>
+    <div class="bigMenuStyle" >Performance</div>
+    <div class="performance_desc">Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.</div>
+		<div class="performance_main_desc">
+      <div class="performance_main_desc_img">
+        <img id="performanceMainImg" width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-00.png?v=1639133555" >
+      </div>
+      <div id="performanceMainDescData" class="performance_main_desc_data">
+        <div>
+          <ul>
+            <li id="gearHub" class="perf_big">0W</li>
+            <li class="perf_bold">Geared Hub Motor</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li id="milesPerCharge" class="perf_big">22+</li>
+            <li class="perf_bold">Miles per Charge</li>
+          </ul>
+        </div>
+        <div class="columnSplitMiddle">
+          <ul>
+            <li id="maxTorque" class="perf_big">52Nm</li>
+            <li class="perf_bold">Max Torque</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li id="perdalAssLevel" class="perf_big">5</li>
+          <li class="perf_bold">Pedal Assist Levels</li>
+          </ul>
+        </div>
       </div>
     </div>
+    <div id="perf_wrapper">
+			<div class="uni_imgSlider">
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-01.jpg?v=1639133554" width="450" height="300"></li>
+						<li class="titleStyle">Rear Geared Motor</li>
+						<li>Rear hub motor delivers up to 500W of peak power and 52Nm torque ensuring controlled acceleration.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-02.jpg?v=1639133554" width="450" height="300"></li>
+						<li class="titleStyle">Pedal Assist System</li>
+						<li>The pedal assist system gives you power with each pedal stroke. 5 levels at your disposal to help getting where you want to go.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-03.jpg?v=1639133554" width="450" height="300"></li>
+						<li class="titleStyle">Li-ion Battery</li>
+						<li>Located on the down tube of the eBike for better weight distribution. Delivers a range on a single charge up to 22 miles.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-04.jpg?v=1639133555" width="450" height="300"></li>
+						<li class="titleStyle">LCD Display</li>
+						<li>The LCD screen gives you all the information you care about before next exploration with peace of mind.</li>
+					</ul>
+				</div>
+        <div class="item">
+					<ul>
+						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-05.jpg?v=1639133555" width="450" height="300"></li>
+						<li class="titleStyle">Mechanical Disc Brake</li>
+						<li>A wire cable from the lever to the calliper to activate the disc-brake. Reliable stopping power provided by Shimano, perfect for both wet and dry conditions.</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+    <div id="perf_ctlBtn1">
+      <div class="leftBtns"></div>
+      <div class="rightBtns">
+        <div id="fun_perf_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
+        <div id="fun_perf_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
+      </div>
+    </div>
+	</div>
+  <div id="flexibility">
+    <div class="tabRoundCorner"></div>
+    <div class="bigMenuStyle" >Flexibility</div>
+    <div class="flexibility_desc">Designed for riders who want the go-anywhere flexibility. This Folding OX Electric Fat Tire Bike provides a geometry that blends comfort with capability. The low-profile frame is foldable while stiff and strong. It also makes this an easy bike to step in and out of.</div>
+		<div id="flex_wrapper">
+			<div class="uni_imgSlider">
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/flexibility-01.jpg?v=1639129439" width="450" height="300"></li>
+						<li class="titleStyle">Step-thru Frame</li>
+						<li>Ultra-low standover height design makes it ability to accommodate smaller riders. Allows riders of all sizes to get farther back on the bike when the terrain demands it.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/flexibility-02.jpg?v=1639129439" width="450" height="300"></li>
+						<li class="titleStyle">Ultra-Fat Tires</li>
+						<li>Equipped with ultra-fat tires from CST making it a perfect choice for trail riding, as well as the beach or boardwalk.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/flexibility-03.jpg?v=1639129439" width="450" height="300"></li>
+						<li class="titleStyle">Foldable</li>
+						<li>It doesn't take up much space for storage thanks to its folding frame. Folds into half can be ease of transport as it is compact enough to fit into almost every car.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/flexibility-04.jpg?v=1639129439" width="450" height="300"></li>
+						<li class="titleStyle">Rear Rack</li>
+						<li>Integrated with a durable steel rear rack for more mounting possibilities that allows you to carry more gear with you or transport your cargo effortlessly while you're riding.</li>
+					</ul>
+				</div>
+        <div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/flexibility-05.jpg?v=1639129439" width="450" height="300"></li>
+						<li class="titleStyle">Small Wheels</li>
+						<li>The smaller diameter tires sized as 20” x 4” has ability to quickly maneuver through traffic with fast acceleration.</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+    <div id="flex_ctlBtn1">
+      <div class="leftBtns"></div>
+      <div class="rightBtns">
+        <div id="fun_flex_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
+        <div id="fun_flex_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
+      </div>
+    </div>
+	</div>
+  <div id="userfriendly">
+    <div class="tabRoundCorner"></div>
+    <div class="bigMenuStyle" >User-Friendly</div>
+    <div class="userfriendly-desc">Sometimes the simplest solution brings the most comfort. Comfortable suspension, intuitive twist grip throttle and cushy saddle are all standard.</div>
+		<div id="userfly_wrapper">
+			<div class="uni_imgSlider">
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/user-friendly-01.jpg?v=1639123249" width="450" height="300"></li>
+						<li class="titleStyle">Hi-Rise Handlebar</li>
+						<li>The position of the hi-rise handlebar put your wrists and back in the most natural position while riding.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/user-friendly-02.jpg?v=1639123265" width="450" height="300"></li>
+						<li class="titleStyle">Front Suspension</li>
+						<li>The front suspension takes a large majority of the rider's weight. It can gently moderate the speed of the compression and rebound to smooth out the ride.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/user-friendly-03.jpg?v=1639123278" width="450" height="300"></li>
+						<li class="titleStyle">Padded Saddle</li>
+						<li>Well sculpted seat covered up with a thick layer of foam that will completely bring a pleasurable riding experience.</li>
+					</ul>
+				</div>
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopifycdn.net/s/files/1/0614/0490/5716/files/user-friendly-04.jpg?v=1639123289" width="450" height="300"></li>
+						<li class="titleStyle">Twist Throttle</li>
+						<li>Propels you and your bike forward by twisting the throttle, especially for additional boost up hills or when accelerating.</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+		<div id="userfly_ctlBtn1">
+      <div class="leftBtns"></div>
+      <div class="rightBtns">
+        <div id="fun_userfly_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
+        <div id="fun_userfly_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
+      </div>
+    </div>
+	</div>
+  <div id="geometry">
+    <div class="tabRoundCorner"></div>
+    <div class="bigMenuStyle" >Geometry</div>
+		<div class="tabBtnDiv">
+			<div class="tabBtn1" onclick="divShowLeft()">
+				<ul>
+					<li>Overall</li>
+				</ul>
+			</div>
+			<div class="tabBtn2" onclick="divShowRight()">
+				<ul>
+					<li>Folded</li>
+				</ul>
+			</div>
+		</div>
+		<div class="tabInfo">
+			<div class="overall">
+				<div class="overallWrapper">
+						<div>
+              <img calss="overallImg" src="" width="480" height="480" loading="lazy">
+            </div>
+            <div class="overallWrapperData">
+              <ul class="overallLeftColWith">
+                <li class="overallBtBoder1px overallTopBoder1px overallBgColor" >Overall Size</li>
+                <li class="overallBtBoder1px overallBgColor" >Wheel Size</li>
+                <li class="overallBtBoder1px">A - Seat tube length</li>
+                <li class="overallBtBoder1px">B - Seatpost diamater</li>
+                <li class="overallBtBoder1px">C - Saddle height</li>
+                <li class="overallBtBoder1px">D - Handlebar height</li>
+                <li class="overallBtBoder1px">E - Handlebar width</li>
+                <li class="overallBtBoder1px">F - Crank length</li>
+                <li class="overallBtBoder1px">G - Wheelbase</li>
+                <li class="overallBtBoder1px">H - Rear carrier height</li>
+              </ul>
+              <ul class="overallRightColWith">
+                <li class="overallBtmBoder1px overallTopBoder1px overallBgColor">64" x 44"</li>
+                <li class="overallBtmBoder1px overallBgColor">20" x 4"</li>
+                <li class="overallBtmBoder1px">16.5"</li>
+                <li class="overallBtmBoder1px">1"</li>
+                <li class="overallBtmBoder1px">31.8" - 38.5"</li>
+                <li class="overallBtmBoder1px">44"</li>
+                <li class="overallBtmBoder1px">21.6"</li>
+                <li class="overallBtmBoder1px">6.8"</li>
+                <li class="overallBtmBoder1px">43.3"</li>
+                <li class="overallBtmBoder1px">25.5"</li>
+              </ul>
+            </div>
+				</div>
+				<div class="tabBtmNoteDiv"><ul><li>All measurements provided in inch unless otherwise noted.</li></ul></div>
+			</div>
+			<div class="folded">
+				<div class="foldedWrapper">
+					<div>
+            <img src="" width="480" height="480" loading="lazy">
+          </div>
+          <div class="foldedWrapperData">
+            <ul class="foldedLeftColWidth">
+              <li class="overallBtBoder1px overallTopBoder1px foldedBgColor">A - Height</li>
+              <li class="overallBtBoder1px foldedBgColor">B - Width</li>
+            </ul>
+            <ul class="foldedRightColWidth">
+              <li class="overallBtmBoder1px overallTopBoder1px foldedBgColor">47.6"</li>
+              <li class="overallBtmBoder1px foldedBgColor">37.8"</li>
+            </ul>
+          </div>
+				</div>
+				<div class="tabBtmNoteDiv"><ul><li >All measurements provided in inch unless otherwise noted.</li></ul></div>
+			</div>
+		</div>
+	</div>
+  <div id="product_main">
+    <div class="roundCorner"></div>
+    <div class="bigMenuStyle" >Specification</div>
+    <div id="product_main_spe_Tech_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Technology</div>
+    </div>
+    <div id="product_main_spe_Tech" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with">
+            <li class="rtBoder1px btBoder1px topBoder1px">Motor</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">52Nm/500W motor</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Pedal Assist Levels</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">0~5 level</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Display</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">861 LCD display</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Battery</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Tianneng 48V/10A, removable, supports up to 22 miles</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Dive Mode</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">5-level Pedal-assist and Full Twist Throttle</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
+    <div id="product_main_spe_Frame_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Frame</div>
+    </div>
+    <div id="product_main_spe_Frame" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with">
+            <li class="rtBoder1px btBoder1px topBoder1px">Colors</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">Gunmetal Black; Metallic White</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Frame</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Nakto steel step-thru frame</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Fork</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Trama 82B sprung fork, 60mm travel</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="product_main_spe_Components_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Components</div>
+    </div>
+    <div id="product_main_spe_Components" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with">
+            <li class="rtBoder1px btBoder1px topBoder1px">Handle bars</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">Hi-rise cruiser bar, aluminium alloy, 25.2" width</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Stem</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Steel</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Seatpost</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Aluminium alloy dropper post, seat-height adjustability, 1" diameter</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Saddle</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Comfort padded in black, 2 damping spring</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Pedals</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Yonghua PA66, foldable</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
+    <div id="product_main_spe_Drivetrain_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Drivetrain</div>
+    </div>
+    <div id="product_main_spe_Drivetrain" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with">
+            <li class="rtBoder1px btBoder1px topBoder1px">Shifters</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">Shimano Tourney TZ</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Rear Derailleur</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Shimano, RD-TZ50-GS</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear">
+            <li class="rtBoder1px btBoder1px">Brakes</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Shimano, mechanical disc, steel</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Brake Levers</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Steel, silver</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Chain</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Rust resistant</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Cranket</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Lide 52*152</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Bottom Bracket</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Integral bottom bracket</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
+    <div id="product_main_spe_Wheels_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Wheels</div>
+    </div>
+    <div id="product_main_spe_Wheels" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px topBoder1px">Rims</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">Aluminium alloy</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Hubs</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">52Nm/500W motor, intergrated into the rear wheel, general brushless hub</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Spokes</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Carbon steel, silver</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Types</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">Kenda or CST, 26 x 4"</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
+    <div id="product_main_spe_Accessories_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Accessories</div>
+    </div>
+    <div id="product_main_spe_Accessories" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px topBoder1px">Pack</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">Rear rack, steel</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px">Front light</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px">LED light</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div id="product_main_spe_Weight_Menu" onclick="speToggleMain(this.id)" class="detail_menu_style">
+      <div class="add"></div>
+      <div class="speMenu">Weight</div>
+    </div>
+    <div id="product_main_spe_Weight" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
+      <ul>
+        <li>
+          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
+            <li class="rtBoder1px btBoder1px topBoder1px">Weight</li>
+          </ul>
+          <ul class="product_main_rtUl_with">
+            <li class="btBoder1px topBoder1px">751 lbs.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-
+  
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>

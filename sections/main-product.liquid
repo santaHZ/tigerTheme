@@ -41,21 +41,13 @@
               {%- assign media = product.selected_or_first_available_variant.featured_media -%}
               {%- if product.selected_or_first_available_variant.featured_media != null -%}
                 <div class="item" data-media-id="{{ section.id }}-{{ media.id }}">
-                  <ul>
-                    <li>
-                      <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
-                    </li>
-                  </ul>
+                  <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
                 </div>
               {%- endif -%}
               {%- for media in product.media -%}
                 {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                   <div class="item" data-media-id="{{ section.id }}-{{ media.id }}">
-                    <ul>
-                      <li>
-                        <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
-                      </li>
-                    </ul>
+                    <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
                   </div>
                 {%- endunless -%}
               {%- endfor -%}
@@ -68,21 +60,13 @@
               {%- assign media = product.selected_or_first_available_variant.featured_media -%}
               {%- if product.selected_or_first_available_variant.featured_media != null -%}
                 <div class="item" prodPeek-data-media-id="{{ section.id }}-{{ media.id }}">
-                  <ul>
-                    <li>
-                      <img src="{{- media | image_url -}}" alt="{{media.alt}}"/>
-                    </li>
-                  </ul>
+                  <img src="{{- media | image_url -}}" alt="{{media.alt}}"/>
                 </div>
               {%- endif -%}
               {%- for media in product.media -%}
                 {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 <div class="item" prodPeek-data-media-id="{{ section.id }}-{{ media.id }}">
-                  <ul>
-                    <li>
-                      <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
-                    </li>
-                  </ul>
+                  <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
                 </div>
                 {%- endunless -%}
               {%- endfor -%}
@@ -442,19 +426,19 @@
         </div>
         <div>
           <ul>
-            <li id="milesPerCharge" class="perf_big">22+</li>
+            <li id="milesPerCharge" class="perf_big">0+</li>
             <li class="perf_bold">Miles per Charge</li>
           </ul>
         </div>
         <div class="columnSplitMiddle">
           <ul>
-            <li id="maxTorque" class="perf_big">52Nm</li>
+            <li id="maxTorque" class="perf_big">0Nm</li>
             <li class="perf_bold">Max Torque</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li id="perdalAssLevel" class="perf_big">5</li>
+            <li id="perdalAssLevel" class="perf_big">0</li>
           <li class="perf_bold">Pedal Assist Levels</li>
           </ul>
         </div>
@@ -683,10 +667,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topBoder1px">Motor</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Motor</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">52Nm/500W motor</li>
+            <li class="btBoder1px topLtBoder1px">52Nm/500W motor</li>
           </ul>
         </li>
       </ul>
@@ -740,10 +724,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topBoder1px">Colors</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Colors</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">Gunmetal Black; Metallic White</li>
+            <li class="btBoder1px topLtBoder1px">Gunmetal Black; Metallic White</li>
           </ul>
         </li>
       </ul>
@@ -776,10 +760,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topBoder1px">Handle bars</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Handle bars</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">Hi-rise cruiser bar, aluminium alloy, 25.2" width</li>
+            <li class="btBoder1px topLtBoder1px">Hi-rise cruiser bar, aluminium alloy, 25.2" width</li>
           </ul>
         </li>
       </ul>
@@ -833,10 +817,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topBoder1px">Shifters</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Shifters</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">Shimano Tourney TZ</li>
+            <li class="btBoder1px topLtBoder1px">Shimano Tourney TZ</li>
           </ul>
         </li>
       </ul>
@@ -910,10 +894,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px topBoder1px">Rims</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Rims</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">Aluminium alloy</li>
+            <li class="btBoder1px topLtBoder1px">Aluminium alloy</li>
           </ul>
         </li>
       </ul>
@@ -957,10 +941,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px topBoder1px">Pack</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Pack</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">Rear rack, steel</li>
+            <li class="btBoder1px topLtBoder1px">Rear rack, steel</li>
           </ul>
         </li>
       </ul>
@@ -984,10 +968,10 @@
       <ul>
         <li>
           <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px topBoder1px">Weight</li>
+            <li class="rtBoder1px btBoder1px topRtBoder1px">Weight</li>
           </ul>
           <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topBoder1px">751 lbs.</li>
+            <li class="btBoder1px topLtBoder1px">751 lbs.</li>
           </ul>
         </li>
       </ul>

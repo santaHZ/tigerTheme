@@ -9,9 +9,13 @@ const prod_wrapper = document.querySelector('#prod_wrapper');
 
 //******************/ touch move function - begin *******************//
 
-const prod_slider = document.querySelector('#prod_wrapper').firstElementChild  //this is div with class "uni_imgSlider"
+const prod_slider = document.querySelector('#prod_wrapper').firstElementChild;  //this is div with class "uni_imgSlider"
 const prod_slides = Array.from(prod_slider.querySelectorAll('.item')); // this is div slides array
-console.log(prod_slides);
+console.log("prod_slides:" + prod_slides);
+console.log("prod_slides[0] clientWidth:" + prod_slides[0].clientWidth);
+console.log("prod_slider clientWidth:" + prod_slider.clientWidth);
+console.log("prod_slider scrollWidth:" + prod_slider.scrollWidth);
+console.log("prod_slider clientHeight:" + prod_slider.clientHeight);
 
 
 
@@ -109,7 +113,10 @@ function prod_setSlidePosition(){
 }
 
 function prod_setPositionByIndex(){
-	let prod_size = Math.round(prod_slider.clientWidth / productShowcaseColNum)
+	//let prod_size = Math.round(prod_slider.clientWidth / productShowcaseColNum);
+  let prod_size = prod_slider.clientWidth / productShowcaseColNum;
+  console.log("prod_slider clientWidth:" + prod_slider.clientWidth);
+  console.log("prod_slider clientHeight:" + prod_slider.clientHeight);
 	prod_currentTranslate = uniCounter["productShowcase"] * (- prod_size);
 	prod_prevTranslate = prod_currentTranslate;
 	prod_setSlidePosition();

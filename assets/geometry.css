@@ -56,7 +56,7 @@
     background-color: white;
     cursor: pointer;
     padding: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* set the margin-botton to show div backgroud*/
 }
 
 #geometry .tabBtnDiv .tabBtn2 ul{
@@ -76,7 +76,7 @@
     background-color: white;
     cursor: pointer;
     padding: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* set the margin-botton to show div backgroud*/
 }
 
 #geometry .tabInfo{
@@ -87,21 +87,6 @@
     display: block;
     width: 40%;
     height: 40%;
-}
-
-
-@media screen and (max-width: 749px) {
-    #geometry .tabInfo img{
-        width: 85vw;
-        height: 85vw;
-    }
-}
-
-@media screen and (min-width: 750px) {
-    #geometry .tabInfo img{
-        width: 40vw;
-        height: 40vw;
-    }
 }
 
 #geometry .tabInfo .overall {
@@ -121,16 +106,6 @@
     display: flex;
 }
 
-@media screen and (max-width: 749px) {
-    #geometry .tabInfo .overall .overallWrapper{
-        padding: 0px;
-        margin: 0px;
-        width: 100%;
-        position: relative;
-        display: block;
-    }
-}
-
 #geometry .tabInfo .overall .overallWrapper .overallWrapperData{ /*div  for data*/
     padding: 0px;
     margin: 0px;
@@ -140,8 +115,6 @@
     width: 100%;
     float: left;
 }
-
-
 
 #geometry .tabInfo .overall .overallWrapper .overallWrapperData ul{ /* ul with class overallLeftColWith*/
     position: relative;
@@ -214,7 +187,6 @@
     padding-left: 10px;
 }
 
-
 /*Define folded product data*/
 #geometry .tabInfo{
     padding: 0px;
@@ -241,17 +213,6 @@
     display: flex;
     width: 100%;
 }
-@media screen and (max-width: 749px) {
-    #geometry .tabInfo .folded .foldedWrapper {
-        padding: 0px;
-        margin: 0px;
-        position: relative;
-        display: block;
-        width: 100%;
-    }
-
-}
-
 
 #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData{
     padding: 0px;
@@ -262,10 +223,6 @@
     float: left;
     width: 100%;
 }
-
-
-
-
 
 
 #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul{
@@ -285,21 +242,6 @@
     font-size: 1.0vmax; /* define data font*/
 }
 
-@media screen and (max-width: 749px) {
-    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
-        font-size: 3.0vmax;
-    }
-    
-}
-
-@media screen and (min-width: 750px) {
-    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
-        font-size: 3.0vmax;
-    }
-    
-}
-
-
 #geometry .foldedLeftColWidth{
     display: block;
     width: 60%;
@@ -315,8 +257,79 @@
     background-color: rgb(214, 216, 215);
 }
 
+/* setting to different type of device*/
+@media screen and (max-width: 749px) {
+    #geometry .tabInfo img{
+        width: 85vw;
+        height: 85vw;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper {
+        padding: 0px;
+        margin: 0px;
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+        font-size: 1.5vmax;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper .overallWrapperData ul li{
+        font-size: 1.5vmax;
+    }
+
+    #geometry .tabBtnDiv .tabBtn1 ul li{
+        font-size: 1.3em;  /* define font size of tab button 1 Overall*/
+        margin-bottom: 2px;
+    }
+
+    #geometry .tabBtnDiv .tabBtn2 ul li{
+        font-size: 1.3em;  /* define font size of tab button 2 Folded*/
+        margin-bottom: 2px;
+    }
 
 
+}
+
+@media screen and (min-width: 750px) {
+    #geometry .tabInfo img{
+        width: 40vw;
+        height: 40vw;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+        font-size: 3.0vmax;
+    }
+}
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) { 
+
+        #geometry .tabBtnDiv .tabBtn1 ul li{
+            font-size: 1.3em;  /* define font size of tab button 2*/
+            margin-bottom: 2px;
+        }
+
+        #geometry .tabBtnDiv .tabBtn2 ul li{
+            font-size: 1.3em;  /* define font size of tab button 2*/
+            margin-bottom: 2px;
+        }
+
+
+    }
 
 
 

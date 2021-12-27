@@ -155,15 +155,7 @@ function perf_dotBtnFunReset(){
 //************** touch move function - end ****************//
 
 
-
-
-
-
-
-
-
-
-
+//*****************digit animation function - start ***************//
 let gearhub_no = 0;
 let milesPerCharge_no = 0;
 let maxTorque_no = 0;
@@ -173,34 +165,30 @@ function addNum1 (){
 	if (gearhub_no < 500){
 		gearhub_no ++;
 		gearHub.innerHTML = gearhub_no + "W";
-		setTimeout(addNum1, 5);
+		setTimeout(addNum1, 10);  // set interval size
 	}
 }
-
 function addNum2 (){
 	if (milesPerCharge_no < 22){
 		milesPerCharge_no ++;
 		milesPerCharge.innerHTML = milesPerCharge_no + "+";
-		setTimeout(addNum2, 15);
+		setTimeout(addNum2, 100);  // set interval size
 	}
 }
-
 function addNum3 (){
 	if (maxTorque_no < 52){
 		maxTorque_no ++;
 		maxTorque.innerHTML = maxTorque_no + "Nm";
-		setTimeout(addNum3, 25);
+		setTimeout(addNum3, 50);  // set interval size
 	}
 }
-
 function addNum4 (){
 	if (perdalAssLevel_no < 5){
 		perdalAssLevel_no ++;
 		perdalAssLevel.innerHTML = perdalAssLevel_no;
-		setTimeout(addNum4, 25);
+		setTimeout(addNum4, 300);  // set interval size
 	}
 }
-
 function isScrolledIntoView(el) {
 	var rect = el.getBoundingClientRect();
 	var elemTop = rect.top;
@@ -212,22 +200,20 @@ function isScrolledIntoView(el) {
 	//isVisible = elemTop < window.innerHeight && elemBottom >= 0;
 	return isVisible;
 }
-
 var myScrollFunc = function() {
 
-	//console.log('scrollY : ' + window.scrollY);
-	//var y = window.scrollY;
-
 	if (isScrolledIntoView(performanceMainDescData)) {
-		setTimeout(addNum1, 5);
-		setTimeout(addNum2, 15);
-		setTimeout(addNum3, 25);
-		setTimeout(addNum4, 25);
+		setTimeout(addNum1, 10);
+		setTimeout(addNum2, 100);
+		setTimeout(addNum3, 50);
+		setTimeout(addNum4, 300);
 	} else {
 	}
 };
 
 window.addEventListener("scroll", myScrollFunc);
+
+//*****************digit animation function - end ***************//
 
 window.addEventListener('resize', function(event) {
 

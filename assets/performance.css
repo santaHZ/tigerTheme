@@ -9,6 +9,7 @@
     clear: both;
     /* border: 1px solid cornflowerblue; */
 }
+
 #performance .tabRoundCorner{
     display: block;
     color:white;
@@ -24,8 +25,6 @@
     clear: both;
 }
 
-
-
 /*slid section*/
 #perf_wrapper{
     display: block;
@@ -36,7 +35,6 @@
     overflow: hidden;
     white-space: nowrap;
 }
-
 
 /*定义左侧按钮样式*/
 #perf_ctlBtn1{
@@ -61,54 +59,6 @@
     /*background-color: blueviolet;*/
 }
 
-/*此处要加上id选择符，才能正常显示*/
-#perf_ctlBtn1 .leftBtns .buttonDotSolid{
-    display: block;
-    float: left;
-    width: 1vw;
-    height: 1vw;
-    background:black;
-    cursor: pointer;
-    border: 0.2vw solid gray;
-    border-radius: 50%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1vw;
-    margin-left: 2vmax;
-}
-
-@media screen and (max-width: 749px) {
-    #perf_ctlBtn1 .leftBtns .buttonDotSolid{
-        width: 2vmax;
-        height: 2vmax;
-        font-size: 2vmax;
-        border: 0.3vmax solid gray;
-    }
-}
-
-/*此处要加上id选择符，才能正常显示*/
-#perf_ctlBtn1 .leftBtns .buttonDotEmpty{
-    display: block;
-    float: left;
-    width: 1vw;
-    height: 1vw;
-    background: #fff;
-    cursor: pointer;
-    border: 0.2vw solid gray;
-    border-radius: 50%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1vw;
-    margin-left: 2vmax;
-
-}
-@media screen and (max-width: 749px) {
-    #perf_ctlBtn1 .leftBtns .buttonDotEmpty{
-        width: 2vmax;
-        height: 2vmax;
-        font-size: 2vmax;
-        border: 0.3vmax solid gray;
-    }
-}
-
 #perf_ctlBtn1 .rightBtns{
     position: relative;
     padding: 0px;
@@ -118,8 +68,6 @@
     height: 100%;
     /* background-color:burlywood; */
 }
-
-
 
 /*定义右侧按钮样式*/
 #perf_ctlBtn2{
@@ -135,15 +83,6 @@
     font-size: 2.5vw;  /*Block description head font */
     margin-bottom: 2em;
 }
-
-@media screen and (max-width: 749px) {
-    .performance_desc{
-        font-size: 3.5vw;  /*Block description head font */
-
-    }
-    
-}
-
 
 .performance_main_desc{
     padding: 0px;
@@ -161,7 +100,6 @@
     float: left;
 }
 
-
 /*performance_Main_Desc_Data div (show numbers)*/
 .performance_main_desc_data{
     display: block;
@@ -172,7 +110,6 @@
     margin-top: 6.0vmax;
     /* border: 1px solid chocolate; */
 }
-
 
 .performance_main_desc_data ul{
     position: relative;
@@ -204,52 +141,6 @@
     line-height: 1.6vmax;
     color: black;
 }
-
-@media screen and (max-width: 749px) { /* here must have space between and and (*/
-    .performance_main_desc_img{
-        width: 100%;
-        clear: both;
-    }
-
-    .performance_main_desc_data{
-        width: 100%;
-        clear:left;
-        margin-left: 0px;
-        margin-top: 0px;
-        margin-bottom: 30px;
-    }
-
-    .performance_main_desc_data div{
-        width: 50%;
-        display: block;
-        float: left;
-    
-    }
-
-    .performance_main_desc_data .columnSplitMiddle{
-        display: block;
-        clear: both;
-    
-    }
-
-    .perf_big{
-        font-size: 4.0vmax;
-        line-height: 4.8vmax;
-        color: chartreuse;
-    }
-    
-    
-    .perf_bold{
-        font-size: 1.5vmax;
-        line-height: 1.9vmax;
-        color: black;
-    }
-    
-}
-
-
-
-
 
 .main_banner{   /* set the section showing biggest image */
     position: relative;
@@ -318,19 +209,6 @@
     display: none;
 }
 
-@media screen and (max-width: 749px){
-    .main_banner_f2.MoreContent{
-        display: none;
-    }
-
-
-    .main_banner_f2.LessContent{
-        display: block;
-    }
-    
-}
-
-
 .main_top_banner{
     display: block;
     overflow: auto;
@@ -364,20 +242,123 @@
  }
 
  .main_top_bold{
-     font-weight: 1200;
-     font-size: 2.0vmin;
+    font-size: 2.0em;
+    font-weight: bolder;
+     
  }
 
  .main_top_light{
+    font-size: 1.2em;
     font-weight: 300;
-    font-size: 1.5vmin;
 }
 
 @media screen and (max-width: 749px) {
     /* adjust layout of top banner 4 columns*/
     .main_top_banner div{
         width: 50%;
+        padding: 1em;
+        margin: 0;
+        /* background-color: wheat; */
     }
+
+    .main_top_banner div ul li img{
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .main_top_banner div ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .main_top_banner div ul li{
+        font-size: 0.7em;
+    }
+
+    .main_top_banner div ul li.main_top_bold{
+        font-size: 1.0em;
+        font-weight: bolder;
+        margin: 0;
+    }
+
+    .main_top_banner div ul li.main_top_light{
+        font-size: 0.8em;
+        margin: 0;
+    }
+
+    .performance_main_desc_img{
+        width: 100%;
+        clear: both;
+    }
+
+    .performance_main_desc_data{
+        width: 100%;
+        clear:left;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    .performance_main_desc_data div{
+        width: 50%;
+        display: block;
+        float: left;
+    
+    }
+
+    .performance_main_desc_data .columnSplitMiddle{
+        display: block;
+        clear: both;
+    
+    }
+
+    .perf_big{
+        font-size: 4.0vmax;
+        line-height: 4.8vmax;
+        color: chartreuse;
+    }
+    
+    .perf_bold{
+        font-size: 1.5vmax;
+        line-height: 1.9vmax;
+        color: black;
+    }
+
+    .performance_desc{
+        font-size: 3.5vw;  /*Block description head font */
+
+    }
+
+    .main_banner_name{
+        font-weight: bold;
+
+    }
+    
+    .main_banner_f1{
+        font-size: 3.0vw;
+        font-weight: 700;
+        padding-top: 5px;
+
+    }
+    
+    .main_banner_f2{
+        font-size: 2.8vw;
+
+    }
+    
+    .main_banner_f2.MoreContent{
+        display: none;
+    }
+
+    .main_banner_f2.LessContent{
+        display: block;
+        background: none;
+        padding: 0px;
+        font-weight: bold;
+        color: black;
+    }
+
+    
 
 }
 

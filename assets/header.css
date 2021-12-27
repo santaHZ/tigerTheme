@@ -1,0 +1,58 @@
+.floatingMenu{
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: 0px;
+    width: 100%;
+    background-color: black;
+    z-index: 100;
+    display: flex;
+}
+
+.middleMenu{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    list-style: none;
+    float: left;
+    margin: 0 auto;
+    height: auto;
+}
+
+.middleMenu li{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    float: left;
+    border: 0px;
+    border-right: 1px solid lightgray;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    height: 10em;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.rtMenu{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: absolute;
+    list-style: none;
+    right: 12em;
+    top: 0px;
+    width: auto;
+    height: auto;
+    border-color: chocolate;
+}
+
+.rtMenu li{
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    background-color: cadetblue;
+    padding: 1em;
+    height: 3.5em;
+    font-size: 1em;
+}

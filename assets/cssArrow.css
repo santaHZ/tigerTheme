@@ -8,22 +8,6 @@
     transform: rotate(135deg);
 }
 
-#felx_ctlBtn1 .buttonDotSolid{
-    border: 0.05vw solid gray;
-    border-radius: 50%;
-    width: 0.4vw;
-    height: 0.4vw;
-    background-color:black;
-}
-
-#felx_ctlBtn1 .buttonDotEmpty{
-    border: 0.05vw solid gray;
-    border-radius: 50%;
-    width: 0.4vw;
-    height: 0.4vw;
-    background-color:#fff;
-}
-
 #felx_ctlBtn2 .arrow{
     --border-size: 0.2vw;
     --size: calc(var(--border-size) * 4);

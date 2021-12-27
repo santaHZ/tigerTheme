@@ -4,10 +4,8 @@
 
 
 //*********************design for small product showcase -begin ********************//
-
-let productPeekShowcaseColNum = 9;
 const prodPeek_wrapper = document.querySelector('#prodPeek_wrapper');
-const prodPeek_AllSliderImages = document.querySelectorAll('#prodPeek_wrapper .uni_imgSlider .item ul li img');
+const prodPeek_AllSliderImages = document.querySelectorAll('#prodPeek_wrapper .uni_imgSlider .item img');
 //console.log(prodPeek_AllSliderImages);
 
 //******************/ touch move function - begin *******************//
@@ -21,6 +19,7 @@ let prodPeek_slides_id =prodPeek_slides[0].getAttribute("prodPeek-data-media-id"
 
 // calculate maxCounter
 let maxCounter = Math.ceil((prodPeek_wrapper.scrollWidth - prodPeek_wrapper.clientWidth) / prodPeek_AllSliderImages[0].clientWidth);
+
 
 
 // initialize uniCounter
@@ -119,6 +118,8 @@ function prodPeek_setSlidePosition(){
 
 function prodPeek_setPositionByIndex(){
     let prodPeek_size = Math.round(prodPeek_AllSliderImages[0].clientWidth);
+	console.log("prodPeek_AllSliderImages[0] width:" + prodPeek_AllSliderImages[0].clientWidth);
+	console.log("prodPeek_size:" + prodPeek_size);
 	prodPeek_currentTranslate = uniCounter["productPeekShowcase"] * (- prodPeek_size);
 	prodPeek_prevTranslate = prodPeek_currentTranslate;
 	prodPeek_setSlidePosition();
@@ -126,10 +127,6 @@ function prodPeek_setPositionByIndex(){
 
 
 let showcaseMainImg = document.querySelector('#prod_wrapper .uni_imgSlider img');
-
-
-
-
 
 window.addEventListener('resize', function(event){
 
@@ -139,22 +136,8 @@ window.addEventListener('resize', function(event){
 	uniCounter["productPeekShowcase"] = 0;
 	prodPeek_setPositionByIndex();
 
-    if (window.innerWidth < 1360){
-        productPeekShowcaseColNum = 6;
-        for (let i=0; i < (prodPeek_AllSliderImages.length - 0); i++ ){
-            prodPeek_AllSliderImages[i].setAttribute('width', Math.ceil(prodPeek_wrapper.clientWidth / productPeekShowcaseColNum));
-            prodPeek_AllSliderImages[i].setAttribute('height', Math.ceil(prodPeek_AllSliderImages[i].width / 1.5));
-            
-        }
+	console.log("prodPeek_AllSliderImages[0] width:" + prodPeek_AllSliderImages[0].clientWidth);
 
-    }else if(window.innerWidth < 990){
-        productPeekShowcaseColNum = 3;
-        for (let i=0; i < (prodPeek_AllSliderImages.length - 0); i++ ){
-            prodPeek_AllSliderImages[i].setAttribute('width', Math.ceil(prodPeek_wrapper.clientWidth / productPeekShowcaseColNum));
-            prodPeek_AllSliderImages[i].setAttribute('height', Math.ceil(prodPeek_AllSliderImages[i].width / 1.5));
-            
-        }
-    }
-
+	maxCounter = Math.ceil((prodPeek_wrapper.scrollWidth - prodPeek_wrapper.clientWidth) / prodPeek_AllSliderImages[0].clientWidth);
 
 },true);
