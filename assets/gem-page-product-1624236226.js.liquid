@@ -1,0 +1,1571 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+
+    
+    
+    
+        jQuery(function() {
+  var $module = jQuery('#m-1621324646582').children('.module');
+  $module.gfV3Product();
+}); 
+    
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+        var $module = jQuery('#m-1621324646631').children('.module');
+        $module.gfV3ProductPrice({
+            displayCurrency: true
+        });
+    });
+    
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621324646596').children('.module');
+  var style = $module.attr('data-style');
+  var updatePrice = $module.attr('data-updateprice');
+
+  $module.gfV3ProductQuantity({
+    'style': style,
+    'updatePrice': updatePrice
+  });
+})( window.GemQuery || jQuery );
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621325088746').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+        jQuery(function() {
+  var $module = jQuery('#m-1621324646557').children('.module');
+});
+    
+jQuery(function() {
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  var $module = jQuery('#m-1621324646635').children('.module');
+  if (mode == 'dev') {
+      jQuery('#m-1621324646635').attr('data-name', '').css('background-image', 'none').removeAttr('data-image');
+      
+      var flag = true;
+      var $bkLiquid = parent.jQuery('body').find('#gfFrame').contents().find('#module-1621324646635');
+      if ($bkLiquid && $bkLiquid.length > 0) {
+          var $settings = $bkLiquid.find('.settings');
+          try {
+              var name = '';
+              var imageUrl = '';
+              settings = JSON.parse($settings.html());
+              for (var i = 0; i < settings.length; i++) {
+                  if (settings[i].name == 'name') {
+                      name = settings[i].default_value
+                  }
+                  if (settings[i].name == 'image') {
+                      imageUrl = settings[i].default_value
+                  }
+              }
+              if (imageUrl != '') {
+                  flag = false;
+                  jQuery('#m-1621324646635').css('background-image', 'url(' + imageUrl + ')').css('min-height', '100px').attr('data-image', 'true');
+              }
+              if (name != '' && name != 'Custom Code') {
+                  flag = false;
+                  jQuery('#m-1621324646635').attr('data-name', name);
+              }
+          } catch(error) {
+              console.log(error);
+          }
+      }
+      if (flag) {
+          jQuery('#m-1621324646635').attr('data-name', 'Right click on the module, then choose Edit Html / Liquid option to start writing your custom code.');
+      }
+  }
+});
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621324646578').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621324646538').children('.module');
+  $module.gfV1StockCounter();
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+    var $module = jQuery('#m-1621324646566').children('.module');
+    var effect = $module.attr('data-effect');
+    $module.gfV3ProductImage({
+        'effect': effect
+    })
+});
+    
+        jQuery(function() {
+  var $module = jQuery('#m-1621324646583').children('.module');
+  $module.gfV3ProductImageList({
+      onImageClicked: function(imageUrl, imageZoomUrl) {}
+  });
+
+  var style = $module.attr('data-style');
+  switch(style) {
+      case 'slider':
+          var navspeed = $module.data('navspeed'),
+              navlg = $module.data('navlg'),
+              navmd = $module.data('navmd'),
+              navsm = $module.data('navsm'),
+              navxs = $module.data('navxs'),
+              collg = $module.data('collg'),
+              colmd = $module.data('colmd'),
+              colsm = $module.data('colsm'),
+              colxs = $module.data('colxs'),
+              dotslg = $module.data('dotslg'),
+              dotsmd = $module.data('dotsmd'),
+              dotssm = $module.data('dotssm'),
+              dotsxs = $module.data('dotsxs'),
+
+              marginlg = parseInt($module.data('mlg')),
+              marginmd = parseInt($module.data('mmd')),
+              marginsm = parseInt($module.data('msm')),
+              marginxs = parseInt($module.data('mxs'));
+
+          var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+          if(mode == 'production') {
+              var loop = $module.data('loop');
+          } else {
+              var loop = 0;
+          }
+          $module.find('.gf_product-images-list').owlCarousel({
+              mouseDrag: false,
+              navSpeed: navspeed,
+              autoWidth: !1,
+              loop: loop,
+              responsiveClass:true,
+              responsive:{
+                  0:{
+                      items:colxs,
+                      nav: navxs,
+                      dots:dotsxs,
+                      margin: marginxs
+                  },
+                  768:{
+                      items:colsm,
+                      nav: navsm,
+                      dots:dotssm,
+                      margin: marginsm
+                  },
+                  992:{
+                      items:colmd,
+                      nav: navmd,
+                      dots:dotsmd,
+                      margin: marginmd
+                  },
+                  1200:{
+                      items:collg,
+                      nav: navlg,
+                      dots:dotslg,
+                      margin: marginlg
+                  }
+              }
+          }); 
+          break;
+  }
+}); 
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1621324646575').children('.module');
+    var btnLabel = $module.attr('data-btnlabel');
+    
+    if ($module.attr('data-modelink') == 'auto'){
+        $module.attr('data-editlink', '');
+    }
+    
+    $module.gfSocialShare({
+        btnLabel: btnLabel
+    });
+})( window.GemQuery || jQuery );
+    
+        jQuery(function() {
+  var $module = jQuery('#m-1621336372755').children('.module');
+  $module.gfV3Product();
+}); 
+    
+    
+        jQuery(function() {
+    var $module = jQuery('#m-1621336372781').children('.module');
+    var effect = $module.attr('data-effect');
+    $module.gfV3ProductImage({
+        'effect': effect
+    })
+});
+    
+        jQuery(function() {
+  var $module = jQuery('#m-1621336372743').children('.module');
+  $module.gfV3ProductImageList({
+      onImageClicked: function(imageUrl, imageZoomUrl) {}
+  });
+
+  var style = $module.attr('data-style');
+  switch(style) {
+      case 'slider':
+          var navspeed = $module.data('navspeed'),
+              navlg = $module.data('navlg'),
+              navmd = $module.data('navmd'),
+              navsm = $module.data('navsm'),
+              navxs = $module.data('navxs'),
+              collg = $module.data('collg'),
+              colmd = $module.data('colmd'),
+              colsm = $module.data('colsm'),
+              colxs = $module.data('colxs'),
+              dotslg = $module.data('dotslg'),
+              dotsmd = $module.data('dotsmd'),
+              dotssm = $module.data('dotssm'),
+              dotsxs = $module.data('dotsxs'),
+
+              marginlg = parseInt($module.data('mlg')),
+              marginmd = parseInt($module.data('mmd')),
+              marginsm = parseInt($module.data('msm')),
+              marginxs = parseInt($module.data('mxs'));
+
+          var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+          if(mode == 'production') {
+              var loop = $module.data('loop');
+          } else {
+              var loop = 0;
+          }
+          $module.find('.gf_product-images-list').owlCarousel({
+              mouseDrag: false,
+              navSpeed: navspeed,
+              autoWidth: !1,
+              loop: loop,
+              responsiveClass:true,
+              responsive:{
+                  0:{
+                      items:colxs,
+                      nav: navxs,
+                      dots:dotsxs,
+                      margin: marginxs
+                  },
+                  768:{
+                      items:colsm,
+                      nav: navsm,
+                      dots:dotssm,
+                      margin: marginsm
+                  },
+                  992:{
+                      items:colmd,
+                      nav: navmd,
+                      dots:dotsmd,
+                      margin: marginmd
+                  },
+                  1200:{
+                      items:collg,
+                      nav: navlg,
+                      dots:dotslg,
+                      margin: marginlg
+                  }
+              }
+          }); 
+          break;
+  }
+}); 
+    
+    
+    
+(function(jQuery) {
+  var $module = jQuery('#m-1621336372701').children('.module');
+  var swatchText = $module.attr('data-swatch-text') != undefined ? $module.attr('data-swatch-text') : '1';
+  $module.gfV3ProductSwatches({
+    swatchText: swatchText,
+    onSwatchSelected: function(variant, $swatch) {}
+  });
+})(window.GemQuery || jQuery);
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+        var $module = jQuery('#m-1621336372707').children('.module');
+        $module.gfV3ProductPrice({
+            displayCurrency: true
+        });
+    });
+    
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621336372780').children('.module');
+  var style = $module.attr('data-style');
+  var updatePrice = $module.attr('data-updateprice');
+
+  $module.gfV3ProductQuantity({
+    'style': style,
+    'updatePrice': updatePrice
+  });
+})( window.GemQuery || jQuery );
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621336372747').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+        jQuery(function() {
+  var $module = jQuery('#m-1621336372786').children('.module');
+});
+    
+jQuery(function() {
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  var $module = jQuery('#m-1621336372712').children('.module');
+  if (mode == 'dev') {
+      jQuery('#m-1621336372712').attr('data-name', '').css('background-image', 'none').removeAttr('data-image');
+      
+      var flag = true;
+      var $bkLiquid = parent.jQuery('body').find('#gfFrame').contents().find('#module-1621336372712');
+      if ($bkLiquid && $bkLiquid.length > 0) {
+          var $settings = $bkLiquid.find('.settings');
+          try {
+              var name = '';
+              var imageUrl = '';
+              settings = JSON.parse($settings.html());
+              for (var i = 0; i < settings.length; i++) {
+                  if (settings[i].name == 'name') {
+                      name = settings[i].default_value
+                  }
+                  if (settings[i].name == 'image') {
+                      imageUrl = settings[i].default_value
+                  }
+              }
+              if (imageUrl != '') {
+                  flag = false;
+                  jQuery('#m-1621336372712').css('background-image', 'url(' + imageUrl + ')').css('min-height', '100px').attr('data-image', 'true');
+              }
+              if (name != '' && name != 'Custom Code') {
+                  flag = false;
+                  jQuery('#m-1621336372712').attr('data-name', name);
+              }
+          } catch(error) {
+              console.log(error);
+          }
+      }
+      if (flag) {
+          jQuery('#m-1621336372712').attr('data-name', 'Right click on the module, then choose Edit Html / Liquid option to start writing your custom code.');
+      }
+  }
+});
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621336372727').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621336372758').children('.module');
+  $module.gfV1StockCounter();
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  var $hero = jQuery('#m-1621392051213');
+  var $module = jQuery('#m-1621392051213').children('.module');
+
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  var $heroLink = $hero.children('.hero-link');
+  if (mode == 'dev' && $heroLink.length > 0) {
+    $hero.children('.hero-link').hide();
+  }
+  if (mode == 'production' && $heroLink.length > 0) {
+    $module.off('click.openLink').on('click.openLink', function (e) {
+      var $target = jQuery(e.target);
+      if ($target.length > 0) {
+        var linkTarget = typeof $target.attr('href') !== "undefined" ? $target.attr('href') : "";
+        if (linkTarget == "") {
+          var link = typeof $heroLink.attr('href') !== "undefined" ? $heroLink.attr('href') : "";
+          var newTab = typeof $heroLink.attr('target') !== "undefined" ? $heroLink.attr('target') : "";
+          if (link != "") {
+            if (newTab == "") {
+              window.location.href = link;
+            } else {
+              window.open(link, newTab);
+            }
+          }
+        }
+      };
+    })
+  }
+
+  var height = jQuery.trim($module.attr("data-height"));
+  if (height == undefined || height == "") {
+    $hero.css("height", "auto!important");
+  } else {
+    $hero.css("height", "inherit");
+  }
+
+
+  var effect = $module.attr('data-effect');
+  var transition = $module.attr('data-transition');
+
+  if (effect == 'effect-zoom') {
+    $module.parent().addClass(effect);
+
+    setTimeout(function () {
+      var backgroundImage = $module.parent().css('background-image');
+      var backgroundSize = $module.parent().css('background-size');
+      var backgroundPosition = $module.parent().css('background-position');
+      $module.siblings('.gf_hero-bg-wrap').css({
+        'background-image': 'inherit',
+        'background-size': 'inherit',
+        'background-position': 'inherit',
+        '-webkit-transition': 'transform ' + transition + 's ease-in-out',
+        '-moz-transition': 'transform ' + transition + 's ease-in-out',
+        '-ms-transition': 'transform ' + transition + 's ease-in-out',
+        '-o-transition': 'transform ' + transition + 's ease-in-out',
+        'transition': 'transform ' + transition + 's ease-in-out'
+      })
+      $module.siblings('.gf_hero-bg-wrap').children('.gf_hero-bg').css({
+        'background-image': 'inherit',
+        'background-size': 'inherit',
+        'background-position': 'inherit',
+        '-webkit-transition': 'transform ' + transition + 's ease-in-out',
+        '-moz-transition': 'transform ' + transition + 's ease-in-out',
+        '-ms-transition': 'transform ' + transition + 's ease-in-out',
+        '-o-transition': 'transform ' + transition + 's ease-in-out',
+        'transition': 'transform ' + transition + 's ease-in-out'
+      });
+    }, 300);
+  } else{
+    $module.parent().removeClass("effect-zoom");
+  }
+
+  if ($module.attr('data-fixedMode') == '1') {
+    function changeImage() {
+      var backgroundImage = $module.parent().css('background-image');
+      if (backgroundImage) {
+        backgroundImage = backgroundImage.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+        $module.find('.gf_hero-fixed').attr('src', backgroundImage);
+        $module.parent().addClass('gf_hero-fixed-mode');
+      }
+    }
+    changeImage();
+    let windowWidth = jQuery(window).width();
+    let timeoutResize = 0;
+    jQuery(window).resize(function () {
+      if (jQuery(window).width() == windowWidth) {
+        return;
+      }
+      windowWidth = jQuery(window).width();
+
+      if (timeoutResize) {
+        clearTimeout(timeoutResize);
+        timeoutResize = 0;
+      }
+
+      timeoutResize = window.setTimeout(function () {
+        changeImage();
+      }, 16);
+    });
+  } else {
+    $module.parent().removeClass('gf_hero-fixed-mode');
+  }
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  var $hero = jQuery('#m-1621392860730');
+  var $module = jQuery('#m-1621392860730').children('.module');
+
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  var $heroLink = $hero.children('.hero-link');
+  if (mode == 'dev' && $heroLink.length > 0) {
+    $hero.children('.hero-link').hide();
+  }
+  if (mode == 'production' && $heroLink.length > 0) {
+    $module.off('click.openLink').on('click.openLink', function (e) {
+      var $target = jQuery(e.target);
+      if ($target.length > 0) {
+        var linkTarget = typeof $target.attr('href') !== "undefined" ? $target.attr('href') : "";
+        if (linkTarget == "") {
+          var link = typeof $heroLink.attr('href') !== "undefined" ? $heroLink.attr('href') : "";
+          var newTab = typeof $heroLink.attr('target') !== "undefined" ? $heroLink.attr('target') : "";
+          if (link != "") {
+            if (newTab == "") {
+              window.location.href = link;
+            } else {
+              window.open(link, newTab);
+            }
+          }
+        }
+      };
+    })
+  }
+
+  var height = jQuery.trim($module.attr("data-height"));
+  if (height == undefined || height == "") {
+    $hero.css("height", "auto!important");
+  } else {
+    $hero.css("height", "inherit");
+  }
+
+
+  var effect = $module.attr('data-effect');
+  var transition = $module.attr('data-transition');
+
+  if (effect == 'effect-zoom') {
+    $module.parent().addClass(effect);
+
+    setTimeout(function () {
+      var backgroundImage = $module.parent().css('background-image');
+      var backgroundSize = $module.parent().css('background-size');
+      var backgroundPosition = $module.parent().css('background-position');
+      $module.siblings('.gf_hero-bg-wrap').css({
+        'background-image': 'inherit',
+        'background-size': 'inherit',
+        'background-position': 'inherit',
+        '-webkit-transition': 'transform ' + transition + 's ease-in-out',
+        '-moz-transition': 'transform ' + transition + 's ease-in-out',
+        '-ms-transition': 'transform ' + transition + 's ease-in-out',
+        '-o-transition': 'transform ' + transition + 's ease-in-out',
+        'transition': 'transform ' + transition + 's ease-in-out'
+      })
+      $module.siblings('.gf_hero-bg-wrap').children('.gf_hero-bg').css({
+        'background-image': 'inherit',
+        'background-size': 'inherit',
+        'background-position': 'inherit',
+        '-webkit-transition': 'transform ' + transition + 's ease-in-out',
+        '-moz-transition': 'transform ' + transition + 's ease-in-out',
+        '-ms-transition': 'transform ' + transition + 's ease-in-out',
+        '-o-transition': 'transform ' + transition + 's ease-in-out',
+        'transition': 'transform ' + transition + 's ease-in-out'
+      });
+    }, 300);
+  } else{
+    $module.parent().removeClass("effect-zoom");
+  }
+
+  if ($module.attr('data-fixedMode') == '1') {
+    function changeImage() {
+      var backgroundImage = $module.parent().css('background-image');
+      if (backgroundImage) {
+        backgroundImage = backgroundImage.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+        $module.find('.gf_hero-fixed').attr('src', backgroundImage);
+        $module.parent().addClass('gf_hero-fixed-mode');
+      }
+    }
+    changeImage();
+    let windowWidth = jQuery(window).width();
+    let timeoutResize = 0;
+    jQuery(window).resize(function () {
+      if (jQuery(window).width() == windowWidth) {
+        return;
+      }
+      windowWidth = jQuery(window).width();
+
+      if (timeoutResize) {
+        clearTimeout(timeoutResize);
+        timeoutResize = 0;
+      }
+
+      timeoutResize = window.setTimeout(function () {
+        changeImage();
+      }, 16);
+    });
+  } else {
+    $module.parent().removeClass('gf_hero-fixed-mode');
+  }
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  (function( jQuery ){
+    var $module = jQuery('#m-1621590347403').children('.module');
+    $module.gfV2HeroBanner({});
+    
+  })( window.GemQuery || jQuery );
+  
+(function(jQuery) {
+    var $module = jQuery('#m-1621590347458').children('.module');
+    $module.find('.video-popup').magnificPopup({
+        type: 'iframe',
+        iframe: {
+            patterns: {
+                youtube: {
+                    index: 'youtube.com/',
+                    id: function(url) {
+                        var id;
+                        if (url.indexOf('youtu.be/') != -1) {
+                            id = url.split('youtu.be/');
+                        } else {
+                            id = url.split(/watch\?v=/);
+                        }
+                        if (id && id[1] != undefined) {
+                            id = id[1].split(/&/)[0];
+                        }
+                        return id;
+                    },
+                    src: '//www.youtube.com/embed/%id%?autoplay=1'
+                },
+                youtu: {
+                    index: 'youtu.be/',
+                    id: function(url) {
+                        var id;
+                        if (url.indexOf('youtu.be/') != -1) {
+                            id = url.split('youtu.be/');
+                        } else {
+                            id = url.split(/watch\?v=/);
+                        }
+                        if (id && id[1] != undefined) {
+                            id = id[1].split(/&/)[0];
+                        }
+                        return id;
+                    },
+                    src: '//www.youtube.com/embed/%id%?autoplay=1'
+                },
+                vimeo: {
+                    index: 'vimeo.com/',
+                    id: function(url) {
+                        var m = url.match(/(https?:\/\/)?(www.)?(player.)?vimeo.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/);
+                        if ( !m || !m[5] ) return null;
+                        return m[5];
+                    },
+                    src: '//player.vimeo.com/video/%id%?autoplay=1'
+                }
+            }
+        }
+    });
+})(window.GemQuery || jQuery);
+    window.__gfAnimate.registerHover(jQuery("#m-1621590347458"), '{"animation":{"screens":{"lg":true,"md":true,"sm":true,"xs":true},"name":"pulse","delay":0,"duration":500,"iteration-count":"1"},"interaction":{"key":"mouse-hover","type":"level2"}}');
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1621394588051').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1621394665564').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1621394627478').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1620635932961').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1620635630984').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1620635720952').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1620635791125').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+    var $module = jQuery('#m-1621394727233').children('.module');
+    $module.find('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1621395764620').children('.module');   
+            var navspeed = $module.data('navspeed'),
+                autoplaytimeout = $module.data('autoplaytimeout'),
+                autoplayhoverpause = $module.data('autoplayhoverpause'),
+                navlg = $module.data('navlg'),
+                navmd = $module.data('navmd'),
+                navsm = $module.data('navsm'),
+                navxs = $module.data('navxs'),
+                collg = $module.data('collg'),
+                colmd = $module.data('colmd'),
+                colsm = $module.data('colsm'),
+                colxs = $module.data('colxs'),
+                dotslg = $module.data('dotslg'),
+                dotsmd = $module.data('dotsmd'),
+                dotssm = $module.data('dotssm'),
+                dotsxs = $module.data('dotsxs'),
+                marginlg = parseInt($module.data('marginlg')),
+                marginmd = parseInt($module.data('marginmd')),
+                marginsm = parseInt($module.data('marginsm')),
+                marginxs = parseInt($module.data('marginxs'));
+
+            var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+            if(mode == 'production') {
+                var autoplay = $module.data('autoplay'), 
+                    loop = $module.data('loop');
+            } else {
+                var autoplay = 0, 
+                    loop = 0;
+            }
+        
+            $module.owlCarousel({
+                mouseDrag: false,
+                autoplayHoverPause: autoplayhoverpause,
+                autoplay: autoplay,
+                autoplayTimeout: autoplaytimeout,
+                loop: loop,
+                navSpeed: navspeed,
+                autoWidth: !1,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:colxs,
+                        nav: navxs,
+                        dots:dotsxs,
+                        margin: marginxs
+                    },
+                    768:{
+                        items:colsm,
+                        nav: navsm,
+                        dots:dotssm,
+                        margin: marginsm
+                    },
+                    992:{
+                        items:colmd,
+                        nav: navmd,
+                        dots:dotsmd,
+                        margin: marginmd
+                    },
+                    1200:{
+                        items:collg,
+                        nav: navlg,
+                        dots:dotslg,
+                        margin: marginlg
+                    }
+                }
+            }); 
+        }); 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1621408696664').children('.module');   
+            var navspeed = $module.data('navspeed'),
+                autoplaytimeout = $module.data('autoplaytimeout'),
+                autoplayhoverpause = $module.data('autoplayhoverpause'),
+                navlg = $module.data('navlg'),
+                navmd = $module.data('navmd'),
+                navsm = $module.data('navsm'),
+                navxs = $module.data('navxs'),
+                collg = $module.data('collg'),
+                colmd = $module.data('colmd'),
+                colsm = $module.data('colsm'),
+                colxs = $module.data('colxs'),
+                dotslg = $module.data('dotslg'),
+                dotsmd = $module.data('dotsmd'),
+                dotssm = $module.data('dotssm'),
+                dotsxs = $module.data('dotsxs'),
+                marginlg = parseInt($module.data('marginlg')),
+                marginmd = parseInt($module.data('marginmd')),
+                marginsm = parseInt($module.data('marginsm')),
+                marginxs = parseInt($module.data('marginxs'));
+
+            var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+            if(mode == 'production') {
+                var autoplay = $module.data('autoplay'), 
+                    loop = $module.data('loop');
+            } else {
+                var autoplay = 0, 
+                    loop = 0;
+            }
+        
+            $module.owlCarousel({
+                mouseDrag: false,
+                autoplayHoverPause: autoplayhoverpause,
+                autoplay: autoplay,
+                autoplayTimeout: autoplaytimeout,
+                loop: loop,
+                navSpeed: navspeed,
+                autoWidth: !1,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:colxs,
+                        nav: navxs,
+                        dots:dotsxs,
+                        margin: marginxs
+                    },
+                    768:{
+                        items:colsm,
+                        nav: navsm,
+                        dots:dotssm,
+                        margin: marginsm
+                    },
+                    992:{
+                        items:colmd,
+                        nav: navmd,
+                        dots:dotsmd,
+                        margin: marginmd
+                    },
+                    1200:{
+                        items:collg,
+                        nav: navlg,
+                        dots:dotslg,
+                        margin: marginlg
+                    }
+                }
+            }); 
+        }); 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1621243406391').children('.module');   
+            var navspeed = $module.data('navspeed'),
+                autoplaytimeout = $module.data('autoplaytimeout'),
+                autoplayhoverpause = $module.data('autoplayhoverpause'),
+                navlg = $module.data('navlg'),
+                navmd = $module.data('navmd'),
+                navsm = $module.data('navsm'),
+                navxs = $module.data('navxs'),
+                collg = $module.data('collg'),
+                colmd = $module.data('colmd'),
+                colsm = $module.data('colsm'),
+                colxs = $module.data('colxs'),
+                dotslg = $module.data('dotslg'),
+                dotsmd = $module.data('dotsmd'),
+                dotssm = $module.data('dotssm'),
+                dotsxs = $module.data('dotsxs'),
+                marginlg = parseInt($module.data('marginlg')),
+                marginmd = parseInt($module.data('marginmd')),
+                marginsm = parseInt($module.data('marginsm')),
+                marginxs = parseInt($module.data('marginxs'));
+
+            var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+            if(mode == 'production') {
+                var autoplay = $module.data('autoplay'), 
+                    loop = $module.data('loop');
+            } else {
+                var autoplay = 0, 
+                    loop = 0;
+            }
+        
+            $module.owlCarousel({
+                mouseDrag: false,
+                autoplayHoverPause: autoplayhoverpause,
+                autoplay: autoplay,
+                autoplayTimeout: autoplaytimeout,
+                loop: loop,
+                navSpeed: navspeed,
+                autoWidth: !1,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:colxs,
+                        nav: navxs,
+                        dots:dotsxs,
+                        margin: marginxs
+                    },
+                    768:{
+                        items:colsm,
+                        nav: navsm,
+                        dots:dotssm,
+                        margin: marginsm
+                    },
+                    992:{
+                        items:colmd,
+                        nav: navmd,
+                        dots:dotsmd,
+                        margin: marginmd
+                    },
+                    1200:{
+                        items:collg,
+                        nav: navlg,
+                        dots:dotslg,
+                        margin: marginlg
+                    }
+                }
+            }); 
+        }); 
+    
+    
+    
+    
+    
+    
+    
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1621591534393').children('.module');   
+            var navspeed = $module.data('navspeed'),
+                autoplaytimeout = $module.data('autoplaytimeout'),
+                autoplayhoverpause = $module.data('autoplayhoverpause'),
+                navlg = $module.data('navlg'),
+                navmd = $module.data('navmd'),
+                navsm = $module.data('navsm'),
+                navxs = $module.data('navxs'),
+                collg = $module.data('collg'),
+                colmd = $module.data('colmd'),
+                colsm = $module.data('colsm'),
+                colxs = $module.data('colxs'),
+                dotslg = $module.data('dotslg'),
+                dotsmd = $module.data('dotsmd'),
+                dotssm = $module.data('dotssm'),
+                dotsxs = $module.data('dotsxs'),
+                marginlg = parseInt($module.data('marginlg')),
+                marginmd = parseInt($module.data('marginmd')),
+                marginsm = parseInt($module.data('marginsm')),
+                marginxs = parseInt($module.data('marginxs'));
+
+            var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+            if(mode == 'production') {
+                var autoplay = $module.data('autoplay'), 
+                    loop = $module.data('loop');
+            } else {
+                var autoplay = 0, 
+                    loop = 0;
+            }
+        
+            $module.owlCarousel({
+                mouseDrag: false,
+                autoplayHoverPause: autoplayhoverpause,
+                autoplay: autoplay,
+                autoplayTimeout: autoplaytimeout,
+                loop: loop,
+                navSpeed: navspeed,
+                autoWidth: !1,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:colxs,
+                        nav: navxs,
+                        dots:dotsxs,
+                        margin: marginxs
+                    },
+                    768:{
+                        items:colsm,
+                        nav: navsm,
+                        dots:dotssm,
+                        margin: marginsm
+                    },
+                    992:{
+                        items:colmd,
+                        nav: navmd,
+                        dots:dotsmd,
+                        margin: marginmd
+                    },
+                    1200:{
+                        items:collg,
+                        nav: navlg,
+                        dots:dotslg,
+                        margin: marginlg
+                    }
+                }
+            }); 
+        }); 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  try {
+    var $module = jQuery('#m-1621342681975').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  try {
+    var $module = jQuery('#m-1620878017803').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  try {
+    var $module = jQuery('#m-1620878104789').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  try {
+    var $module = jQuery('#m-1620878235883').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  try {
+    var $module = jQuery('#m-1620878379640').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  try {
+    var $module = jQuery('#m-1620878507728').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621241177854').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621241177854-3').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621420893417').children('.module');
+  $module.gfV3Product();
+})( window.GemQuery || jQuery );
+    
+    
+(function(jQuery) {
+    var $module = jQuery('#m-1621420976927').children('.module');
+    $module.gfV3ProductPrice({
+        displayCurrency: true
+    });
+})(window.GemQuery || jQuery);
+    
+(function( jQuery ){
+  var $module = jQuery('#m-1621420893417-3').children('.module');
+  $module.gfV3ProductCartButton({ onItemAdded: function(data) {}});
+})( window.GemQuery || jQuery );
+    
+    
+    
+(function( jQuery ){
+  // var $module = jQuery('#m-1621584195143').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
