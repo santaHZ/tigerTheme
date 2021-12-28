@@ -165,7 +165,7 @@ function addNum1 (){
 	if (gearhub_no < 500){
 		gearhub_no ++;
 		gearHub.innerHTML = gearhub_no + "W";
-		setTimeout(addNum1, 10);  // set interval size
+		setTimeout(addNum1, 5);  // set interval size
 	}
 }
 function addNum2 (){
@@ -203,7 +203,7 @@ function isScrolledIntoView(el) {
 var myScrollFunc = function() {
 
 	if (isScrolledIntoView(performanceMainDescData)) {
-		setTimeout(addNum1, 10);
+		setTimeout(addNum1, 5);
 		setTimeout(addNum2, 100);
 		setTimeout(addNum3, 50);
 		setTimeout(addNum4, 300);

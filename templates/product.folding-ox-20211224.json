@@ -1,7 +1,7 @@
 {
   "sections": {
-    "main": {
-      "type": "main-product-folding-ox",
+    "main-product-folding-ox-20211224": {
+      "type": "main-product-folding-ox-20211224",
       "blocks": {
         "vendor": {
           "type": "text",
@@ -74,7 +74,7 @@
     }
   },
   "order": [
-    "main-product-folding-ox",
+    "main-product-folding-ox-20211224",
     "product-recommendations"
   ]
 }

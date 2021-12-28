@@ -3,6 +3,7 @@
     display: block;
     overflow: auto;
 	width: 100%;
+    font-family: "Montserrat", sans-serif;
 }
 #product_main h1 {
 	align-content: center;
