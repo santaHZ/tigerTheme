@@ -92,35 +92,35 @@ function flex_touchMove(event){
 		flex_currentTranslate = flex_prevTranslate + flex_currentPosition - flex_startPos;
 		
 	}
-	console.log("flex_startPos:" + flex_startPos);
+	/* console.log("flex_startPos:" + flex_startPos);
 	console.log("flex_currentPosition:" + flex_currentPosition);
-	console.log('position after moved:' + flex_currentTranslate);
+	console.log('position after moved:' + flex_currentTranslate); */
 }
 
 // get mouse or touch postionX
 function flex_getPositionX(event) {
-	console.log("pageX:" + event.pageX);
-	console.log("clientX:" + event.clientX);
+	/* console.log("pageX:" + event.pageX);
+	console.log("clientX:" + event.clientX); */
 	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
 }
 
 function flex_animation(){
 	flex_setSlidePosition(); //after clicked arrow button, then mousedown on image will make image move. a problem.
-	console.log('1 triggered.');  
-	console.log("2 currentTranslate:" + flex_currentTranslate);
+	/* console.log('1 triggered.');  
+	console.log("2 currentTranslate:" + flex_currentTranslate); */
 	if (flex_isDragging) requestAnimationFrame(flex_animation);
 }
 
 function flex_setSlidePosition(){
-	console.log('setSlidePosition:' + flex_currentTranslate);
+	// console.log('setSlidePosition:' + flex_currentTranslate);
 	flex_slider.style.transform = `translateX(${flex_currentTranslate}px)`;
 }
 
 function flex_setPositionByIndex(){
 	let flex_size = Math.round(flex_slider.clientWidth / touchColNum);
-	console.log("touch end size:" + flex_size);
+	// console.log("touch end size:" + flex_size);
 	flex_currentTranslate = uniCounter["flexibility"] * (- flex_size);
-	console.log("touch end currentTranslate:" + flex_currentTranslate);
+	// console.log("touch end currentTranslate:" + flex_currentTranslate);
 	flex_prevTranslate = flex_currentTranslate;
 	flex_setSlidePosition();
 }
@@ -187,8 +187,8 @@ let fun_Uni_prevBtn2 = function(btnId){
 	}else{
 		//uni_imgSlider.style.transition = "transform 0.4s ease-in-out";
 		uniCounter[counterId] --;
-		console.log('btn:' + uniCounter[counterId]);
-		console.log(counterId);
+		/* console.log('btn:' + uniCounter[counterId]);
+		console.log(counterId); */
 
 		switch(counterId){
 			case "flexibility":
@@ -243,8 +243,8 @@ let fun_Uni_nextBtn2 = function(btnId){
 	}else{
 		//uni_imgSlider.style.transition = "transform 0.4 ease-in-out";
 		uniCounter[counterId] ++;
-		console.log(uniCounter[counterId]);
-		console.log(counterId);
+		/* console.log(uniCounter[counterId]);
+		console.log(counterId); */
 
 		switch(counterId){
 			case "flexibility":

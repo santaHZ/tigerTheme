@@ -69,6 +69,7 @@
     white-space:normal;
     word-wrap: break-word;
     text-align: left;
+    color: black;
     
 }
 
@@ -220,6 +221,7 @@
 
     .uni_imgSlider .item ul .titleStyle{
         font-size: 5.0vw;  /*image description head font */
+        color: black;
         
     }
     .uni_imgSlider .item ul li{
