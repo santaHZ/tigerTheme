@@ -13,8 +13,8 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_label_1": "LEARN MORE",
+            "button_link_1": "shopify:\/\/collections\/blog",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -27,9 +27,10 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/main1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
-        "adapt_height_first_image": false,
+        "adapt_height_first_image": true,
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
@@ -104,7 +105,7 @@
         "product": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "foldingoxw",
             "second_image": false,
             "image_padding": false,
             "secondary_background": false
@@ -113,7 +114,7 @@
         "collection": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "fat-tire-ebike",
             "image_padding": false,
             "color_scheme": "background-1"
           }
