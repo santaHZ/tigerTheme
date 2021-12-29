@@ -11,7 +11,7 @@ if (uniCounter.hasOwnProperty("userfriendly")){
 		
 }else{
 	uniCounter["userfriendly"] = 0;
-	console.log(uniCounter);
+	// console.log(uniCounter);
 }
 
 let userfly_isDragging = false,

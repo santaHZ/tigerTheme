@@ -43,18 +43,22 @@
     clear: both;
 }
 
-#product_main div ul li ul li {
+#product_main div ul li ul li {  /* set the font size of detail content of specification */
 	list-style: none;
-	font-size: calc(14px + (36 - 14) * ((100vw - 320px) / (2560 - 320)));
+	/* font-size: calc(14px + (36 - 14) * ((100vw - 320px) / (2560 - 320))); */
+    font-size: 0.8em;
 	display: block;
 	border-width: 0px;
 	border-style: solid;
 	border-color: lightgray;
-	padding: 1em;
+	padding: 0.5em;
 }
 
 #product_main .rtBoder1px {
 	border-right-width: 1px;
+    font-weight: bold;
+    color: black;
+    padding-left: 1.5em;
 }
 
 #product_main .ltBoder1px {
@@ -84,32 +88,31 @@
     margin-right: 2em;
 }
 
-
-
-.add {
+.add {   
     display: block;
     position: relative;
     float: left;
-    border: 1.0vw solid coral;
-    width: 2.0vw;
-    height: 2.0vw;
-    margin-top: 1.0vw;
-    margin-left: 1.2vw;
+    width: 1.3vw;    /*set the size of plus icon*/
+    height: 1.3vw;
+    margin-top: 0.5vw;
+    margin-left: 0.6vw;
     /* color: #fff; */
-    color: #ccc;
+    /* color: #ccc; */
+    color: black;
     transition: color .25s;
     
 }
 
-.add::before{
+.add::before{  /* set the add icon like minus*/
     content: '';
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 2.6vw;
+    width: 2.6vw; 
     margin-left: -1.3vw;
-    margin-top: -0.2vw;
-    border-top: 0.4vw solid;
+    margin-top: -0.1vw;
+    border-top: 0.2vw solid;
+    /* border: 1px solid chocolate; */
 }
 
 .add::after{
@@ -118,49 +121,52 @@
     left: 50%;
     top: 50%;
     height: 2.6vw;
-    margin-left: -0.2vw;
+    margin-left: -0.1vw;
     margin-top: -1.3vw;
-    border-left: 0.4vw solid;
+    border-left: 0.2vw solid;
 }
 
+/* set the minus icon */
 .minus {
     display: block;
     position: relative;
     float: left;
-    border: 1.0vw solid;
-    width: 2.0vw;
-    height: 2.0vw;
-    color: #ccc;
+    width: 1.3vw;
+    height: 1.3vw;
+    color: black;
+    /* color: #ccc; */
     /* color: #fff; */
     transition: color .25s;
-    margin-top: 1.0vw;
-    margin-left: 1.2vw;
+    margin-top: 0.5vw;
+    margin-left: 0.6vw;
     
 }
 
-.minus::before{
+.minus::before{ /* set the minus icon*/
     content: '';
     position: absolute;
     left: 50%;
     top: 50%;
     width: 2.6vw;
     margin-left: -1.3vw;
-    margin-top: -0.2vw;
-    border-top: 0.4vw solid;
+    margin-top: -0.1vw;
+    border-top: 0.2vw solid;
 }
 
 .speMenu{
-    font-size: 2.5vw;
+    font-size: 1.3vw;  /* set font size of subMenu like Technology Frame..*/
     padding-left: 10px;
+    color: black;
+    font-weight: bold;
 }
 
 .roundCorner{
     display: block;
-    color:white;
+    color:#A4DE2F;
     text-align: center;
     border: 0px solid #a1a1a1;
     padding: 0.2vw 0.4vw;
-    background: #029789;
+    background: #A4DE2F;
     width: 5.0vw;
     height: 1.5vw;
     border-radius: 0.4vw;
@@ -169,7 +175,7 @@
 }
 
 .bigMenuStyle{
-	font-size: 3.5vw;
+	font-size: 3.0vw;
     margin-bottom: 10px;
 	font-weight: bold;
 	color: black;
@@ -179,7 +185,7 @@
 
 .detail_menu_style{  /* set container of add and minus icon */
     display: block;
-    height: 4.0vmax;
+    height: 3.0vmax;
     cursor: pointer;
     /* border: 2px solid rgb(161, 21, 21); */
     /* background-color: rgb(214, 216, 211); */
@@ -282,6 +288,18 @@
         height: 0.8em;
         font-size: 0.8em;
         border: 0.1em solid gray;
+    }
+
+    .detail_menu_style{  /* set container of add and minus icon */
+        display: block;
+        height: 4.0vmax;
+        cursor: pointer;
+        /* border: 2px solid rgb(161, 21, 21); */
+        /* background-color: rgb(214, 216, 211); */
+    }
+
+    #product_main div ul li ul li {
+        font-size: 2.5em;
     }
 }
 

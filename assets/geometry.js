@@ -9,7 +9,7 @@ const tabBtn2 = document.querySelector("#geometry .tabBtnDiv .tabBtn2");
 const DivOverallWrapper = tabDivOverall.firstElementChild;
 const DivFoldedWrapper = tabDivFolded.firstElementChild;
 //let tabDivFoldedWrapperData = document.querySelector("#geometry .tabInfo .folded .foldedWrapper .foldedlWrapperData");
-console.log(DivOverallWrapper);
+// console.log(DivOverallWrapper);
 
 const overallImg = DivOverallWrapper.firstElementChild.firstElementChild;
 overallImg.setAttribute('src', tabBtnOverall);
@@ -17,7 +17,7 @@ overallImg.setAttribute('src', tabBtnOverall);
 const foldedImg = DivFoldedWrapper.firstElementChild.firstElementChild;
 foldedImg.setAttribute('src', tabBtnFolded);
 
-console.log(overallImg);
+// console.log(overallImg);
 
 
 

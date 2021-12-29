@@ -16,7 +16,7 @@
     text-align: center;
     border: 0px solid #a1a1a1;
     padding: 0.2vw 0.4vw;
-    background: #029789;
+    background: #A4DE2F;
     width: 5.0vw;
     height: 1.5vw;
     border-radius: 0.4vw;
@@ -131,7 +131,7 @@
     padding: 10px;
     padding-left: 20px;
     list-style: none;
-    font-size: 0.8vw; /* define data font*/
+    font-size: 0.8vw; /* define overall data font*/
 }
 
 .overallBtBoder1px{
@@ -153,7 +153,7 @@
 
 .overallBgColor{
     background-color:rgb(214, 216, 215);
-    font-size: 1.0vw; /* define bigger font for top 2 rows*/
+    font-size: 2.0vw; /* define bigger font for top 2 rows for data, here setting is not effective, maybe because former setting used long selector*/
     font-weight: bold;
 }
 
@@ -240,7 +240,7 @@
     list-style: none;
     padding: 10px;
     padding-left: 20px;
-    font-size: 1.0vmax; /* define data font*/
+    font-size: 1.0vw; 
 }
 
 #geometry .foldedLeftColWidth{
@@ -251,11 +251,11 @@
 #geometry .foldedRightColWidth{
     display: block;
     width: 33%;
-    height: auto;
 }
 
 .foldedBgColor{
     background-color: rgb(214, 216, 215);
+    font-size: 1.0vw;
 }
 
 /* setting to different type of device*/
@@ -309,7 +309,8 @@
     }
 
     #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
-        font-size: 3.0vmax;
+        font-size: .8vw;
+        font-weight: bold;
     }
 }
 

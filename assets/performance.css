@@ -17,7 +17,7 @@
     text-align: center;
     border: 0px solid #a1a1a1;
     padding: 0.2vw 0.4vw;
-    background: #029789;
+    background: #A4DE2F;
     width: 5vw;
     height: 1.5vw;
     border-radius: 0.4vw;
@@ -80,8 +80,8 @@
 }
 
 .performance_desc{
-    width: 100%;
-    font-size: 2.5vw;  /*Block description head font */
+    width: 50%;
+    font-size: 1.1vw;  /*Block description head font */
     margin-bottom: 2em;
 }
 
@@ -251,8 +251,11 @@
  }
 
  .main_top_light{
-    font-size: 1.2em;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: lighter;
+    color: #BCBCBC;
+    padding-right: 5em;
+    
 }
 
 @media screen and (max-width: 749px) {
@@ -318,7 +321,7 @@
     .perf_big{
         font-size: 4.0vmax;
         line-height: 4.8vmax;
-        color: chartreuse;
+        color: #A4DE2F;
     }
     
     .perf_bold{
@@ -328,6 +331,7 @@
     }
 
     .performance_desc{
+        width: 100%;
         font-size: 3.5vw;  /*Block description head font */
 
     }
