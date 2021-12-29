@@ -113,8 +113,11 @@
     position: relative;
     list-style: none;
     display: flex;
+    padding-left: 5%;
+    padding-top: 10%;
     width: 100%;
     float: left;
+    /* border: 1px solid chocolate; */
 }
 
 #geometry .tabInfo .overall .overallWrapper .overallWrapperData ul{ /* ul with class overallLeftColWith*/
@@ -154,12 +157,14 @@
 .overallBgColor{
     background-color:rgb(214, 216, 215);
     font-size: 2.0vw; /* define bigger font for top 2 rows for data, here setting is not effective, maybe because former setting used long selector*/
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .overallLeftColWith{  /* define left column width*/
     display: block;
     width: 60%;
+    font-weight: bold;
+    /* border: 1px solid chocolate; */
 }
 
 .overallRightColWith{  /* define right column width*/
@@ -222,7 +227,10 @@
     list-style: none;
     display: flex;
     float: left;
+    padding-left: 5%;
+    padding-top: 10%;
     width: 100%;
+    /* border: 1px solid coral; */
 }
 
 
@@ -240,12 +248,13 @@
     list-style: none;
     padding: 10px;
     padding-left: 20px;
-    font-size: 1.0vw; 
+    font-size: 0.8vw; 
 }
 
 #geometry .foldedLeftColWidth{
     display: block;
     width: 60%;
+    font-weight: bold;
 }
 
 #geometry .foldedRightColWidth{
@@ -310,7 +319,6 @@
 
     #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
         font-size: .8vw;
-        font-weight: bold;
     }
 }
 

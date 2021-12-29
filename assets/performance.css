@@ -56,7 +56,7 @@
     float: left;
     width: 60%;
     height: 100%;
-    padding-top: 1rem;
+    padding-top: 2rem;
     /*background-color: blueviolet;*/
 }
 
@@ -108,7 +108,7 @@
     margin: 0px;
     float: left;
     margin-left: 10.0vmax;
-    margin-top: 6.0vmax;
+    margin-top: 3.9vmax;
     /* border: 1px solid chocolate; */
 }
 
@@ -119,28 +119,32 @@
     padding: 0px;
     list-style: none;
     border: 0px solid chocolate;
-    padding-left: 10%;
+    padding-left: 5%;
+    width: 300px; /* this setting controll word space*/
+    margin-bottom: 3em;
 }
 
 .performance_main_desc_data ul li{
     display: block;
     list-style: none;
-    border: 0px solid chartreuse;
+    /* border: 1px solid chartreuse; */
     padding: 0px;
     margin: 0px;
+    
 }
 
 .perf_big{
-    font-size: 4.0vmax;
-    line-height: 4.4vmax;
-    color: chartreuse;
+    font-size: 3.0vmax;
+    line-height: 3.6vmax;
+    color: #A4DE2F;
 }
 
 
 .perf_bold{
-    font-size: 1.5vmax;
+    font-size: 1.2vmax;
     line-height: 1.6vmax;
     color: black;
+    font-weight: bolder;
 }
 
 .main_banner{   /* set the section showing biggest image */
@@ -255,7 +259,8 @@
     font-size: 14px;
     font-weight: lighter;
     color: #BCBCBC;
-    padding-right: 5em;
+    width: 70% !important;
+    /* border: 1px solid coral; */
     
 }
 

@@ -199,7 +199,7 @@
     height: 1vw;
     background:black;
     cursor: pointer;
-    border: 0.2vw solid gray;
+    border: 0.2vw solid lightgray;
     border-radius: 50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1vw;
@@ -213,7 +213,7 @@
     height: 1vw;
     background: #fff;
     cursor: pointer;
-    border: 0.2vw solid gray;
+    border: 0.2vw solid lightgray;
     border-radius: 50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1vw;
