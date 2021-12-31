@@ -5,7 +5,7 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    margin-bottom: 2vmax;
+    margin-bottom: 2vw;
     clear: both;
     font-family: "Montserrat", sans-serif;
     /* border: 1px solid cornflowerblue; */
@@ -107,8 +107,8 @@
     padding: 0px;
     margin: 0px;
     float: left;
-    margin-left: 10.0vmax;
-    margin-top: 3.9vmax;
+    padding-left: 10.0em;
+    padding-top: 3.9em;
     /* border: 1px solid chocolate; */
 }
 
@@ -119,8 +119,9 @@
     padding: 0px;
     list-style: none;
     border: 0px solid chocolate;
-    padding-left: 5%;
-    width: 300px; /* this setting controll word space*/
+    /* padding-left: 5%; */
+    /* width: 300px; */
+    width: auto;
     margin-bottom: 3em;
 }
 
@@ -134,17 +135,19 @@
 }
 
 .perf_big{
-    font-size: 3.0vmax;
-    line-height: 3.6vmax;
+    font-size: 3.0vw;
+    line-height: 3.6vw;
     color: #A4DE2F;
 }
 
 
 .perf_bold{
-    font-size: 1.2vmax;
-    line-height: 1.6vmax;
+    display: inline;
+    font-size: 1.2vw;
+    line-height: 1.6vw;
     color: black;
     font-weight: bolder;
+    width: auto;
 }
 
 .main_banner{   /* set the section showing biggest image */
@@ -153,7 +156,7 @@
     overflow: none;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 2vmax;
+    margin-bottom: 2vw;
     width: 100%;
     height: auto;
     text-align: center;
@@ -294,8 +297,10 @@
     }
 
     .main_top_banner div ul li.main_top_light{
-        font-size: 0.8em;
+        font-size: 0.7em;
         margin: 0;
+        width: 100% !important;
+        /* border: 1px solid coral; */
     }
 
     .performance_main_desc_img{
@@ -324,16 +329,36 @@
     
     }
 
+    .performance_main_desc_data{
+        padding-left: 1em;
+        padding-top: 0.5em;
+        /* border: 1px solid rgb(72, 36, 172); */
+    }
+
+    .performance_main_desc_data ul{
+        padding-bottom: 0;
+        margin-bottom: 0;
+        /* border: 1px solid coral; */
+    }
+
+    /* set second row with no margin-bottom */
+    ul.performance_main_desc_data_ul{
+        margin-bottom: 1em;
+        padding-bottom: 0;
+    }
+
     .perf_big{
-        font-size: 4.0vmax;
-        line-height: 4.8vmax;
+        font-size: 6.0vw;
+        line-height: 6.8vw;
         color: #A4DE2F;
+        /* border: 1px solid chocolate !important; */
     }
     
     .perf_bold{
-        font-size: 1.5vmax;
-        line-height: 1.9vmax;
+        font-size: 3.5vw;
+        line-height: 3.9vw;
         color: black;
+        /* border: 1px solid chocolate !important; */
     }
 
     .performance_desc{

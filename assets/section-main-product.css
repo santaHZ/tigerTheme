@@ -838,26 +838,79 @@ a.product__text {
 
 
 /* editing the button color by user*/
+.product__title{
+  font-size: 35px;
+  color: #222222;
+  font-weight: bold;
+}
+
+.price--large{
+  font-size: 23px !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+
+
 .shopify-payment-button .shopify-payment-button__button{
   background-color: #A4DE2F;
   box-shadow: none !important;
   font-weight: bold;
+  /* color: black; */
 }
 
 .shopify-payment-button .shopify-payment-button__button:hover{
   background-color: #A4DE2F !important;
   box-shadow: none !important;
+  /* color: black; */
 }
 
 .product-form__submit.button{
   font-weight: bold;
   border: 1px solid lightgray !important;;
   box-shadow: none !important;
+  color: black;
+  width: 100%;
 }
 
 .product-form__submit.button:hover{
   border: 1px solid lightgray !important;;
   box-shadow: none !important;
+  background-color: black;
+  color: white;
+}
+
+.quantity{
+  width: 98%;
+  border: 1px solid lightgray;
+}
+
+button[name=plus]{
+  border-left: 1px solid lightgray;
+}
+
+button[name=plus]:hover{
+  background-color: #A4DE2F;
+}
+
+button[name=minus]{
+  border-right: 1px solid lightgray;
+}
+
+button[name=minus]:hover{
+  background-color: #A4DE2F;
+}
+
+div[id^=price-]{
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.klarnaDes{
+  font-size: 15px;
+  padding-left: 5px;
+  line-height: 15px;
 }
 
 

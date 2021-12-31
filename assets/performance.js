@@ -25,6 +25,21 @@ const perf_slider = document.querySelector('#perf_wrapper').firstElementChild  /
 const perf_slides = Array.from(perf_slider.querySelectorAll('.item')); // this is div slides array
 const perf_btn = document.querySelector('#perf_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
+// initiallize [performance] dot buttons
+for (let i=0; i < (perf_slides.length - colNum + 1); i++){
+	let node = document.createElement("div");
+	node.setAttribute("id", "perf_DotBtn-" +i);
+	if(i== 0){
+		node.setAttribute("class", "buttonDotSolid");
+	}else{
+		node.setAttribute("class", "buttonDotEmpty");
+	}
+	node.setAttribute("onclick","dotBtnFun(this.id)");
+	perf_btn.appendChild(node);
+}
+//console.log(perf_btn);
+
+
 // initialize uniCounter
 if (uniCounter.hasOwnProperty("performance")){
 		

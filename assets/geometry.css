@@ -282,6 +282,11 @@
         display: block;
     }
 
+    #geometry .tabInfo .overall .overallWrapperData{
+        /* border: 1px solid coral; */
+        padding-left: 0px !important;
+    }
+
     #geometry .tabInfo .folded .foldedWrapper {
         padding: 0px;
         margin: 0px;
@@ -290,12 +295,17 @@
         width: 100%;
     }
 
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData{
+        /* border: 1px solid coral; */
+        padding-left: 0px;
+    }
+
     #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
-        font-size: 1.5vmax;
+        font-size: 3.5vw;
     }
 
     #geometry .tabInfo .overall .overallWrapper .overallWrapperData ul li{
-        font-size: 1.5vmax;
+        font-size: 3.5vw;
     }
 
     #geometry .tabBtnDiv .tabBtn1 ul li{

@@ -6,6 +6,21 @@ const userfly_slider = document.querySelector('#userfly_wrapper').firstElementCh
 const userfly_slides = Array.from(userfly_slider.querySelectorAll('.item')); // this is div slides array
 const userfly_btn = document.querySelector('#userfly_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
+// initiallize [userfriendly] dot buttons
+for (let i=0; i < (userfly_slides.length - colNum + 1); i++){
+	let node = document.createElement("div");
+	node.setAttribute("id", "userfly_DotBtn-" +i);
+	if(i== 0){
+		node.setAttribute("class", "buttonDotSolid");
+	}else{
+		node.setAttribute("class", "buttonDotEmpty");
+	}
+	node.setAttribute("onclick","dotBtnFun(this.id)");
+	userfly_btn.appendChild(node);
+}
+//console.log(userfly_btn);
+
+
 // initialize uniCounter
 if (uniCounter.hasOwnProperty("userfriendly")){
 		
