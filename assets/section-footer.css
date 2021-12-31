@@ -510,3 +510,38 @@ noscript .localization-selector.link {
 .footer .disclosure__link--active {
   text-decoration: underline;
 }
+
+
+
+/* user setting to footer section */
+.footer{
+  background-color: black !important;
+  color: white !important;
+}
+
+.link.link--text.list-menu__item.list-menu__item--link{
+  color: white;
+}
+
+.footer-block__details-content.rte{
+  color: white;
+}
+
+.footer-block__heading{
+  color: white;
+}
+
+input[id ^= NewsletterForm--]{
+  border-color: white;
+  box-shadow: none;
+  color: white !important;
+}
+
+input[id ^= NewsletterForm--]:hover{
+  border-color: white;
+  box-shadow: none;
+}
+
+.field__label{
+  color: white;
+}
