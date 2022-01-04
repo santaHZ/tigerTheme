@@ -30,6 +30,7 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'nav_bar.js' | asset_url }}" defer="defer"></script>
 
     {{ content_for_header }}
 
@@ -110,7 +111,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'header.css' | asset_url | stylesheet_tag }}
+    {{ 'nav_bar.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -136,6 +137,255 @@
     {% section 'announcement-bar' %}
 
     {% section 'header' %}
+
+
+    <div class="stickyMenu">
+      <div class="topMenu">
+          <ul class="topMenuUl">
+              <li class="homeBlock"><a href="/">HOME</a></li>
+              <li class="allBikesMenu"><a href="/collections/all-bikes">ALL EBIKES<span class="menuArrow"></span></a>
+                  <div class="menuBlock">
+                      <ul class="dropdownPro">
+                          <li class="viewAll"><a href="/collections/all-bikes">VIEW ALL</a><span class="icon-arrow"></span></li>
+                          <li><a href="/collections/fat-tire-ebike">FAT TIRE 20"</a><span class="icon-arrow"></span></li>
+                          <li><a href="/collections/fat-tire-ebike">FAT TIRE 26"</a><span class="icon-arrow"></span></li>
+                          <li><a href="/collections/city-ebike">CITY 16"-22"</a><span class="icon-arrow"></span></li>
+                          <li><a href="/collections/city-e-bikes-26">CITY E-BIKES 26"</a><span class="icon-arrow"></span></li>
+                          <li><a href="/collections/mountain-ebike">MOUNTAIN</a><span class="icon-arrow"></span></li>
+                          <li><a href="/collections/folding-electric-bike">FOLDING</a><span class="icon-arrow"></span></li>
+                      </ul>
+                      <div class="dropdownProDetail">
+                          <ul class="setInvisible">
+                              <li>
+                                  <a href="/products/camel-men-26"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camelMen26.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Camel Men 26"</a>
+                                  <span>739.00$</span>
+                              </li>
+                              <li><a href="/products/camel"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camelWomen26.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Camel Women 26"</a>
+                                  <span>739.00$</span>
+                              </li>
+                              <li><a href="/products/city-stroller"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cityStroller.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">City Stroller</a>
+                                  <span>899.00$</span>
+                              </li>
+                              <li><a href="/products/classic"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/classic.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Classic</a>
+                                  <span>859.00$</span>
+                              </li>
+                              <li><a href="/products/cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cruiser.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Cruiser</a>
+                                  <span>999.00$</span>
+                              </li>
+                              <li><a href="/products/discovery"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/naktoDiscovery.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Nakto Discovery</a>
+                                  <span>999.00$</span>
+                              </li>
+                              <li><a href="/products/elegance"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/elegance.png?v=1641290141" width="225" height="150"></a>
+                                  <a href="#">Elegance</a>
+                                  <span>729.00$</span>
+                              </li>
+                              <li><a href="/products/fashion"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/fashion.png?v=1641289890" width="225" height="150"></a>
+                                  <a href="#">Fashion</a>
+                                  <span>709.00$</span>
+                              </li>
+                              <li><a href="/products/foldingoxw"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/foldingOX.jpg?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Folding OX</a>
+                                  <span>1099.00$</span>
+                              </li>
+                              <li><a href="/products/mini-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/miniCruiser.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Mini Cruiser</a>
+                                  <span>949.00$</span>
+                              </li>
+                              <li><a href="/products/pony"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/pony250W.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">PONY 250W</a>
+                                  <span>709.00$</span>
+                              </li>
+                              <li><a href="/products/ranger"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/rangerMountain.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Ranger mountain</a>
+                                  <span>949.00$</span>
+                              </li>
+                              <li><a href="/products/santa-monica"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/santaMonica.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Santa Monica(Ship in December)</a>
+                                  <span>1099.00$</span>
+                              </li>
+                              <li><a href="/products/skylark"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/skylark.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Skylark</a>
+                                  <span>699.00$</span>
+                              </li>
+                              <li><a href="/products/super-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/superCruiser.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Super Cruiser</a>
+                                  <span>1299.00$</span>
+                              </li>
+                          </ul>
+                          <ul class="setInvisible">
+                              <li><a href="/products/foldingoxw"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/foldingOX.jpg?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Folding OX</a>
+                                  <span>1099.00$</span>
+                              </li>
+                              <li><a href="/products/discovery"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/naktoDiscovery.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Nakto Discovery</a>
+                                  <span>999.00$</span>
+                              </li>
+                              <li><a href="/products/mini-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/miniCruiser.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Mini Cruiser</a>
+                                  <span>949.00$</span>
+                              </li>
+                          </ul>
+                          <ul class="setInvisible">
+                              <li><a href="/products/santa-monica"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/santaMonica.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Santa Monica(Ship in December)</a>
+                                  <span>1099.00$</span>
+                              </li>
+                              <li><a href="/products/super-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/superCruiser.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Super Cruiser</a>
+                                  <span>1299.00$</span>
+                              </li>
+                              <li><a href="/products/cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cruiser.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Cruiser</a>
+                                  <span>999.00$</span>
+                              </li>
+                          </ul>
+                          <ul class="setInvisible">
+                              <li><a href="/products/skylark"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/skylark.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Skylark</a>
+                                  <span>699.00$</span>
+                              </li>
+                              <li><a href="/products/elegance"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/elegance.png?v=1641290141" width="225" height="150"></a>
+                                  <a href="#">Elegance</a>
+                                  <span>729.00$</span>
+                              </li>
+                              <li><a href="/products/fashion"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/fashion.png?v=1641289890" width="225" height="150"></a>
+                                  <a href="#">Fashion</a>
+                                  <span>709.00$</span>
+                              </li>
+                              <li><a href="/products/pony"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/pony250W.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">PONY 250W</a>
+                                  <span>709.00$</span>
+                              </li>
+                          </ul>
+                          <ul class="setInvisible">
+                              <li><a href="/products/city-stroller"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cityStroller.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">City Stroller</a>
+                                  <span>899.00$</span>
+                              </li>
+                              <li><a href="/products/camel-men-26"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camelMen26.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Camel Men 26"</a>
+                                  <span>739.00$</span>
+                              </li>
+                              <li><a href="/products/camel"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camelWomen26.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Came Women 26"</a>
+                                  <span>739.00$</span>
+                              </li>
+                              <li><a href="/products/classic"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/classic.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Classic</a>
+                                  <span>859.00$</span>
+                              </li>
+                          </ul>
+                          <ul class="setInvisible">
+                              <li><a href="/products/ranger"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/rangerMountain.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Ranger Mountain</a>
+                                  <span>949.00$</span>
+                              </li>
+                          </ul>
+                          <ul class="setInvisible">
+                              <li><a href="/products/foldingoxw"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/foldingOX.jpg?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Folding OX</a>
+                                  <span>1099.00$</span>
+                              </li>
+                              <li><a href="/products/fashion"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/fashion.png?v=1641289890" width="225" height="150"></a>
+                                  <a href="#">Fashion</a>
+                                  <span>709.00$</span>
+                              </li>
+                              <li><a href="/products/skylark"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/skylark.png?v=1641289889" width="225" height="150"></a>
+                                  <a href="#">Skylark</a>
+                                  <span>699.00$</span>
+                              </li>
+                          </ul>
+
+                      </div>
+                  </div>
+              </li>
+              <li class="accMenu"><a href="/collections/accessories-1">ACCESSORIES<span class="menuArrow"></span></a>
+                  <ul class="dropdownAcc">
+                      <li><a href="/collections/accessories">Accessories</a></li>
+                      <li><a href="/collections/replacement-parts">Replacement Parts</a></li>
+                  </ul>
+              </li>
+              <li class="commMenu"><a href="#">COMMUNITY<span class="menuArrow"></span></a>
+                  <ul class="dropdownCom">
+                      <li><a href="/pages/nakto-blog">Blog</a></li>
+                      <li><a href="/pages/what-our-customers-say">Reviews</a></li>
+                      <li><a href="/pages/reviews3">Story</a></li>
+                      <li><a href="/pages/test">Membership</a></li>
+                  </ul>
+              </li>
+              <li class="supportMenu"><a href="#">SUPPORT<span class="menuArrow"></span></a>
+                  <ul class="dropdownSup">
+                      <li><span>Support</span><hr>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/support1.png?v=1641290299" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="/pages/about-us">About Us</a><a href="#">Factory, warehouse, company</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/support2.png?v=1641290299" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="/pages/shipping-policy">Shipping Policy</a><a href="#">Free shipping to the US</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/support3.png?v=1641290299" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="/pages/return-and-refund-policy" >Return & Refund</a><a href="#">Hassle-free returns & refunds</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/support4.png?v=1641290299" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="/pages/warranty" >Warranty</a><a href="#">One year warranty</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/support5.png?v=1641290299" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="/pages/privacy-policy" >Privacy Policy</a><a href="#">We take your data privacy seriously</a></li>
+                          </ul>
+                      </li>
+                      <li><span>Contact Us</span><hr>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/contactus1.png?v=1641290284" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="#" >Customer Service E-mail</a><a href="#">support@nakto.com</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/contactus2.png?v=1641290284" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="#" >Founder E-mail</a><a href="#">aston@nakto.com</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/contactus3.png?v=1641290284" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="#" >Customer Phone</a><a href="#">phone: 703-270-0055</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/contactus4.png?v=1641290284" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="#" >Warehouse Phone</a><a href="#">phone: 1-(714)603-7547</a></li>
+                          </ul>
+                          <ul>
+                              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/contactus5.png?v=1641290284" width="70" height="70"></li>
+                              <li class="dropdownSupTitle"><a href="#" >Address</a><a href="#">1683 sierra Madre cir Placentia, CA 929870, USA</a></li>
+                          </ul>
+                      </li>
+                      <li><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6625.943881475663!2d-117.82867!3d33.864614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd14afe9f6703%3A0x426f8956abce5028!2s1683%20Sierra%20Madre%20Cir%2C%20Placentia%2C%20CA%2092870!5e0!3m2!1sen!2sus!4v1641283305933!5m2!1sen!2sus" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe></li>
+                  </ul>
+              </li>
+              <li class="dealerMenu"><a href="#">DEALER & AFFILIATE<span class="menuArrow"></span></a>
+                  <ul class="dropdownDeal">
+                      <li><a href="/pages/register-affiliate-account">Affiliate Register</a></li>
+                      <li><a href="/pages/find-a-dealer">Find A Dealer</a></li>
+                  </ul>
+              </li>
+          </ul>
+          <div class="accountDiv"><a href="/account/login">Account</a></div>
+      </div>
+    </div>
+    {%- if request.page_type == 'product' -%}
+    <div>this is product page 31321654654</div>
+    {%- endif -%}
+
+
+
+
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

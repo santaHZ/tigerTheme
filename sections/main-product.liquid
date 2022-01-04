@@ -86,13 +86,15 @@
           {%- when '@app' -%}
             {% render block %}
           {%- when 'text' -%}
-            <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+            <!-- <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
               {{- block.settings.text -}}
-            </p>
+            </p> -->
           {%- when 'title' -%}
+            <div class="productWrapperText">Electric Fat-Tire Bike</div>
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+            <hr>
             <div class="overViewStyle">Overview</div>
             <div>The compact Folding OX E-bike is born for portability and mobility. Hi-rise cruiser handlebar creates a lower riding profile with comfort. With the equipment of wide tire, you could explore all sorts of riding locations, on or off-road trails. Easily folds in half to let you bring it with you wherever you go.</div>
 <!-- Start Areviews product title Rating Code -->

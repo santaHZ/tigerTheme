@@ -837,9 +837,17 @@ a.product__text {
 }
 
 
-/* editing the button color by user*/
+/************************ editing the button color by user **********************/
+.productWrapperText{
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+
 .product__title{
-  font-size: 35px;
+  font-size: 35px!important;
+  letter-spacing: .2px!important;
   color: #222222;
   font-weight: bold;
   text-transform: uppercase;

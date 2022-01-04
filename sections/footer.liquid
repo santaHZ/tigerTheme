@@ -27,50 +27,36 @@
             assign footer_grid_class = 'grid--3-col-tablet'
           endif
         -%}
-        <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
-          {%- for block in section.blocks -%}
-            <div class="footer-block grid__item{% if block.type == 'link_list' and block.settings.heading != blank %} footer-block--menu{% endif %}" {{ block.shopify_attributes }}>
-              {%- if block.settings.heading != blank -%}
-                <h2 class="footer-block__heading">{{- block.settings.heading | escape -}}</h2>
-              {%- endif -%}
-
-              {%- case block.type -%}
-                {%- when 'text' -%}
-                  <div class="footer-block__details-content rte">
-                    {{ block.settings.subtext }}
-                  </div>
-                {%- when 'link_list' -%}
-                  {%- if block.settings.menu != blank and block.settings.heading != blank -%}
-                    <ul class="footer-block__details-content list-unstyled">
-                      {%- for link in block.settings.menu.links -%}
-                        <li>
-                          <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
-                            {{ link.title }}
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-                {%- when 'image' -%}
-                  <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
-                    {%- if block.settings.image != blank -%}
-                      {%- assign image_size = block.settings.image_width | append: 'x' -%}
-                      <img
-                        srcset= "{{ block.settings.image | img_url: image_size }}, {{ block.settings.image | img_url: image_size, scale: 2 }} 2x"
-                        src="{{ block.settings.image | img_url: '400x' }}"
-                        alt="{{ block.settings.image.alt | escape }}"
-                        loading="lazy"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
-                        style="max-width: min(100%, {{ block.settings.image_width }}px);"
-                      >
-                    {%- else -%}
-                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                    {%- endif -%}
-                  </div>
-                {%- endcase -%}
-            </div>
-          {%- endfor -%}
+        <div class="footerCustomize">
+          <ul>
+            <li class="footerBigFont">Buy with Us</li>
+            <li><a href="/collection/fat-tire-ebike">Fat Tire E-Bikes</a></li>
+            <li><a href="/collection/city-ebike">City E-Bikes</a></li>
+            <li><a href="/collection/mountain-ebike">Mountain E-Bikes</a></li>
+          </ul>
+          <ul>
+            <li class="footerBigFont">Support</li>
+            <li><a href="/pages/about-us">About Nakto</a></li>
+            <li><a href="/pages/contact-us">Contact Us</a></li>
+            <li><a href="/pages/shipping-policy">Shipping Policy</a></li>
+            <li><a href="/pages/return-and-refund-policy">Return & Refund Policy</a></li>
+            <li><a href="/pages/nakto-blog">Blogs</a></li>
+        </ul>
+          <ul>
+            <li class="footerBigFont">Legal</li>
+            <li><a href="/pages/warranty">Warranty Information</a></li>
+            <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/pages/terms-and-conditions">Terms and Conditions</a></li>
+            <li><a href="/pages/intellectual-property-rights">Intellectual Property Rights</a></li>
+          </ul>
+          <ul>
+            <li class="footerBigFont">Contact Us</li>
+            <li><strong>EMAIL:</strong> support@nakto.com</li>
+            <li><strong>CUSTOMER SERVICE:</strong></li>
+            <li>703-270-0055 (6 Days from 9:00 am to 6:00 pm)</li>
+            <li><strong>ADDRESS:</strong></li>
+            <li>Warehouse: 1683 Sierra Madre cir Placentia, CA 92870, USA</li>
+          </ul>
         </div>
       {%- endif -%}
 
