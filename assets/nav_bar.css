@@ -9,8 +9,9 @@
 .topMenuUl{ /* containing lis as top menu words*/
     display: flex;
     list-style: none;
-    width: 50%;
-    justify-content: space-evenly;
+    width: auto; /*this setting make the menu center*/
+    align-items: center;
+    justify-content: space-between;
     background-color: black;
     padding: 0;
     margin: 0;
@@ -23,6 +24,7 @@
     padding: 0;
     margin: 0;
     position: relative;
+    display: inline-block; /*testing*/
     width: auto;
     /* border-right: 1px solid #313131; */
     /* border: 5px solid coral; */
@@ -34,7 +36,7 @@
     text-decoration: none;
     background-color: black;
     color: white;
-    padding: 15px;
+    padding: 15px 20px;
     margin: 0px;
     transition: background-color 0.3s ease-in-out;
     /* border: 1px solid chartreuse; */
@@ -66,9 +68,9 @@
     background-color: white;
 }
 
-li.allBikesMenu:hover{
+/* li.allBikesMenu:hover{
     background-color: blueviolet;
-}
+} */
 
 .allBikesMenu:hover .menuBlock{
     visibility: visible;
@@ -511,6 +513,25 @@ ul.dropdownDeal li a:hover{
     background-color: white;
 
 }
+
+div.stickyMenu{
+    width: 100%;
+}
+
+div.stickyStyle{
+    position: sticky;
+    position: -webkit-sticky; /* FOR Safari*/
+    left: 0;
+    top: 0;
+    /* top: 90px; */
+    width: 100%;
+    z-index: 3;
+}
+
+
+
+
+
 
 @media screen and (max-width: 749px){
     div.stickyMenu{

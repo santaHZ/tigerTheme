@@ -1,0 +1,167 @@
+.mainIndex{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    position: relative;
+}
+
+.bannerMainImage{
+    width: 100%;
+    border: 0;
+    display: block;
+}
+
+.advertingBlock{
+    position: absolute;
+    top: 35%;
+    right: 6%;
+    color: white;
+}
+
+.advertingBlock ul{
+    list-style: none;
+}
+
+.textProductName{
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.advertiseWords{
+    font-size: 50px;
+    font-weight: bolder;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.featureProduct{
+    font-size: medium;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.featureProduct > span{
+    margin: 0 10px !important;
+}
+
+.mainIndexBtn{
+    display: block;
+    background-color: #EF6B24;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    line-height: 50px;
+    text-decoration: none;
+    width: 75%;
+    /* margin: 0 auto; */
+    text-align: center;
+}
+
+
+/* 3 column */
+.mainIndex3Col{
+    position: relative;
+    display: flex;
+    margin: 0 20px;
+    margin-top: 20px;
+}
+
+
+.mainIndex3Col_1{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    /* float: left; */
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    transition: transform ease-in-out 0.3s;
+    
+}
+.mainIndex3Col_1 ul{
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    list-style: none;
+}
+.mainIndex3Col_1 ul li:first-child{
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 30px;
+}
+
+.mainIndex3Col_2{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    /* float: left; */
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    transition: transform ease-in-out 0.3s;
+}
+.mainIndex3Col_2 ul{
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    list-style: none;
+}
+.mainIndex3Col_2 ul li:first-child{
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 30px;
+}
+
+
+.mainIndex3Col_3{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    /* float: left; */
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    transition: transform ease-in-out 0.3s;
+    
+}
+.mainIndex3Col_3 ul{
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    list-style: none;
+}
+.mainIndex3Col_3 ul li:first-child{
+    font-size: 30px;
+    font-weight: bolder;
+    line-height: 30px;
+}
+
+.mainIndex3Col_1.zoomImgIn{
+    transform: scale(1.05);
+}
+
+.mainIndex3Col_1.zoomImgOut{
+    transform: scale(1.0);
+}
+
+.mainIndex3Col_2.zoomImgIn{
+    transform: scale(1.05);
+}
+
+.mainIndex3Col_2.zoomImgOut{
+    transform: scale(1.0);
+}
+
+.mainIndex3Col_3.zoomImgIn{
+    transform: scale(1.05);
+}
+
+.mainIndex3Col_3.zoomImgOut{
+    transform: scale(1.0);
+}

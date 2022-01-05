@@ -19,6 +19,12 @@ let dropdownProLi = document.querySelectorAll('.dropdownPro li');
 // get first li under dropdownPro
 let viewAllLi = document.querySelector('.dropdownPro').firstElementChild;
 
+//get stickyMenu div object
+let stickyMenuDiv = document.querySelector('.stickyMenu');
+
+let topMenuUl = document.querySelector('.topMenu > .topMenuUl');
+
+
 // set initFlag
 let initFlag = 1;
 
@@ -109,3 +115,22 @@ dropdownNodes.forEach((node, index)=>{
     });
 
 });
+
+
+window.onscroll = function(){
+    if(window.pageYOffset >= topMenuUl.offsetTop){
+        stickyMenuDiv.classList.add("stickyStyle");
+        /* console.log('window_pageYOffset:' + window.pageYOffset);
+        console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
+    }else{
+        stickyMenuDiv.classList.remove("stickyStyle");
+        /* console.log('window_pageYOffset2:' + window.pageYOffset);
+        console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+    }
+
+    if(window.pageYOffset == 0){
+        stickyMenuDiv.classList.remove("stickyStyle");
+        /* console.log('window_pageYOffset2:' + window.pageYOffset);
+        console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+    }
+}
