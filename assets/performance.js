@@ -98,7 +98,7 @@ function perf_touchEnd(){
 	}
 	perf_setPositionByIndex();
 
-	let btnNodes = perf_btn.children;
+	let btnNodes =Array.from(perf_btn.children);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != uniCounter["performance"]){
@@ -149,7 +149,7 @@ function perf_dotBtnFunReset(){
 	//console.log(idString);
 	//console.log(idStringIndex);
 
-	let btnNodes = perf_btn.children;
+	let btnNodes =Array.from(perf_btn.children);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != idStringIndex){

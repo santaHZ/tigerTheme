@@ -1,8 +1,8 @@
-window.onload = function() {
+/* window.onload = function() {
 
 
 };
-
+ */
 
 //*************universal funcions ***********//
 
@@ -15,7 +15,7 @@ let dotBtnFun = function(dotBtnId){
 	//console.log(idString);
 	//console.log(idStringIndex);
 
-	let btnNodes = curDotClkObj.parentElement.parentElement.firstElementChild.children;
+	let btnNodes =Array.from(curDotClkObj.parentElement.parentElement.firstElementChild.children);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != idStringIndex){

@@ -83,7 +83,7 @@ function userfly_touchEnd(){
 	}
 	userfly_setPositionByIndex();
 
-	let btnNodes = userfly_btn.children;
+	let btnNodes =Array.from(userfly_btn.children);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != uniCounter["userfriendly"]){
@@ -136,7 +136,7 @@ function userfly_dotBtnFunReset(){
 	console.log(idString);
 	console.log(idStringIndex);
 
-	let btnNodes = userfly_btn.children;
+	let btnNodes =Array.from(userfly_btn.children);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != idStringIndex){
