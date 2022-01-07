@@ -278,6 +278,7 @@
 
 .popularEBikes > ul > li.popularEBikesStar{
     color: #A4DE2F;
+    font-size: 20px;
 }
 
 .popularEBikes > ul > li.popularEBikesPrice{
@@ -466,13 +467,6 @@
             margin: 5px 0;
             border: 1px solid lightgray;
         }
-
-        .popularEBikes > ul > li.popularEBikesStar i{
-            content: "\f005";
-            font-family: "Font Awesome 5 Free";
-        }
-
-
     }
 
     @media screen and (max-width: 749px){
@@ -605,8 +599,4 @@
             border: 1px solid lightgray;
         }
 
-        .popularEBikes > ul > li.popularEBikesStar i{
-            content: "\f005";
-            font-family: "Font Awesome 5 Free";
-        }
     }
