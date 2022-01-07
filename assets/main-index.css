@@ -142,7 +142,15 @@
     line-height: 30px;
 }
 
-.mainIndex3Col_1.zoomImgIn{
+.zoomImgIn{
+    transform: scale(1.05);
+}
+
+.zoomImgOut{
+    transform: scale(1.0);
+}
+
+/* .mainIndex3Col_1.zoomImgIn{
     transform: scale(1.05);
 }
 
@@ -164,4 +172,441 @@
 
 .mainIndex3Col_3.zoomImgOut{
     transform: scale(1.0);
+} */
+
+
+
+/* popular E-Bikes row */
+.popularEBikesColHeader{
+    margin: 0 50px;
+    margin-top: 50px;
 }
+
+.popularEBikesColHeader > ul{
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popularEBikesColHeader > ul > li:first-child{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.popularEBikesColHeader > ul > li:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+
+.popularEBikesColHeader > ul > li > p{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    line-height: 20px;
+    color: #666666;
+    font-weight: 350;
+    width: 50%;
+}
+
+.popularEBikesColHeader > ul > li > p a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: #A4DE2F;
+}
+
+.popularEBikesColHeader > ul > li > a:last-child{
+    font-weight: bold;
+    color: #222;
+}
+
+.popularEBikesColHeader > ul a{
+    transition: color ease-in 0.3s;
+}
+
+.popularEBikesColHeader > ul a:hover{
+    color: #88BC1E;
+}
+
+.popularEBikesColHeader > ul > li > a:last-child:hover{
+    color: #88BC1E;
+}
+
+.popularEBikes{
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: center;
+    margin: 0 50px;
+    margin-top: 20px;
+    /* border: 1px solid crimson; */
+}
+
+.popularEBikes > ul{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid lightgray;
+    border-left: 0;
+    width: 100%;
+}
+
+.popularEBikes > ul:first-child{
+    border-left: 1px solid lightgray;
+}
+
+.popularEBikes > ul > li{
+    padding: 0;
+    margin: 0;
+    width: 90%;
+    /* border: 1px solid cornflowerblue; */
+}
+
+.popularEBikes > ul > li.popularEBikesTitle{
+    font-size: 23px;
+    color: black;
+    font-weight: bold;
+    /* background-color: cornflowerblue; */
+}
+
+.popularEBikes > ul > li.popularEBikesStar{
+    color: #A4DE2F;
+}
+
+.popularEBikes > ul > li.popularEBikesPrice{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.popularEBikes > ul > li:last-child{
+    padding: 0;
+    margin: 0;
+    width: 90%;
+    /* border: 1px solid cornflowerblue; */
+    background-color: #A4DE2F;
+    text-align: center;
+    /* vertical-align: middle; */
+    line-height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 50px;
+    font-weight: bold;
+    transition: background-color ease-in 0.3s;
+}
+
+.popularEBikes > ul > li:last-child:hover{
+    background-color: #88BC1E;
+    cursor: pointer;
+}
+
+.popularEBikes > ul > li:last-child a{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: #222;
+}
+
+.popularEBikes > ul > a{
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid coral; */
+    /* align-items: center; */
+    text-align: center;
+}
+
+.popularEBikes > ul > a > img{
+    display: block;
+    /* border: 1px solid cornsilk; */
+    /* margin-top: 20px; */
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: transform ease-in-out 0.3s;
+}
+
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2){
+
+        /* index page Main Image */
+        .advertingBlock{
+            position: absolute;
+            top: 15%;
+            right: 0 !important;
+            color: white;
+            /* border: 1px solid coral; */
+            width: 30%;
+        }
+        
+        .advertingBlock ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid cornflowerblue; */
+        }
+        
+        .textProductName{
+            font-size: 10px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .advertiseWords{
+            font-size: 12px;
+            font-weight: bolder;
+            line-height: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .featureProduct{
+            font-size: 10px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            width: 80%;
+        }
+        
+        .featureProduct > span{
+            margin: 0 10px !important;
+        }
+        
+        .mainIndexBtn{
+            display: block;
+            background-color: #EF6B24;
+            color: white;
+            font-size: 8px;
+            font-weight: bolder;
+            line-height: 15px;
+            text-decoration: none;
+            width: 80%;
+            /* margin: 0 auto; */
+            text-align: center;
+        }
+
+
+        /* mainIndex 3 column */
+        .mainIndex3Col{
+            position: relative;
+            display: block;
+            margin: 0 5px;
+            margin-top: 10px;
+        }
+
+        .mainIndex3Col_1, .mainIndex3Col_2, .mainIndex3Col_3{
+            padding: 0;
+            margin: 0;
+        }
+
+        .mainIndex3Col_1 ul, .mainIndex3Col_2 ul, .mainIndex3Col_3 ul{
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mainIndex3Col_1 ul li:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 20px;
+        }
+
+        .mainIndex3Col_2 ul li:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 20px;
+        }
+
+        .mainIndex3Col_3 ul li:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 20px;
+        }
+
+
+        /*  popular E-Bikes row  */
+        .popularEBikesColHeader{
+            margin: 0 10px;
+            margin-top: 20px;
+        }
+
+        .popularEBikesColHeader > ul > li:first-child{
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 25px;
+        }
+
+        .popularEBikesColHeader > ul > li:last-child{
+            display: block;
+        }
+
+        .popularEBikesColHeader > ul > li > p{
+            width: 100%;
+        }
+
+
+        .popularEBikes{
+            display: block;
+            margin: 0 5px;
+        }
+
+        .popularEBikes > ul{
+            margin: 5px 0;
+            border: 1px solid lightgray;
+        }
+
+        .popularEBikes > ul > li.popularEBikesStar i{
+            content: "\f005";
+            font-family: "Font Awesome 5 Free";
+        }
+
+
+    }
+
+    @media screen and (max-width: 749px){
+        /* index page Main Image */
+        .advertingBlock{
+            position: absolute;
+            top: 15%;
+            right: 0 !important;
+            color: white;
+            /* border: 1px solid coral; */
+            width: 30%;
+        }
+        
+        .advertingBlock ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid cornflowerblue; */
+        }
+        
+        .textProductName{
+            font-size: 10px;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .advertiseWords{
+            font-size: 12px;
+            font-weight: bolder;
+            line-height: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .featureProduct{
+            font-size: 10px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            width: 80%;
+        }
+        
+        .featureProduct > span{
+            margin: 0 10px !important;
+        }
+        
+        .mainIndexBtn{
+            display: block;
+            background-color: #EF6B24;
+            color: white;
+            font-size: 8px;
+            font-weight: bolder;
+            line-height: 15px;
+            text-decoration: none;
+            width: 80%;
+            /* margin: 0 auto; */
+            text-align: center;
+        }
+
+
+        /* mainIndex 3 column */
+        .mainIndex3Col{
+            position: relative;
+            display: block;
+            margin: 0 5px;
+            margin-top: 10px;
+        }
+
+        .mainIndex3Col_1, .mainIndex3Col_2, .mainIndex3Col_3{
+            padding: 0;
+            margin: 0;
+        }
+
+        .mainIndex3Col_1 ul, .mainIndex3Col_2 ul, .mainIndex3Col_3 ul{
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mainIndex3Col_1 ul li:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 20px;
+        }
+
+        .mainIndex3Col_2 ul li:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 20px;
+        }
+
+        .mainIndex3Col_3 ul li:first-child{
+            font-size: 20px;
+            font-weight: bolder;
+            line-height: 20px;
+        }
+
+
+        /*  popular E-Bikes row  */
+        .popularEBikesColHeader{
+            margin: 0 10px;
+            margin-top: 20px;
+        }
+
+        .popularEBikesColHeader > ul > li:first-child{
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 25px;
+        }
+
+        .popularEBikesColHeader > ul > li:last-child{
+            display: block;
+        }
+
+        .popularEBikesColHeader > ul > li > p{
+            width: 100%;
+        }
+
+
+        .popularEBikes{
+            display: block;
+            margin: 0 5px;
+        }
+
+        .popularEBikes > ul{
+            margin: 5px 0;
+            border: 1px solid lightgray;
+        }
+
+        .popularEBikes > ul > li.popularEBikesStar i{
+            content: "\f005";
+            font-family: "Font Awesome 5 Free";
+        }
+    }
