@@ -27,45 +27,17 @@
             assign footer_grid_class = 'grid--3-col-tablet'
           endif
         -%}
-        <div class="footerCustomize">
-          <ul>
-            <li class="footerBigFont">Buy with Us</li>
-            <li><a href="/collection/fat-tire-ebike">Fat Tire E-Bikes</a></li>
-            <li><a href="/collection/city-ebike">City E-Bikes</a></li>
-            <li><a href="/collection/mountain-ebike">Mountain E-Bikes</a></li>
-          </ul>
-          <ul>
-            <li class="footerBigFont">Support</li>
-            <li><a href="/pages/about-us">About Nakto</a></li>
-            <li><a href="/pages/contact-us">Contact Us</a></li>
-            <li><a href="/pages/shipping-policy">Shipping Policy</a></li>
-            <li><a href="/pages/return-and-refund-policy">Return & Refund Policy</a></li>
-            <li><a href="/pages/nakto-blog">Blogs</a></li>
-        </ul>
-          <ul>
-            <li class="footerBigFont">Legal</li>
-            <li><a href="/pages/warranty">Warranty Information</a></li>
-            <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/pages/terms-and-conditions">Terms and Conditions</a></li>
-            <li><a href="/pages/intellectual-property-rights">Intellectual Property Rights</a></li>
-          </ul>
-          <ul>
-            <li class="footerBigFont">Contact Us</li>
-            <li><strong>EMAIL:</strong> support@nakto.com</li>
-            <li><strong>CUSTOMER SERVICE:</strong></li>
-            <li>703-270-0055 (6 Days from 9:00 am to 6:00 pm)</li>
-            <li><strong>ADDRESS:</strong></li>
-            <li>Warehouse: 1683 Sierra Madre cir Placentia, CA 92870, USA</li>
-          </ul>
-        </div>
+        
       {%- endif -%}
 
       <div class="footer-block--newsletter">
         {%- if section.settings.newsletter_enable -%}
           <div class="footer-block__newsletter">
-            {%- if section.settings.newsletter_heading != blank -%}
+            <div class="signMeUp">Sign Me Up!</div>
+            <div class="signMeUpContent">Get special offers, exclusive product news, and event info straight to your inbox.</div>
+            <!-- {%- if section.settings.newsletter_heading != blank -%}
               <h2 class="footer-block__heading">{{ section.settings.newsletter_heading | escape }}</h2>
-            {%- endif -%}
+            {%- endif -%} -->
             {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
               <input type="hidden" name="contact[tags]" value="newsletter">
               <div class="newsletter-form__field-wrapper">
@@ -97,6 +69,7 @@
                     {% render 'icon-arrow' %}
                   </button>
                 </div>
+
                 {%- if form.errors -%}
                   <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                 {%- endif -%}
@@ -105,7 +78,9 @@
                 <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
               {%- endif -%}
             {%- endform -%}
+            <div class="socialPlatformIcon"><a href=""><i class="fa fa-youtube"></i></a><a href=""><i class="fa fa-instagram"></i></a><a href=""><i class="fa fa-twitter"></i></a><a href=""><i class="fa fa-facebook-official"></i></a></div>
           </div>
+          
         {%- endif -%}
 
         {%- if section.settings.show_social -%}
@@ -184,6 +159,38 @@
             {%- endif -%}
           </ul>
         {%- endif -%}
+      </div>
+
+      <div class="footerCustomize">
+        <ul>
+          <li class="footerBigFont">Buy with Us</li>
+          <li><a href="/collection/fat-tire-ebike">Fat Tire E-Bikes</a></li>
+          <li><a href="/collection/city-ebike">City E-Bikes</a></li>
+          <li><a href="/collection/mountain-ebike">Mountain E-Bikes</a></li>
+        </ul>
+        <ul>
+          <li class="footerBigFont">Support</li>
+          <li><a href="/pages/about-us">About Nakto</a></li>
+          <li><a href="/pages/contact-us">Contact Us</a></li>
+          <li><a href="/pages/shipping-policy">Shipping Policy</a></li>
+          <li><a href="/pages/return-and-refund-policy">Return & Refund Policy</a></li>
+          <li><a href="/pages/nakto-blog">Blogs</a></li>
+      </ul>
+        <ul>
+          <li class="footerBigFont">Legal</li>
+          <li><a href="/pages/warranty">Warranty Information</a></li>
+          <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/pages/terms-and-conditions">Terms and Conditions</a></li>
+          <li><a href="/pages/intellectual-property-rights">Intellectual Property Rights</a></li>
+        </ul>
+        <ul>
+          <li class="footerBigFont">Contact Us</li>
+          <li><strong>EMAIL:</strong> support@nakto.com</li>
+          <li><strong>CUSTOMER SERVICE:</strong></li>
+          <li>703-270-0055 (6 Days from 9:00 am to 6:00 pm)</li>
+          <li><strong>ADDRESS:</strong></li>
+          <li>Warehouse: 1683 Sierra Madre cir Placentia, CA 92870, USA</li>
+        </ul>
       </div>
     </div>
   {%- endif -%}

@@ -123,7 +123,7 @@ const startSlide = ()=>{
 }
 
 userReview_slider.addEventListener('transitionend', ()=>{
-    console.log(uniCounter["userReview"]);
+    // console.log(uniCounter["userReview"]);
     if (Number(uniCounter["userReview"]) >= 5){
         uniCounter["userReview"] = 1;
         settingBtnPosition();
@@ -208,15 +208,10 @@ function userReview_touchMove(event){
 		userReview_currentTranslate = userReview_prevTranslate + userReview_currentPosition - userReview_startPos;
 		
 	}
-	/* console.log("userReview_startPos:" + userReview_startPos);
-	console.log("userReview_currentPosition:" + userReview_currentPosition);
-	console.log('position after moved:' + userReview_currentTranslate); */
 }
 
 // get mouse or touch postionX
 function userReview_getPositionX(event) {
-	/* console.log("pageX:" + event.pageX);
-	console.log("clientX:" + event.clientX); */
 	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
 }
 
@@ -269,7 +264,6 @@ let dotBtnFun = function(dotBtnId){
 	uniCounter[counterId] = Number(idStringIndex) + 1; // make sure use Number() to convert string to number; +1 because there is a prepend cloneNode.
 	//console.log(uniCounter[counterId]);
 
-
 	switch(counterId){
         case "userReview":
             userReview_setPositionByIndex();
@@ -308,7 +302,112 @@ function userReview_dotBtnFunReset(){
 }
 
 
-// **************  video slide  ******************//
+// **************  video slider _1  ******************//
+
+const videoSlideContainer_1 = document.getElementById('videoRow1_wrapper');
+const videoSlider_1 = document.querySelector('.uni_videoSlider');
+
+const videoSlider_1_interval = 2000;
+
+let videoSlides_1 = document.querySelectorAll('.videoSlider_item');
+let videoSlide_1_index = 1;
+let videoSliderId_1;
+
+const videoSlideWidth_1 = videoSlides_1[videoSlide_1_index].clientWidth;
+
+// console.log(slideWidth);
+
+videoSlider_1.style.transform = `translateX(${-videoSlideWidth_1 * videoSlide_1_index}px)`;
 
 
+const startVideoSlide_1 = ()=>{
+    videoSliderId_1 = setInterval(()=>{
+        videoSlide_1_index++;
+		if(videoSlide_1_index >= 5){
+			videoSlide_1_index = 1;
+		}else{
+			videoSlider_1.style.transform = `translateX(${-videoSlideWidth_1 * videoSlide_1_index}px)`;
+        	videoSlider_1.style.transition = '.7s';
+		}
+        
+    }, videoSlider_1_interval);
+}
+
+videoSlider_1.addEventListener('transitionend', ()=>{
+    // console.log('transition end');
+    videoSlides_1 = document.querySelectorAll('.videoSlider_item');
+    if (videoSlide_1_index >=4){
+        videoSlider_1.style.transition = 'none';
+        videoSlide_1_index = 1;
+        videoSlider_1.style.transform = `translateX(${-videoSlideWidth_1 * videoSlide_1_index}px)`;
+    }
+    /* if (slides[index].id === firstClone.id){
+        slide.style.transition = 'none';
+        index = 1;
+        slide.style.transform = `translateX(${-slideWidth * index}px)`;
+    } */
+});
+
+videoSlideContainer_1.addEventListener('mouseenter', ()=>{
+    clearInterval(videoSliderId_1);
+});
+
+videoSlideContainer_1.addEventListener('mouseleave', startVideoSlide_1);
+
+startVideoSlide_1();
+
+
+// **************  video slider _2  ******************//
+
+const videoSlideContainer_2 = document.getElementById('videoRow2_wrapper');
+const videoSlider_2 = document.querySelector('#videoRow2_wrapper .uni_videoSlider');
+
+const videoSlider_2_interval = 3000;
+
+let videoSlides_2 = document.querySelectorAll('#videoRow2_wrapper .uni_videoSlider .videoSlider_item');
+let videoSlide_2_index = 1;
+let videoSliderId_2;
+
+const videoSlideWidth_2 = videoSlides_2[0].clientWidth;
+
+console.log(videoSlideWidth_2);
+
+videoSlider_2.style.transform = `translateX(${-videoSlideWidth_2 * videoSlide_2_index}px)`;
+
+
+const startVideoSlide_2 = ()=>{
+    videoSliderId_2 = setInterval(()=>{
+        videoSlide_2_index++;
+		if(videoSlide_2_index >= 5){
+			videoSlide_2_index = 1;
+		}else{
+			videoSlider_2.style.transform = `translateX(${-videoSlideWidth_2 * videoSlide_2_index}px)`;
+        	videoSlider_2.style.transition = '.7s';
+		}
+        
+    }, videoSlider_2_interval);
+}
+
+videoSlider_2.addEventListener('transitionend', ()=>{
+    // console.log('transition end');
+    videoSlides_2 = document.querySelectorAll('.videoSlider_item');
+    if (videoSlide_2_index >=4){
+        videoSlider_2.style.transition = 'none';
+        videoSlide_2_index = 1;
+        videoSlider_2.style.transform = `translateX(${-videoSlideWidth_2 * videoSlide_2_index}px)`;
+    }
+    /* if (slides[index].id === firstClone.id){
+        slide.style.transition = 'none';
+        index = 1;
+        slide.style.transform = `translateX(${-slideWidth * index}px)`;
+    } */
+});
+
+videoSlideContainer_2.addEventListener('mouseenter', ()=>{
+    clearInterval(videoSliderId_2);
+});
+
+videoSlideContainer_2.addEventListener('mouseleave', startVideoSlide_2);
+
+startVideoSlide_2();
 

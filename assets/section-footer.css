@@ -513,7 +513,7 @@ noscript .localization-selector.link {
 
 
 
-/* user setting to footer section */
+/********* user setting to footer section *********/
 .footer{
   background-color: #222 !important;
   color: white !important;
@@ -551,6 +551,7 @@ input[id ^= NewsletterForm--]:hover{
   justify-content: space-evenly;
   font-size: 17px;
   color: rgba(255,255,255,.6);
+  /* border: 1px solid coral; */
 }
 
 .footerCustomize ul{
@@ -581,6 +582,56 @@ input[id ^= NewsletterForm--]:hover{
 
 .copyright__content a:hover{
   color: white;
+}
+
+.footer-block--newsletter{
+  /* border: 3px solid crimson; */
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.footer__content-top{
+  /* border: 1px solid cyan; */
+  padding-bottom: 0;
+}
+
+.footer-block__newsletter > .signMeUp{
+  font-size: 36px;
+  font-weight: bolder;
+  color: white !important;
+  /* border: 1px solid gold; */
+}
+
+.footer-block__newsletter .signMeUpContent{
+  padding: 0;
+  margin: 0 auto;
+  width: 30%;
+  font-size: 18px;
+  font-weight: 300 !important;
+  color: white;
+  opacity: .6;
+  word-wrap: normal;
+  line-height: 23px;
+  margin-bottom: 50px;
+}
+
+.footer__content-bottom{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  /* border: 1px solid green; */
+}
+
+.socialPlatformIcon{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.socialPlatformIcon a{
+  text-decoration: none;
+  display: inline-block;
+  color: #A4DE2F;
+  font-size: 2em;
+  padding-right: 10px;
 }
 
 
