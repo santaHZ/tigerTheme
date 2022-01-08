@@ -168,7 +168,9 @@
 } */
 
 .dropdownProDetail{
-    width: 931px;
+    width: calc(931px + 1.5vw);
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .dropdownProDetail ul{
@@ -296,7 +298,7 @@
 .topMenuUl > li.supportMenu > ul.dropdownSup{
     position: absolute;
     display: flex;
-    left: -500%;
+    left: -300%;
     top: 100%;
     width: 1000px;
     visibility: hidden;
