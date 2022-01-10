@@ -2346,7 +2346,8 @@ details-disclosure > details {
     padding-left: 1rem;
     padding-bottom: 1rem;
     width: 600px;
-    max-width: 100%;
+    /* max-width: 100%; */
+    max-width: 25%;
   }
 }
 

@@ -1,8 +1,8 @@
 .productShowcaseWrapper{
     display: block;
     float: left;
-    border: 0px solid cornflowerblue;
-    margin: 0px;
+    /* border: 1px solid cornflowerblue; */
+    margin: 0;
     padding: 0;
     /* background-color: yellow; */
 
@@ -11,8 +11,9 @@
 /*********** the div outside of div with class pro_wrapper **********/
 #productShowcase{
     display: block;
-    width: 50.0vw;
-    height: 33.33vw;
+    /* width: 50.0vw; */
+    /* width: 50%; */
+    height: 35.74vw;
     padding: 0;
     margin: 0;
     /* background-color: violet; */
@@ -25,23 +26,31 @@
     overflow: hidden;
     border:0px;
     width: 50.0vw;
-    height: 33.33vw;
+    height: 35.74vw;
     margin-bottom: 5px;
     padding: 0;
     margin: 0;
+    /* border: 1px solid rgb(140, 177, 54); */
+}
+
+#productShowcase #prod_wrapper .uni_imgSlider{
+    margin: 0;
+    padding: 0;
 }
 
 #productShowcase #prod_wrapper .uni_imgSlider .item{  /*re adjust margin-right to 0px*/
     margin-right: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 #productShowcase #prod_wrapper .uni_imgSlider .item img{
     display: block;
-    width: 50.0vw;
-    height: 33.33vw;
+    width: 50.0vw; 
+    height: 35.74vw;
     padding: 0px;
     margin: 0px;
-    border: 0px solid crimson;
+    /* border: 1px solid crimson; */
 }
 
 
@@ -54,7 +63,12 @@
     width: 50.0vw;
     padding: 0px;
     margin: 0px;
-    border: 0px solid coral;
+    /* border: 1px solid coral; */
+}
+
+#prodPeek_wrapper .uni_imgSlider{
+    margin: 0;
+    padding: 0;
 }
 
 #prodPeek_wrapper .uni_imgSlider .item{  /*re adjust margin-right to 0px*/

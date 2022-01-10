@@ -657,5 +657,103 @@ input[id ^= NewsletterForm--]:hover{
     font-size: 20px;
   }
 
+  .footer-block__newsletter{
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-block__newsletter > .signMeUp{
+    font-size: 30px;
+    /* border: 1px solid gold; */
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-block__newsletter .signMeUpContent{
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    font-size: 18px;
+    font-weight: 300 !important;
+    color: white;
+    opacity: .6;
+    word-wrap: normal;
+    line-height: 23px;
+    margin-bottom: 30px;
+  }
+
+  .footer-block--newsletter{
+    /* border: 3px solid crimson; */
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .footer__content-top{
+    /* border: 1px solid cyan; */
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+
 
 }
+
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2){
+
+      .footerCustomize{
+        display: block;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: left; */
+        font-size: 15px;
+        color: rgba(255,255,255,.6);
+        /* border: 1px solid coral; */
+      }
+    
+      .footerCustomize ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+      }
+    
+      .footerBigFont{
+        font-size: 20px;
+      }
+    
+      .footer-block__newsletter{
+        padding: 0;
+        margin: 0;
+      }
+    
+      .footer-block__newsletter > .signMeUp{
+        font-size: 30px;
+        /* border: 1px solid gold; */
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+      }
+    
+      .footer-block__newsletter .signMeUpContent{
+        padding: 0;
+        margin: 0 auto;
+        width: 80%;
+        font-size: 18px;
+        font-weight: 300 !important;
+        color: white;
+        opacity: .6;
+        word-wrap: normal;
+        line-height: 23px;
+        margin-bottom: 30px;
+      }
+    
+      .footer-block--newsletter{
+        /* border: 3px solid crimson; */
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+      }
+
+    }

@@ -168,8 +168,8 @@
 } */
 
 .dropdownProDetail{
-    width: calc(931px + 1.5vw);
-    max-height: 100vh;
+    width: calc(931px + 2.5vw);
+    max-height: 80vh;
     overflow-y: auto;
 }
 
@@ -554,3 +554,10 @@ div.stickyStyle{
     }
 
 
+    @media screen and (min-width: 750px) and (max-width: 1366px){
+        .dropdownProDetail{
+            width: calc(931px + 5vw);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    }

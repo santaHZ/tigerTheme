@@ -323,3 +323,9 @@
     transition: background-color var(--duration-long) ease;
   }
 }
+
+/******* user setting for collections ********/
+
+.card-wrapper {
+  /* width: 25%; */
+}
