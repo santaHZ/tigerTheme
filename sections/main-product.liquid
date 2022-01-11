@@ -168,12 +168,12 @@
                     {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
 
-                      <div style="display: flex;">
-                        <div style="width: 50%;">
+                      <div class="quantityAddBtnWrapper">
+                        <div class="quantityWrapper">
                           <div class="product-form__input product-form__quantity" {{ block.shopify_attributes }}>
-                            <!-- <label class="form__label" for="Quantity-{{ section.id }}">
+                            <label class="form__label" for="Quantity-{{ section.id }}">
                               {{ 'products.product.quantity.label' | t }}
-                            </label> -->
+                            </label>
                             <quantity-input class="quantity">
                               <button class="quantity__button no-js-hidden" name="minus" type="button">
                                 <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
@@ -194,7 +194,7 @@
                             </quantity-input>
                           </div>
                         </div>
-                        <div style="width: 50%;">
+                        <div class="addBtnWrapper">
                           <div class="product-form__buttons">
                             <button
                               type="submit"

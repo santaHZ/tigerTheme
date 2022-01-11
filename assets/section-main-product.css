@@ -886,6 +886,8 @@ a.product__text {
   box-shadow: none !important;
   color: black;
   width: 100%;
+  /* width: auto; */
+  /* margin-left: 5px; */
 }
 
 .product-form__submit.button:hover{
@@ -896,8 +898,11 @@ a.product__text {
 }
 
 .quantity{
-  width: 98%;
+  width: 100%;
+  /* width: auto; */
+  /* margin-right: 5px; */
   border: 1px solid lightgray;
+
 }
 
 button[name=plus]{
@@ -935,4 +940,35 @@ div.overViewStyle{
   line-height: 25px;
 }
 
+.form__label{  /* hidden quantity label */
+  display: none;
+}
 
+
+.product-form__submit.button.button--full-width.button--secondary{
+  margin: 0;
+  padding: 0;
+}
+
+.product-form__input.product-form__quantity{
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.quantityAddBtnWrapper{
+  display: flex; 
+  justify-content:center; 
+  align-items:center; 
+  /* border: 1px solid cadetblue;  */
+  margin-bottom: 10px;
+}
+
+
+.quantityWrapper{
+  width: 50%;
+  margin-right: 10px;
+}
+
+.addBtnWrapper{
+  width: 50%;
+}
