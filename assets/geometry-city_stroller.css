@@ -1,0 +1,376 @@
+#geometry{
+    position: relative;
+    display: block;
+    overflow:auto;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 2vmax;
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid cornflowerblue; */
+}
+
+#geometry .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 0.2vw 0.4vw;
+    background: #A4DE2F;
+    width: 5.0vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
+}
+
+#geometry .tabBtnDiv{
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    display: flex;
+    border: 0px solid cornflowerblue;
+}
+
+#geometry .tabBtnDiv .tabBtn1 {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    background-color: rgb(214, 216, 215);
+}
+
+#geometry .tabBtnDiv .tabBtn1 ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#geometry .tabBtnDiv .tabBtn1 ul li{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.6vw;  /* define font size of tab button 2*/
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 5px; /* set the margin-botton to show div backgroud*/
+}
+
+#geometry .tabBtnDiv .tabBtn2 ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#geometry .tabBtnDiv .tabBtn2 ul li{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.6vw; /* define font size of tab button 2*/
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    padding: 3px;
+    margin-bottom: 5px; /* set the margin-botton to show div backgroud*/
+}
+
+#geometry .tabInfo{
+    display: block;
+}
+
+#geometry .tabInfo img{
+    display: block;
+    width: 40%;
+    height: 40%;
+}
+
+#geometry .tabInfo .overall {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+#geometry .tabInfo .overall .overallWrapper{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData{ /*div  for data*/
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    padding-left: 5%;
+    padding-top: 10%;
+    width: 100%;
+    float: left;
+    /* border: 1px solid chocolate; */
+}
+
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData ul{ /* ul with class overallLeftColWith*/
+    position: relative;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    /*width: 100%;*/
+}
+
+#geometry .tabInfo .overall .overallWrapper .overallWrapperData ul li{
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+    list-style: none;
+    font-size: 0.8vw; /* define overall data font*/
+}
+
+.overallBtBoder1px{
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+    border-right: 1px solid;
+    border-right-color: gray;
+}
+
+.overallBtmBoder1px{
+    border-bottom: 1px solid;
+    border-bottom-color: gray;
+}
+
+.overallTopBoder1px{
+    border-top: 2px solid;
+    border-top-color: black;
+}
+
+.overallBgColor{
+    background-color:rgb(214, 216, 215);
+    font-size: 2.0vw; /* define bigger font for top 2 rows for data, here setting is not effective, maybe because former setting used long selector*/
+    /* font-weight: bold; */
+}
+
+.overallLeftColWith{  /* define left column width*/
+    display: block;
+    width: 60%;
+    font-weight: bold;
+    /* border: 1px solid chocolate; */
+}
+
+.overallRightColWith{  /* define right column width*/
+    display: block;
+    width: 33%;
+}
+
+
+/* define bottom note size and style*/
+.tabBtmNoteDiv{
+    list-style: none;
+    font-size: 1.0vmax;
+    padding: 0px;
+    margin: 0px;
+}
+
+.tabBtmNoteDiv ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.tabBtmNoteDiv ul li{
+    padding: 0px;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+/*Define folded product data*/
+#geometry .tabInfo{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded .foldedWrapper {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+#geometry .tabInfo .folded .foldedWrapper .foldedWrapperData{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    float: left;
+    padding-left: 5%;
+    padding-top: 10%;
+    width: 100%;
+    /* border: 1px solid coral; */
+}
+
+
+#geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul{
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+
+#geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+    display: block;
+    list-style: none;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 0.8vw; 
+}
+
+#geometry .foldedLeftColWidth{
+    display: block;
+    width: 60%;
+    font-weight: bold;
+}
+
+#geometry .foldedRightColWidth{
+    display: block;
+    width: 33%;
+}
+
+.foldedBgColor{
+    background-color: rgb(214, 216, 215);
+    font-size: 1.0vw;
+}
+
+/* setting to different type of device*/
+@media screen and (max-width: 749px) {
+    #geometry .tabInfo img{
+        width: 85vw;
+        height: 85vw;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        position: relative;
+        display: block;
+    }
+
+    #geometry .tabInfo .overall .overallWrapperData{
+        /* border: 1px solid coral; */
+        padding-left: 0px !important;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper {
+        padding: 0px;
+        margin: 0px;
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData{
+        /* border: 1px solid coral; */
+        padding-left: 0px;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+        font-size: 3.5vw;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper .overallWrapperData ul li{
+        font-size: 3.5vw;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper .overallWrapperData .overallRightColWith li:first-child{
+        /* font-size: 2.5vw; */
+        line-height: 3.2vw;
+        height: 3.2em;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper .overallWrapperData .overallRightColWith li:nth-child(2){
+        height: 3.2em;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper .overallWrapperData .overallLeftColWith li:first-child{
+        height: 3.2em;
+    }
+
+    #geometry .tabInfo .overall .overallWrapper .overallWrapperData .overallLeftColWith li:nth-child(2){
+        height: 3.2em;
+    }
+
+    #geometry .tabBtnDiv .tabBtn1 ul li{
+        font-size: 1.3em;  /* define font size of tab button 1 Overall*/
+        margin-bottom: 2px;
+    }
+
+    #geometry .tabBtnDiv .tabBtn2 ul li{
+        font-size: 1.3em;  /* define font size of tab button 2 Folded*/
+        margin-bottom: 2px;
+    }
+
+
+}
+
+@media screen and (min-width: 750px) {
+    #geometry .tabInfo img{
+        width: 40vw;
+        height: 40vw;
+    }
+
+    #geometry .tabInfo .folded .foldedWrapper .foldedWrapperData ul li{
+        font-size: .8vw;
+    }
+}
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) { 
+
+        #geometry .tabBtnDiv .tabBtn1 ul li{
+            font-size: 1.3em;  /* define font size of tab button 2*/
+            margin-bottom: 2px;
+        }
+
+        #geometry .tabBtnDiv .tabBtn2 ul li{
+            font-size: 1.3em;  /* define font size of tab button 2*/
+            margin-bottom: 2px;
+        }
+
+
+
+
+    }
+
+
+
+
