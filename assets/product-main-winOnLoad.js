@@ -58,7 +58,8 @@ window.addEventListener('resize', function(event) {
 		
 		for (let i=0; i < (docAllSliderImages.length - 0); i++ ){
 			docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
-			docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+			// docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+			docAllSliderImages[i].setAttribute('height', 'auto');
 			
 		}
 
@@ -125,7 +126,8 @@ window.addEventListener('resize', function(event) {
 		
 		for (let i=0; i < (docAllSliderImages.length - 0); i++ ){
 			docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
-			docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+			// docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+			docAllSliderImages[i].setAttribute('height', 'auto');
 			
 		}
 
@@ -194,7 +196,8 @@ window.addEventListener('resize', function(event) {
 		
 		for (let i=0; i < (docAllSliderImages.length - 0); i++ ){
 			docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
-			docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+			// docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+			docAllSliderImages[i].setAttribute('height', 'auto');
 			
 		}
 
