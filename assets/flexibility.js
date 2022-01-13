@@ -218,6 +218,8 @@ let fun_Uni_prevBtn2 = function(btnId){
 				perf_setPositionByIndex();
 			case "userfriendly":
 				userfly_setPositionByIndex();
+			case "seeItInlife":
+				seeItInlife_setPositionByIndex();
 				
 		}
 
@@ -274,6 +276,8 @@ let fun_Uni_nextBtn2 = function(btnId){
 				perf_setPositionByIndex();
 			case "userfriendly":
 				userfly_setPositionByIndex();
+			case "seeItInlife":
+				seeItInlife_setPositionByIndex();
 				
 		}
 

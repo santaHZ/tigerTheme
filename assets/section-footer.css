@@ -626,10 +626,10 @@ input[id ^= NewsletterForm--]:hover{
   margin-top: 20px;
 }
 
-.socialPlatformIcon a{
+.socialPlatformIcon > a > i{
   text-decoration: none;
   display: inline-block;
-  color: #A4DE2F;
+  color: #A4DE2F !important;
   font-size: 2em;
   padding-right: 10px;
 }

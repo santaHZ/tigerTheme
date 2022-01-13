@@ -38,6 +38,8 @@ let dotBtnFun = function(dotBtnId){
 			perf_setPositionByIndex();
 		case "userfriendly":
 			userfly_setPositionByIndex();
+		case "seeItInlife":
+			seeItInlife_setPositionByIndex();
 			
 	}
 
@@ -118,6 +120,37 @@ window.addEventListener('resize', function(event) {
 		}
 
 
+		// reset [seeItInlife] dot button no. after window resizing
+
+		// initiallize [seeItInlife] dot buttons
+
+		while(seeItInlife_btn.firstElementChild){
+			seeItInlife_btn.removeChild(seeItInlife_btn.firstElementChild);
+		}
+
+		for (let i=0; i < (seeItInlife_slides.length - colNum + 1); i++){
+			let node = document.createElement("div");
+			node.setAttribute("id", "seeItInlife_DotBtn-" +i);
+			if(i== 0){
+				node.setAttribute("class", "buttonDotSolid");
+			}else{
+				node.setAttribute("class", "buttonDotEmpty");
+			}
+			node.setAttribute("onclick","dotBtnFun(this.id)");
+			seeItInlife_btn.appendChild(node);
+
+		}
+
+
+		if ( seeItInlife_btn.children.length == 1){
+			seeItInlife_btn.setAttribute('style', 'visibility:hidden;');
+			seeItInlife_right_btn.setAttribute('style', 'visibility:hidden;');
+		}else{
+			seeItInlife_btn.setAttribute('style', 'visibility:visible;');
+			seeItInlife_right_btn.setAttribute('style', 'visibility:visible;');
+		}
+
+
 
 		
 	}else if(window.innerWidth < 1200 && window.innerWidth >=750){
@@ -185,6 +218,37 @@ window.addEventListener('resize', function(event) {
 			}
 			node.setAttribute("onclick","dotBtnFun(this.id)");
 			userfly_btn.appendChild(node);
+		}
+
+
+		// reset [seeItInlife] dot button no. after window resizing
+
+		// initiallize [seeItInlife] dot buttons
+
+		while(seeItInlife_btn.firstElementChild){
+			seeItInlife_btn.removeChild(seeItInlife_btn.firstElementChild);
+		}
+
+
+		for (let i=0; i < (seeItInlife_slides.length - colNum + 1); i++){
+			let node = document.createElement("div");
+			node.setAttribute("id", "seeItInlife_DotBtn-" +i);
+			if(i== 0){
+				node.setAttribute("class", "buttonDotSolid");
+			}else{
+				node.setAttribute("class", "buttonDotEmpty");
+			}
+			node.setAttribute("onclick","dotBtnFun(this.id)");
+			seeItInlife_btn.appendChild(node);
+
+		}
+
+		if ( seeItInlife_btn.children.length == 1){
+			seeItInlife_btn.setAttribute('style', 'visibility:hidden;');
+			seeItInlife_right_btn.setAttribute('style', 'visibility:hidden;');
+		}else{
+			seeItInlife_btn.setAttribute('style', 'visibility:visible;');
+			seeItInlife_right_btn.setAttribute('style', 'visibility:visible;');
 		}
 
 
@@ -257,6 +321,41 @@ window.addEventListener('resize', function(event) {
 			node.setAttribute("onclick","dotBtnFun(this.id)");
 			userfly_btn.appendChild(node);
 		}
+
+
+
+
+
+		// reset [seeItInlife] dot button no. after window resizing
+
+		// initiallize [seeItInlife] dot buttons
+
+		while(seeItInlife_btn.firstElementChild){
+			seeItInlife_btn.removeChild(seeItInlife_btn.firstElementChild);
+		}
+
+
+		for (let i=0; i < (seeItInlife_slides.length - colNum + 1); i++){
+			let node = document.createElement("div");
+			node.setAttribute("id", "seeItInlife_DotBtn-" +i);
+			if(i== 0){
+				node.setAttribute("class", "buttonDotSolid");
+			}else{
+				node.setAttribute("class", "buttonDotEmpty");
+			}
+			node.setAttribute("onclick","dotBtnFun(this.id)");
+			seeItInlife_btn.appendChild(node);
+
+		}
+
+		if ( seeItInlife_btn.children.length == 1){
+			seeItInlife_btn.setAttribute('style', 'visibility:hidden;');
+			seeItInlife_right_btn.setAttribute('style', 'visibility:hidden;');
+		}else{
+			seeItInlife_btn.setAttribute('style', 'visibility:visible;');
+			seeItInlife_right_btn.setAttribute('style', 'visibility:visible;');
+		}
+
 
 	}
 
