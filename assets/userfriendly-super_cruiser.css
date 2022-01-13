@@ -1,0 +1,146 @@
+#userfriendly {
+    position: relative;
+    display: block;
+    overflow: auto;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    margin-bottom: 2vmax;
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid cornflowerblue; */
+}
+
+
+.userfriendly_upWrapper{
+    /* border: 1px solid chocolate; */
+}
+
+.userfriendly_upWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start; /*align items at the top*/
+    margin-bottom: 50px;
+}
+
+.userfriendly_upWrapper > div:nth-child(1){
+    width: 60%;
+}
+
+.userfriendly_upWrapper > div:nth-child(2){
+    width: 40%;
+    /* border: 1px solid chartreuse; */
+    text-align: right;
+
+}
+
+.userfriendly_upWrapper > div:nth-child(2) img{
+    display: inline-block;
+    border: 0;
+    padding-right: 10px;
+    /* margin: 0 auto; */
+}
+
+
+
+
+#userfriendly .tabRoundCorner{
+    display: block;
+    color:white;
+    text-align: center;
+    border: 0px solid #a1a1a1;
+    padding: 0.2vw 0.4vw;
+    background: #A4DE2F;
+    width: 5.0vw;
+    height: 1.5vw;
+    border-radius: 0.4vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1.0vw;
+}
+
+
+#userfly_wrapper{
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    border: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.userfriendly-desc{
+    width: 50%;
+    font-size: 1.1vw;  /*Block description head font */
+    margin-bottom: 2em;
+}
+
+/*定义左侧按钮样式*/
+#userfly_ctlBtn1{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 2rem;
+    display: block;
+    height: 50px;
+    width: 100%;
+
+}
+
+#userfly_ctlBtn1 .leftBtns{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    width: 60%;
+    height: 100%;
+    padding-top: 2rem;
+    /*background-color: blueviolet;*/
+}
+
+#userfly_ctlBtn1 .rightBtns{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    float: right;
+    width: 40%;
+    height: 100%;
+    /* background-color:burlywood; */
+}
+
+@media screen and (max-width: 749px) {
+
+    .userfriendly_upWrapper{
+        display: block;
+    }
+
+    .userfriendly_upWrapper > div:nth-child(1){
+        width: 100%;
+    }
+
+    .userfriendly_upWrapper > div:nth-child(2){
+        width: 100%;
+    }
+    .userfriendly_upWrapper > div:nth-child(2) img{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .userfriendly_desc{
+        width: 100%;
+        font-size: 3.5vw;  /*Block description head font */
+
+    }
+
+
+
+    .userfriendly-desc{
+        font-size: 3.5vw;  /*Block description head font */
+        width: 100%;
+
+    }
+    
+}
+
