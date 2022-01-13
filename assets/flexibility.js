@@ -24,6 +24,18 @@ for (let i=0; i < (flex_slides.length - colNum + 1); i++){
 //console.log(flex_btn);
 
 
+const flex_right_btn = document.querySelector('#flex_ctlBtn1').lastElementChild;
+
+
+if ( flex_btn.children.length == 1){
+    flex_btn.setAttribute('style', 'visibility:hidden;');
+    flex_right_btn.setAttribute('style', 'visibility:hidden;');
+}else{
+    flex_btn.setAttribute('style', 'visibility:visible;');
+    flex_right_btn.setAttribute('style', 'visibility:visible;');
+}
+
+
 
 
 // initialize uniCounter

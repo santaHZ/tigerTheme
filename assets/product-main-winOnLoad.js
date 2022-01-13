@@ -83,6 +83,16 @@ window.addEventListener('resize', function(event) {
 			flex_btn.appendChild(node);
 		}
 
+		
+		if ( flex_btn.children.length == 1){
+			flex_btn.setAttribute('style', 'visibility:hidden;');
+			flex_right_btn.setAttribute('style', 'visibility:hidden;');
+		}else{
+			flex_btn.setAttribute('style', 'visibility:visible;');
+			flex_right_btn.setAttribute('style', 'visibility:visible;');
+		}
+
+
 
 		// reset [performance] dot button no. after window resizing 
 		while(perf_btn.firstElementChild){
@@ -179,6 +189,15 @@ window.addEventListener('resize', function(event) {
 			}
 			node.setAttribute("onclick","dotBtnFun(this.id)");
 			flex_btn.appendChild(node);
+		}
+
+
+		if ( flex_btn.children.length == 1){
+			flex_btn.setAttribute('style', 'visibility:hidden;');
+			flex_right_btn.setAttribute('style', 'visibility:hidden;');
+		}else{
+			flex_btn.setAttribute('style', 'visibility:visible;');
+			flex_right_btn.setAttribute('style', 'visibility:visible;');
 		}
 
 
@@ -284,6 +303,14 @@ window.addEventListener('resize', function(event) {
 			}
 			node.setAttribute("onclick","dotBtnFun(this.id)");
 			flex_btn.appendChild(node);
+		}
+
+		if ( flex_btn.children.length == 1){
+			flex_btn.setAttribute('style', 'visibility:hidden;');
+			flex_right_btn.setAttribute('style', 'visibility:hidden;');
+		}else{
+			flex_btn.setAttribute('style', 'visibility:visible;');
+			flex_right_btn.setAttribute('style', 'visibility:visible;');
 		}
 
 
