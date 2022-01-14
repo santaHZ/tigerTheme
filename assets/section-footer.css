@@ -514,6 +514,16 @@ noscript .localization-selector.link {
 
 
 /********* user setting to footer section *********/
+.newsletter-form__message.newsletter-form__message--success.form__message{ /*when subscibe successful, message color*/
+  /* color: white; */
+  /* color: #A4DE2F; */
+  /* text-align: center; */
+  margin: 0 auto;
+  /* padding-top: 15px; */
+  margin-top: 20px;
+  color: lightgray;
+}
+
 .footer{
   background-color: #222 !important;
   color: white !important;

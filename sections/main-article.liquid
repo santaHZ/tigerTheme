@@ -1,97 +1,160 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
-
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when '@app' -%}
-        <div class="page-width page-width--narrow">
-          {% render block %}
+{{ 'section-blog-post-2022011401.css' | asset_url | stylesheet_tag }}
+<div class="pageMainLayout">
+  <div class="mainBanner">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main_img_1.jpg?v=1642149448" width="80%" alt="">
+  </div>
+  <div class="mainContent">
+    <div class="leftContent">
+      <div class="leftContentTitle">How To Choose Electric Bike For Women 2022</div>
+      <div class="leftContentSubtitle">
+        <div>JANUARY 5, 2022</div><div>Share:</div><div><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-twitter"></i><i class="fa fa-pinterest"></i><i class="fa fa-envelope-o"></i><i class="fa fa-linkedin"></i></div>
+      </div>
+      <div>
+        <p>The wonderful outdoors belongs to everyone, and perhaps the most convenient way to explore it is on an e-bike. Especially for women, Having an electric bike is an excellent way to cater to your fitness level if you need to get in better physical shape but are uncertain about your exercise capacities. You may activate the engine when you're fatigued or about to begin a long climb, and you can deactivate it when you want to stretch your legs or relish a downhill descent.</p>
+        <p>Here's a comprehensive guide to women's electric bicycles so you can find one that's perfect for you.</p>
+      </div>
+      <div class="contentNavigator">
+        <ul>
+          <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/66_icon1.png?v=1642151999" width="40" alt=""></li>
+          <li><p>What you should looking for<br>when you choose a ebike for<br>women?</p></li>
+        </ul>
+        <ul>
+          <li>1. <a href="#">Convenience</a></li>
+          <li>2. <a href="#">Safety</a></li>
+          <li>3. <a href="#">Comfort</a></li>
+          <li>4. <a href="#">Designs</a></li>
+        </ul>
+      </div>
+      <div class="subNavigator1">Top-Class Convenience</div>
+      <div class="subNavigator1_a">
+        <div>
+          <div>
+            <p>1) Step-Through Frame<br>A Step-through frame is a kind of low frame. The middle bar of the bike is removed. As a result, a person can easily get on and get off.</p>
+            <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/step_through_ebike_frame_VS_step_over_ebike_frame.jpg?v=1642152792" width="50%" height="auto" alt="">
+          </div>
+          <div>
+            <p>Now. Women may wear skirts or long clothes. In that case, a lady can easily ride the bike. Whereas men's E-bikes have a middle bar. Hence, it may be a little difficult for the women to ride these bikes with middle bars or triangular frames.</p>          
+          </div>
         </div>
-      {%- when 'featured_image'-%}
-        {%- if article.image -%}
-          <div class="article-template__hero-container" {{ block.shopify_attributes }}>
-            <div class="article-template__hero-{{ block.settings.image_height }} media"
-              itemprop="image"
-              {% if block.settings.image_height == 'adapt' and article.image %} style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"{% endif %}
-            >
-              <img
-                srcset="{% if article.image.width >= 350 %}{{ article.image | img_url: '350x' }} 350w,{% endif %}
-                  {% if article.image.width >= 750 %}{{ article.image | img_url: '750x' }} 750w,{% endif %}
-                  {% if article.image.width >= 1100 %}{{ article.image | img_url: '1100x' }} 1100w,{% endif %}
-                  {% if article.image.width >= 1500 %}{{ article.image | img_url: '1500x' }} 1500w,{% endif %}
-                  {% if article.image.width >= 2200 %}{{ article.image | img_url: '2200x' }} 2200w,{% endif %}
-                  {% if article.image.width >= 3000 %}{{ article.image | img_url: '3000x' }} 3000w,{% endif %}
-                  {{ article.image | img_url: 'master' }} {{ article.image.width }}w"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
-                src="{{ article.image | img_url: '1100x' }}"
-                loading="lazy"
-                width="{{ article.image.width }}"
-                height="{{ article.image.height }}"
-                alt="{{ article.image.alt | escape }}">
+      </div>
+      <div class="subNavigator1_b">
+        <div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/wheel_size_is_a_important_factor_for_women.jpg?v=1642156602" width="50%" height="auto" alt="">
+            <div>
+              <p>2) Wheel Size (optional)<br>Usually, women are shorter than men. That's why they should research before buying an E-bikes.</p>
+              <p>Large wheels are for tall woman. So, if your height is between 4 feet 9 inches to 5 feet 9 inches, then you should buy an E-bike with a smaller wheel size (20 to 26 inches).</p>
             </div>
           </div>
-        {%- endif -%}
-
-        {%- when 'title'-%}
-          <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
-            <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-            {%- if block.settings.blog_show_date -%}
-              <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
-            {%- endif -%}
-            {%- if block.settings.blog_show_author -%}
-              <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <span itemprop="name">{{ article.author }}</span>
-              </span>
-            {%- endif -%}
-          </header>
-
-        {%- when 'content'-%}
-          <div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody" {{ block.shopify_attributes }}>
-              {{ article.content }}
+        </div>
+      </div>
+      <div class="subNavigator1_c">
+        <div>
+          <div>
+            <div>
+              <p>3) Basket<br>Ladies have so many things to buy. Women love shopping. Hence, a female E-bike comes with a basket. So, put all your things on the basket and forget your backpack.</p>
+            </div>
+            <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/A_basket_on_women_s_ebiks_is_really_helpful.jpg?v=1642156645" width="50%" height="auto" alt="">
           </div>
-
-        {%- when 'share' -%}
-          <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>
-            <share-button class="share-button" {{ block.shopify_attributes }}>
-              <button class="share-button__button hidden">
-                {% render 'icon-share' %}
-                {{ block.settings.share_label | escape }}
-              </button>
-              <details id="Details-{{ block.id }}-{{ section.id }}">
-                <summary class="share-button__button">
-                  {% render 'icon-share' %}
-                  {{ block.settings.share_label | escape }}
-                </summary>
-                <div id="Article-share-{{ section.id }}" class="share-button__fallback motion-reduce">
-                  <div class="field">
-                    <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status">
-                    </span>
-                    <input type="text"
-                          class="field__input"
-                          id="url"
-                          value="{{ shop.url | append: article.url }}"
-                          placeholder="{{ 'general.share.share_url' | t }}"
-                          onclick="this.select();"
-                          readonly
-                    >
-                    <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
-                  </div>
-                  <button class="share-button__close hidden no-js-hidden">
-                    {% render 'icon-close' %}
-                    <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
-                  </button>
-                  <button class="share-button__copy no-js-hidden">
-                    {% render 'icon-clipboard' %}
-                    <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
-                  </button>
-                </div>
-              </details>
-            </share-button>
-            <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+        </div>
+      </div>
+      <div class="subNavigator1_d">
+        <div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/battery_capacity.jpg?v=1642156960" width="50%" height="auto" alt="">
+            <div>
+              <p>4) A Battery With A Long Life<br>An E-bike should always have large battery capacity, especially for women. Imagine that, In the middle of your happy weekend trip, the battery suddenly runs out, you have to ride sweaty, and your beautiful skirt becomes embarrassed.</p>
+            </div>
           </div>
-    {%- endcase -%}
-  {%- endfor -%}
+          <div>
+            <p>If you choose an e-bike for girls, One important thing is large battery capacity. So that they don't have to pedal in the middle of their happy journey.</p>
+          </div>
+        </div>
+      </div>
 
+      <div class="subNavigator2">A-Grade Safety</div>
+      <div class="subNavigator2_a">
+        <div>
+          <div>
+            <p>1) Easy To Control Speed</p>
+            <p>The best part of women E-bikes is the speed limiter option. You can change the settings and you can set a speed limit (for example 15 mph). That's it you can ride your bike slowly and safely.</p>
+          </div>
+        </div>
+      </div>
+      <div class="subNavigator2_b">
+        <div>
+          <div>
+            <div>
+              <p>2) Great Brakes</p>
+              <p>Though there are many types of braking (rim brakes.drum brakes. Etc) systems for E-bikes. Rim brake also known as V-brake Is a traditional braking method. Disc brakes are of two types-hydraulic and mechanical. These brakes can keep your bike's speed in check when driving down from a sloppy area. V-brake and disc brakes are always choose for a women ebike.</p>
+            </div>
+            <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/V_brake_VS_Disc_brake.jpg?v=1642158486" width="50%" height="auto" alt="">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="subNavigator3">High Comfort Level</div>
+      <div class="subNavigator3_a">
+        <div>
+          <div>
+            <p>1)Leather Saddle</p>
+            <p>The saddle on a women's E-bike can really make a huge difference. You can find a wide, soft,  Leathery and thick saddle on a female E-bike. This means you don't have to seat on narrow male e-bike saddles.</p>
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/Nakto_women_classic_electric_bike.jpg?v=1642160508" width="100%" alt="">
+        </div>
+      </div>
+      <div class="subNavigator3_b">
+        <div>
+          <div>
+            <p>2) Ergonomic Design</p>
+            <p>A women E-bike is designed specifically for female riders. Usually, women's body is different from men's. They have shorter arms and not-so-broad shoulders. So. a woman would find women E-bikes really ergonomic.</p>
+          </div>
+        </div>
+      </div>
+      <div class="subNavigator3_c">
+        <div>
+          <div>
+            <p>3) Comfortable Grips</p>
+            <p>Comfortable handlebars are really important. You can choose straight or drop-down handlebars. Rubber grips or leather grip are pretty good choice. So, choose an E-bike that has anti-skid grips.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="subNavigator4">WOMEN SPECIFIC DESIGN</div>
+      <div class="subNavigator4_a">
+        <div>
+          <div>
+            <p>1)Stylish Design</p>
+            <p>Women E-bikes are marvelously designed. Women like fashion and style in everything. That's why women's e-bikes have some unexpected curves and impressive designs.</p>
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/choose_different_color_ebikes_for_your_girl.jpg?v=1642160925" width="100%" alt="">
+        </div>
+      </div>
+      <div class="subNavigator4_b">
+        <div>
+          <div>
+            <p>2) Attractive Colors</p>
+            <p>Colorful e-bikes are perhaps not for men. Usually.men don't like bright colorful E-bikes. But, women love cute and lovely rides. So when you are choosing a women E-bike, you are free to choose a splendid color for your bike.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="rightContent">13213</div>
+  </div>
+</div>
+
+
+<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="element-margin center">
     <a href="{{ blog.url }}" class="article-template__link link animate-arrow{% if blog.comments_enabled? == false %} spaced-section{% endif %}">
       <span class="icon-wrap">{% render 'icon-arrow' %}</span>

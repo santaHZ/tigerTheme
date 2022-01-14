@@ -1,0 +1,364 @@
+.pageMainLayout{
+  width: 64%;
+  margin: 0 auto;
+}
+
+.mainBanner{
+  width: 100%;
+  /* text-align: center; */
+}
+
+.mainBanner img{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.mainContent{
+  display: flex;
+  justify-content: center;
+}
+
+.leftContent{
+  border: 1px solid cornflowerblue;
+  height: 6000px; /*setting page height*/
+  width: 76%;
+  /* margin-left: -20px; */
+}
+
+.leftContentTitle{
+  width: 100%;
+  font-size: 30px;
+  border: 1px solid chocolate;
+  text-align: center;
+  font-weight: bold;
+}
+
+.leftContentSubtitle{
+  width: 100%;
+  display: flex;
+  border: 1px solid crimson;
+}
+
+.contentNavigator{
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.contentNavigator ul{
+  list-style: none;
+}
+
+.contentNavigator ul:first-child{
+  padding: 0;
+  text-align: right;
+  width: 38%;
+  border-right: 1px solid lightgray;
+  /* border: 1px solid cyan; */
+  margin-left: -30px;
+  color: #5e5e5e;
+
+}
+
+.contentNavigator ul:nth-child(2) li{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.contentNavigator ul:nth-child(2) li:first-child{
+  margin-top:30px;
+}
+
+.contentNavigator ul:nth-child(2) li a{
+  text-decoration: none;
+  color: #a4de2f;
+  font-size: 20px;
+
+}
+
+
+
+.contentNavigator ul:first-child li:nth-child(2){
+  word-wrap: normal;
+}
+
+.contentNavigator ul:first-child li:nth-child(2) p{
+  font-size: 21px;
+  word-wrap: normal;
+}
+
+.subNavigator1{
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: -20px;
+}
+
+.subNavigator1_a > div:first-child{
+  margin-left: 2%;
+  border: 1px solid cornflowerblue;
+  width: 98%;  /*setting full content width*/
+}
+
+.subNavigator1_a > div > div:first-child{
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  align-items: center;
+  border: 1px solid cornflowerblue;
+}
+
+.subNavigator1_a > div > div:first-child img{
+  border: 1px solid coral;
+}
+
+.subNavigator1_a > div > div:first-child p{
+  width: 50%;
+  font-size: 17px;  /*Setting Step-Through*/
+  /* padding: 0; */
+
+}
+
+.subNavigator1_a > div > div:nth-child(2){
+  width: 100%;
+}
+
+.subNavigator1_a > div > div:nth-child(2) p{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+.subNavigator1_b > div > div:first-child{
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  align-items: center;
+}
+
+.subNavigator1_b > div:first-child{
+  margin-left: 2%;
+  border: 1px solid cornflowerblue;
+  width: 98%;  /*setting full content width*/
+}
+
+.subNavigator1_b{
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.subNavigator1_c > div > div:first-child{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* align-items: center; */
+}
+
+.subNavigator1_c > div:first-child{
+  margin-left: 2%;
+  border: 1px solid cornflowerblue;
+  width: 98%;  /*setting full content width*/
+}
+
+.subNavigator1_c{
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+
+.subNavigator1_d > div > div:first-child{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* align-items: center; */
+}
+
+.subNavigator1_d > div:first-child{
+  margin-left: 2%;
+  border: 1px solid cornflowerblue;
+  width: 98%;  /*setting full content width*/
+}
+
+.subNavigator1_d{
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+
+.subNavigator2{
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: -20px;
+  color: #141414;
+}
+
+.subNavigator2_a{
+  margin-left: -20px;
+  color: #595959;
+}
+
+.subNavigator2_a > div > div p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.subNavigator2_a > div > div p:nth-child(2){
+  font-size: 18px;
+}
+
+.subNavigator2_b{
+  margin-left: -20px;
+  margin-bottom: 50px;
+}
+
+.subNavigator2_b > div > div:first-child{
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  /* align-items: center; */
+  align-items: flex-end;
+}
+
+.subNavigator2_b > div > div:first-child > div > p:first-child{
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.subNavigator2_b > div > div:first-child > div > p:nth-child(2){
+  font-size: 18px;
+  margin-left: 1em;
+}
+
+
+
+.subNavigator3{
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: -20px;
+  color: #141414;
+}
+
+.subNavigator3_a{
+  margin-left: -20px;
+  color: #595959;
+}
+
+.subNavigator3_a > div > div p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  margin-top: 30px;
+  /* font-weight: bold; */
+}
+
+.subNavigator3_a > div > div p:nth-child(2){
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.subNavigator3_b{
+  margin-left: -20px;
+  color: #595959;
+}
+
+.subNavigator3_b > div > div p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  margin-top: 30px;
+  /* font-weight: bold; */
+}
+
+.subNavigator3_b > div > div p:nth-child(2){
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.subNavigator3_c{
+  margin-left: -20px;
+  color: #595959;
+  margin-bottom: 100px;
+}
+
+.subNavigator3_c > div > div p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  margin-top: 30px;
+  /* font-weight: bold; */
+}
+
+.subNavigator3_c > div > div p:nth-child(2){
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.subNavigator4{
+  width: 100%;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: -20px;
+  color: #141414;
+}
+
+.subNavigator4_a{
+  margin-left: -20px;
+  color: #595959;
+}
+
+.subNavigator4_a > div > div p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  margin-top: 30px;
+  /* font-weight: bold; */
+}
+
+.subNavigator4_a > div > div p:nth-child(2){
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.subNavigator4_b{
+  margin-left: -20px;
+  color: #595959;
+}
+
+.subNavigator4_b > div > div p:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  margin-top: 30px;
+  /* font-weight: bold; */
+}
+
+.subNavigator4_b > div > div p:nth-child(2){
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+
+
+
+/*******rightContent block***********/
+.rightContent{
+  border: 1px solid cornflowerblue;
+  height: 6000px;  /*setting page height*/
+  width: 24%;
+}
+
