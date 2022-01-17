@@ -352,6 +352,19 @@
   font-size: 18px;
 }
 
+.field.field--with-error.customizeColor input::-webkit-input-placeholder{
+  color: #141414 !important;
+}
+
+div.field.field--with-error.customizeColor input[placeholder]{
+  color: black !important;
+}
+
+div.field.field--with-error.customizeColor input[type="text"] {
+  -moz-appearance:    textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
 
 
 

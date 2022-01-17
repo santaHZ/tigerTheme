@@ -1,18 +1,215 @@
 <link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
 
+<script src="{{ 'main-page.js' | asset_url }}" defer="defer"></script>
+
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="page-width page-width--narrow">
-  <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte">
-    {{ page.content }}
+<div class="mainPageBanner">
+  <div class="side-crop">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/banner_bgImg.jpg?v=1642385721" alt="pug wrapped in a blanket">
   </div>
-  <div>88888888</div>
+  <div>Nakto Blog</div>
+  <div>Fat tire, Folding, city, mountain, Nakto provide ebikes for riders at all levels. High quality and affordable price.You can choose the right bike that suits your needs. You will get one year warranty and excellent after-sales service. </div>
+  <a href="/collections/all-bikes">Buy Now</a>
 </div>
+
+<div class="mainPageMainContent">
+  <div class="mainPageMainLeft">
+    <div>
+      <ul>
+        <li><a class="mainPageMainLeft_bottomb"></a></li>
+      </ul>
+      <ul>
+        <li><a onclick="mainPageMainLeftContentToggle1()" class="mainPageMainLeft_ltb mainPageMainLeft_topb mainPageMainLeft_rtb mainPageMainLeft_bottomb mainPageMainLeft_bottomb_white">CYCLING LIFE</a></li>
+      </ul>
+      <ul>
+        <li><a onclick="mainPageMainLeftContentToggle2()" class="mainPageMainLeft_topb mainPageMainLeft_rtb mainPageMainLeft_bottomb mainPageMainLeft_bgColor">KNOWLEDGE</a></li>
+      </ul>
+      <ul>
+        <li><a class="mainPageMainLeft_bottomb"></a></li>
+      </ul>
+    </div>
+    <div class="cyclingContent">
+      <ul>
+        <li><a href="/blogs/cycling-life/how-to-choose-electric-bike-for-women-2022"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-1.jpg?v=1642396505" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/how-to-choose-electric-bike-for-women-2022">How To Choose Electric Bike For Women 2022</a></li>
+        <li>How To Choose Electric Bike For Women 2022 JANUARY 5, 2022 Share: The wonderful outdoors belongs to everyone, and perhaps the most convenient way to explore it is on an...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/all-you-need-to-know-about-class-2-bike"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-2.jpg?v=1642396640" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/all-you-need-to-know-about-class-2-bike">All You Need To Know About Class 2 Bike</a></li>
+        <li>All You Need To Know About Ebike Classes December 23, 2021 Share: Around the 1890s the people of the US first experienced an E-bike. Though.the design of e-bikes was made...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/why-is-nakto-santamonica-so-impressive"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-3.jpg?v=1642396715" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/why-is-nakto-santamonica-so-impressive">Why is Nakto Santamonica so impressive</a></li>
+        <li>Why is Nakto Santamonica so impressive Best fat tire e-bike under $1,300 by Vincent  November 3rd, 2021 Purchasing a fat tire electric bike is an important step on a cyclist's...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/halloween-around-the-world"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-4.jpg?v=1642396727" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/halloween-around-the-world">Halloween Around The World</a></li>
+        <li>Halloween Around The World October 30, 2021 Share: The traditions and importance of Halloween vary greatly among countries that observe it. In Scotland and Ireland, traditional Halloween customs include children...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/7-tips-when-riding-in-the-rain"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-5.jpg?v=1642396742" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/7-tips-when-riding-in-the-rain">7 Tips When Riding In The Rain</a></li>
+        <li>7 Tips When Riding In The Rain October 13, 2021 Share: Rainy days are no fun for anyone. But there's actually something fun about riding an ebike in this weather:...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/best-transportation-option-during-pandemic-times"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-6.jpg?v=1642396753" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/best-transportation-option-during-pandemic-times">E-Bike | Best Transportation Option During Pandemic Times</a></li>
+        <li>E-Bike | Best Transportation Option During Pandemic Times September 23, 2021 Share: The grave coronavirus pandemic has caused the loss of human life at an unprecedented scale. It is a...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/the-ultimate-guide-on-how-to-prepare-for-an-e-bike-trip"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-7.jpg?v=1642396765" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/the-ultimate-guide-on-how-to-prepare-for-an-e-bike-trip">The Ultimate Guide on How to Prepare for an E-Bike Trip</a></li>
+        <li>The Ultimate Guide on How to Prepare for an E-Bike Trip September 18, 2021 Share: E-bikes are now getting more and more popular. Cycles were invented long ago. But, when...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/6-tips-for-better-electric-bike-commuting"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-8.jpg?v=1642396776" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/6-tips-for-better-electric-bike-commuting">6 Tips For Better Electric Bike Commuting</a></li>
+        <li>6 Tips For Better Electric Bike Commuting September 16, 2021 Share: With people returning to the workplace as school and offices open up around the country some may be eyeing...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/5-amazing-benefits-of-commuting-on-an-e-bike"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-9.jpg?v=1642396789" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/5-amazing-benefits-of-commuting-on-an-e-bike">5 Amazing Benefits Of Commuting On An E-bike</a></li>
+        <li>5 Amazing Benefits Of Commuting On An E-bike September 8, 2021 Share: E-bikes are now getting more and more popular. Cycles were invented long ago. But, when bikes reappeared with...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/why-you-should-buy-a-fat-tire-e-bike"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-10.jpg?v=1642396800" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/why-you-should-buy-a-fat-tire-e-bike">Why you should buy a fat tire e-bike</a></li>
+        <li>Why you should buy a fat tire e-bike? by Vincent W What is a fat tire ebike? It's just an ebike with tires that are over 4 inches in width....</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/5-tips-you-need-to-know-before-buying-a-fat-tire-e-bike"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-11.jpg?v=1642396866" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/5-tips-you-need-to-know-before-buying-a-fat-tire-e-bike">5 tips you need to know before buying a fat tire e-bike</a></li>
+        <li>5 tips you need to know before buying a fat tire e-bike by Vincent W January 15, 2021 We thought it'd be good to take a look at some of...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/cycling-life/best-fat-tire-e-bike-under-1300"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cyclingLife-12.jpg?v=1642396877" alt=""></a></li>
+        <li><a href="/blogs/cycling-life/best-fat-tire-e-bike-under-1300">Best fat tire e-bike under $1,300</a></li>
+        <li>Best fat tire e-bike under $1,300 Best fat tire e-bike under $1,300 by Vincent W January 18, 2021 Why the Nakto Super Cruiser is so impressive？ Below is a list...</li>
+      </ul>
+    </div>
+    <div class="knowledgeContent">
+      <ul>
+        <li><a href="/blogs/news/things-you-need-to-know-about-bike-chain"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/knowledge-1.jpg?v=1642406564" alt=""></a></li>
+        <li><a href="/blogs/news/things-you-need-to-know-about-bike-chain">Things You Need To Know About Bike Chain</a></li>
+        <li>Things You Need To Know About Bike Chain October 27, 2021 Share: If you put a lot of miles on your bike, the parts will eventually wear out. After many...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/news/throttle-vs-pedal-assit-riding-modes-on-nakto-electric-bike"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/knowledge-2.jpg?v=1642406564" alt=""></a></li>
+        <li><a href="/blogs/news/throttle-vs-pedal-assit-riding-modes-on-nakto-electric-bike">Throttle VS Pedal Assit: Riding Modes On Nakto Electric Bike</a></li>
+        <li>Throttle VS Pedal Assit: Riding Modes On Nakto Electric Bike September 26, 2021 Share: An E-Bike can help people get out biking and get the most out of their adventure....</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/news/what-you-should-know-about-suspension-forks"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/knowledge-3.jpg?v=1642406564" alt=""></a></li>
+        <li><a href="/blogs/news/what-you-should-know-about-suspension-forks">What you should know about suspension forks？</a></li>
+        <li>What you should know about suspension forks September 21, 2021 Share: Bike suspension provides improved control, traction and comfort on rooty, rocky singletrack or potholed roads. It is one of many...</li>
+      </ul>
+      <ul>
+        <li><a href="/blogs/news/best-fat-tire-electric-bike-under-1200"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/knowledge-4.jpg?v=1642406564" alt=""></a></li>
+        <li><a href="/blogs/news/best-fat-tire-electric-bike-under-1200">Best fat tire e-bike under $1,200</a></li>
+        <li>Share: Why the Nakto Super Cruiser is so impressive？ Below is a list of the main features and benefits of a Nakto Super Cruiser fat tire ebike. We won't look...</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mainPageMainRight">
+    <div style="font-size: 30px; text-align: center;">Related Products</div>
+    <div>
+      <ul>
+        <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_camel_women_img.png?v=1642402428" width="100%"></a></li>
+        <li>Camel Women 26"</li>
+        <li>$739.00</li>
+        <li>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="40227828531360" />
+            <input type="submit" value="BUY NOW" class="mainPageMainRightbtn" />
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_folding_ox_img.png?v=1642404082" width="100%"></a></li>
+        <li>Folding OX</li>
+        <li>$1099.00</li>
+        <li>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="39690190061728" />
+            <input type="submit" value="BUY NOW" class="mainPageMainRightbtn" />
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_folding_ox_img.png?v=1642404082" width="100%"></a></li>
+        <li>Folding OX</li>
+        <li>$1099.00</li>
+        <li>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="39690190061728" />
+            <input type="submit" value="BUY NOW" class="mainPageMainRightbtn" />
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_skylark_img.png?v=1642404188" width="100%"></a></li>
+        <li>Skylark</li>
+        <li>$699.00</li>
+        <li>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="40210946654368" />
+            <input type="submit" value="BUY NOW" class="mainPageMainRightbtn" />
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_folding_ox_img.png?v=1642404082" width="100%"></a></li>
+        <li>Folding OX</li>
+        <li>$1099.00</li>
+        <li>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="39690190061728" />
+            <input type="submit" value="BUY NOW" class="mainPageMainRightbtn" />
+          </form>
+        </li>
+      </ul>
+      <ul>
+        <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_super_cruiser_img.png?v=1642404330" width="100%"></a></li>
+        <li>Super Cruiser</li>
+        <li>$1299.00</li>
+        <li>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="39690149331104" />
+            <input type="submit" value="BUY NOW" class="mainPageMainRightbtn" />
+          </form>
+        </li>
+      </ul>
+    </div>
+    <div class="subscribe_block_frame">
+      <div>Sign Up</div>
+      <div>Become an NAKTO insider today, Sign up to get the latest on sales, new releases, and more.</div>
+      <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8">
+        <input type="hidden" name="form_type" value="contact">
+        <input type="hidden" name="utf8" value="✓">
+        <div>
+            <div>
+                <div>
+                    <input type="email" name="contact[email]" placeholder="Enter email address" required="required" value="">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
 
 {% schema %}
 {
