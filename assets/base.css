@@ -2363,3 +2363,49 @@ details-disclosure > details {
   }
 }
 /* setting gird__item for desktop -end*/
+
+
+
+/****setting blog article bottome comment block*****/
+.field__input{
+  box-shadow: none;
+  border: 0px !important;
+  border: 1px solid white !important;
+  color: aliceblue !important;
+}
+
+.field__input:hover{
+  box-shadow: none !important;
+  border: 1px solid black !important;
+}
+
+.field__input:hover:focus{
+  box-shadow: none;
+  border: 1px solid black !important;
+}
+
+.field__input:focus{
+  box-shadow: none;
+  border: 1px solid black !important;
+}
+
+.text-area.field__input{
+  box-shadow: none;
+  border: 0px !important;
+  border: 1px solid white !important;
+  color: aliceblue !important;
+}
+
+.text-area.field__input:hover:focus{
+  box-shadow: none;
+  border: 0px !important;
+  border: 1px solid white !important;
+  color: aliceblue !important;
+}
+
+#comments input[type=submit]{
+  box-shadow: none;
+  border: 0px !important;
+  border: 1px solid white !important;
+  color: aliceblue !important;
+}
