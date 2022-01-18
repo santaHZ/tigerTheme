@@ -22,8 +22,10 @@
 }
 
 .leftContent{
+  display: block;
   /* border: 1px solid cornflowerblue; */
-  height: 4760px; /*setting page height*/
+  /* height: 4700px;  */
+  height: auto;
   width: 76%;
   /* margin-left: -20px; */
   margin-top: -40px;
@@ -173,66 +175,9 @@
 .subNavigator1_a > div > div:nth-child(2) p{
   padding: 0;
   margin: 0;
-}
-
-
-
-
-.subNavigator1_b > div > div:first-child{
-  display: flex;
-  justify-content: center;
-  /* align-items: flex-start; */
-  align-items: center;
-}
-
-.subNavigator1_b > div:first-child{
-  margin-left: 2%;
-  /* border: 1px solid cornflowerblue; */
-  width: 98%;  /*setting full content width*/
-}
-
-.subNavigator1_b{
-  font-size: 17px;
+  font-size: 21px;
   margin-bottom: 20px;
 }
-
-.subNavigator1_c > div > div:first-child{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  /* align-items: center; */
-}
-
-.subNavigator1_c > div:first-child{
-  margin-left: 2%;
-  /* border: 1px solid cornflowerblue; */
-  width: 98%;  /*setting full content width*/
-}
-
-.subNavigator1_c{
-  font-size: 17px;
-  margin-bottom: 20px;
-}
-
-
-.subNavigator1_d > div > div:first-child{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  /* align-items: center; */
-}
-
-.subNavigator1_d > div:first-child{
-  margin-left: 2%;
-  /* border: 1px solid cornflowerblue; */
-  width: 98%;  /*setting full content width*/
-}
-
-.subNavigator1_d{
-  font-size: 17px;
-  /* margin-bottom: 20px; */
-}
-
 
 .subNavigator2{
   width: 100%;
@@ -241,6 +186,12 @@
   margin-left: -20px;
   color: #141414;
   padding-top: 80px;
+}
+
+.subNavigator2Img{
+  padding: 0;
+  margin: 0;
+  margin-left: -20px;
 }
 
 .subNavigator2_a{
@@ -259,31 +210,6 @@
   font-size: 18px;
 }
 
-.subNavigator2_b{
-  margin-left: -20px;
-  margin-bottom: 50px;
-}
-
-.subNavigator2_b > div > div:first-child{
-  display: flex;
-  justify-content: center;
-  /* align-items: flex-start; */
-  /* align-items: center; */
-  align-items: flex-end;
-}
-
-.subNavigator2_b > div > div:first-child > div > p:first-child{
-  font-size: 21px;
-  font-weight: bold;
-}
-
-.subNavigator2_b > div > div:first-child > div > p:nth-child(2){
-  font-size: 18px;
-  margin-left: 1em;
-}
-
-
-
 .subNavigator3{
   width: 100%;
   font-size: 28px;
@@ -293,64 +219,34 @@
   padding-top: 80px;
 }
 
-.subNavigator3_a{
+.subNavigator3Img{
+  padding: 0;
+  margin: 0;
   margin-left: -20px;
-  color: #595959;
 }
 
-.subNavigator3_a > div > div p:first-child{
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-  margin-top: 30px;
-  /* font-weight: bold; */
+.subNavigator3Content{
+  font-size: 20px;
+  list-style-position: inside;
 }
 
-.subNavigator3_a > div > div p:nth-child(2){
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
+.subNavigator3Content ul{
+  margin-left: 0;
+  padding-left: 0;
 }
 
-
-.subNavigator3_b{
-  margin-left: -20px;
-  color: #595959;
+.subNavigator3Content ul li a{
+  text-decoration: none;
+  color: #a4de2f;
+  transition: all 0.2s ease-in-out;
 }
 
-.subNavigator3_b > div > div p:first-child{
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-  margin-top: 30px;
-  /* font-weight: bold; */
+.subNavigator3Content ul li a:hover{
+  color: #78a61a;
 }
 
-.subNavigator3_b > div > div p:nth-child(2){
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-}
-
-
-.subNavigator3_c{
-  margin-left: -20px;
-  color: #595959;
-  margin-bottom: 20px;
-}
-
-.subNavigator3_c > div > div p:first-child{
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
-  margin-top: 30px;
-  /* font-weight: bold; */
-}
-
-.subNavigator3_c > div > div p:nth-child(2){
-  padding: 0;
-  margin: 0;
-  font-size: 18px;
+.subNavigator3btmText{
+  font-size: 20px;
 }
 
 
@@ -388,11 +284,25 @@
 
 }
 
+/* .element-margin.center{
+  border: 1px solid coral;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.article-template{
+  border: 1px solid cornflowerblue;
+  padding-top: 0;
+  margin-top: 0;
+
+} */
 
 /*******rightContent block***********/
 .rightContent{
+  display: block;
   /* border: 1px solid cornflowerblue; */
-  height: 4600px;  /*setting page height*/
+  /* height: 4600px;   */
+  height: auto;
   width: 26%;
   margin: 0 20px;
   /* background-color: #999; */
@@ -564,3 +474,333 @@
 .popularBlogsBlock ul li:nth-child(4){
   padding-bottom: 20px;
 }
+
+
+@media screen and (min-width:750px) and (max-width:1366px) {
+  .mainContent{
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    /* margin-top: -50px; */
+    /* border: 1px solid coral; */
+  }
+
+  .subscribe_block_frame{
+    width: 100%;
+    height: 14em;
+    padding: 20px 10px;
+    border: 1px solid lightgray;
+    margin: 0px auto 30px auto;
+    margin-right: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+  .subscribe_block_frame div:first-child{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .subscribe_block_frame button[type=submit]{
+    background: none;
+    width: 60%;
+    height: 2em;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 1em;
+    font-weight: bold;
+  }
+
+  .leftContentTitle{
+    width: 80%;
+    font-size: 30px;
+    /* border: 1px solid chocolate; */
+    /* text-align: center; */
+    color: black;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+
+@media screen and (max-width: 749px){
+  .rightContent{
+    display: none;
+  }
+
+  .leftContent{
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .pageMainLayout{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .mainBanner img{
+    width: 100%;
+  }
+  
+  .mainContent{
+    margin-left: 0px;
+    /* margin-top: -50px; */
+  }
+
+  .leftContentTitle, .leftContentSubtitle, .leftContentBriefContent, .contentNavigator{
+    margin-left: 0px;
+    padding-left: 30px;
+  }
+
+  .contentNavigator{
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 60px; */
+  }
+
+  .contentNavigator ul:first-child{
+    padding: 0;
+    text-align: right;
+    width: 50%;
+    border-right: 1px solid lightgray;
+    /* border: 1px solid cyan; */
+    margin-left: 0px;
+    color: #5e5e5e;
+  
+  }
+
+  .contentNavigator ul:nth-child(2){
+    padding: 0;
+  }
+
+  .subNavigator1{
+    width: 100%;
+    padding-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 0px;
+  }
+
+  .subNavigator1_a > div > div:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* align-items: flex-start; */
+    align-items: center;
+    /* border: 1px solid cornflowerblue; */
+    margin-left: 0px;
+    /* padding-left: 10px; */
+    padding: 0 10px;
+  }
+
+  .subNavigator1_a > div > div:nth-child(2) p{
+    padding: 0 10px;
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .subNavigator2{
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 0px;
+    color: #141414;
+    padding-top: 30px;
+  }
+  
+  .subNavigator2Img{
+    padding: 0 10px;
+    margin: 0;
+    margin-left: 0px;
+  }
+  
+  .subNavigator2_a{
+    margin-left: 0px;
+    color: #595959;
+  }
+
+  .subNavigator2_a > div > div p:first-child{
+    padding: 0 10px;
+    margin: 0;
+    font-size: 21px;
+    font-weight: bold;
+  }
+  
+  .subNavigator2_a > div > div p:nth-child(2){
+    padding: 0 10px;
+    font-size: 18px;
+  }
+
+  .subNavigator3{
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 0px;
+    color: #141414;
+    padding-top: 30px;
+  }
+  
+  .subNavigator3Img{
+    padding: 0 10px;
+    margin: 0;
+    margin-left: 0px;
+  }
+  
+  .subNavigator3Content{
+    font-size: 20px;
+    list-style-position: inside;
+    padding: 0 10px;
+  }
+
+  .subNavigator3btmText{
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+}
+
+
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+      .rightContent{
+        display: none;
+      }
+
+      .leftContent{
+        width: 100%;
+        margin-top: 0px;
+      }
+
+      .pageMainLayout{
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .mainBanner img{
+        width: 100%;
+      }
+      
+      .mainContent{
+        margin-left: 0px;
+        /* margin-top: -50px; */
+      }
+
+      .leftContentTitle, .leftContentSubtitle, .leftContentBriefContent, .contentNavigator{
+        margin-left: 0px;
+        padding-left: 30px;
+      }
+
+      .contentNavigator{
+        display: flex;
+        flex-direction: column;
+        /* margin-bottom: 60px; */
+      }
+
+      .contentNavigator ul:first-child{
+        padding: 0;
+        text-align: right;
+        width: 50%;
+        border-right: 1px solid lightgray;
+        /* border: 1px solid cyan; */
+        margin-left: 0px;
+        color: #5e5e5e;
+      
+      }
+
+      .contentNavigator ul:nth-child(2){
+        padding: 0;
+      }
+
+      .subNavigator1{
+        width: 100%;
+        padding-top: 30px;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 0px;
+      }
+
+      .subNavigator1_a > div > div:first-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        /* align-items: flex-start; */
+        align-items: center;
+        /* border: 1px solid cornflowerblue; */
+        margin-left: 0px;
+        /* padding-left: 10px; */
+        padding: 0 10px;
+      }
+
+      .subNavigator1_a > div > div:nth-child(2) p{
+        padding: 0 10px;
+        margin: 0;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .subNavigator2{
+        width: 100%;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 0px;
+        color: #141414;
+        padding-top: 30px;
+      }
+      
+      .subNavigator2Img{
+        padding: 0 10px;
+        margin: 0;
+        margin-left: 0px;
+      }
+      
+      .subNavigator2_a{
+        margin-left: 0px;
+        color: #595959;
+      }
+
+      .subNavigator2_a > div > div p:first-child{
+        padding: 0 10px;
+        margin: 0;
+        font-size: 21px;
+        font-weight: bold;
+      }
+      
+      .subNavigator2_a > div > div p:nth-child(2){
+        padding: 0 10px;
+        font-size: 18px;
+      }
+
+      .subNavigator3{
+        width: 100%;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 0px;
+        color: #141414;
+        padding-top: 30px;
+      }
+      
+      .subNavigator3Img{
+        padding: 0 10px;
+        margin: 0;
+        margin-left: 0px;
+      }
+      
+      .subNavigator3Content{
+        font-size: 20px;
+        list-style-position: inside;
+        padding: 0 10px;
+      }
+
+      .subNavigator3btmText{
+        font-size: 20px;
+        padding: 0 10px;
+      }
+
+    }
