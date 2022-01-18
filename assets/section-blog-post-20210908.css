@@ -155,8 +155,8 @@
 
 .contentNavigator > ul:nth-child(2) > li:last-child{
   margin-top: 0px;
-  height: 1px;
-  border-top: 1px solid #A3A3A3;
+  height: 40px;
+  border-bottom: 1px solid #A3A3A3;
 }
 
 
