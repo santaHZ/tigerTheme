@@ -746,10 +746,11 @@
 
       .subNavigator1{
         width: 100%;
-        padding-top: 30px;
+        padding: 30px 20px 0 20px;
         font-size: 28px;
         font-weight: bold;
         margin-left: 0px;
+
       }
 
       .subNavigator1_a > div > div:first-child{
@@ -761,11 +762,11 @@
         /* border: 1px solid cornflowerblue; */
         margin-left: 0px;
         /* padding-left: 10px; */
-        padding: 0 10px;
+        padding: 0 20px;
       }
 
       .subNavigator1_a > div > div:nth-child(2) p{
-        padding: 0 10px;
+        padding: 0 20px;
         margin: 0;
         font-size: 18px;
         margin-bottom: 20px;
@@ -777,18 +778,13 @@
         font-weight: bold;
         margin-left: 0px;
         color: #141414;
-        padding-top: 30px;
-      }
-      
-      .subNavigator2Img{
-        padding: 0 10px;
-        margin: 0;
-        margin-left: 0px;
+        padding: 30px 20px 0 20px;
       }
       
       .subNavigator2_a{
         margin-left: 0px;
         color: #595959;
+        padding: 0 20px;
       }
 
       .subNavigator2_a > div > div p:first-child{
@@ -803,30 +799,38 @@
         font-size: 18px;
       }
 
+
       .subNavigator3{
+        width: 100%;
+        margin-left: 0px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #141414;
+        padding: 30px 20px 0 20px;
+      }
+
+      .subNavigator3Content{
+        font-size: 20px;
+        margin-left: 0px;
+        padding: 0 20px;
+      }
+
+      .subNavigator4{
         width: 100%;
         font-size: 28px;
         font-weight: bold;
         margin-left: 0px;
         color: #141414;
-        padding-top: 30px;
+        padding-top: 60px;
+        padding: 0 20px;
       }
       
-      .subNavigator3Img{
-        padding: 0 10px;
-        margin: 0;
+      .subNavigator4Content{
+        font-size: 16px;
         margin-left: 0px;
-      }
-      
-      .subNavigator3Content{
-        font-size: 20px;
-        list-style-position: inside;
-        padding: 0 10px;
+        padding: 0 20px;
       }
 
-      .subNavigator3btmText{
-        font-size: 20px;
-        padding: 0 10px;
-      }
+
 
     }
