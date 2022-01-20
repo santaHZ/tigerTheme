@@ -1,0 +1,184 @@
+.page-title {
+  margin-top: 0;
+}
+
+.main-page-title {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .main-page-title {
+    margin-bottom: 4rem;
+  }
+}
+
+.page-placeholder-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.page-placeholder {
+  width: 52.5rem;
+  height: 52.5rem;
+}
+
+/*************user settings**************/
+
+.aboutUsBanner{
+  display: block;
+  border: 0;
+  margin-top: -70px;
+  position: relative;
+  color: white;
+}
+
+.aboutUsBannerText1{
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.aboutUsBannerText2{
+  position: absolute;
+  top: 45%;
+  left: 20%;
+  font-size: 16px;
+}
+
+.naktoStory{
+  width: 60%;
+  margin: 90px auto 0 auto;
+}
+
+.naktoStory p{
+  font-size: 16px;
+}
+
+P.naktoStoryTitle{
+  font-size: 30px;
+  font-weight: bolder;
+  color: black;
+}
+
+.naktoMVC{
+  width: 60%;
+  margin: 30px auto 0 auto;
+  display: flex;
+}
+
+.naktoMVC > ul {
+  list-style: none;
+  padding: 10px 20px;
+}
+
+.naktoMVC > ul >li:first-child{
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.naktoFactory{
+  width: 60%;
+  margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.naktoFactory div{
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.naktoFactory div > p:first-child{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+
+.naktoWarehouse{
+  width: 60%;
+  margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.naktoWarehouse div{
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.naktoWarehouse div > p:first-child{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+
+.naktoCoreValue{
+  width: 60%;
+  margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.naktoCoreValue div{
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.naktoCoreValue div > p:first-child{
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2){
+
+      .aboutUsBanner{
+        display: block;
+        border: 0;
+        margin-top: -70px;
+        position: relative;
+        color: white;
+      }
+      
+      .aboutUsBannerText1{
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      .aboutUsBannerText2{
+        position: absolute;
+        top: 45%;
+        left: 10%;
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      .naktoMVC{
+        width: 100%;
+        flex-direction: column;
+      }
+
+
+
+
+    }
+
