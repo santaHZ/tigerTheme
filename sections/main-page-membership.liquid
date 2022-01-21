@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="{{ 'section-main-page-membership.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<script src="{{ 'main-page-membership.js' | asset_url }}" defer="defer"></script>
+
+<noscript>{{ 'section-main-page-membership.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="memberShipBanner">
+  <div class="side-crop">
+    <img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/memberShip-banner-img.jpg?v=1642733173" alt="santa monica">
+  </div>
+  <div class="hero-overlay"> </div>
+  <div class="memberShipBannerText1">MEMBER PONITS</div>
+  <div class="memberShipBannerText2">NAKTO launched member points system!<br>Just a few small steps, customers can get points to exchange gifts!<br>Want to know more? click here to get more surprises...</div>
+  <div class="readMore"><a href="/collections/all-bikes">Read More</a></div>
+</div>
+
+<div class="memberPointsTitle">
+  <div>
+    <p>MEMBER PONITS</p>
+    <p>HOW CAN YOU GET POINTS</p>
+  </div>
+  <div>
+    <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/memberShip-flower-img.jpg?v=1642741689" width="100%" alt=""></p>
+  </div>
+</div>
+
+<div class="waysPoints">
+  <div>
+    <p>WAYS</p>
+    <p class="whiteBgColor">Newsletter Signup</p>
+    <p class="grayBgColor">Follow Facebook Page</p>
+    <p class="whiteBgColor">Follow InstagramPage</p>
+    <p class="grayBgColor">Follow Youtube Channel</p>
+    <p class="whiteBgColor">5 Stars Review on Website </p>
+    <p class="grayBgColor">5 Stars Review on Facebook</p>
+    <p class="whiteBgColor">Buy An E-bike</p>
+    <p class="grayBgColor">Refer A Friend</p>
+  </div>
+  <div>
+    <p>POINTS</p>
+    <p class="whiteBgColor">10Points</p>
+    <p class="grayBgColor">10Points</p>
+    <p class="whiteBgColor">10Points</p>
+    <p class="grayBgColor">10Points</p>
+    <p class="whiteBgColor">10Points</p>
+    <p class="grayBgColor">10Points</p>
+    <p class="whiteBgColor">30Points</p>
+    <p class="grayBgColor">30Points</p>
+  </div>
+</div>
+<div class="waysPointsAttention"><p style="margin: 0 auto; font-size: 20px;">Attention: Use no more than 100 points per bike. </p></div>
+
+<div class="pointWays">
+  <div class="pointWaysImg">
+    <img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/memberShip-way-img.jpg?v=1642743335" width="100%" alt="">
+  </div>
+  <div class="pointWaysText">
+    <p>How do you do it?</p>
+    <p>1. Finish the tasks above<br>2. Give us a screenshot<br>3. Send the screenshot to email: support@nakto.com<br>4. Our customer service check and send you the discount directly</p>
+  </div>
+</div>
+
+
+<div class="memberShipBtmImg">
+  <div class="memberShipBtmImg-side-crop">
+    <img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/memberShip-bottom-img.jpg?v=1642741249" alt="santa monica">
+  </div>
+  <div class="hero-overlay"> </div>
+  <div class="memberShipBtmImgText1">JOIN OUR<br>MEMBERSHIP NOW</div>
+  <div class="memberShipBtmImgText2">Get your first NAKTO BIKE</div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "spaced-section"
+}
+{% endschema %}

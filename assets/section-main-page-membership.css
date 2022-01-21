@@ -1,0 +1,292 @@
+.memberShipBanner{
+  display: block;
+  border: 0;
+  margin-top: -70px;
+  position: relative;
+  color: white;
+}
+
+.side-crop { 
+  padding: 0;
+  margin: 0;
+  max-width: 100%; 
+  max-height: 380px;
+  overflow: hidden; 
+  text-indent: -5%;
+  position: relative;
+}
+
+.side-crop img {
+  display: block;
+  float: right;
+  margin-top: -25%; /* crop position */
+  width: 100%;
+}
+
+.hero-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid coral; */
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: .4;
+}
+
+.memberShipBannerText1{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  font-size: 42px;
+  font-weight: bold;
+  transform: translateX(-50%);
+}
+
+.memberShipBannerText2{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 16px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.readMore{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+
+.readMore a{
+  text-decoration: none;
+  color: #222222;
+  padding: 10px 30px;
+  border: 1px solid white;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.readMore a:hover{
+  background-color: rgba(200, 200, 200, .4);
+  color: white;
+}
+
+.memberPointsTitle{
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+.memberPointsTitle div{
+  width: 50%;
+  /* border: 1px solid cornflowerblue; */
+}
+
+.memberPointsTitle div p:first-child{
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.memberPointsTitle div p:last-child{
+  font-size: 2.8vw;
+  line-height: 2.8vw;
+  padding: 0;
+  margin: 0;
+}
+
+.waysPoints{
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.waysPoints div{
+  width: 50%;
+  /* border: 1px solid chocolate; */
+  text-align: center;
+  padding: 0 10px;
+}
+
+.waysPoints div p{
+  font-size: 21px;
+  font-weight: 340;
+  line-height: 21px;
+}
+
+.waysPoints div p:first-child{
+  font-size: 30px;
+  background-color: #8bd656;
+  color: #666666;
+  font-weight: 340;
+  line-height: 55px;
+  margin: 0;
+}
+
+.grayBgColor{
+  background-color: lightgray;
+  margin: 0;
+  padding: 10px 0px;
+}
+
+.whiteBgColor{
+  background-color: white;
+  margin: 0;
+  padding: 10px 0px;
+}
+
+.waysPointsAttention{
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.pointWays{
+  width: 65%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.pointWaysImg p{
+  font-size: 20px;
+}
+
+.pointWays div{
+  width: 50%;
+  padding: 0 15px;
+}
+
+.pointWaysText p:first-child{
+  margin: 0 auto;
+  width: 80%;
+  font-size: 1.6vw;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.pointWaysText p:last-child{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+  /* border: 1px solid chocolate; */
+}
+
+.memberShipBtmImg{
+  display: block;
+  border: 0;
+  margin-top: 100px;
+  position: relative;
+  color: white;
+}
+
+.memberShipBtmImgText1{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  font-size: 45px;
+  font-weight: bold;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 55px;
+}
+
+.memberShipBtmImgText2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.memberShipBtmImg-side-crop { 
+  padding: 0;
+  margin: 0;
+  max-width: 100%; 
+  max-height: 380px;
+  overflow: hidden; 
+  text-indent: -5%;
+  position: relative;
+}
+
+.memberShipBtmImg-side-crop img {
+  display: block;
+  float: right;
+  margin-top: -15%; /* crop position */
+  width: 100%;
+}
+
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2){
+
+      .side-crop { 
+        padding: 0;
+        margin: 0;
+        max-width: 100%; 
+        max-height: 580px;
+        overflow: hidden; 
+        text-indent: -5%;
+        position: relative;
+      }
+
+      .memberShipBannerText1{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        transform: translateX(-50%);
+      }
+      
+      .memberShipBannerText2{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        font-size: 10px;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+      
+      .readMore{
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+        
+      }
+      
+      .readMore a{
+        text-decoration: none;
+        color: #222222;
+        padding: 5px 15px;
+        border: 1px solid white;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .readMore a:hover{
+        background-color: rgba(200, 200, 200, .4);
+        color: white;
+      }
+
+
+
+    }
+
