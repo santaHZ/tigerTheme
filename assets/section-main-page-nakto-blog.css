@@ -110,7 +110,7 @@
   /* height: 4000px; */
   height: auto;
   /* border: 1px solid chocolate; */
-  padding: 0 2% 0 2%;
+  margin: 0 2% 0 2%;
   /* border-left: 1px solid rgb(206,206,206); */
   /* border-right: 1px solid rgb(206,206,206); */
   /* border-bottom: 1px solid rgb(206,206,206); */
@@ -244,9 +244,10 @@
 /**********cyclingContent***********/
 
 .cyclingContent{
+  display: block;
   /* border: 1px solid rgb(206,206,206); */
   /* padding: 0 20px 0 20px; */
-  height: 3260px;  /******setting content height******/
+  height: 3850px;  /******setting content height******/
   /* height: auto; */
   border: 0;
   border: 1px solid rgb(206,206,206);
@@ -512,8 +513,8 @@
         word-wrap: normal;
         word-break: normal;
         color: white;
-        font-size: 10px;
-        line-height: 10px;
+        font-size: 13px;
+        line-height: 15px;
         /* border: 1px solid chocolate; */
       }
 
@@ -549,11 +550,11 @@
 
 
       .mainPageMainLeft{ /*****left column*****/
-        width: 100%;
+        width: 96%;
         height: auto;
         /* border: 1px solid chocolate; */
         padding: 0;
-        margin: 0;
+        margin: 0 2%;
       }
 
       .side-crop { 
@@ -622,6 +623,10 @@
 
       .mainPageMainContent{
         display: block;
+      }
+
+      .cyclingContent{
+        height: 3530px;
       }
 
 
