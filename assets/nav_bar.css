@@ -382,7 +382,7 @@ ul.dropdownSup li a{
 /* set last div style*/
 .accountDiv{
     width: 100px;
-    /* margin-left: 100px; */
+    margin-left: 80px;
     /* border: 1px solid chocolate; */
     color: white;
     /* font-weight: bold; */
@@ -556,10 +556,16 @@ div.stickyStyle{
     }
 
 
-    @media screen and (min-width: 750px) and (max-width: 1366px){
-        .dropdownProDetail{
-            width: calc(931px + 5vw);
-            max-height: 80vh;
-            overflow-y: auto;
-        }
+@media screen and (min-width: 750px) and (max-width: 1366px){
+    .dropdownProDetail{
+        width: calc(931px + 60px);
+        max-height: 80vh;
+        overflow-y: auto;
+        /* max-width: 80vh; */
+        /* overflow-x: auto; */
     }
+
+    .menuBlock{
+        margin-left: -100%;
+    }
+}
