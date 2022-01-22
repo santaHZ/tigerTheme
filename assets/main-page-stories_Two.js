@@ -8,27 +8,27 @@ const userStory_Two_sliderWrapper = document.querySelector('#userStory_Two_wrapp
 
 const userStory_Two_slidesLi =Array.from(userStory_Two_slider.querySelectorAll('.uni_imgSlider > .item > ul > li'));
 
-console.log(userStory_Two_slides);
-console.log(userStory_Two_slides.length);
+// console.log(userStory_Two_slides);
+// console.log(userStory_Two_slides.length);
 
-console.log('userStory_Two_slider' + userStory_Two_slider);
+// console.log('userStory_Two_slider' + userStory_Two_slider);
 
-console.log('userStory_Two_sliderWrapper:' + userStory_Two_sliderWrapper.clientWidth);
+// console.log('userStory_Two_sliderWrapper:' + userStory_Two_sliderWrapper.clientWidth);
 
 /*** the following slideWidth need to recalculate after window resizing ***/
 let singleSlideWidth_Two = Math.ceil(userStory_Two_sliderWrapper.clientWidth / colNum);
 
 
-console.log('singleSlideWidth_Two:' + singleSlideWidth_Two);
+// console.log('singleSlideWidth_Two:' + singleSlideWidth_Two);
 
 let dotAvailableNum_Two = userStory_Two_slides.length - colNum - 1;
-console.log('dotAvailabel:' + dotAvailableNum_Two);
+// console.log('dotAvailabel:' + dotAvailableNum_Two);
 
 
 //***** initiallize [userStory_Two] dot buttons *****//
 for (let i=0; i < (userStory_Two_slides.length - 3 - 1); i++){
 	let userStory_Two_node = document.createElement("div");
-    console.log('i am here' + i);
+    // console.log('i am here' + i);
 	// userStory_Two_node.setAttribute("id", "userStory_Two_DotBtn-" +i);
     userStory_Two_node.id = "userStory_Two_DotBtn-" + i;
 	if(i== 0){
@@ -40,7 +40,7 @@ for (let i=0; i < (userStory_Two_slides.length - 3 - 1); i++){
 	userStory_Two_btn.appendChild(userStory_Two_node);
 }
 
-console.log(userStory_Two_btn);
+// console.log(userStory_Two_btn);
 
 // initialize uniCounter
 if (uniCounter.hasOwnProperty("userStory_Two")){
@@ -73,7 +73,7 @@ let settingBtnPosition_2 = function(){
     })
 }
 
-console.log('conlNum:' + colNum);
+// console.log('conlNum:' + colNum);
 userStory_Two_setPositionByIndex(); //initialize slide position
 settingBtnPosition_2();
 //console.log(userStory_Two_slides);
@@ -87,7 +87,7 @@ const startSlide_Two = ()=>{
             // userStory_Two_slider.style.transform = `translateX(${-userStory_Two_size * uniCounter["userStory_Two"]}px)`;
 
         }else{
-			console.log('current index:' + uniCounter["userStory_Two"]);
+			// console.log('current index:' + uniCounter["userStory_Two"]);
             userStory_Two_setPositionByIndex();
             settingBtnPosition_2();
         }
@@ -97,7 +97,7 @@ const startSlide_Two = ()=>{
 userStory_Two_slider.addEventListener('transitionend', ()=>{
 
 	let counterMax = userStory_Two_slides.length - 3 + 1;
-	console.log(colNum);
+	// console.log(colNum);
 
     // console.log(uniCounter["userStory_Two"]);
     if (Number(uniCounter["userStory_Two"]) >= counterMax ){
@@ -124,13 +124,13 @@ userStory_Two_slider.addEventListener('transitionend', ()=>{
 
 });
 
-slideContainerOuter.addEventListener('mouseenter', ()=>{
+slideContainerOuter_Two.addEventListener('mouseenter', ()=>{
     clearInterval(slideId_Two);
 });
 
-// slideContainerOuter.addEventListener('mouseleave', startSlide_Two);
+slideContainerOuter_Two.addEventListener('mouseleave', startSlide_Two);
 
-// startSlide_Two();
+startSlide_Two();
 
 userStory_Two_slides.forEach((slide, index) => {
 	const userStory_Two_slideImage = slide.querySelector('ul');
@@ -221,13 +221,13 @@ function userStory_Two_setSlidePosition(){
 
 function userStory_Two_setPositionByIndex(){
 	// console.log("touch end size:" + userStory_Two_size);
-	console.log('index:' + uniCounter["userStory_Two"]);
+	// console.log('index:' + uniCounter["userStory_Two"]);
 	// userStory_Two_currentTranslate = uniCounter["userStory_Two"] * (- userStory_Two_size);
 
 	// the following singleSlideWidth_Two recalculated after window resizing
 	singleSlideWidth_Two = Math.ceil(userStory_Two_sliderWrapper.clientWidth / colNum);
 
-	console.log('singleSlideWidth_Two:' + singleSlideWidth_Two);
+	// console.log('singleSlideWidth_Two:' + singleSlideWidth_Two);
 	userStory_Two_currentTranslate = uniCounter["userStory_Two"] * (- singleSlideWidth_Two);
 	
 	// console.log("touch end currentTranslate:" + userStory_Two_currentTranslate);
@@ -244,11 +244,11 @@ function userStory_Two_dotBtnFunReset(){
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	console.log(idString);
-	console.log(idStringIndex);
+	// console.log(idString);
+	// console.log(idStringIndex);
 
 	let btnNodes = Array.from(userStory_Two_btn.children);
-	console.log(btnNodes);
+	// console.log(btnNodes);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != idStringIndex){
@@ -257,7 +257,7 @@ function userStory_Two_dotBtnFunReset(){
 	})
 
 	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
-	console.log('present counterId:' + counterId);
+	// console.log('present counterId:' + counterId);
 
 	uniCounter[counterId] = Number(idStringIndex) + 2; // make sure use Number() to convert string to number
 

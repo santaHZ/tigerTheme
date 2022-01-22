@@ -87,7 +87,7 @@ const startSlide = ()=>{
             // userStory_slider.style.transform = `translateX(${-userStory_size * uniCounter["userStory"]}px)`;
 
         }else{
-			console.log('current index:' + uniCounter["userStory"]);
+			// console.log('current index:' + uniCounter["userStory"]);
             userStory_setPositionByIndex();
             settingBtnPosition();
         }

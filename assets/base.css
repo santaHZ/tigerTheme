@@ -1,4 +1,9 @@
 /* Color custom properties */
+/* *{
+  border: 1px solid crimson;
+  box-sizing: border-box;
+  margin: 0;
+} */
 
 :root,
 .color-background-1 {

@@ -645,6 +645,11 @@ input[id ^= NewsletterForm--]:hover{
 }
 
 
+.footer__content-bottom-wrapper.page-width{
+  padding: 0;
+}
+
+
 @media screen and (max-width: 749px) {
   .footerCustomize{
     display: block;

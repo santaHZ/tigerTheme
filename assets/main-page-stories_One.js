@@ -8,27 +8,27 @@ const userStory_One_sliderWrapper = document.querySelector('#userStory_One_wrapp
 
 const userStory_One_slidesLi =Array.from(userStory_One_slider.querySelectorAll('.uni_imgSlider > .item > ul > li'));
 
-console.log(userStory_One_slides);
-console.log(userStory_One_slides.length);
+// console.log(userStory_One_slides);
+// console.log(userStory_One_slides.length);
 
-console.log('userStory_One_slider' + userStory_One_slider);
+// console.log('userStory_One_slider' + userStory_One_slider);
 
-console.log('userStory_One_sliderWrapper:' + userStory_One_sliderWrapper.clientWidth);
+// console.log('userStory_One_sliderWrapper:' + userStory_One_sliderWrapper.clientWidth);
 
 /*** the following slideWidth need to recalculate after window resizing ***/
 let singleSlideWidth_One = Math.ceil(userStory_One_sliderWrapper.clientWidth / colNum);
 
 
-console.log('singleSlideWidth_One:' + singleSlideWidth_One);
+// console.log('singleSlideWidth_One:' + singleSlideWidth_One);
 
 let dotAvailableNum_One = userStory_One_slides.length - colNum - 1;
-console.log('dotAvailabel:' + dotAvailableNum_One);
+// console.log('dotAvailabel:' + dotAvailableNum_One);
 
 
 //***** initiallize [userStory_One] dot buttons *****//
 for (let i=0; i < (userStory_One_slides.length - 3 - 1); i++){
 	let userStory_One_node = document.createElement("div");
-    console.log('i am here' + i);
+    // console.log('i am here' + i);
 	// userStory_One_node.setAttribute("id", "userStory_One_DotBtn-" +i);
     userStory_One_node.id = "userStory_One_DotBtn-" + i;
 	if(i== 0){
@@ -40,7 +40,7 @@ for (let i=0; i < (userStory_One_slides.length - 3 - 1); i++){
 	userStory_One_btn.appendChild(userStory_One_node);
 }
 
-console.log(userStory_One_btn);
+// console.log(userStory_One_btn);
 
 // initialize uniCounter
 if (uniCounter.hasOwnProperty("userStory_One")){
@@ -73,7 +73,7 @@ let settingBtnPosition_1 = function(){
     })
 }
 
-console.log('conlNum:' + colNum);
+// console.log('conlNum:' + colNum);
 userStory_One_setPositionByIndex(); //initialize slide position
 settingBtnPosition_1();
 //console.log(userStory_One_slides);
@@ -87,9 +87,9 @@ const startSlide_One = ()=>{
             // userStory_One_slider.style.transform = `translateX(${-userStory_One_size * uniCounter["userStory_One"]}px)`;
 
         }else{
-			console.log('current index:' + uniCounter["userStory_One"]);
+			// console.log('current index:' + uniCounter["userStory_One"]);
             userStory_One_setPositionByIndex();
-            settingBtnPosition();
+            settingBtnPosition_1();
         }
     }, interval);
 }
@@ -97,7 +97,7 @@ const startSlide_One = ()=>{
 userStory_One_slider.addEventListener('transitionend', ()=>{
 
 	let counterMax = userStory_One_slides.length - 3 + 1;
-	console.log(colNum);
+	// console.log(colNum);
 
     // console.log(uniCounter["userStory_One"]);
     if (Number(uniCounter["userStory_One"]) >= counterMax ){
@@ -112,7 +112,7 @@ userStory_One_slider.addEventListener('transitionend', ()=>{
 	let lastIndex = userStory_One_slides.length - 3
 
 	if (Number(uniCounter["userStory_One"]) < 2){
-		console.log(uniCounter["userStory_One"]);
+		// console.log(uniCounter["userStory_One"]);
         uniCounter["userStory_One"] = lastIndex;
         settingBtnPosition_1();
         userStory_One_slider.style.transition = 'none';
@@ -124,13 +124,13 @@ userStory_One_slider.addEventListener('transitionend', ()=>{
 
 });
 
-slideContainerOuter.addEventListener('mouseenter', ()=>{
+slideContainerOuter_One.addEventListener('mouseenter', ()=>{
     clearInterval(slideId_One);
 });
 
-// slideContainerOuter.addEventListener('mouseleave', startSlide_One);
+slideContainerOuter_One.addEventListener('mouseleave', startSlide_One);
 
-// startSlide_One();
+startSlide_One();
 
 userStory_One_slides.forEach((slide, index) => {
 	const userStory_One_slideImage = slide.querySelector('ul');
@@ -221,13 +221,13 @@ function userStory_One_setSlidePosition(){
 
 function userStory_One_setPositionByIndex(){
 	// console.log("touch end size:" + userStory_One_size);
-	console.log('index:' + uniCounter["userStory_One"]);
+	// console.log('index:' + uniCounter["userStory_One"]);
 	// userStory_One_currentTranslate = uniCounter["userStory_One"] * (- userStory_One_size);
 
 	// the following singleSlideWidth_One recalculated after window resizing
 	singleSlideWidth_One = Math.ceil(userStory_One_sliderWrapper.clientWidth / colNum);
 
-	console.log('singleSlideWidth_One:' + singleSlideWidth_One);
+	// console.log('singleSlideWidth_One:' + singleSlideWidth_One);
 	userStory_One_currentTranslate = uniCounter["userStory_One"] * (- singleSlideWidth_One);
 	
 	// console.log("touch end currentTranslate:" + userStory_One_currentTranslate);
@@ -247,11 +247,11 @@ function userStory_One_dotBtnFunReset(){
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	console.log(idString);
-	console.log(idStringIndex);
+	// console.log(idString);
+	// console.log(idStringIndex);
 
 	let btnNodes = Array.from(userStory_One_btn.children);
-	console.log(btnNodes);
+	// console.log(btnNodes);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != idStringIndex){
@@ -260,7 +260,7 @@ function userStory_One_dotBtnFunReset(){
 	})
 
 	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
-	console.log('present counterId:' + counterId);
+	// console.log('present counterId:' + counterId);
 
 	uniCounter[counterId] = Number(idStringIndex) + 2; // make sure use Number() to convert string to number
 
