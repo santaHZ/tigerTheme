@@ -58,8 +58,7 @@
     text-decoration: none;
     color: #595959;
     margin: 0;
-    padding: 0;
-    
+    padding: 0; 
 }
 
 .storiesSubTitle > ul > li:first-child > a{
@@ -407,16 +406,22 @@
             padding-left: 10px;
         }
 
+        #userStory_wrapper .uni_imgSlider .item ul li:nth-child(2){
+            font-size: 15px;
+            line-height: 20px;
+        }
 
-        #userStory_wrapper .uni_imgSlider .item ul li p{
+
+        #userStory_wrapper .uni_imgSlider .item ul li p:first-child{
             font-size: 15px;
             word-break: normal;
             white-space: normal;
             margin: 0;
             padding: 0;
-            line-height: 20px;
-            text-align: start;
-        }
+            line-height: 40px;
+            text-align: center;
+            /* border: 1px solid crimson; */
+        }       
         
         #userStory_ctlBtn1{
             margin: 0 auto;
@@ -426,64 +431,52 @@
             /* border: 1px solid crimson; */
         }
 
+        .storiesImgText{
+            display: block;
+        }
+
+        .storiesImgText div{
+            width: 100%;
+        }
+
+        .storiesSubTitle > ul > li:nth-child(2) a{
+            font-size: 20px;
+            width: 60%;
+
+        }
+
+
+        .storiesSubTitle > ul > li:nth-child(1){
+            width: 20%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .storiesSubTitle > ul > li:nth-child(3){
+            width: 20%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .storiesSubTitle > ul > li:nth-child(2){
+            width: 60%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+
+
+
+
+
+
 }
 
 @media screen and (max-width: 749px){
-    .userCommentStory{
-        display: block;
-        margin: 20px 0px;
-        padding: 0;
-        /* margin-bottom: 100px; */
-        /* border: 1px solid coral; */
-    }
-
-
-    #userStory_wrapper{      /*this is the div outside of uni_imgSlider */
-        display: block; 
-        padding: 0px;
-        margin: 0px auto;
-        width: 90vw;
-        border: 0px;
-        overflow: hidden;
-        white-space: nowrap;
-        /* border: 1px solid coral; */
-    }
-
-    #userStory_wrapper .uni_imgSlider .item ul{
-        margin: 0;
-        padding: 0;
-        width: 90vw;
-        list-style: none;
-        /* width: 100%; */
-        /* border: 1px solid chartreuse; */
-    }
-    
-    #userStory_wrapper .uni_imgSlider .item ul li{
-        margin: 0;  /*this setting make space beside words*/
-        padding: 0;
-        width: 85vw;  /*this with control ul width */
-        user-select: none; /* Standard */
-        padding-left: 10px;
-    }
-
-
-    #userStory_wrapper .uni_imgSlider .item ul li p{
-        font-size: 15px;
-        word-break: normal;
-        white-space: normal;
-        margin: 0;
-        padding: 0;
-        line-height: 20px;
-        text-align: start;
-    }
-    
-    #userStory_ctlBtn1{
-        margin: 0 auto;
-        padding: 0;
-        height: 20px;
-        width: 90vw;
-        /* border: 1px solid crimson; */
-    }
 
 
 }

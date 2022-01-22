@@ -193,17 +193,6 @@
             user-select: none; /* Standard */
             padding-left: 10px;
         }
-
-
-        #userStory_One_wrapper .uni_imgSlider .item ul li p{
-            font-size: 15px;
-            word-break: normal;
-            white-space: normal;
-            margin: 0;
-            padding: 0;
-            line-height: 20px;
-            text-align: start;
-        }
         
         #userStory_One_ctlBtn1{
             margin: 0 auto;
@@ -211,6 +200,21 @@
             height: 20px;
             width: 90vw;
             /* border: 1px solid crimson; */
+        }
+
+        #userStory_One_wrapper .uni_imgSlider .item ul li p{
+            font-size: 15px;
+            word-break: normal;
+            white-space: normal;
+            margin: 0;
+            padding: 0;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        #userStory_One_wrapper .uni_imgSlider .item ul li:nth-child(2){
+            font-size: 15px;
+            line-height: 20px;
         }
 
 }
@@ -235,7 +239,7 @@
         white-space: nowrap;
         /* border: 1px solid coral; */
     }
-
+    
 
     #userStory_One_wrapper .uni_imgSlider .item ul{
         margin: 0;
@@ -253,17 +257,6 @@
         user-select: none; /* Standard */
         padding-left: 10px;
     }
-
-
-    #userStory_One_wrapper .uni_imgSlider .item ul li p{
-        font-size: 15px;
-        word-break: normal;
-        white-space: normal;
-        margin: 0;
-        padding: 0;
-        line-height: 20px;
-        text-align: start;
-    }
     
     #userStory_One_ctlBtn1{
         margin: 0 auto;
@@ -271,6 +264,21 @@
         height: 20px;
         width: 90vw;
         /* border: 1px solid crimson; */
+    }
+
+    #userStory_One_wrapper .uni_imgSlider .item ul li p{
+        font-size: 15px;
+        word-break: normal;
+        white-space: normal;
+        margin: 0;
+        padding: 0;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    #userStory_One_wrapper .uni_imgSlider .item ul li:nth-child(2){
+        font-size: 15px;
+        line-height: 20px;
     }
 
 

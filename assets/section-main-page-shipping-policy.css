@@ -51,3 +51,24 @@ div p a:hover{
   text-decoration: none;
   color: #78a61a;
 }
+
+
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+      .shippingPolicy{
+        width: 98%;
+        margin: 0 auto;
+        padding: 8px 10px 18px 10px;
+        background-color: rgba(100,100,100,.1);
+        margin-top: -50px;
+      }
+
+      div.shippingPolicyTitle p{
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+      }
+
+    }
