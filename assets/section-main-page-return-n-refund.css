@@ -1,0 +1,54 @@
+.returnRefundPolicy{
+  width: 75%;
+  margin: 0 auto;
+  padding: 80px 100px 180px 100px;
+  background-color: rgba(100,100,100,.1);
+}
+
+div > p:first-child{
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+
+div.returnRefundPolicyTitle p{
+  font-size: 52px;
+  font-weight: bold;
+  color: black;
+}
+
+span.spanBold{
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+div > ul:nth-child(2){
+  padding: 0;
+  margin: 0;
+}
+
+div > ul:nth-child(2) li{
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  list-style:decimal;
+}
+
+div p img{
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+div p a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #a4de2f;
+  transition: all 0.2s ease-in-out;
+}
+
+div p a:hover{
+  text-decoration: none;
+  color: #78a61a;
+}
