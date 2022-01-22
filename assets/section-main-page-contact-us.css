@@ -1,99 +1,126 @@
-.WarrantyPolicy{
-  width: 75%;
-  margin: 0 auto;
-  padding: 80px 100px 180px 100px;
-  background-color: rgba(100,100,100,.1);
+.form-status.form-status-list.form__message{
+  font-size: 20px;
+  color: white;
 }
 
-div > p:first-child{
-  font-size: 22px;
-  font-weight: bold;
-  color: black;
+.labelText{
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
 }
 
-div.WarrantyPolicyTitle p{
-  font-size: 52px;
-  font-weight: bold;
-  color: black;
+.contactUsBanner{
+  position: relative;
+  width: 100%;
 }
 
-span.spanBold{
-  font-size: 15px;
-  font-weight: bold;
-  color: #000;
-}
-
-div > ul:nth-child(2){
-  padding: 0;
-  margin: 0;
-}
-
-div > ul:nth-child(2) li{
-  padding: 0;
-  margin: 0;
-  margin-left: 20px;
-  list-style:decimal;
-}
-
-div > ul:nth-child(3){
-  padding: 0;
-  margin: 0;
-}
-
-div > ul:nth-child(3) li{
-  padding: 0;
-  margin: 0;
-  margin-left: 20px;
-  /* list-style:decimal; */
-}
-
-div > ul.warrantyClaim{
-  padding: 0;
-  margin: 0;
-}
-
-div > ul.warrantyClaim li{
-  padding: 0;
-  margin: 0;
-  margin-left: 20px;
-  list-style:decimal;
-}
-
-div p img{
+.contactUsBanner img{
   display: block;
-  width: 60%;
-  margin: 0 auto;
+  border: 0;
 }
 
-div p a{
-  text-decoration: none;
+.contactUsBannerText{
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size: 48px;
+  line-height: 58px;
+  color: white;
+  font-weight: bolder;
+}
+
+
+.formBlock{
+  display: block;
+  width: 50%;
+  display: block;
+  padding: 0px 50px;
+  margin: 20px 0;
+  height: auto;
+}
+
+.formBlock input{
+  padding: 20px 0;
+}
+
+div.field{
+  margin: 10px 0;
+}
+
+div.formBlock input:hover{
+  border: 1px solid white;
+}
+
+#ContactForm-email.field__input input:hover{
+  border: 1px solid white;
+}
+
+.mainFormArea{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  color: white;
+  background-color: black;
+}
+
+.mainFormAreaText{
+  width: 15%;
+  /* border: 1px solid crimson; */
+  margin-top: 100px;
+}
+
+.mainFormAreaText p{
+  margin: 30px 0;
+  font-size: 13px;
+}
+
+.formBlockTitle{
+  font-size: 38px;
   font-weight: bold;
-  color: #a4de2f;
+}
+
+.formBlockTitleDes{
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+div.contact__button button{
+  background-color: #a4de2f;
+  color: black;
+  font-weight: bold;
   transition: all 0.2s ease-in-out;
 }
 
-div p a:hover{
+div.contact__button button:hover{
+  background-color: #78a61a;
+}
+
+div.mainFormAreaText a{
   text-decoration: none;
+  color: #a4de2f;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+div.mainFormAreaText a:hover{
   color: #78a61a;
 }
 
+.spanBoldFont{
+  font-weight: bold;
+}
+
+a.naktoEmail{
+  text-decoration: underline;
+  color: white;
+
+}
 
 @media only screen 
     and (device-width: 414px) 
     and (device-height: 896px) 
     and (-webkit-device-pixel-ratio: 2) {
-      .WarrantyPolicy{
-        width: 98%;
-        margin: 0 auto;
-        padding: 8px 10px 18px 10px;
-        background-color: rgba(100,100,100,.1);
-        margin-top: -50px;
-      }
 
-      div.WarrantyPolicyTitle p{
-        font-size: 32px;
-        font-weight: bold;
-        color: black;
-      }
 
     }

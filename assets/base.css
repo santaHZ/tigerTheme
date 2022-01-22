@@ -2381,17 +2381,17 @@ details-disclosure > details {
 
 .field__input:hover{
   box-shadow: none !important;
-  border: 1px solid black !important;
+  border: 1px solid black;
 }
 
 .field__input:hover:focus{
   box-shadow: none;
-  border: 1px solid black !important;
+  border: 1px solid black;
 }
 
 .field__input:focus{
   box-shadow: none;
-  border: 1px solid black !important;
+  border: 1px solid black;
 }
 
 .text-area.field__input{
