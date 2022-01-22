@@ -1,99 +1,71 @@
-var imageA = document.querySelectorAll('.mainIndex3Col > a');
-var imageImg = document.querySelectorAll('.mainIndex3Col > a >img');
-// var imageDivImg = document.querySelector('.zoomInner');
-// console.log(imageA);
-// console.log(imageImg);
-
-imageImg.forEach((imageImgchild,index)=> {
-    imageImg[index].addEventListener('mouseover', function(){
-        imageA[index].classList.remove('zoomImgOut');
-        imageA[index].classList.add('zoomImgIn');
-        // console.log('mouse over');
-        setTimeout(() => {
-            // console.log('mouse out');
-            imageA[index].classList.remove('zoomImgIn');
-            imageA[index].classList.add('zoomImgOut');
-        }, 300);
-    })
-})
-
-var imagePopularEBikes = document.querySelectorAll('.popularEBikes > ul > a > img');
-
-imagePopularEBikes.forEach((imageImgchild,index)=> {
-    imagePopularEBikes[index].addEventListener('mouseover', function(){
-        imagePopularEBikes[index].classList.remove('zoomImgOut');
-        imagePopularEBikes[index].classList.add('zoomImgIn');
-        // console.log('mouse over');
-        setTimeout(() => {
-            // console.log('mouse out');
-            imagePopularEBikes[index].classList.remove('zoomImgIn');
-            imagePopularEBikes[index].classList.add('zoomImgOut');
-        }, 300);
-    })
-})
-
-
-
 //******************/ touch move function - begin *******************//
-const slideContainerOuter = document.getElementById('userReview'); //get div object most outside;
-const userReview_slider = document.querySelector('#userReview_wrapper').firstElementChild  //this is div with class "uni_imgSlider"
-let userReview_slides = Array.from(userReview_slider.querySelectorAll('.uni_imgSlider > .item')); // this is div slides array
-const userReview_btn = document.querySelector('#userReview_ctlBtn1').firstElementChild; // this is the div for dot buttons
+const slideContainerOuter = document.getElementById('userStory'); //get div object most outside;
+const userStory_slider = document.querySelector('#userStory_wrapper').firstElementChild  //this is div with class "uni_imgSlider"
+let userStory_slides = Array.from(userStory_slider.querySelectorAll('.uni_imgSlider > .item')); // this is div slides array
+const userStory_btn = document.querySelector('#userStory_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
-console.log(userReview_slides);
-console.log(userReview_slides.length);
+const userStory_sliderWrapper = document.querySelector('#userStory_wrapper'); // div with id #userStory_wrapper
 
-const firstClone = userReview_slides[0].cloneNode(true);
-const lastClone = userReview_slides[userReview_slides.length -1].cloneNode(true);
+const userStory_slidesLi =Array.from(userStory_slider.querySelectorAll('.uni_imgSlider > .item > ul > li'));
 
-firstClone.id = 'first-clone';
-lastClone.id = 'last-clone';
+// console.log(userStory_slides);
+// console.log(userStory_slides.length);
 
-userReview_slider.append(firstClone);
-userReview_slider.prepend(lastClone);  //this appending action is happened after DOM is loaded
+// console.log('userStory_slider' + userStory_slider);
+
+// console.log('userStory_sliderWrapper:' + userStory_sliderWrapper.clientWidth);
+
+/*** the following slideWidth need to recalculate after window resizing ***/
+let singleSlideWidth = Math.ceil(userStory_sliderWrapper.clientWidth / colNum);
 
 
-//***** initiallize [userReview] dot buttons *****//
-for (let i=0; i < (userReview_slides.length - 0); i++){
-	let userReview_node = document.createElement("div");
-    console.log('i am here');
-	// userReview_node.setAttribute("id", "userReview_DotBtn-" +i);
-    userReview_node.id = "userReview_DotBtn-" + i;
+// console.log('singleSlideWidth:' + singleSlideWidth);
+
+let dotAvailableNum = userStory_slides.length - colNum - 1;
+// console.log('dotAvailabel:' + dotAvailableNum);
+
+
+//***** initiallize [userStory] dot buttons *****//
+for (let i=0; i < (userStory_slides.length - 3 - 1); i++){
+	let userStory_node = document.createElement("div");
+    // console.log('i am here' + i);
+	// userStory_node.setAttribute("id", "userStory_DotBtn-" +i);
+    userStory_node.id = "userStory_DotBtn-" + i;
 	if(i== 0){
-		userReview_node.setAttribute("class", "buttonDotSolid");
+		userStory_node.setAttribute("class", "buttonDotSolid");
 	}else{
-		userReview_node.setAttribute("class", "buttonDotEmpty");
+		userStory_node.setAttribute("class", "buttonDotEmpty");
 	}
-	userReview_node.setAttribute("onclick","dotBtnFun(this.id)");
-	userReview_btn.appendChild(userReview_node);
+	userStory_node.setAttribute("onclick","dotBtnFun(this.id)");
+	userStory_btn.appendChild(userStory_node);
 }
 
-console.log(userReview_btn);
+// console.log(userStory_btn);
 
 // initialize uniCounter
-if (uniCounter.hasOwnProperty("userReview")){
+if (uniCounter.hasOwnProperty("userStory")){
 		
 }else{
-	uniCounter["userReview"] = 1;
+	uniCounter["userStory"] = 2;
 	// console.log(uniCounter);
 }
 
-let userReview_isDragging = false,
-	userReview_startPos = 0,
-	userReview_currentTranslate = 0,
-	userReview_prevTranslate = 0,
-	userReview_animationID = 0,
-	userReview_currentIndex = 0
+let userStory_isDragging = false,
+	userStory_startPos = 0,
+	userStory_currentTranslate = 0,
+	userStory_prevTranslate = 0,
+	userStory_animationID = 0,
+	userStory_currentIndex = 0
 
-let userReview_currentPosition = 0;
-let interval = 2000;
-let userReview_size = userReview_slider.clientWidth;
+let userStory_currentPosition = 0;
+let interval = 5000;
+let userStory_size = userStory_slider.clientWidth;
 let slideId;
 
 let settingBtnPosition = function(){
-    let btnNodes = Array.from(userReview_btn.children);
+    let btnNodes = Array.from(userStory_btn.children);
     btnNodes.forEach((child, index) =>{
-        if (index != uniCounter["userReview"] - 1){
+        if (index != uniCounter["userStory"] - 2){
             child.setAttribute("class","buttonDotEmpty");
         }else{
             child.setAttribute("class","buttonDotSolid");
@@ -101,61 +73,79 @@ let settingBtnPosition = function(){
     })
 }
 
-userReview_setPositionByIndex(); //initialize slide position
+// console.log('conlNum:' + colNum);
+userStory_setPositionByIndex(); //initialize slide position
 settingBtnPosition();
-//console.log(userReview_slides);
+//console.log(userStory_slides);
 
 const startSlide = ()=>{
     slideId = setInterval(()=>{
-        uniCounter["userReview"] += 1;
-        if(uniCounter["userReview"] >= 6){
-            uniCounter["userReview"] = 1;
-            // userReview_slider.style.transition = 'none';
-            // userReview_slider.style.transform = `translateX(${-userReview_size * uniCounter["userReview"]}px)`;
+        uniCounter["userStory"] += 1;
+        if(uniCounter["userStory"] >= 7){
+            uniCounter["userStory"] = 2;
+            // userStory_slider.style.transition = 'none';
+            // userStory_slider.style.transform = `translateX(${-userStory_size * uniCounter["userStory"]}px)`;
 
         }else{
-            userReview_setPositionByIndex();
+			console.log('current index:' + uniCounter["userStory"]);
+            userStory_setPositionByIndex();
             settingBtnPosition();
         }
-        
-        
     }, interval);
 }
 
-userReview_slider.addEventListener('transitionend', ()=>{
-    // console.log(uniCounter["userReview"]);
-    if (Number(uniCounter["userReview"]) >= 5){
-        uniCounter["userReview"] = 1;
+userStory_slider.addEventListener('transitionend', ()=>{
+
+	let counterMax = userStory_slides.length - 3 + 1;
+	// console.log(colNum);
+
+    // console.log(uniCounter["userStory"]);
+    if (Number(uniCounter["userStory"]) >= counterMax ){
+        uniCounter["userStory"] = 2;
         settingBtnPosition();
-        userReview_slider.style.transition = 'none';
-        userReview_slider.style.transform = `translateX(${-userReview_size * uniCounter["userReview"]}px)`;
-        // userReview_slider.style.transition = 'transform 0.7s ease-in-out';
-        
+        userStory_slider.style.transition = 'none';
+        // userStory_slider.style.transform = `translateX(${-userStory_size * uniCounter["userStory"]}px)`;
+		userStory_slider.style.transform = `translateX(${-singleSlideWidth * uniCounter["userStory"]}px)`;
+        // userStory_slider.style.transition = 'transform 0.7s ease-in-out';
     }
+
+	let lastIndex = userStory_slides.length - 3
+
+	if (Number(uniCounter["userStory"]) < 2){
+		// console.log(uniCounter["userStory"]);
+        uniCounter["userStory"] = lastIndex;
+        settingBtnPosition();
+        userStory_slider.style.transition = 'none';
+        // userStory_slider.style.transform = `translateX(${-userStory_size * uniCounter["userStory"]}px)`;
+		userStory_slider.style.transform = `translateX(${-singleSlideWidth * uniCounter["userStory"]}px)`;
+        // userStory_slider.style.transition = 'transform 0.7s ease-in-out';
+    }
+
+
 });
 
 slideContainerOuter.addEventListener('mouseenter', ()=>{
     clearInterval(slideId);
 });
 
-slideContainerOuter.addEventListener('mouseleave', startSlide);
+ slideContainerOuter.addEventListener('mouseleave', startSlide);
 
-startSlide();
+ startSlide();
 
-userReview_slides.forEach((slide, index) => {
-	const userReview_slideImage = slide.querySelector('ul');
-	userReview_slideImage.addEventListener('dragstart', (e) => e.preventDefault());
+userStory_slides.forEach((slide, index) => {
+	const userStory_slideImage = slide.querySelector('ul');
+	userStory_slideImage.addEventListener('dragstart', (e) => e.preventDefault());
 
 	//Touch events
-	userReview_slideImage.addEventListener('touchstart', userReview_touchStart(index));
-	userReview_slideImage.addEventListener('touchend', userReview_touchEnd);
-	userReview_slideImage.addEventListener('touchmove', userReview_touchMove);
+	userStory_slideImage.addEventListener('touchstart', userStory_touchStart(index));
+	userStory_slideImage.addEventListener('touchend', userStory_touchEnd);
+	userStory_slideImage.addEventListener('touchmove', userStory_touchMove);
 
 	//Mouse events
-	userReview_slideImage.addEventListener('mousedown', userReview_touchStart(index));
-	userReview_slideImage.addEventListener('mouseup', userReview_touchEnd);
-	userReview_slideImage.addEventListener('mouseleave', userReview_touchEnd);
-	userReview_slideImage.addEventListener('mousemove', userReview_touchMove);
+	userStory_slideImage.addEventListener('mousedown', userStory_touchStart(index));
+	userStory_slideImage.addEventListener('mouseup', userStory_touchEnd);
+	userStory_slideImage.addEventListener('mouseleave', userStory_touchEnd);
+	userStory_slideImage.addEventListener('mousemove', userStory_touchMove);
 
 })
 
@@ -166,33 +156,33 @@ window.oncontextmenu = function(event){
 	return false;
 }
 
-function userReview_touchStart(index){
+function userStory_touchStart(index){
 	return function(event){
-		userReview_currentIndex = index;
+		userStory_currentIndex = index;
 		
-		userReview_startPos = userReview_getPositionX(event);
-		userReview_isDragging = true;
-		userReview_animationID = requestAnimationFrame(userReview_animation);
+		userStory_startPos = userStory_getPositionX(event);
+		userStory_isDragging = true;
+		userStory_animationID = requestAnimationFrame(userStory_animation);
 	}
 }
 
-function userReview_touchEnd(){
-	userReview_isDragging = false;
-	cancelAnimationFrame(userReview_animationID);
-	const userReview_movedBy = userReview_currentTranslate - userReview_prevTranslate;
-	//console.log(uniCounter["userReview"]);
-	if(userReview_movedBy < -50 && uniCounter["userReview"] < (userReview_slides.length + 0)){
-		uniCounter["userReview"] += 1;
+function userStory_touchEnd(){
+	userStory_isDragging = false;
+	cancelAnimationFrame(userStory_animationID);
+	const userStory_movedBy = userStory_currentTranslate - userStory_prevTranslate;
+	//console.log(uniCounter["userStory"]);
+	if(userStory_movedBy < -50 && uniCounter["userStory"] < (userStory_slides.length + 0)){
+		uniCounter["userStory"] += 1;
 	}
-	if(userReview_movedBy > 50 && uniCounter["userReview"] > 1){
-		uniCounter["userReview"] -= 1;
+	if(userStory_movedBy > 50 && uniCounter["userStory"] > -2){
+		uniCounter["userStory"] -= 1;
 	}
-	userReview_setPositionByIndex();
+	userStory_setPositionByIndex();
 
-	let btnNodes = Array.from(userReview_btn.children);
+	let btnNodes = Array.from(userStory_btn.children);
     // console.log(btnNodes);
 	btnNodes.forEach((child, index) =>{
-		if (index != uniCounter["userReview"] - 1){
+		if (index != uniCounter["userStory"] - 2){
             // console.log(index);
             // console.log(child);
 			child.setAttribute("class","buttonDotEmpty");
@@ -202,54 +192,61 @@ function userReview_touchEnd(){
 	})
 }
 
-function userReview_touchMove(event){
-	if (userReview_isDragging){
-		userReview_currentPosition = userReview_getPositionX(event);
-		userReview_currentTranslate = userReview_prevTranslate + userReview_currentPosition - userReview_startPos;
+function userStory_touchMove(event){
+	if (userStory_isDragging){
+		userStory_currentPosition = userStory_getPositionX(event);
+		userStory_currentTranslate = userStory_prevTranslate + userStory_currentPosition - userStory_startPos;
 		
 	}
 }
 
 // get mouse or touch postionX
-function userReview_getPositionX(event) {
+function userStory_getPositionX(event) {
 	return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
 }
 
-function userReview_animation(){
-	userReview_setSlidePosition(); //after clicked arrow button, then mousedown on image will make image move. a problem.
+function userStory_animation(){
+	userStory_setSlidePosition(); //after clicked arrow button, then mousedown on image will make image move. a problem.
 	/* console.log('1 triggered.');  
-	console.log("2 currentTranslate:" + userReview_currentTranslate); */
-	if (userReview_isDragging) requestAnimationFrame(userReview_animation);
+	console.log("2 currentTranslate:" + userStory_currentTranslate); */
+	if (userStory_isDragging) requestAnimationFrame(userStory_animation);
 }
 
-function userReview_setSlidePosition(){
-	// console.log('setSlidePosition:' + userReview_currentTranslate);
+function userStory_setSlidePosition(){
+	// console.log('setSlidePosition:' + userStory_currentTranslate);
     
-	userReview_slider.style.transform = `translateX(${userReview_currentTranslate}px)`;
-    userReview_slider.style.transition = 'transform 0.7s ease-in-out';
+	userStory_slider.style.transform = `translateX(${userStory_currentTranslate}px)`;
+    userStory_slider.style.transition = 'transform 0.7s ease-in-out'; /* setting the transition */
 }
 
-function userReview_setPositionByIndex(){
-	// console.log("touch end size:" + userReview_size);
-	userReview_currentTranslate = uniCounter["userReview"] * (- userReview_size);
-	// console.log("touch end currentTranslate:" + userReview_currentTranslate);
-	userReview_prevTranslate = userReview_currentTranslate;
-	userReview_setSlidePosition();
+function userStory_setPositionByIndex(){
+	// console.log("touch end size:" + userStory_size);
+	// console.log('index:' + uniCounter["userStory"]);
+	// userStory_currentTranslate = uniCounter["userStory"] * (- userStory_size);
+
+	// the following singleSlideWidth recalculated after window resizing
+	singleSlideWidth = Math.ceil(userStory_sliderWrapper.clientWidth / colNum);
+
+	// console.log('singleSlideWidth:' + singleSlideWidth);
+	userStory_currentTranslate = uniCounter["userStory"] * (- singleSlideWidth);
+	
+	// console.log("touch end currentTranslate:" + userStory_currentTranslate);
+	userStory_prevTranslate = userStory_currentTranslate;
+	userStory_setSlidePosition();
 }
 
 
-/* dot button function */
-
-let dotBtnFun = function(dotBtnId){
-	let curDotClkObj = document.getElementById(dotBtnId);
+function userStory_dotBtnFunReset(){
+	let curDotClkObj = document.getElementById("userStory_DotBtn-0");
 
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	//console.log(idString);
-	//console.log(idStringIndex);
+	// console.log(idString);
+	// console.log(idStringIndex);
 
-	let btnNodes = Array.from(curDotClkObj.parentElement.parentElement.firstElementChild.children);
+	let btnNodes = Array.from(userStory_btn.children);
+	// console.log(btnNodes);
 
 	btnNodes.forEach((child, index) =>{
 		if (index != idStringIndex){
@@ -258,156 +255,22 @@ let dotBtnFun = function(dotBtnId){
 	})
 
 	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
+	// console.log('present counterId:' + counterId);
 
-	//console.log(counterId);
-
-	uniCounter[counterId] = Number(idStringIndex) + 1; // make sure use Number() to convert string to number; +1 because there is a prepend cloneNode.
-	//console.log(uniCounter[counterId]);
+	uniCounter[counterId] = Number(idStringIndex) + 2; // make sure use Number() to convert string to number
 
 	switch(counterId){
-        case "userReview":
-            userReview_setPositionByIndex();
-			
-	}
-
-}
-
-
-
-function userReview_dotBtnFunReset(){
-	let curDotClkObj = document.getElementById("userReview_DotBtn-0");
-
-	curDotClkObj.setAttribute("class","buttonDotSolid");
-	let idString = curDotClkObj.getAttribute("id");
-	let idStringIndex = idString.charAt(idString.length-1);
-	//console.log(idString);
-	//console.log(idStringIndex);
-
-	let btnNodes = userReview_btn.children;
-
-	btnNodes.forEach((child, index) =>{
-		if (index != idStringIndex){
-			child.setAttribute("class","buttonDotEmpty");
-		}
-	})
-
-	let counterId = curDotClkObj.parentElement.parentElement.parentElement.id;
-
-	uniCounter[counterId] = Number(idStringIndex); // make sure use Number() to convert string to number
-
-	switch(counterId){
-		case "userReview":
-			userReview_setPositionByIndex();
+		case "userStory":
+			userStory_setPositionByIndex();
 	}
 }
 
 
-// **************  video slider _1  ******************//
-
-const videoSlideContainer_1 = document.getElementById('videoRow1_wrapper');
-const videoSlider_1 = document.querySelector('.uni_videoSlider');
-
-const videoSlider_1_interval = 2000;
-
-let videoSlides_1 = document.querySelectorAll('.videoSlider_item');
-let videoSlide_1_index = 1;
-let videoSliderId_1;
-
-const videoSlideWidth_1 = videoSlides_1[videoSlide_1_index].clientWidth;
-
-// console.log(slideWidth);
-
-videoSlider_1.style.transform = `translateX(${-videoSlideWidth_1 * videoSlide_1_index}px)`;
 
 
-const startVideoSlide_1 = ()=>{
-    videoSliderId_1 = setInterval(()=>{
-        videoSlide_1_index++;
-		if(videoSlide_1_index >= 5){
-			videoSlide_1_index = 1;
-		}else{
-			videoSlider_1.style.transform = `translateX(${-videoSlideWidth_1 * videoSlide_1_index}px)`;
-        	videoSlider_1.style.transition = '.7s';
-		}
-        
-    }, videoSlider_1_interval);
-}
-
-videoSlider_1.addEventListener('transitionend', ()=>{
-    // console.log('transition end');
-    videoSlides_1 = document.querySelectorAll('.videoSlider_item');
-    if (videoSlide_1_index >=4){
-        videoSlider_1.style.transition = 'none';
-        videoSlide_1_index = 1;
-        videoSlider_1.style.transform = `translateX(${-videoSlideWidth_1 * videoSlide_1_index}px)`;
-    }
-    /* if (slides[index].id === firstClone.id){
-        slide.style.transition = 'none';
-        index = 1;
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-    } */
-});
-
-videoSlideContainer_1.addEventListener('mouseenter', ()=>{
-    clearInterval(videoSliderId_1);
-});
-
-videoSlideContainer_1.addEventListener('mouseleave', startVideoSlide_1);
-
-startVideoSlide_1();
 
 
-// **************  video slider _2  ******************//
-
-const videoSlideContainer_2 = document.getElementById('videoRow2_wrapper');
-const videoSlider_2 = document.querySelector('#videoRow2_wrapper .uni_videoSlider');
-
-const videoSlider_2_interval = 3000;
-
-let videoSlides_2 = document.querySelectorAll('#videoRow2_wrapper .uni_videoSlider .videoSlider_item');
-let videoSlide_2_index = 1;
-let videoSliderId_2;
-
-const videoSlideWidth_2 = videoSlides_2[0].clientWidth;
-
-console.log(videoSlideWidth_2);
-
-videoSlider_2.style.transform = `translateX(${-videoSlideWidth_2 * videoSlide_2_index}px)`;
 
 
-const startVideoSlide_2 = ()=>{
-    videoSliderId_2 = setInterval(()=>{
-        videoSlide_2_index++;
-		if(videoSlide_2_index >= 5){
-			videoSlide_2_index = 1;
-		}else{
-			videoSlider_2.style.transform = `translateX(${-videoSlideWidth_2 * videoSlide_2_index}px)`;
-        	videoSlider_2.style.transition = '.7s';
-		}
-        
-    }, videoSlider_2_interval);
-}
 
-videoSlider_2.addEventListener('transitionend', ()=>{
-    // console.log('transition end');
-    videoSlides_2 = document.querySelectorAll('.videoSlider_item');
-    if (videoSlide_2_index >=4){
-        videoSlider_2.style.transition = 'none';
-        videoSlide_2_index = 1;
-        videoSlider_2.style.transform = `translateX(${-videoSlideWidth_2 * videoSlide_2_index}px)`;
-    }
-    /* if (slides[index].id === firstClone.id){
-        slide.style.transition = 'none';
-        index = 1;
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-    } */
-});
-
-videoSlideContainer_2.addEventListener('mouseenter', ()=>{
-    clearInterval(videoSliderId_2);
-});
-
-videoSlideContainer_2.addEventListener('mouseleave', startVideoSlide_2);
-
-startVideoSlide_2();
 

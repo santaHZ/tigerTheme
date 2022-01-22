@@ -4,41 +4,19 @@ let uniCounter ={};  // store flexibility, userfriendly, performance 's slider c
 const prodShowcaseArray = [];
 let productShowcaseColNum = 1;
 
-const flex_wrapper = document.querySelector('#flex_wrapper');
-const docAllSliderImages = document.querySelectorAll('.item ul li img');
+if (window.innerWidth < 750){
+  colNum = 1; //when window size smaller than 750, set all sliders colNum 1
+  touchColNum = 1;
 
-		// initialize flexibility block dot buttons and all slideImg sizes
-    if (window.innerWidth < 750){
-      colNum = 1; //when window size smaller than 750, set all sliders colNum 1
-      touchColNum = 1;
-      //felx_max_counter = 4;
-      for (let i=0; i < (docAllSliderImages.length -0) ; i++ ){
-        docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
-        // docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
-        docAllSliderImages[i].setAttribute('height', 'auto');
-        //flex_size = Math.round(flex_wrapper.clientWidth / colNum);
-      }
-    }else if(window.innerWidth < 1200 && window.innerWidth >=750){
-      colNum = 2; //when window size smaller than 750, set all sliders colNum 1
-      touchColNum = 2;
-      //felx_max_counter = 4;
-      for (let i=0; i < (docAllSliderImages.length -0) ; i++ ){
-        docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
-        // docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
-        docAllSliderImages[i].setAttribute('height', 'auto');
-        //flex_size = Math.round(flex_wrapper.clientWidth / colNum);
-      }
-    }else{
-      colNum = 3; //when window size smaller than 750, set all sliders colNum 3
-      touchColNum = 3;
-      //felx_max_counter = 2;
-      for (let i=0; i < (docAllSliderImages.length -0); i++ ){
-        docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
-        // docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
-        docAllSliderImages[i].setAttribute('height', 'auto');
-        //flex_size = Math.round(flex_wrapper.clientWidth / colNum);
-      }
-    }
+}else if(window.innerWidth < 1200 && window.innerWidth >=750){
+  colNum = 2; //when window size smaller than 750, set all sliders colNum 1
+  touchColNum = 2;
+
+}else{
+  colNum = 3; //when window size smaller than 750, set all sliders colNum 3
+  touchColNum = 3;
+
+}
 
 
 // ***************above codes are user added********************* //

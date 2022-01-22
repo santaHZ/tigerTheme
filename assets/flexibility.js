@@ -8,6 +8,7 @@ const flex_slider = document.querySelector('#flex_wrapper').firstElementChild  /
 const flex_slides = Array.from(flex_slider.querySelectorAll('.item')); // this is div slides array
 const flex_btn = document.querySelector('#flex_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
+const flex_wrapper = document.querySelector('#flex_wrapper');
 
 // initiallize [flexibility] dot buttons
 for (let i=0; i < (flex_slides.length - colNum + 1); i++){

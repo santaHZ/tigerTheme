@@ -2,6 +2,45 @@
 };
  */
 
+//*********page initialize at first open - begin - *********//
+
+const docAllSliderImages = document.querySelectorAll('.item ul li img');
+
+if (window.innerWidth < 750){
+	colNum = 1; //when window size smaller than 750, set all sliders colNum 1
+	touchColNum = 1;
+	//felx_max_counter = 4;
+	for (let i=0; i < (docAllSliderImages.length -0) ; i++ ){
+	  docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
+	  // docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+	  docAllSliderImages[i].setAttribute('height', 'auto');
+	  //flex_size = Math.round(flex_wrapper.clientWidth / colNum);
+	}
+  }else if(window.innerWidth < 1200 && window.innerWidth >=750){
+	colNum = 2; //when window size smaller than 750, set all sliders colNum 1
+	touchColNum = 2;
+	//felx_max_counter = 4;
+	for (let i=0; i < (docAllSliderImages.length -0) ; i++ ){
+	  docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
+	  // docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+	  docAllSliderImages[i].setAttribute('height', 'auto');
+	  //flex_size = Math.round(flex_wrapper.clientWidth / colNum);
+	}
+  }else{
+	colNum = 3; //when window size smaller than 750, set all sliders colNum 3
+	touchColNum = 3;
+	//felx_max_counter = 2;
+	for (let i=0; i < (docAllSliderImages.length -0); i++ ){
+	  docAllSliderImages[i].setAttribute('width', Math.ceil(flex_wrapper.clientWidth / colNum) - 10);
+	  // docAllSliderImages[i].setAttribute('height', Math.ceil(docAllSliderImages[i].width * 0.66666));
+	  docAllSliderImages[i].setAttribute('height', 'auto');
+	  //flex_size = Math.round(flex_wrapper.clientWidth / colNum);
+	}
+  }
+
+//*********page initialize at first open - end - *********//
+
+
 //*************universal funcions ***********//
 
 let dotBtnFun = function(dotBtnId){
@@ -51,8 +90,9 @@ let dotBtnFun = function(dotBtnId){
 window.addEventListener('resize', function(event) {
 
 	flex_dotBtnFunReset();  //initialize slider position after window resize.
-	userfly_dotBtnFunReset()
-	perf_dotBtnFunReset()
+	userfly_dotBtnFunReset();
+	perf_dotBtnFunReset();
+
 
 	if (window.innerWidth < 750){
 		colNum = 1; //when window size smaller than 750, set all sliders colNum 1
