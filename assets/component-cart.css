@@ -41,6 +41,24 @@ cart-items.is-empty .title-wrapper-with-link,
   font-size: inherit;
 }
 
+
+/*********user setting*********/
+.cart__note label{
+  color: #121212BF;
+}
+
+.cart__note .field__input.text-area{
+  color: black !important;
+  border: 1px solid #1212120a !important;
+}
+
+.cart__note .field__input.text-area:focus{
+  color: black !important;
+  border: 1px solid #1212120a !important;
+}
+
+
+
 @media screen and (min-width: 990px) {
   .cart__warnings {
     padding: 7rem 0 1rem;
@@ -101,6 +119,10 @@ cart-items {
 .cart__note .field__input {
   padding: 1rem;
 }
+
+
+
+
 
 @media screen and (min-width: 750px) {
   .cart__items {
@@ -206,3 +228,6 @@ cart-items {
     gap: 1rem;
   }
 }
+
+
+

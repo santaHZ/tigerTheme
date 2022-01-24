@@ -117,6 +117,15 @@ a.naktoEmail{
 
 }
 
+.socialIconStyle i{
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.socialIconStyle a{
+  text-decoration: none;
+}
+
 @media only screen 
     and (device-width: 414px) 
     and (device-height: 896px) 
