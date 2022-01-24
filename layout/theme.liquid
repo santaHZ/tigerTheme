@@ -37,7 +37,7 @@
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'nav_bar.js' | asset_url }}" defer="defer"></script>
 
-    {{ content_for_header }}{% include 'globo.menu.script' %}
+    {{ content_for_header }}
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
@@ -431,3 +431,4 @@
 <!--End_Gem_Page_Footer_Script-->
 </body>
 </html>
+{% include 'globo.menu.script' %}
