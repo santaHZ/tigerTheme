@@ -339,6 +339,15 @@ li.girlComment > p{
   text-decoration: none;
   padding: 0;
   margin: 0;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+.rightContent > div > ul > li > a:hover{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: #78a61a;
 }
 
 .rightContent > div > ul > li > a > img{
