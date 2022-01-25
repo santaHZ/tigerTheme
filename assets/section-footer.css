@@ -556,17 +556,23 @@ input[id ^= NewsletterForm--]:hover{
   color: white;
 }
 
-.footerCustomize{
+div.footerCustomize{
   display: flex;
   justify-content: space-evenly;
+  align-items: baseline;
   font-size: 17px;
   color: rgba(255,255,255,.6);
   /* border: 1px solid coral; */
 }
 
-.footerCustomize ul{
+div.footerCustomize ul{
   list-style: none;
   width: 25%;
+}
+
+div.footerCustomize ul li{
+  list-style: none;
+  width: 100%;
 }
 
 .footerCustomize ul a{
