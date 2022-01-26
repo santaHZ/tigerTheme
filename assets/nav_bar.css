@@ -358,6 +358,7 @@ ul.dropdownSup li ul{
 ul.dropdownSup li a{
     display: block;
     color: black;
+    transition: color 0.2s ease-in-out;
     /* border: 1px solid crimson; */
 }
 
