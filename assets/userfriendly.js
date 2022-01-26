@@ -74,7 +74,7 @@ function userfly_touchEnd(){
 	userfly_isDragging = false;
 	cancelAnimationFrame(userfly_animationID);
 	const userfly_movedBy = userfly_currentTranslate - userfly_prevTranslate;
-	console.log(uniCounter["userfriendly"]);
+	// console.log(uniCounter["userfriendly"]);
 	if(userfly_movedBy < -50 && uniCounter["userfriendly"] < (userfly_slides.length - touchColNum)){
 		uniCounter["userfriendly"] += 1;
 	}

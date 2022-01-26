@@ -112,12 +112,12 @@ function prod_setPositionByIndex(){
 //   console.log("prod_slider clientHeight:" + prod_slider.clientHeight);
 	// let prod_size = prod_slider.clientWidth;
 	slideCounterTesting++;
-	console.log('wrapper width:\'' + slideCounterTesting + '\'' + prod_slider.clientWidth); 
+	// console.log('wrapper width:\'' + slideCounterTesting + '\'' + prod_slider.clientWidth); 
 	// adding above testing console.log, the problem that there will be a little of next slide show up in current slide show.
 
 
 	let prod_size = prod_slides[0].clientWidth;
-	console.log(prod_size);
+	// console.log(prod_size);
 	prod_currentTranslate = uniCounter["productShowcase"] * (- prod_size);
 	prod_prevTranslate = prod_currentTranslate;
 	prod_setSlidePosition();

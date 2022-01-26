@@ -890,10 +890,12 @@ a.product__text {
   color: #222222;
   font-weight: bold;
   text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
 }
 
 .product__title:hover{
   color: #A4DE2F;
+  cursor: pointer;
 
 }
 
