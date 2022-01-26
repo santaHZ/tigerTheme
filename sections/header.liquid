@@ -19,6 +19,7 @@
 <style>
   header-drawer {
     justify-self: start;
+    /* justify-self: center; */
     margin-left: -1.2rem;
   }
 
@@ -351,7 +352,9 @@
     {%- endif -%}
 
     {%- if section.settings.menu != blank -%}
-      <nav class="header__inline-menu">
+    <!-- user customize navigator -->
+    <div style="height: 20px; width: 50vw; margin: 0 auto; border: 0px solid chartreuse; display: none;">All Shipping free to USA.</div>
+      <nav class="header__inline-menu" style="display: none;">
         <ul class="list-menu list-menu--inline" role="list">
           {%- for link in section.settings.menu.links -%}
             <li>
