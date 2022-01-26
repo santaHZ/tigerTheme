@@ -97,9 +97,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>This Super Cruiser Fat Tire E-bike is an electric bike born of equal parts style and performance. Remains perfectly balanced with low center of gravity thanks to a downtube mounted battery pack. A flat handlebar, for lively and intuitive handling. Extra wide 4” tire from CST BFT, for additional safety on tight turns and tough climbs. Robust reliability meets agile handling, making it fun to ride both on and off road.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>
