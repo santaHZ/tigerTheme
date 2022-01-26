@@ -1,10 +1,14 @@
 {
   "sections": {
     "banner": {
-      "type": "main-collection-banner-cityEBikes"
+      "type": "main-collection-banner-cityEBikes",
+      "settings": {
+      }
     },
     "product-grid": {
-      "type": "main-collection-product-grid-cityEBikes"
+      "type": "main-collection-product-grid-cityEBikes",
+      "settings": {
+      }
     }
   },
   "order": [
