@@ -1,0 +1,117 @@
+.WarrantyPolicy{
+  width: 75%;
+  margin: 0 auto;
+  padding: 80px 100px 180px 100px;
+  background-color: rgba(100,100,100,.1);
+}
+
+div > p:first-child{
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+
+div.WarrantyPolicyTitle p{
+  font-size: 52px;
+  font-weight: bold;
+  color: black;
+}
+
+span.spanBold{
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+div > ul:nth-child(2){
+  padding: 0;
+  margin: 0;
+}
+
+div > ul:nth-child(2) li{
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  list-style:decimal;
+}
+
+div > ul:nth-child(3){
+  padding: 0;
+  margin: 0;
+}
+
+div > ul:nth-child(3) li{
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  /* list-style:decimal; */
+}
+
+div > ul.warrantyClaim{
+  padding: 0;
+  margin: 0;
+}
+
+div > ul.warrantyClaim li{
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  list-style:decimal;
+}
+
+div p img{
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+div p a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #a4de2f;
+  transition: all 0.2s ease-in-out;
+}
+
+div p a:hover{
+  text-decoration: none;
+  color: #78a61a;
+}
+
+/* settings for iphon 11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+      .WarrantyPolicy{
+        width: 98%;
+        margin: 0 auto;
+        padding: 8px 10px 18px 10px;
+        background-color: rgba(100,100,100,.1);
+        margin-top: -50px;
+      }
+
+      div.WarrantyPolicyTitle p{
+        font-size: 32px;
+        font-weight: bold;
+        color: black;
+      }
+
+    }
+
+
+/* settings for android*/
+@media screen and (max-width: 749px){
+  .WarrantyPolicy{
+    width: 98%;
+    margin: 0 auto;
+    padding: 8px 10px 18px 10px;
+    background-color: rgba(100,100,100,.1);
+    margin-top: -50px;
+  }
+
+  div.WarrantyPolicyTitle p{
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+  }
+}
