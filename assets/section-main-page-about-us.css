@@ -281,3 +281,128 @@ P.naktoStoryTitle{
 
     }
 
+
+@media screen and (max-width: 749px){
+  .aboutUsBanner{
+    display: block;
+    border: 0;
+    margin-top: -70px;
+    position: relative;
+    color: white;
+  }
+  
+  .aboutUsBannerText1{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .aboutUsBannerText2{
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .naktoMVC{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .naktoStory{
+    width: 90%;
+    margin: 30px auto 0 auto;
+  }
+
+  .naktoWarehouse{
+    width: 100%;
+    margin: 30px auto 0 auto;
+    display: block;
+    /* border: 1px solid chartreuse; */
+  }
+
+  .naktoWarehouse .forDesktop{
+    display: none;
+  }
+  
+  .naktoWarehouse .forMobile{
+    display: block;
+  }
+
+  .naktoWarehouse div{
+    width: 100%;
+    padding: 0 20px;
+    /* border: 1px solid chocolate; */
+  }
+
+  .naktoWarehouse div p{
+    padding: 0;
+    margin: 0;
+  }
+
+  .naktoWarehouse div p img{
+    display: block;
+  }
+
+  .naktoWarehouseText{
+    /* border: 1px solid coral; */
+  }
+
+
+  .naktoFactory{
+    width: 100%;
+    margin: 10px auto 0 auto;
+    display: block;
+    /* border: 1px solid chartreuse; */
+  }
+
+  .naktoFactory div{
+    width: 100%;
+    padding: 0 20px;
+    /* border: 1px solid chocolate; */
+  }
+
+  .naktoFactory div p{
+    padding: 0;
+    margin: 0;
+  }
+
+  .naktoFactory div p img{
+    display: block;
+  }
+
+  .naktoFactoryText{
+    /* border: 1px solid coral; */
+  }
+
+
+  .naktoCoreValue{
+    width: 100%;
+    margin: 30px auto 0 auto;
+    display: block;
+    /* border: 1px solid chartreuse; */
+  }
+
+  .naktoCoreValue div{
+    width: 100%;
+    padding: 0 20px;
+    /* border: 1px solid chocolate; */
+  }
+
+  .naktoCoreValue div p{
+    padding: 0;
+    margin: 0;
+  }
+
+  .naktoCoreValue div p img{
+    display: block;
+  }
+
+  .naktoCoreValueText{
+    /* border: 1px solid coral; */
+  }
+}
+

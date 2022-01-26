@@ -659,19 +659,30 @@ div.footerCustomize ul li{
 @media screen and (max-width: 749px) {
   .footerCustomize{
     display: block;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: left; */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
     font-size: 15px;
     color: rgba(255,255,255,.6);
     /* border: 1px solid coral; */
   }
 
-  .footerCustomize ul{
+  div.footerCustomize ul{
     padding: 0;
     margin: 0;
     list-style: none;
     width: 100%;
+  }
+
+  div.footerCustomize ul li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+  }
+
+  div.footerCustomize ul li a{
+    text-decoration: none;
   }
 
   .footerBigFont{
@@ -727,19 +738,30 @@ div.footerCustomize ul li{
 
       .footerCustomize{
         display: block;
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* justify-content: left; */
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
         font-size: 15px;
         color: rgba(255,255,255,.6);
         /* border: 1px solid coral; */
       }
     
-      .footerCustomize ul{
+      div.footerCustomize ul{
         padding: 0;
         margin: 0;
         list-style: none;
         width: 100%;
+      }
+
+      div.footerCustomize ul li{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+      }
+
+      div.footerCustomize ul li a{
+        text-decoration: none;
       }
     
       .footerBigFont{
