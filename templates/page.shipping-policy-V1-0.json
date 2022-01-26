@@ -1,7 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "main-page-shipping-policy-V1-0"
+      "type": "main-page-shipping-policy-V1-0",
+      "settings": {
+      }
     }
   },
   "order": [
