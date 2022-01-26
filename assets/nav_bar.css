@@ -569,3 +569,15 @@ div.stickyStyle{
         margin-left: -100%;
     }
 }
+
+/* lisa laptop 1280px width*/
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+    .menuBlock{
+        margin-left: -5%;
+    }
+
+    .topMenuUl > li.supportMenu > ul.dropdownSup{
+        left: -360%;
+    }
+    
+}

@@ -29,7 +29,7 @@
     height: 35.74vw;
     margin-bottom: 5px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     /* border: 1px solid rgb(140, 177, 54); */
 }
 
@@ -143,3 +143,106 @@
     }
 
 
+/* Misty desktop width 1600px*/
+@media screen and (min-width: 1024px) and (max-width: 1600px){
+
+    /*********** the div outside of div with class pro_wrapper **********/
+    #productShowcase{
+        display: block;
+        /* width: 50.0vw; */
+        /* width: 50%; */
+        /* height: 37.17vw; */
+        /* height: 37.89vw; */
+        /* height: 38.60vw; */
+        height: 39.32vw;
+        padding: 0;
+        margin: 0;
+        /* background-color: violet; */
+    }
+
+    /*define big product img slider*/
+    #productShowcase #prod_wrapper{
+        display: block;
+        float: left;
+        overflow: hidden;
+        border:0px;
+        /* width: 50.0vw; */
+        /* height: 35.74vw; */
+        /* width: 52.0vw;
+        height: 37.17vw; */
+        /* width: 53.0vw;
+        height: 37.89vw; */
+        /* width: 54.0vw;
+        height: 38.60vw; */
+        width: 55.0vw;
+        height: 39.32vw;
+        margin-bottom: 5px;
+        padding: 0;
+        margin: 0 auto;
+        /* border: 1px solid rgb(140, 177, 54); */
+    }
+
+    #productShowcase #prod_wrapper .uni_imgSlider{
+        margin: 0;
+        padding: 0;
+    }
+
+    #productShowcase #prod_wrapper .uni_imgSlider .item{  /*re adjust margin-right to 0px*/
+        margin-right: 0px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #productShowcase #prod_wrapper .uni_imgSlider .item img{
+        display: block;
+        /* width: 52.0vw; 
+        height: 37.17vw; */
+        /* width: 53.0vw;
+        height: 37.89vw; */
+        /* width: 54.0vw;
+        height: 38.60vw; */
+        width: 55.0vw;
+        height: 39.32vw;
+        padding: 0px;
+        margin: 0px;
+        /* border: 1px solid crimson; */
+    }
+
+
+    /******define small product img slider*******/
+    #productPeekShowcase #prodPeek_wrapper{
+        display: block; 
+        overflow: hidden;
+        white-space: nowrap;
+        /* width: 390px; */
+        /* width: 52.0vw; */
+        /* width: 53.0vw; */
+        /* width: 54.0vw; */
+        width: 55.0vw;
+        padding: 0px;
+        margin: 0px;
+        /* border: 1px solid coral; */
+    }
+
+    #prodPeek_wrapper .uni_imgSlider{
+        margin: 0;
+        padding: 0;
+    }
+
+    #prodPeek_wrapper .uni_imgSlider .item{  /*re adjust margin-right to 0px*/
+        margin: 0;
+        padding: 0;
+        margin-right: 0px;
+
+    }
+
+    #prodPeek_wrapper .uni_imgSlider .item img{
+        display: block; 
+        width: 120px;
+        height: 80px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
+
+}
