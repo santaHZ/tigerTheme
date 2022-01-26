@@ -97,17 +97,11 @@
             <hr>
             <div class="overViewStyle">Overview</div>
             <div>The City Stroller City E-bike - one bike for every occasion. A frame with a glistening sheen, makes this bike sleek and modern. Supports single speed pedal assist and throttle for an easy-going ride, 6-speed Shimano gears for uphill riding. Includes built-in front woven basket and rear rack for additional essentials.</div>
-<!-- Start Areviews product title Rating Code -->
-<div class='areviews_header_stars'></div> 
-<!-- End Areviews product title Rating Code -->
-
           {%- when 'price' -%}
-
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>
               <div>{%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}</div>
-              
             </div>
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
               <div class="product__tax caption rte">
