@@ -657,13 +657,13 @@ div.footerCustomize ul li{
 
 
 @media screen and (max-width: 749px) {
-  .footerCustomize{
+  div.footerCustomize{
     display: block;
     display: flex;
     flex-direction: column;
     justify-content: left;
     font-size: 15px;
-    color: rgba(255,255,255,.6);
+    color: rgba(255,255,255,.6) !important;
     /* border: 1px solid coral; */
   }
 
@@ -686,10 +686,10 @@ div.footerCustomize ul li{
     color: rgba(255,255,255,.6);
   }
 
-  div.footerCustomize ul li a:link{
+/*   div.footerCustomize ul li a:link{
     text-decoration: none;
     color: rgba(255,255,255,.6);
-  }
+  } */
 
   .footerBigFont{
     font-size: 20px;
