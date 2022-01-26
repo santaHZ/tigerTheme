@@ -114,7 +114,7 @@
     position: relative;
   }
   
-  .storiesImg-crop img {
+.storiesImg-crop img {
     display: block;
     float: right;
     margin-top: -2%; /* crop position */
@@ -132,7 +132,7 @@
     position: relative;
   }
   
-  .storiesImg-crop1 img {
+.storiesImg-crop1 img {
     display: block;
     float: right;
     margin-top: -20%; /* crop position */
@@ -150,7 +150,7 @@
     position: relative;
   }
   
-  .storiesImg-crop2 img {
+.storiesImg-crop2 img {
     display: block;
     float: right;
     margin-top: -2%; /* crop position */

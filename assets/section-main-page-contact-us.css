@@ -21,12 +21,33 @@
 
 .contactUsBannerText{
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 20%;
   font-size: 48px;
   line-height: 58px;
   color: white;
   font-weight: bolder;
+}
+
+.mainFormArea{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  color: white;
+  background-color: black;
+  /* border: 1px solid cornflowerblue; */
+}
+
+.mainFormAreaText{
+  width: 15%;
+  /* border: 1px solid crimson; */
+  margin-top: 100px;
+}
+
+.mainFormAreaText p{
+  margin: 30px 0;
+  font-size: 13px;
 }
 
 
@@ -37,6 +58,7 @@
   padding: 0px 50px;
   margin: 20px 0;
   height: auto;
+  /* border: 1px solid chartreuse; */
 }
 
 .formBlock input{
@@ -53,26 +75,6 @@ div.formBlock input:hover{
 
 #ContactForm-email.field__input input:hover{
   border: 1px solid white;
-}
-
-.mainFormArea{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  color: white;
-  background-color: black;
-}
-
-.mainFormAreaText{
-  width: 15%;
-  /* border: 1px solid crimson; */
-  margin-top: 100px;
-}
-
-.mainFormAreaText p{
-  margin: 30px 0;
-  font-size: 13px;
 }
 
 .formBlockTitle{
@@ -131,5 +133,49 @@ a.naktoEmail{
     and (device-height: 896px) 
     and (-webkit-device-pixel-ratio: 2) {
 
+      .mainFormArea{
+        flex-direction: column;
+      }
+
+      .mainFormAreaText{
+        width: 90%;
+        margin: 0px auto 0 auto;
+        text-align: center;
+
+      }
+
+      .formBlock{
+        width: 100%;
+      }
+
+      .contactUsBannerText{
+        font-size: 15px;
+        line-height: 20px;
+        top: 30%;
+      }
 
     }
+
+
+@media screen and (max-width: 749px){
+  .mainFormArea{
+    flex-direction: column;
+  }
+
+  .mainFormAreaText{
+    width: 90%;
+    margin: 0px auto 0 auto;
+    text-align: center;
+
+  }
+
+  .formBlock{
+    width: 100%;
+  }
+
+  .contactUsBannerText{
+    font-size: 15px;
+    line-height: 20px;
+    top: 30%;
+  }
+}
