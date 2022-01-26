@@ -683,6 +683,12 @@ div.footerCustomize ul li{
 
   div.footerCustomize ul li a{
     text-decoration: none;
+    color: rgba(255,255,255,.6);
+  }
+
+  div.footerCustomize ul li a:link{
+    text-decoration: none;
+    color: rgba(255,255,255,.6);
   }
 
   .footerBigFont{
