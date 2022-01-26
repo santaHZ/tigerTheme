@@ -95,9 +95,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>The Nakto Camel <strong>Men Electric bike</strong> - one bike for every occasion. A frame with a glistening sheen, makes this bike sleek and modern. Supports single speed pedal assist and throttle for an easy-going ride, 6-speed Shimano gears for uphill riding. Includes built-in front woven basket and rear rack for additional essentials.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>

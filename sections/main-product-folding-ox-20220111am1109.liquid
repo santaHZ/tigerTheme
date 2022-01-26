@@ -94,9 +94,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>The compact Folding OX E-bike is born for portability and mobility. Hi-rise cruiser handlebar creates a lower riding profile with comfort. With the equipment of wide tire, you could explore all sorts of riding locations, on or off-road trails. Easily folds in half to let you bring it with you wherever you go.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>

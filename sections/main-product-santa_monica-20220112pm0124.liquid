@@ -97,9 +97,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>The Santa Monica Fat Tire E-bike is the iconic electric fat tire bike created to be the smoothest, long-lasting all terrains bike that you can trust. Cruise through town at your own pace with head up and eyes on the road thanks to its ergonomic bends and gentle upward sweep. Both pedal assist system and full twist throttle give you additional boost and more range with ease.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>

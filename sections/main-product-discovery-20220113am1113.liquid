@@ -97,9 +97,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>Have a sleek and awesome ride to use for every day with the Nakto Discovery 48v Fat Tire Electric Bike! This beautiful electric bike features a compact design with performance fat tires made for paved roads and off-road paths in the city. It comes with 20-inch spoked rims and a sizable 8 amp/hour battery. Discovery Fat Bike is the ideal ride for going to school or work.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>

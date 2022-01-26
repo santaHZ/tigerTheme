@@ -97,9 +97,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>The <strong>NAKTO Skylark</strong> Folding Bike is a stylish city bike, featuring a classic folding frame with fenders and 16-inch spoked rims. The frame is made of high-strength carbon steel with a premium paint finish. The bike comes with a rear luggage rack where you can strap your bag. This bike is designed for daily mobility and can be easily driven by anyone. Easily folds in half to let you bring it with you wherever you go.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>

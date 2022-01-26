@@ -97,9 +97,9 @@
               {{ product.title | escape }}
             </h1>
             <hr>
+          {%- when 'price' -%}
             <div class="overViewStyle">Overview</div>
             <div>Have a reliable and stylish ride for every day with the Nakto Elegance 36v Cruiser Electric Bike!<br>This compact electric road bike features the timeless step-through, cruiser-style frame with a robust 36-volt electric motor made for paved roads in the city. It is an entry-level electric city bike that comes with gorgeous 22-inch spoked rims with sleek road tires and a sizable 10 amp/hour battery for traveling long distances.</div>
-          {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
               <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>
