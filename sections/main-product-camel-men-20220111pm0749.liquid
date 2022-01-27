@@ -62,13 +62,39 @@
               {%- assign media = product.selected_or_first_available_variant.featured_media -%}
               {%- if product.selected_or_first_available_variant.featured_media != null -%}
                 <div class="item" prodPeek-data-media-id="{{ section.id }}-{{ media.id }}">
-                  <img src="{{- media | image_url -}}" alt="{{media.alt}}"/>
+                  <img 
+                    srcset="{% if media.preview_image.width >= 120 %}{{ media.preview_image | img_url: '120x' }} 120w,{% endif %}
+                    {% if media.preview_image.width >= 288 %}{{ media.preview_image | img_url: '288x' }} 288w,{% endif %}
+                    {% if media.preview_image.width >= 576 %}{{ media.preview_image | img_url: '576x' }} 576w,{% endif %}
+                    {% if media.preview_image.width >= 750 %}{{ media.preview_image | img_url: '750x' }} 750w,{% endif %}
+                    {% if media.preview_image.width >= 1100 %}{{ media.preview_image | img_url: '1100x' }} 1100w,{% endif %}
+                    {% if media.preview_image.width >= 1500 %}{{ media.preview_image | img_url: '1500x' }} 1500w,{% endif %}
+                    {{ media.preview_image | img_url: 'master' }} {{ media.preview_image.width }}w"
+                    src="{{- media | image_url: '120x' -}}" 
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: 0.64 | round }}px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+                    loading="lazy"
+                    width="120"
+                    alt="{{media.alt}}" 
+                  />
                 </div>
               {%- endif -%}
               {%- for media in product.media -%}
                 {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 <div class="item" prodPeek-data-media-id="{{ section.id }}-{{ media.id }}">
-                  <img src="{{- media | image_url -}}" alt="{{media.alt}}" />
+                  <img 
+                    srcset="{% if media.preview_image.width >= 120 %}{{ media.preview_image | img_url: '120x' }} 120w,{% endif %}
+                    {% if media.preview_image.width >= 288 %}{{ media.preview_image | img_url: '288x' }} 288w,{% endif %}
+                    {% if media.preview_image.width >= 576 %}{{ media.preview_image | img_url: '576x' }} 576w,{% endif %}
+                    {% if media.preview_image.width >= 750 %}{{ media.preview_image | img_url: '750x' }} 750w,{% endif %}
+                    {% if media.preview_image.width >= 1100 %}{{ media.preview_image | img_url: '1100x' }} 1100w,{% endif %}
+                    {% if media.preview_image.width >= 1500 %}{{ media.preview_image | img_url: '1500x' }} 1500w,{% endif %}
+                    {{ media.preview_image | img_url: 'master' }} {{ media.preview_image.width }}w"
+                    src="{{- media | image_url: '120x' -}}" 
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: 0.64 | round }}px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+                    loading="lazy"
+                    width="120"
+                    alt="{{media.alt}}" 
+                  />
                 </div>
                 {%- endunless -%}
               {%- endfor -%}

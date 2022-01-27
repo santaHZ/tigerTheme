@@ -495,7 +495,7 @@
     display: none;
 }
 
-.main_top_banner{
+.main_top_banner{ /*setting top 4 column row with icon and text*/
     display: block;
     overflow: auto;
     background-color: black;
@@ -528,14 +528,14 @@
     color: white;
  }
 
- .main_top_bold{
+.main_top_bold{
     font-size: 1.5em;
     font-weight: bolder;
     color: black;
-     
- }
+    
+}
 
- .main_top_light{
+.main_top_light{
     font-size: 14px;
     font-weight: lighter;
     color: #BCBCBC;
@@ -548,7 +548,8 @@
     /* adjust layout of top banner 4 columns*/
     .main_top_banner div{
         width: 50%;
-        padding: 1em;
+        /* padding: 2%; */
+        padding: 0;
         margin: 0;
         /* background-color: wheat; */
     }
@@ -561,14 +562,29 @@
     .main_top_banner div ul {
         padding: 0;
         margin: 0;
+        width: 100%;
+        height: 150px;
+        /* border: 1px solid chocolate; */
+        padding: 20px 5% 20px 5%;
+    }
+
+    .main_top_banner div ul:first-child{
+        padding-left: 10%;
+    }
+
+    .main_top_banner div ul:nth-child(3){
+        padding-left: 10%;
     }
 
     .main_top_banner div ul li{
+        padding: 0;
+        margin: 0;
         font-size: 0.7em;
+        /* border: 1px solid cornflowerblue; */
     }
 
     .main_top_banner div ul li.main_top_bold{
-        font-size: 1.0em;
+        font-size: 0.9em;
         font-weight: bolder;
         margin: 0;
     }
@@ -646,18 +662,19 @@
 
     .main_banner_name{
         font-weight: bold;
+        width: 50%;
 
     }
     
     .main_banner_f1{
-        font-size: 3.0vw;
+        font-size: 2.8vw;
         font-weight: 700;
         padding-top: 5px;
 
     }
     
     .main_banner_f2{
-        font-size: 2.8vw;
+        font-size: 2.6vw;
 
     }
     
@@ -670,10 +687,174 @@
         background: none;
         padding: 0px;
         font-weight: bold;
-        color: black;
+        color: white;
+    }
+
+    .wpas_header{
+        font-size: 20px;
+    }
+
+    .wpas_content1{
+        display: block;
+    }
+
+    .wpas_content1 div:first-child{
+        width: 99%;
+        /* border: 1px solid cornflowerblue; */
+    }
+
+    .wpas_content1 div:first-child div{
+        width: 50%;
+    }
+
+    .wpas_content1 div:nth-child(2){
+        width: 99%;
+        /* border: 1px solid chocolate; */
+        margin-left: 0;
+    }
+
+    .wpas_content1 div:nth-child(2) p{
+        margin-bottom: 0;
+    }
+
+    .wpas_content1 div:nth-child(2) p:first-child{
+        width: 90%;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    .wpas_content2{
+        display: block;
+    }
+
+    .wpas_content2 div:first-child{
+        width: 99%;
+        /* border: 1px solid cornflowerblue; */
+    }
+
+    .wpas_content2 div:first-child div{
+        width: 50%;
+    }
+
+    .wpas_content2 div:nth-child(2){
+        width: 99%;
+        /* border: 1px solid chocolate; */
+        margin-left: 0;
+    }
+
+    .wpas_content2 div:nth-child(2) p{
+        margin-bottom: 0;
+    }
+
+    .wpas_content2 div:nth-child(2) p:first-child{
+        margin-top: 8px;
+        font-size: 14px;
     }
 
     
+
+}
+
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2){
+
+    .main_banner_f1{
+        font-size: 2.6vw;
+        font-weight: 700;
+        padding-top: 5px;
+    }
+
+    .main_banner_name{
+        font-weight: bold;
+        /* border: 1px solid coral; */
+        width: 36vw;
+        right: 8%;
+
+    }
+    
+    .main_banner_f1{
+        width: 36vw;
+        font-size: 2.6vw;
+        font-weight: 700;
+        padding-top: 5px;
+        line-height: 3.2vw;
+
+
+    }
+    
+    .main_banner_f2{
+        width: 36vw;
+        font-size: 2.8vw;
+        line-height: 3.2vw;
+        top: 40%;
+        color: white !important;
+
+    }
+
+    .wpas_header{
+        font-size: 20px;
+    }
+
+    .wpas_content1{
+        display: block;
+    }
+
+    .wpas_content1 div:first-child{
+        width: 99%;
+        /* border: 1px solid cornflowerblue; */
+    }
+
+    .wpas_content1 div:first-child div{
+        width: 50%;
+    }
+
+    .wpas_content1 div:nth-child(2){
+        width: 99%;
+        /* border: 1px solid chocolate; */
+        margin-left: 0;
+    }
+
+    .wpas_content1 div:nth-child(2) p{
+        margin-bottom: 0;
+    }
+
+    .wpas_content1 div:nth-child(2) p:first-child{
+        width: 90%;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    .wpas_content2{
+        display: block;
+    }
+
+    .wpas_content2 div:first-child{
+        width: 99%;
+        /* border: 1px solid cornflowerblue; */
+    }
+
+    .wpas_content2 div:first-child div{
+        width: 50%;
+    }
+
+    .wpas_content2 div:nth-child(2){
+        width: 99%;
+        /* border: 1px solid chocolate; */
+        margin-left: 0;
+    }
+
+    .wpas_content2 div:nth-child(2) p{
+        margin-bottom: 0;
+    }
+
+    .wpas_content2 div:nth-child(2) p:first-child{
+        margin-top: 8px;
+        font-size: 14px;
+    }
 
 }
 
