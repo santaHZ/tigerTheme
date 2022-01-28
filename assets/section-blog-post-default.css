@@ -2,22 +2,10 @@
   width: 76%;
   margin: 0 auto;
 }
-
-.mainBanner{
-  width: 100%;
-  /* text-align: center; */
-}
-
-.mainBanner img{
-  width: 85%;
-  display: block;
-  margin: 0 auto;
-}
-
 .mainContent{
   display: flex;
   justify-content: center;
-  margin-left: 100px;
+  align-items: center;
   /* margin-top: -50px; */
 }
 
@@ -27,62 +15,17 @@
   /* height: 4700px;  */
   height: auto;
   width: 76%;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 50px;
+  color: #141414;
   /* margin-left: -20px; */
-  margin-top: -40px;
+  margin: 50px auto 20px auto;
   background-color: white;
+  text-align: center;
 }
 
-.leftContentTitle{
-  width: 100%;
-  font-size: 30px;
-  /* border: 1px solid chocolate; */
-  /* text-align: center; */
-  color: black;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
 
-.leftContentSubtitle{
-  width: 90%;
-  display: flex;
-  /* border: 1px solid crimson; */
-  justify-content: space-between;
-  color: #A3A3A3;
-}
-
-.leftContentSubtitle div:nth-child(2) a{
-  color: inherit;
-}
-
-.leftContentSubtitle div:nth-child(2) a i{
-  padding-left: 10px;
-  
-}
-
-.leftContentTitle, .leftContentSubtitle, .leftContentBriefContent, .contentNavigator{
-  margin-left: 50px;
-}
-
-.contentNavigator{
-  margin-left: 0px;
-}
-
-.leftContentBriefContent{
-  width: 90%;
-  font-size: 16px;
-  color: #595959;
-}
-
-.leftContentBriefContent p{
-  margin-bottom: 20px;
-}
-
-.leftContentBriefContent p span{
-  font-size: 30px;
-  font-weight: bold;
-  color: #222222;
-}
 
 #CommentForm-author{
   /* color: #141414 !important; */
