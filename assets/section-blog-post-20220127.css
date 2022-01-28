@@ -102,12 +102,33 @@
 
 }
 
+.subNavigator1_a > ul > li a{
+  text-decoration: none;
+  color: #a4de2f;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.subNavigator1_a > ul > li a:hover{
+  color: #78a61a;
+}
+
+p > span.spanBold{
+  font-weight: bold;
+  color: #000;
+}
+
 .subNavigator1_a > ul.dotUlLi{
   list-style-type: disc;
 }
 
 .subNavigator1_a > ul.dotUlLi > li{
   list-style-type: disc;
+}
+
+.subNavigator1_a > ul.dotUlLi > li p{
+  padding: 0;
+  margin: 0;
 }
 
 
