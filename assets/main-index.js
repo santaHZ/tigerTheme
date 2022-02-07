@@ -40,8 +40,8 @@ const userReview_slider = document.querySelector('#userReview_wrapper').firstEle
 let userReview_slides = Array.from(userReview_slider.querySelectorAll('.uni_imgSlider > .item')); // this is div slides array
 const userReview_btn = document.querySelector('#userReview_ctlBtn1').firstElementChild; // this is the div for dot buttons
 
-console.log(userReview_slides);
-console.log(userReview_slides.length);
+// console.log(userReview_slides);
+// console.log(userReview_slides.length);
 
 const firstClone = userReview_slides[0].cloneNode(true);
 const lastClone = userReview_slides[userReview_slides.length -1].cloneNode(true);
@@ -56,7 +56,7 @@ userReview_slider.prepend(lastClone);  //this appending action is happened after
 //***** initiallize [userReview] dot buttons *****//
 for (let i=0; i < (userReview_slides.length - 0); i++){
 	let userReview_node = document.createElement("div");
-    console.log('i am here');
+    // console.log('i am here');
 	// userReview_node.setAttribute("id", "userReview_DotBtn-" +i);
     userReview_node.id = "userReview_DotBtn-" + i;
 	if(i== 0){
@@ -68,7 +68,7 @@ for (let i=0; i < (userReview_slides.length - 0); i++){
 	userReview_btn.appendChild(userReview_node);
 }
 
-console.log(userReview_btn);
+// console.log(userReview_btn);
 
 // initialize uniCounter
 if (uniCounter.hasOwnProperty("userReview")){
