@@ -85,6 +85,13 @@
   color: #78a61a;;
 }
 
+.feb14Style{
+  text-decoration: underline; 
+  font-weight: bold; 
+  font-size: 1.5em; 
+  color: #a4de2f;
+}
+
 .contentNavigator{
   display: flex;
   justify-content: center;
@@ -663,10 +670,10 @@ li.girlComment > p{
 
   .subNavigator1_a > div > div:first-child{
     display: flex;
-    flex-direction: column;
-    justify-content: left;
+    flex-direction: row;
+    justify-content: space-between;
     /* align-items: flex-start; */
-    align-items: center;
+    align-items: baseline;
     /* border: 1px solid cornflowerblue; */
     margin-left: 0px;
     /* padding-left: 10px; */
@@ -719,8 +726,19 @@ li.girlComment > p{
         padding-left: 10px;
       }
 
+      .leftContentTitle{
+        font-size: 1.45em;
+      }
+
       .leftContentBriefContent{
-        padding-left: 20px;
+        padding-left: 10px;
+      }
+
+      .feb14Style{
+        text-decoration: underline; 
+        font-weight: bold; 
+        font-size: 1.2em; 
+        color: #a4de2f;
       }
 
       .contentNavigator{
@@ -751,6 +769,10 @@ li.girlComment > p{
         width: 30%;
       }
 
+      .mainText{
+        padding: 0 10px 0 10px;
+      }
+
       .subNavigator1{
         width: 100%;
         padding-top: 30px;
@@ -762,10 +784,10 @@ li.girlComment > p{
 
       .subNavigator1_a > div > div:first-child{
         display: flex;
-        flex-direction: column;
-        justify-content: left;
+        flex-direction: row;
+        justify-content: space-between;
         /* align-items: flex-start; */
-        align-items: center;
+        align-items: baseline;
         /* border: 1px solid cornflowerblue; */
         margin-left: 0px;
         /* padding-left: 10px; */
