@@ -9,25 +9,19 @@
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="{{ 'product-main.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'geometry-city_stroller.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'parts-main-20220122.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'flexibility-super_cruiser.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'performance-super_cruiser.css' | asset_url }}" type="text/css">
+
 <link rel="stylesheet" href="{{ 'userfriendly-super_cruiser.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'seeItInLife.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'product-showcase.css' | asset_url }}" type="text/css">
 <!-- <link rel="stylesheet" href="{{ 'all.min.css' | asset_url }}" type="text/css"> -->
 
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-main.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'geometry.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'flexibility.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'performance-super_cruiser.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'userfriendly.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'seeItInLife.js' | asset_url }}" defer="defer"></script>
+
+
 <script src="{{ 'product-showcase.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-main-winOnLoad.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
@@ -113,6 +107,7 @@
               </div>
             {%- endif -%}
             <div {{ block.shopify_attributes }}>
+              <!-- <div style="width: 200px; height: 100px; border: 1px solid cadetblue;">I am here</div> -->
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
@@ -287,9 +282,11 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
-                      <fieldset class="js product-form__input">
+                  <!-- below <input></input> element is the identifier of the model select button !!! -->
+                      <fieldset class="js product-form__input" data-id="{{ option.position }}">
                         <legend class="form__label">{{ option.name }}</legend>
                         {%- for value in option.values -%}
+                          
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"
                                 value="{{ value | escape }}"
@@ -313,6 +310,7 @@
                       <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                         {{ option.name }}
                       </label>
+                      <!-- below <select></select> elment is the model select button !!! -->
                       <div class="select">
                         <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
                           class="select__select"

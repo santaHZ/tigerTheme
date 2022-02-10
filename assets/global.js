@@ -591,7 +591,7 @@ class VariantSelects extends HTMLElement {
 
   onVariantChange() {
     this.updateOptions();
-    this.updateMasterId();
+    this.updateMasterId();  // get currentVariant object
     this.toggleAddButton(true, '', false);
     this.updatePickupAvailability();
     this.removeErrorMessage();
@@ -617,7 +617,7 @@ class VariantSelects extends HTMLElement {
       return !variant.options.map((option, index) => {
         return this.options[index] === option;
       }).includes(false);
-    });
+    });    
   }
 
   updateMedia() {
@@ -681,6 +681,7 @@ class VariantSelects extends HTMLElement {
     shareButton.updateUrl(`${window.shopUrl}${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
 
+  //below function is to update Variant.id
   updateVariantInput() {
     const productForms = document.querySelectorAll(`#product-form-${this.dataset.section}, #product-form-installment`);
     productForms.forEach((productForm) => {
@@ -754,11 +755,18 @@ class VariantSelects extends HTMLElement {
     const price = document.getElementById(`price-${this.dataset.section}`);
     if (!addButton) return;
     addButtonText.textContent = window.variantStrings.unavailable;
-    if (price) price.classList.add('visibility-hidden');
+    if (price) 
+    {
+      price.classList.add('visibility-hidden');
+    }
+    else{
+      // price.classList.remove('visibility-hidden');
+    }
   }
 
   getVariantData() {
     this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+    // console.log(this.variantData);
     return this.variantData;
   }
 }
@@ -775,6 +783,32 @@ class VariantRadios extends VariantSelects {
     this.options = fieldsets.map((fieldset) => {
       return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
     });
+
+    this.optionsTopChecked = Array.from(this.querySelectorAll('fieldset > input')).filter(radio => radio.checked);
+    let optTopChecked = this.optionsTopChecked[0].value;
+
+    this.optionsBottom = Array.from(this.querySelectorAll('fieldset > input')).filter(radio => radio.id.startsWith("template--15677363224806__main-2"));
+
+    let variantNameArray = Array.from(this.getVariantData());
+    let variantOptionArray = variantNameArray.map(map => map.options.toString());
+
+    this.optionsBottom.forEach( function(opt, index){
+
+      let optionsCheckArray = [];
+      optionsCheckArray.push(optTopChecked);
+      optionsCheckArray.push(opt.value);
+
+      if (variantOptionArray.includes(optionsCheckArray.toString())){
+        opt.removeAttribute('disabled');
+        opt.checked = true;
+        console.log('success!');
+      }else{
+        opt.setAttribute('disabled','disabled');
+        opt.checked =false;
+      }
+
+    });
+
   }
 }
 
