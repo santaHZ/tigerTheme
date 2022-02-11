@@ -814,22 +814,25 @@ class VariantSelects extends HTMLElement {
     this.optionsBottomAvailable = Array.from(this.querySelectorAll('fieldset > input:not([disabled])')).filter(radio => radio.id.substring(radio.id.length-3,radio.id.length-2) == "2");
     // console.log('btm available:' + this.optionsBottomAvailable);
     // console.log(this.optionsBottomAvailable);
-    let hasCheckedOpt = 0;
-    this.optionsBottomAvailable.forEach(function(opt){
-      if (opt.checked){
-        hasCheckedOpt = 1;
-        // console.log('already have checked item!');
+
+    if (this.optionsBottomAvailable.length != 0){
+
+      let hasCheckedOpt = 0;
+      this.optionsBottomAvailable.forEach(function(opt){
+        if (opt.checked){
+          hasCheckedOpt = 1;
+          // console.log('already have checked item!');
+        }
+      })
+
+      if (hasCheckedOpt == 1){
+        // console.log("already have checked item!")
+
+      }else{
+        this.optionsBottomAvailable[0].checked = true;
       }
-    })
-
-    if (hasCheckedOpt == 1){
-      // console.log("already have checked item!")
-
-    }else{
-      this.optionsBottomAvailable[0].checked = true;
     }
   }
-
 }
 
 customElements.define('variant-selects', VariantSelects);
