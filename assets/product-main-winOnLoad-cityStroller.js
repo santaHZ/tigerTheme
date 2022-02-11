@@ -172,8 +172,6 @@ window.addEventListener('resize', function(event) {
 
 
 
-
-
 		
 	}else if(window.innerWidth < 1200 && window.innerWidth >=750){
 		colNum = 2; //when window size smaller than 750, set all sliders colNum 1
