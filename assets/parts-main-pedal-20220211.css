@@ -1,0 +1,210 @@
+.productListWrapper{
+    width: 70%;
+    /* border: 1px solid cornflowerblue; */
+    margin: 0 auto;
+}
+
+.productList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productList > ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    /* height: 210px; */
+}
+
+.productList > ul > li{
+    text-align: center;
+}
+
+.productList > ul > li:nth-child(2){
+    height: 2.8em;
+}
+
+.productList > ul > li:nth-child(2) > a{
+    display: block;
+    text-decoration: none;
+    font-size: 0.8em;
+    line-height: 0.9em;
+    word-wrap: normal;
+    word-break: break-all;
+    padding: 10px 35px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    /* border: 1px solid #555; */
+    transition: all 0.2s ease-in-out;
+}
+
+.productList > ul > li:nth-child(2) > a:hover{
+    color: #78a61a;
+}
+
+.productList > ul > li:nth-child(1) > a > img{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+}
+
+.borderLeft{
+    border-left: 1px solid #000;
+}
+.borderRight{
+    border-right: 1px solid #000;
+}
+.borderTop{
+    border-top: 1px solid #000;
+}
+.borderBottom{
+    border-bottom: 1px solid #000;
+}
+
+span{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #000;
+}
+
+
+
+
+@media screen and (max-width: 749px) {
+    .speMenu{
+        font-size: 1.8vmax;  /* set size of sub specification menu words */
+    }
+
+    #product_main div ul li ul li{
+        /* height: 10em; */
+        vertical-align: middle;
+    }
+    #product_main .rtBoder1px {
+        clear: both;
+    }
+
+    #product_main div ul li ul{
+        clear: both;
+        width: 95%;
+    }
+    #product_main .rtBoder1px {
+        font-weight: bold;
+        border-right: 0px;
+    }
+    .product_main_lfUl_with{
+        width: 100%;
+    }
+    
+    .product_main_rtUl_with{
+        width: 100%;
+    }
+
+    #product_main .topLtBoder1px {
+        border-top-width: 0px;
+        border-top-color: lightgray;
+    }
+
+    #product_main div ul li ul li {
+        padding: 0.5em;
+    }
+
+    .speMenu{
+        font-size: 2.5vmax;  /* set size of sub specification menu */
+    }
+
+    .add {
+        margin-top: 14px;
+        
+    }
+
+    .minus {
+        margin-top: 14px;
+        
+    }
+
+    .bigMenuStyle{
+        font-size: 25px;  /* define size of word "Specification" */
+    }
+
+    .leftBtns .buttonDotEmpty{
+        width: 0.8em;
+        height: 0.8em;
+        font-size: 0.8em;
+        border: 0.1em solid gray;
+    }
+
+    .leftBtns .buttonDotSolid{
+        width: 0.8em;
+        height: 0.8em;
+        font-size: 0.8em;
+        border: 0.1em solid gray;
+    }
+
+    .detail_menu_style{  /* set container of add and minus icon */
+        display: block;
+        height: 4.0vmax;
+        cursor: pointer;
+        /* border: 2px solid rgb(161, 21, 21); */
+        /* background-color: rgb(214, 216, 211); */
+    }
+
+    #product_main div ul li ul li {
+        font-size: 2.5em;
+    }
+}
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) { 
+        #product_main div ul li ul{
+            clear: both;
+            width: 95%;
+        }
+        #product_main .rtBoder1px {
+            font-weight: bold;
+            border-right: 0px;
+        }
+        .product_main_lfUl_with{
+            width: 100%;
+        }
+        
+        .product_main_rtUl_with{
+            width: 100%;
+        }
+
+        #product_main .topLtBoder1px {
+            border-top-width: 0px;
+            border-top-color: lightgray;
+        }
+
+        #product_main div ul li ul li {
+            padding: 0.5em;
+            padding-left: 1.6em;
+        }
+
+        .speMenu{
+            font-size: 2.5vmax;  /* set size of sub specification menu */
+        }
+
+        .add {
+            margin-top: 14px;
+            
+        }
+
+        .minus {
+            margin-top: 14px;
+            
+        }
+
+        .bigMenuStyle{
+            font-size: 25px;  /* define size of word "Specification" */
+        }
+    }
+
+
