@@ -587,9 +587,22 @@ class VariantSelects extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('change', this.onVariantChange);
+    this.updateBtmOption();
+
   }
 
-  onVariantChange() {
+  onVariantChange(e) {
+    // console.log('this is the element triggered event: '+ e.target.id);
+    let triggerTarget = e.target.id.substring(e.target.id.length-3,e.target.id.length-2);
+    if (triggerTarget == '2'){
+      // console.log('clicked bottomOption input');
+    }
+    else{
+
+      this.updateBtmOption();
+    }
+
+    
     this.updateOptions();
     this.updateMasterId();  // get currentVariant object
     this.toggleAddButton(true, '', false);
@@ -641,10 +654,10 @@ class VariantSelects extends HTMLElement {
       this.stickyHeader.dispatchEvent(new Event('preventHeaderReveal'));
     }
 
-    console.log("begin shifting image...")
+    // console.log("begin shifting image...")
     let counterId = newMedia.parentElement.parentElement.parentElement.id;
 
-    console.log(counterId);
+    // console.log(counterId);
 
     if (uniCounter.hasOwnProperty(counterId)){
       //console.log(uniCounter);
@@ -657,9 +670,9 @@ class VariantSelects extends HTMLElement {
     for (let i =0; i < prodShowcaseArray.length; i++){
       if (prodShowcaseArray[i]['dataId'] == newMedia.getAttribute("data-media-id")){
         uniCounter[counterId] = prodShowcaseArray[i]['index'];
-        console.log(counterId);
-        console.log(uniCounter[counterId]);
-        console.log(uniCounter);
+        // console.log(counterId);
+        // console.log(uniCounter[counterId]);
+        // console.log(uniCounter);
         prod_setPositionByIndex();
       }
     }
@@ -769,6 +782,54 @@ class VariantSelects extends HTMLElement {
     // console.log(this.variantData);
     return this.variantData;
   }
+
+
+  updateBtmOption() {
+    this.optionsTopChecked = Array.from(this.querySelectorAll('fieldset > input')).filter(radio => radio.checked);
+    let optTopChecked = this.optionsTopChecked[0].value;
+    // console.log(Array.from(this.querySelectorAll('fieldset > input')));
+    this.optionsBottom = Array.from(this.querySelectorAll('fieldset > input')).filter(radio => radio.id.substring(radio.id.length-3,radio.id.length-2) == "2");
+    // console.log(this.optionsBottom);
+
+    let variantNameArray = Array.from(this.getVariantData());
+    let variantOptionArray = variantNameArray.map(map => map.options.toString());
+
+    this.optionsBottom.forEach( function(opt, index){
+      let optionsCheckArray = [];
+      
+      optionsCheckArray.push(optTopChecked);
+      optionsCheckArray.push(opt.value);
+      if (variantOptionArray.includes(optionsCheckArray.toString())){
+
+        opt.removeAttribute('disabled');
+        // opt.checked = true;
+        // console.log('success!');
+
+      }else{
+        opt.setAttribute('disabled','disabled');
+        opt.checked =false;
+      }
+    });
+
+    this.optionsBottomAvailable = Array.from(this.querySelectorAll('fieldset > input:not([disabled])')).filter(radio => radio.id.substring(radio.id.length-3,radio.id.length-2) == "2");
+    // console.log('btm available:' + this.optionsBottomAvailable);
+    // console.log(this.optionsBottomAvailable);
+    let hasCheckedOpt = 0;
+    this.optionsBottomAvailable.forEach(function(opt){
+      if (opt.checked){
+        hasCheckedOpt = 1;
+        // console.log('already have checked item!');
+      }
+    })
+
+    if (hasCheckedOpt == 1){
+      // console.log("already have checked item!")
+
+    }else{
+      this.optionsBottomAvailable[0].checked = true;
+    }
+  }
+
 }
 
 customElements.define('variant-selects', VariantSelects);
@@ -784,32 +845,8 @@ class VariantRadios extends VariantSelects {
       return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
     });
 
-    this.optionsTopChecked = Array.from(this.querySelectorAll('fieldset > input')).filter(radio => radio.checked);
-    let optTopChecked = this.optionsTopChecked[0].value;
-
-    this.optionsBottom = Array.from(this.querySelectorAll('fieldset > input')).filter(radio => radio.id.startsWith("template--15677363224806__main-2"));
-
-    let variantNameArray = Array.from(this.getVariantData());
-    let variantOptionArray = variantNameArray.map(map => map.options.toString());
-
-    this.optionsBottom.forEach( function(opt, index){
-
-      let optionsCheckArray = [];
-      optionsCheckArray.push(optTopChecked);
-      optionsCheckArray.push(opt.value);
-
-      if (variantOptionArray.includes(optionsCheckArray.toString())){
-        opt.removeAttribute('disabled');
-        opt.checked = true;
-        console.log('success!');
-      }else{
-        opt.setAttribute('disabled','disabled');
-        opt.checked =false;
-      }
-
-    });
-
   }
+
 }
 
 customElements.define('variant-radios', VariantRadios);
