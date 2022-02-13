@@ -90,6 +90,15 @@
     list-style: none;
 }
 
+.menuAccBlockHidden{
+    visibility: hidden;
+    display: none;
+}
+
+.menuAccBlockHidden ul{
+    list-style: none;
+}
+
 .setInvisible{
     visibility: hidden;
     display: none;
@@ -411,41 +420,6 @@ ul.dropdownSup li a{
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     vertical-align: top;
-}
-
-
-/* set ACCESSORIES menu style */
-ul.dropdownAcc{
-    position: absolute;
-    left: 0;
-    top: 100%;
-    border: 1px solid gray;
-    visibility: hidden;
-    padding: 0;
-    margin: 0;
-    width: 120%;
-}
-
-ul.dropdownAcc li{
-    padding: 15px 10px;
-    padding-left: 15px;
-}
-
-ul.dropdownAcc li a{
-    text-decoration: none;
-    color: black;
-    transition: color 0.2s ease-in-out;
-}
-
-ul.dropdownAcc li a:hover{
-    text-decoration: none;
-    color: gray;
-}
-
-.accMenu:hover ul.dropdownAcc{
-    visibility: visible;
-    background-color: white;
-
 }
 
 /* set community menu style */
