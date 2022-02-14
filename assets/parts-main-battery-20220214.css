@@ -1,3 +1,18 @@
+.batterySlogan{
+    margin-top: 5em;
+    font-size: medium;
+    color: #000;
+    font-weight: bold;
+}
+
+.howToUnlodBattery{
+    margin-top: 3em;
+    font-size: medium;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 3em;
+}
+
 .productListWrapper{
     width: 70%;
     /* border: 1px solid cornflowerblue; */
@@ -83,6 +98,27 @@ p > span{
     font-size: 1.5em;
     color: #000;
 }
+
+p > a{
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    color: #a4de2f;
+    transition: all 0.2s ease-in-out;
+}
+
+p > a:hover{
+    color: #78a61a;
+}
+
+
+p > img{
+    display: block;
+    width: 350px;
+    height: auto;
+}
+
+
 
 
 @media screen and (max-width: 749px) {

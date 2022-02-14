@@ -84,6 +84,20 @@ p > span{
     color: #000;
 }
 
+p > a{
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    color: #a4de2f;
+    transition: all 0.2s ease-in-out;
+}
+
+p > a:hover{
+    color: #78a61a;
+}
+
+
+
 
 @media screen and (max-width: 749px) {
     .productListWrapper{
