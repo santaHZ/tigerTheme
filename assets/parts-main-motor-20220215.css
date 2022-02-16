@@ -1,18 +1,6 @@
-.batterySlogan{
-    margin-top: 5em;
-    font-size: medium;
-    color: #000;
-    font-weight: bold;
+.pNotice{
+    padding-top: 5em;
 }
-
-.howToUnlodBattery{
-    margin-top: 3em;
-    font-size: medium;
-    color: #000;
-    font-weight: bold;
-    margin-bottom: 3em;
-}
-
 .productListWrapper{
     width: 70%;
     /* border: 1px solid cornflowerblue; */
@@ -111,17 +99,75 @@ p > a:hover{
     color: #78a61a;
 }
 
+.proInfoTable{
+    width: 70vw;
+    margin: 0 auto;
+}
 
-p > img{
-    display: inline-block;
-    width: 350px;
-    height: auto;
+.proInfoTable ul{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.proInfoTable ul li{
+    float: left;
+    padding: 0;
+    margin: 0;
+    font-size: 1.0vw;
+}
+
+.twoVw{
+    width: 20vw;
+}
+
+.oneVw{
+    width: 10vw;
+}
+
+.borderRt{
+    /* border-right: 1px solid #222; */
+    border-right: 1px solid rgba(34, 34, 34, 0.2);
+}
+
+.borderLt{
+    /* border-left: 1px solid #222; */
+    border-left: 1px solid rgba(34, 34, 34, 0.2);
+}
+
+.borderTp{
+    /* border-top: 1px solid #222; */
+    border-top: 1px solid rgba(34, 34, 34, 0.2);
+}
+
+.borderBtm{
+    /* border-bottom: 1px solid #222; */
+    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+}
+ul > li.MotorListBgColor{
+    background-color: rgb(189, 215, 238);
+}
+
+.proInfoTableMobile{
+    display: none;
+}
+
+.pShipping{
+    clear: both; 
+    padding-top: 3em;
 }
 
 
+
 @media screen and (max-width: 749px) {
+    .pNotice{
+        padding-top: 0;
+    }
+
     .productListWrapper{
         width: 100%;
+        margin: 2em auto;
     }
 
     .productList > ul > li:nth-child(1){
@@ -138,6 +184,47 @@ p > img{
         padding: 1vw 1vw;
     }
 
+    .clearFloatP{
+        padding-top: 2em;
+    }
+
+    .proInfoTable{
+        display: none;
+    }
+
+    .proInfoTableMobile{
+        display: block;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .proInfoTableMobile ul{
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .proInfoTableMobile ul li{
+        float: left;
+        padding: 0;
+        margin: 0;
+        font-size: 2.0vw;
+    }
+
+    .twoVw{
+        width: 30vw;
+    }
+    
+    .oneVw{
+        width: 20vw;
+    }
+
+    .pShipping{
+        clear: both; 
+        padding-top: 2em;
+    }
+
 }
 
 /* 1792x828px at 326ppi iphone11*/
@@ -146,8 +233,13 @@ p > img{
     and (device-height: 896px) 
     and (-webkit-device-pixel-ratio: 2) { 
 
+        .pNotice{
+            padding-top: 0;
+        }
+
         .productListWrapper{
             width: 100%;
+            margin: 2em auto;
         }
 
         .productList > ul > li:nth-child(1){
@@ -162,6 +254,47 @@ p > img{
             font-size: 1.5vw;
             line-height: 1.5vw;
             padding: 1vw 1vw;
+        }
+
+        .clearFloatP{
+            padding-top: 2em;
+        }
+
+        .proInfoTable{
+            display: none;
+        }
+
+        .proInfoTableMobile{
+            display: block;
+            width: 90vw;
+            margin: 0 auto;
+        }
+
+        .proInfoTableMobile ul{
+            width: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .proInfoTableMobile ul li{
+            float: left;
+            padding: 0;
+            margin: 0;
+            font-size: 2.0vw;
+        }
+
+        .twoVw{
+            width: 30vw;
+        }
+        
+        .oneVw{
+            width: 20vw;
+        }
+
+        .pShipping{
+            clear: both; 
+            padding-top: 2em;
         }
 
 

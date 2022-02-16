@@ -1,0 +1,300 @@
+.productListWrapper{
+    width: 70%;
+    /* border: 1px solid cornflowerblue; */
+    margin: 5em auto;
+}
+
+.productList{
+    width: 100%;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.productList > ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    float: left;
+    /* width: 12vw; */
+    /* height: 15vw; */
+    /* height: 210px; */
+}
+
+.clearFloatP{
+    clear: both;
+    padding-top: 5em;
+}
+
+.productList > ul > li{
+    text-align: center;
+}
+
+.productList > ul > li:nth-child(1){
+    height: 10vw;
+}
+
+.productList > ul > li:nth-child(2){
+    height: 2vw;
+}
+
+.productList > ul > li:nth-child(2) > a{
+    display: block;
+    text-decoration: none;
+    font-size: 0.6vw;
+    line-height: 0.6vw;
+    word-wrap: normal;
+    word-break: break-all;
+    padding: 0.4vw 0.4vw;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    /* border: 1px solid #555; */
+    transition: all 0.2s ease-in-out;
+}
+
+.productList > ul > li:nth-child(2) > a:hover{
+    color: #78a61a;
+}
+
+.productList > ul > li:nth-child(1) > a > img{
+    display: block;
+    width: 100%;
+    padding: 0.2vw 0;
+    border: 0;
+}
+
+.borderLeft{
+    border-left: 1px solid #222;
+}
+.borderRight{
+    border-right: 1px solid #222;
+}
+.borderTop{
+    border-top: 1px solid #222;
+}
+.borderBottom{
+    border-bottom: 1px solid #222;
+}
+
+p > span{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #000;
+}
+
+.tireTable{
+    width: 60vw;
+    margin: 0 auto;
+    
+}
+
+.tireTable ul{
+    list-style: none;
+    width: 15vw;
+    height: 8.5vw;
+    float: left;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid cadetblue; */
+}
+
+.tireTable ul:nth-child(3n+1){
+    padding-left: 1em;
+    padding-top: 1em;
+    width: 15vw;
+}
+
+.tireTable ul:nth-child(3n+2){
+    padding-left: 1em;
+    padding-top: 1em;
+    width: 15vw;
+}
+
+.tireTable ul:nth-child(3n+3){
+    padding-left: 1em;
+    padding-top: 1em;
+    width: 30vw;
+}
+
+
+
+.tireTable ul li{
+    text-align: left;
+    font-size: 1vw;
+    line-height: 1.3vw;
+    vertical-align: middle;
+}
+
+.tireTable ul li:nth-child(odd){
+    height: 14vw;
+}
+
+ul > li.paddingTp{
+    padding-top: 5vw;
+}
+
+.tireTable ul li img{
+    display: block;
+    width: 55%;
+    padding: 0;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+
+p.pShipping{
+    display: block;
+    clear: both;
+    padding-top: 2em;
+}
+
+.borderRt{
+    border-right: 1px solid rgba(222, 222, 222, 0.8);
+}
+.borderLt{
+    border-left: 1px solid rgba(222, 222, 222, 0.8);
+}
+.borderTp{
+    border-top: 1px solid rgba(222, 222, 222, 0.8);
+}
+.borderBm{
+    border-bottom: 1px solid rgba(222, 222, 222, 0.8);
+}
+
+.tireTable ul li span{
+    font-weight: bold;
+    color: #000;
+    font-size: 1em;
+}
+
+.tireTableMobile{
+    display: none;
+}
+
+p > a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+    color: #a4de2f;
+    transition: all 0.2s ease-in-out;
+}
+
+p > a:hover{
+    color: #78a61a;
+}
+
+.pClear{
+    clear: both;
+    padding-top: 2em;
+}
+
+@media screen and (max-width: 749px) {
+
+
+}
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) { 
+
+        .productListWrapper{
+            width: 100%;
+        }
+
+        .productList > ul > li:nth-child(1){
+            height: 15vw;
+        }
+        
+        .productList > ul > li:nth-child(2){
+            height: 5vw;
+        }
+
+        .productList > ul > li:nth-child(2) > a{
+            font-size: 1.5vw;
+            line-height: 1.5vw;
+            padding: 1vw 1vw;
+        }
+
+        .productListWrapper{
+            width: 100%;
+            /* border: 1px solid cornflowerblue; */
+            margin: 2em auto;
+        }
+
+        .clearFloatP{
+            padding-top: 2em;
+        }
+
+        .tireTable{
+            display: none;
+        }
+
+
+        .tireTableMobile{
+            display: block;
+            width: 90vw;
+            margin: 0 auto;
+            
+            
+        }
+        
+        .tireTableMobile ul{
+            list-style: none;
+            width: 45vw;
+            height: 19vw;
+            float: left;
+            margin: 0;
+            padding: 0;
+            /* border: 1px solid cadetblue; */
+        }
+        
+        .tireTableMobile ul li{
+            text-align: left;
+            font-size: 0.7em;
+            padding: 0;
+            margin: 0;
+            /* border: 1px solid chocolate; */
+        }
+
+        .tireTableMobile ul:nth-child(3n+1){
+            width: 15vw;
+        }
+        
+        .tireTableMobile ul:nth-child(3n+2){
+            padding-left: 1em;
+            padding-top: 1em;
+            width: 30vw;
+        }
+        
+        .tireTableMobile ul:nth-child(3n+3){
+            padding-left: 1em;
+            padding-top: 1em;
+            width: 45vw;
+        }
+
+        .tireTableMobile ul li img{
+            display: block;
+            width: 80%;
+            padding: 0;
+            margin: 0 auto;
+            padding-top: 2em;
+        }
+
+        .tireTableMobile ul li span{
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .tireTableMobile ul li.paddingTp{
+            padding-top: 15vw;
+        }
+
+
+
+    }
+
+

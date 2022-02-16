@@ -598,11 +598,8 @@ class VariantSelects extends HTMLElement {
       // console.log('clicked bottomOption input');
     }
     else{
-
       this.updateBtmOption();
     }
-
-    
     this.updateOptions();
     this.updateMasterId();  // get currentVariant object
     this.toggleAddButton(true, '', false);
@@ -733,6 +730,11 @@ class VariantSelects extends HTMLElement {
         const destination = document.getElementById(id);
         const source = html.getElementById(id);
 
+        const stockId = `stockNum-${this.dataset.section}`;
+        const destinationStock = document.getElementById(stockId);
+        const sourceStock = html.getElementById(stockId);
+        if (sourceStock && destinationStock) destinationStock.innerHTML = sourceStock.innerHTML;
+
         if (source && destination) destination.innerHTML = source.innerHTML;
 
         const price = document.getElementById(`price-${this.dataset.section}`);
@@ -792,16 +794,16 @@ class VariantSelects extends HTMLElement {
     // console.log(this.optionsBottom);
 
     let variantNameArray = Array.from(this.getVariantData());
-    let variantOptionArray = variantNameArray.map(map => map.options.toString());
+    let variantOptionArray = variantNameArray.map(map => map.options.toString());  //convert array to string for easy comparing
 
     this.optionsBottom.forEach( function(opt, index){
       let optionsCheckArray = [];
-      
       optionsCheckArray.push(optTopChecked);
       optionsCheckArray.push(opt.value);
-      if (variantOptionArray.includes(optionsCheckArray.toString())){
-
+      if (variantOptionArray.includes(optionsCheckArray.toString())){  //convert array to string for easy comparing
         opt.removeAttribute('disabled');
+        // console.log(opt);
+        // console.log(variantNameArray);
         // opt.checked = true;
         // console.log('success!');
 

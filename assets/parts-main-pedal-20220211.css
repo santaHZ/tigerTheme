@@ -104,6 +104,16 @@ p > span{
         padding: 1vw 1vw;
     }
 
+    .productListWrapper{
+        width: 100%;
+        /* border: 1px solid cornflowerblue; */
+        margin: 2em auto;
+    }
+
+    .clearFloatP{
+        padding-top: 2em;
+    }
+
 }
 
 /* 1792x828px at 326ppi iphone11*/
@@ -128,6 +138,16 @@ p > span{
             font-size: 1.5vw;
             line-height: 1.5vw;
             padding: 1vw 1vw;
+        }
+
+        .productListWrapper{
+            width: 100%;
+            /* border: 1px solid cornflowerblue; */
+            margin: 2em auto;
+        }
+
+        .clearFloatP{
+            padding-top: 2em;
         }
 
 

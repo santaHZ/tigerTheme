@@ -87,6 +87,60 @@
     border: 0px;
 }
 
+
+/* setting stock quantity style */
+div.stockNumStyle{  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.stockNumStyle > a{
+    text-decoration: none;
+    font-size: 1.5em;
+    /* color: #A4DE2F; */
+    color: #000;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+div.stockNumStyle > a:hover{
+    /* color: #78a61a; */
+    color: #000;
+}
+
+div.stockNumStyle span{
+    color: #a4de2f;
+    font-size: 1.5em;
+    padding-left: 0.3em;
+}
+
+/* setting optionName style */
+.optionNameStyle{
+    /* background-color: bisque; */
+    height: 1.5em;
+    font-size: medium;
+    font-weight: bold;
+    padding-bottom: 2em;
+    /* border-bottom: 1px solid #78a61a; */
+}
+
+.optionNameStyle span{
+    color: #a4de2f;
+}
+
+#optionNameStyle-2{
+    margin-top: 2em;
+    /* border: 1px solid chocolate; */
+}
+
+/* img.paymentOptionStyle{
+    width: 100 !important;
+
+} */
+
+
+
 /******define small product img slider(for mobile max-width:749px)*******/
 @media screen and (max-width: 749px) {
     #productShowcase #prod_wrapper{ /* set slider container(overflow:hidden) width*/

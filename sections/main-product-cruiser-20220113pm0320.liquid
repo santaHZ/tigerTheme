@@ -101,8 +101,8 @@
             <div class="overViewStyle">Overview</div>
             <div>The compact FAT Tire <strong>NAKTO Cruiser electric bike</strong> is born for portability and mobility. Hi-rise cruiser handlebar creates a lower riding profile with comfort. With the equipment of wide tires, you could explore all sorts of riding locations, on or off-road trails.</div>
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-              <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
-              <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>
+              <img class="paymentOptionStyle" src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="auto">
+              <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>.<br>See if you're prequalified</div>
               <div>{%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}</div>
             </div>
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -121,6 +121,7 @@
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
+            <div class="stockNumStyle" id="stockNum-{{ section.id }}"><a href="#">Available Stock:</a><span>{{ product.selected_or_first_available_variant.inventory_quantity }}</span></div>
           {%- when 'description' -%}
             {%- if product.description != blank -%}
               <div class="product__description rte">
@@ -290,6 +291,7 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
+                  <div class="optionNameStyle" id="optionNameStyle-{{ option.position }}">Choose {{ option.name }}:</div>
                       <fieldset class="js product-form__input">
                         <legend class="form__label">{{ option.name }}</legend>
                         {%- for value in option.values -%}

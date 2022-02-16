@@ -92,8 +92,8 @@
             <hr>
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-              <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="23.2">
-              <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. See if you're prequalified</div>
+              <img class="paymentOptionStyle" src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="auto">
+              <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. <br>See if you're prequalified</div>
               <div>{%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}</div>
             </div>
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -113,11 +113,14 @@
                 {{ form | payment_terms }}
               {%- endform -%}
             </div>
+            <div class="stockNumStyle" id="stockNum-{{ section.id }}"><a href="#">Available Stock: </a><span>{{ product.selected_or_first_available_variant.inventory_quantity }}</span></div>
+            
           {%- when 'description' -%}
             {%- if product.description != blank -%}
               <div class="product__description rte">
                 <!-- {{ product.description }} -->
               </div>
+              
             {%- endif -%}
           {%- when 'custom_liquid' -%}
             {{ block.settings.custom_liquid }}
@@ -282,6 +285,7 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
+                  <div class="optionNameStyle" id="optionNameStyle-{{ option.position }}">Choose {{ option.name }}:</div>
                   <!-- below <input></input> element is the identifier of the model select button !!! -->
                       <fieldset class="js product-form__input" data-id="{{ option.position }}">
                         <legend class="form__label">{{ option.name }}</legend>
@@ -474,7 +478,11 @@
   </p>
   <p><span>Model 1 NAKTO Camel Battery</span></p>
   <p><span>Photo:</span></p>
-  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Camel Battery"></p>
+  <p>
+    <img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Camel Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camel1.png?v=1644909212" width="100" height="auto" alt="NAKTO Electric Bike Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camel2.png?v=1644909212" width="100" height="auto" alt="NAKTO Electric Bike Battery">
+  </p>
   <div>
     <ul>
       <li>SKU:***</li>
@@ -490,7 +498,10 @@
 
   <p><span>Model 2 NAKTO Skylark Bike Battery</span></p>
   <p><span>Photo:</span></p>
-  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Skylark Bike Battery"></p>
+  <p>
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/skylark1.png?v=1644909506" width="100" height="auto" alt="NAKTO Electric Bike Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/skylark2.png?v=1644909506" width="100" height="auto" alt="NAKTO Electric Bike Battery">
+  </p>
   <div>
     <ul>
       <li>SKU:***</li>
@@ -506,7 +517,10 @@
 
   <p><span>Model 3 NAKTO Classic/Stroller Bike Battery</span></p>
   <p><span>Photo:</span></p>
-  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Classic/Stroller Bike Battery"></p>
+  <p>
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/classic1.png?v=1644909711" width="100" height="auto" alt="NAKTO Classic/Stroller Bike Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/classic2.png?v=1644909711" width="100" height="auto" alt="NAKTO Classic/Stroller Bike Battery">
+  </p>
   <div>
     <ul>
       <li>SKU:***</li>
@@ -522,7 +536,10 @@
 
   <p><span>Model 4 NAKTO Super Cruiser Bike Battery</span></p>
   <p><span>Photo:</span></p>
-  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Super Cruiser Bike Battery"></p>
+  <p>
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/superc1.png?v=1644909799" width="100" height="auto" alt="NAKTO Super Cruiser Bike Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/superc2.png?v=1644909799" width="100" height="auto" alt="NAKTO Super Cruiser Bike Battery">
+  </p>
   <div>
     <ul>
       <li>SKU:***</li>
@@ -570,7 +587,10 @@
 
   <p><span>Model 7 NAKTO Folding OX EBIKE Battery</span></p>
   <p><span>Photo:</span></p>
-  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Folding OX EBIKE Battery"></p>
+  <p>
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/foldingox1.png?v=1644909910" width="100" height="auto" alt="NAKTO Folding OX EBIKE Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/foldingox2.png?v=1644909910" width="100" height="auto" alt="NAKTO Folding OX EBIKE Battery">
+  </p>
   <div>
     <ul>
       <li>SKU:***</li>
@@ -586,7 +606,10 @@
 
   <p><span>Model 8 NAKTO Ranger Bike Battery</span></p>
   <p><span>Photo:</span></p>
-  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery-Camel_Elegance_Fashion_Pony_Cruiser_Mini-Cruiser.png?v=1644832342" width="100" height="auto" alt="NAKTO Ranger Bike Battery"></p>
+  <p>
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/ranger1.png?v=1644909996" width="100" height="auto" alt="NAKTO Ranger Bike Battery">
+    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/ranger2.png?v=1644909996" width="100" height="auto" alt="NAKTO Ranger Bike Battery">
+  </p>
   <div>
     <ul>
       <li>SKU:***</li>

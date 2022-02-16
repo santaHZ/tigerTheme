@@ -9,25 +9,19 @@
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="{{ 'product-main.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'geometry-city_stroller.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'flexibility-ranger.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'performance-ranger.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'userfriendly.css' | asset_url }}" type="text/css">
-<link rel="stylesheet" href="{{ 'seeItInLife.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'parts-main-fuse-20220216.css' | asset_url }}" type="text/css">
+<link rel="stylesheet" href="{{ 'flexibility-super_cruiser.css' | asset_url }}" type="text/css">
+
+<link rel="stylesheet" href="{{ 'userfriendly-super_cruiser.css' | asset_url }}" type="text/css">
 <link rel="stylesheet" href="{{ 'product-showcase.css' | asset_url }}" type="text/css">
 <!-- <link rel="stylesheet" href="{{ 'all.min.css' | asset_url }}" type="text/css"> -->
 
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-main.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'geometry.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'flexibility.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'performance-discovery.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'userfriendly.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'seeItInLife.js' | asset_url }}" defer="defer"></script>
+
+
 <script src="{{ 'product-showcase.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-main-winOnLoad.js' | asset_url }}" defer="defer"></script>
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
@@ -92,17 +86,14 @@
               {{- block.settings.text -}}
             </p> -->
           {%- when 'title' -%}
-            <div class="productWrapperText">Electric Fat Tire Bike</div>
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
             <hr>
           {%- when 'price' -%}
-            <div class="overViewStyle">Overview</div>
-            <div>Have a sleek and awesome ride to use for every day with the Nakto Discovery 48v Fat Tire Electric Bike! This beautiful electric bike features a compact design with performance fat tires made for paved roads and off-road paths in the city. It comes with 20-inch spoked rims and a sizable 8 amp/hour battery. Discovery Fat Bike is the ideal ride for going to school or work.</div>
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               <img class="paymentOptionStyle" src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/klarna-icon.png?v=1640865741" width="41.73" height="auto">
-              <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>.<br>See if you're prequalified</div>
+              <div class="klarnaDes">Pay as low as $84/mo. <strong>Klarna</strong>. <br>See if you're prequalified</div>
               <div>{%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}</div>
             </div>
             {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
@@ -116,6 +107,7 @@
               </div>
             {%- endif -%}
             <div {{ block.shopify_attributes }}>
+              <!-- <div style="width: 200px; height: 100px; border: 1px solid cadetblue;">I am here</div> -->
               {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
                 <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                 {{ form | payment_terms }}
@@ -292,9 +284,11 @@
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                   <div class="optionNameStyle" id="optionNameStyle-{{ option.position }}">Choose {{ option.name }}:</div>
-                      <fieldset class="js product-form__input">
+                  <!-- below <input></input> element is the identifier of the model select button !!! -->
+                      <fieldset class="js product-form__input" data-id="{{ option.position }}">
                         <legend class="form__label">{{ option.name }}</legend>
                         {%- for value in option.values -%}
+                          
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"
                                 value="{{ value | escape }}"
@@ -318,6 +312,7 @@
                       <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                         {{ option.name }}
                       </label>
+                      <!-- below <select></select> elment is the model select button !!! -->
                       <div class="select">
                         <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
                           class="select__select"
@@ -393,677 +388,124 @@
       </div>
     </div>
   </div>
-  <div class="main_top_banner">
-    <div>
-      <ul>
-        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_1.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-        <li class="main_top_bold">Motor</li>
-        <li class="main_top_light">350W brushless geared hub motor with max torque of up to 45Nm</li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_2.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-        <li class="main_top_bold">Range</li>
-        <li class="main_top_light">A fully charged battery can last up to 22 miles and 4 hours to juice up fully</li>
-      </ul>
-    </div>
-    <div class="topBannerMiddleSpilit">
-      <ul>
-        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_3.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-        <li class="main_top_bold">Battery</li>
-        <li class="main_top_light">48V/8A Li-ion battery  integrated into the downtube for all-weather use</li>
-      </ul>
-    </div>
-    <div>
-      <ul>
-        <li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/main_top_4.png?v=1639141246" width="50" height="50" loading="lazy"></li>
-        <li class="main_top_bold">Pedal Level</li>
-        <li class="main_top_light">Variable  speed levels from level 1 to level 5 to provide a smoother assistance</li>
-      </ul>
-    </div>
+  <p><img src="https://cdn.shopifycdn.net/s/files/1/0556/1253/9040/files/Battery_fuse-20220216-1.png?v=1644974360" width="300" height="auto" alt=""></p>
+  <div>
+    <p><span>Notice:</span><br>Step1: confirm your e-bike model according to the chart below;<br>Step2: choose the correct parts that you need;<br>Step3: If you can't confirm your e-bike model, go to all e-bikes page to buy parts.</p>
   </div>
-  <div class="main_banner">
-    <img id="mainBannerImg" class="main_banner_img" width="1500" src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_banner_main1.jpg?v=1642042280"  loading="lazy">
-    <div class="main_banner_name">DISCOVERY</div>
-    <div class="main_banner_f1">Explore nature<br>Discover life</div>
-    <div class="main_banner_f2 MoreContent">Explore and roam the city with Discovery, featuring a stylish frame with an integrated battery. The Discovery comes with a 48V, 350W hub motor that gives it power and speed. It is comfortable to ride and perfect for beginners and casual riders. It is equipped with four-inch fat tires and a front fork suspension perfect for riding over bumps and potholes frequently seen on roads. You will love riding it on congested streets and city paths.</div>
-    <div class="main_banner_f2 LessContent">Explore and roam the city with Discovery, featuring a stylish frame with an integrated battery.</div>
+  <div class="productListWrapper">
+    <div class="productList">
+      <ul class="borderLeft borderRight borderTop borderBottom">
+        <li><a href="/products/camel"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camelWomen26.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/camel">Camel Women<br> wht/blk 26"</a></li>
+      </ul>
+      <ul class="borderRight borderTop borderBottom">
+        <li><a href="/products/camel-men-26"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camelMen26_250x179_6340624e-bfc1-48a3-8d5c-fc06611d6faf.png?v=1644583656" alt=""></a></li>
+        <li class="borderTop"><a href="/products/camel-men-26">Camel Men<br> wht/blk 26"</a></li>
+      </ul>
+      <ul class="borderRight borderTop borderBottom mobleBorderLt">
+        <li><a href="/products/city-stroller"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cityStroller.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/city-stroller">City Stroller Red 26"</a></li>
+      </ul>
+      <ul class="borderRight borderTop borderBottom">
+        <li><a href="/products/classic"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/classic.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/classic">Classic 26"</a></li>
+      </ul>
+      <ul class="borderRight borderTop borderBottom">
+        <li><a href="/products/skylark"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/skylark.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/skylark">Skylark 16"</a></li>
+      </ul>
+    </div>
+
+    <div class="productList">
+      <ul class="borderLeft borderRight borderBottom">
+        <li><a href="/products/elegance"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/elegance.png?v=1641290141" alt=""></a></li>
+        <li class="borderTop"><a href="/products/elegance">Elegance</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/fashion"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/fashion.png?v=1641289890" alt=""></a></li>
+        <li class="borderTop"><a href="/products/fashion">Fashion</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/pony"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/pony250W.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/pony">Pony</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/foldingoxw"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/foldingOX.jpg?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/foldingoxw">Folding ox</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/discovery"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/naktoDiscovery.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/discovery">Discovery</a></li>
+      </ul>
+    </div>
+
+    <div class="productList">
+      <ul class="borderLeft borderRight borderBottom">
+        <li><a href="/products/mini-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/miniCruiser.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/mini-cruiser">Mini Cruiser</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/santa-monica"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/santaMonica.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/santa-monica">Santa Monica</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/super-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/superCruiser.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/super-cruiser">Super Cruiser</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/cruiser.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/cruiser">Cruiser</a></li>
+      </ul>
+      <ul class="borderRight borderBottom">
+        <li><a href="/products/ranger"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/rangerMountain.png?v=1641289889" alt=""></a></li>
+        <li class="borderTop"><a href="/products/ranger">Ranger</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <p class="clearFloatP">
+    <span>Description:</span><br>
+    Fuse is when producing short circuit and so on accident, fuse can be burned, cut off circuit to have protective effect there by.
+  </p>
+  <p><span>Product information:</span></p>
+  <div class="fuseTable">
+    <ul class="borderLt borderTp borderRt borderBm">
+      <li>Model 1<br>Battery fuse 20A</li>
+    </ul>
+    <ul class="borderTp borderRt borderBm">
+      <li>Camel/Elegance/Classic/CityStroller/<br>Pony/Cruiser/Ranger/Fashion/Skylark/Mini Cruiser</li>
+    </ul>
+    <ul class="borderLt borderRt borderBm">
+      <li>Model 2<br>Battery fuse 30A</li>
+    </ul>
+    <ul class="borderRt borderBm">
+      <li>Discovery/Folding ox/Super Cruiser/Santa Monica</li>
+    </ul>
   </div>
 
-
-  <div class="wpas_header">What People Are Saying</div>
-  <div class="wpas_content1">
-    <div>
-      <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_video_cover1.jpg?v=1642042308" width="100%" height="auto" alt="">
-      <div><a onclick="wpas1_toggle();"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camel_men_play_btn.png?v=1641888414" width="80" class="wpas_content1Btn"></a></div>
-    </div>
-    <div>
-      <p>“...with the full pedal assist it can reach about 20 miles per hour. I've had a ton of fun on this bike so far. 32miles I've ridden it...”</p>
-      <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
-      <p><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_video_icon1.jpg?v=1642042359" alt=""></p>
-      <p>Shalom Malone</p>
-    </div>
+  <div class="fuseTableMobile">
+    <ul class="borderLt borderTp borderRt borderBm">
+      <li>Model 1<br>Battery fuse 20A</li>
+    </ul>
+    <ul class="borderTp borderRt borderBm">
+      <li>Camel/Elegance/Classic/CityStroller/<br>Pony/Cruiser/Ranger/Fashion/<br>Skylark/Mini Cruiser</li>
+    </ul>
+    <ul class="borderLt borderRt borderBm">
+      <li>Model 2<br>Battery fuse 30A</li>
+    </ul>
+    <ul class="borderRt borderBm">
+      <li>Discovery/Folding ox/Super Cruiser/Santa Monica</li>
+    </ul>
   </div>
-  <div class="trailer1">
-      <iframe width="900" height="506" src="https://www.youtube.com/embed/Vrm-dBSwWdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="close1"><i class="fas fa-times-circle" onclick="wpas1_toggle();"></i></div>
-  </div>
-
-  <div class="wpas_content2">
-    <div>
-      <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_video_cover2.jpg?v=1642042308" width="100%" height="auto" alt="">
-      <div><a onclick="wpas2_toggle();"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/camel_men_play_btn.png?v=1641888414" width="80" class="wpas_content2Btn"></a></div>
-    </div>
-    <div>
-      <p>“...It gonna give you a full 25 miles range on pedal assist. So it's fast. It's durable and it's gonna let you cover...”</p>
-      <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
-      <p><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_video_icon2.jpg?v=1642042359" alt=""></p>
-      <p>GreenMotion Ebikes</p>
-    </div>
-  </div>
-  <div class="trailer2">
-      <iframe width="900" height="506" src="https://www.youtube.com/embed/lu7HcTFJyhI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="close2"><i class="fas fa-times-circle" onclick="wpas2_toggle();"></i></div>
-  </div>
-  
-
-  <div></div>
+  <p class="pClear"><span>Installation Instruction</span></p>
+  <p>Video or user's manual</p>
+  <p><span>Have Problems?</span></p>
+  <p><a href="https://naktohelp.zendesk.com/hc/en-us">Help Center</a></p>
 
 
-  <div id="performance">
-    <div class="tabRoundCorner"></div>
-    <div class="bigMenuStyle" >Performance</div>
-    <div class="performance_desc">Exploring the combination of cool Discovery Electric Fat Tire Bike with the functionality of the multi-speed assist. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.</div>
-		<div class="performance_main_desc">
-      <div class="performance_main_desc_img">
-        <img id="performanceMainImg" width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_performance_main1.jpg?v=1642042586" >
-      </div>
-      <div id="performanceMainDescData" class="performance_main_desc_data">
-        <div>
-          <ul class="performance_main_desc_data_ul">
-            <li id="gearHub" class="perf_big">0W</li>
-            <li class="perf_bold">Geared Hub Motor</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li id="milesPerCharge" class="perf_big">0+</li>
-            <li class="perf_bold">Miles per Charge</li>
-          </ul>
-        </div>
-        <div class="columnSplitMiddle">
-          <ul>
-            <li id="maxTorque" class="perf_big">0Nm</li>
-            <li class="perf_bold">Max Torque</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li id="perdalAssLevel" class="perf_big">0</li>
-          <li class="perf_bold">Pedal Assist Levels</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div id="perf_wrapper">
-			<div class="uni_imgSlider">
-        <div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_performance1.jpg?v=1642042756" width="450" height="300"></li>
-						<li class="titleStyle">Integrated Battery</li>
-						<li>Integrated into the downtube of the eBike for all-weather riding. Delivers a range on a single charge up to 22 miles.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_performance2.jpg?v=1642042756" width="450" height="300"></li>
-						<li class="titleStyle">Rear Geared Motor</li>
-						<li>Rear hub motor delivers up to 350W of peak power and 50Nm torque ensuring controlled acceleration.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_performance3.jpg?v=1642042756" width="450" height="300"></li>
-						<li class="titleStyle">LCD Display</li>
-						<li>The small LCD screen gives you all the information you care about before next exploration with peace of mind.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_performance4.jpg?v=1642042756" width="450" height="300"></li>
-						<li class="titleStyle">Pedal Assist System</li>
-						<li>The pedal assist system gives you power with each pedal stroke. 5 levels at your disposal to help getting where you want to go.</li>
-					</ul>
-				</div>
-        <div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_performance5.jpg?v=1642042756" width="450" height="300"></li>
-						<li class="titleStyle">Disc Brake</li>
-						<li>Ride with confidence on this bike featuring dual disc brake. Reliable stopping power provided by Shimano, perfect for all-weather.</li>
-					</ul>
-				</div>
-			</div>	
-		</div>
-    <div id="perf_ctlBtn1">
-      <div class="leftBtns"></div>
-      <div class="rightBtns">
-        <div id="fun_perf_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
-        <div id="fun_perf_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
-      </div>
-    </div>
-	</div>
-  <div id="flexibility">
-    <div class="flexibility_upWrapper">
-      <div>
-        <div class="tabRoundCorner"></div>
-        <div class="bigMenuStyle" style="width: 50%;">Efficiency</div>
-        <div class="flexibility_desc" style="width: 100%;"><p>We've designed this aluminum alloy frame that is lightweight and stiff. With a comparatively shorter rear chainstay, makes the bike more responsive and more easier to handle. The JackRabbit tire from CST has a fast-rolling tread design with small ramped knobs, providing fast-rolling exprence and plenty of traction at the same time.</p></div>
-      </div>
-      <div><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_efficiency_main1.png?v=1642042874" width="260" alt=""></div>
-    </div>
-    
-		<div id="flex_wrapper">
-			<div class="uni_imgSlider">
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_efficiency1.jpg?v=1642042874" width="450" height="300"></li>
-						<li class="titleStyle">All-Weather Frame</li>
-						<li>Featuring a city-style frame in ultra-light and rust-proof aluminum alloy with white paint. Good looking design for all-weather durability.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_efficiency2.jpg?v=1642042874" width="450" height="300"></li>
-						<li class="titleStyle">Thumb Operation</li>
-						<li>Two button triggers, one for headlight, the other one for horn. Turn on/off the headlight or trigger the horn with the push of the button at the left handlebar for easy thumb operation.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_efficiency3.jpg?v=1642042874" width="450" height="300"></li>
-						<li class="titleStyle">Shimano 6-speed Gears</li>
-						<li>6-speed gears make the bike more versatile in use. Rear cassette and derailleur and shifter are all from Shimano.</li>
-					</ul>
-				</div>
-			</div>	
-		</div>
-    <div id="flex_ctlBtn1">
-      <div class="leftBtns"></div>
-      <div class="rightBtns">
-        <div id="fun_flex_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
-        <div id="fun_flex_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
-      </div>
-    </div>
-	</div>
-  <div id="userfriendly">
-    <div class="tabRoundCorner"></div>
-    <div class="bigMenuStyle" >User-Friendly</div>
-    <div class="userfriendly-desc">With user manual and tool kits included in the package, Elegance is quite easy and quick to assemble.  Comfortable suspension, intuitive full throttle and ergonomic saddle are all standard.</div>
-		<div id="userfly_wrapper">
-			<div class="uni_imgSlider">
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_userfriendly1.jpg?v=1642042965" width="450" height="auto"></li>
-            <li class="titleStyle">Slight-rise Handlebar</li>
-						<li>This slightly-rise handlebar allows the rider to have a wider and stable grip leading to more confidence and control over the bicycle.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_userfriendly2.jpg?v=1642042965" width="450" height="auto"></li>
-            <li class="titleStyle">Front Suspension</li>
-						<li>The front suspension takes a large majority of the rider's weight. It can gently moderate the speed of the compression and rebound to smooth out the ride.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_userfriendly3.jpg?v=1642042965" width="450" height="auto"></li>
-            <li class="titleStyle">Ergonomic Saddle</li>
-						<li>Well sculpted saddle with a sporty design, an alloy quick-release lever makes it easy to adjust the seat to the right height.</li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_userfriendly4.jpg?v=1642042965" width="450" height="auto"></li>
-            <li class="titleStyle">Headlight</li>
-						<li>This compact ebike front light greatly increases the visibility of the rider in traffic. Make sure safe riding at night.</li>
-					</ul>
-				</div>
-			</div>	
-		</div>
-		<div id="userfly_ctlBtn1">
-      <div class="leftBtns"></div>
-      <div class="rightBtns">
-        <div id="fun_userfly_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
-        <div id="fun_userfly_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
-      </div>
-    </div>
-	</div>
 
-  <div id="seeItInlife">
-    <div class="tabRoundCorner"></div>
-    <div class="bigMenuStyle" >See It in Real Life</div>
-    <div class="seeItInlife-desc"></div>
-		<div id="seeItInlife_wrapper">
-			<div class="uni_imgSlider">
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_see_it_in_life1.jpg?v=1642043173" width="450" height="auto"></li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_see_it_in_life2.jpg?v=1642043173" width="450" height="auto"></li>
-					</ul>
-				</div>
-				<div class="item">
-					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/discovery_see_it_in_life3.jpg?v=1642043173" width="450" height="auto"></li>
-					</ul>
-				</div>
-			</div>	
-		</div>
-		<div id="seeItInlife_ctlBtn1">
-      <div class="leftBtns"></div>
-      <div class="rightBtns">
-        <div id="fun_seeItInlife_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
-        <div id="fun_seeItInlife_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
-      </div>
-    </div>
-	</div>
+  <p class="pShipping"><span>Shipping:</span><br>The product usually be dispatched at the same day that orders received, and it usually takes 3-7 days to be delivered. You can get free shipping, and we only ship to the US.</p>
 
-
-  <div id="geometry">
-    <div class="tabRoundCorner"></div>
-    <div class="bigMenuStyle" >Geometry</div>
-		<div class="tabBtnDiv">
-			<div class="tabBtn1" onclick="divShowLeft()">
-				<ul>
-					<li>Overall</li>
-				</ul>
-			</div>
-			<div class="tabBtn2" onclick="divShowRight()" style="display: none;">
-				<ul>
-					<li>Folded</li>
-				</ul>
-			</div>
-		</div>
-		<div class="tabInfo">
-			<div class="overall">
-				<div class="overallWrapper">
-						<div>
-              <img calss="overallImg" src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/ranger_geometry_overall.jpg?v=1642039128" width="480" height="480" loading="lazy">
-            </div>
-            <div class="overallWrapperData">
-              <ul class="overallLeftColWith">
-                <li class="overallBtBoder1px overallTopBoder1px overallBgColor" >Overall Size</li>
-                <li class="overallBtBoder1px overallBgColor" >Wheel Size</li>
-                <li class="overallBtBoder1px">A - Seat tube length</li>
-                <li class="overallBtBoder1px">B - Seatpost diamater</li>
-                <li class="overallBtBoder1px">C - Saddle height</li>
-                <li class="overallBtBoder1px">D - Handlebar height</li>
-                <li class="overallBtBoder1px">E - Handlebar width</li>
-                <li class="overallBtBoder1px">F - Crank length</li>
-                <li class="overallBtBoder1px">G - Wheelbase</li>
-              </ul>
-              <ul class="overallRightColWith">
-                <li class="overallBtmBoder1px overallTopBoder1px overallBgColor">66.9" x 24" x 41"</li>
-                <li class="overallBtmBoder1px overallBgColor">20" x 4"</li>
-                <li class="overallBtmBoder1px">18"</li>
-                <li class="overallBtmBoder1px">1"</li>
-                <li class="overallBtmBoder1px">33.4" - 39.3"</li>
-                <li class="overallBtmBoder1px">41"</li>
-                <li class="overallBtmBoder1px">24"</li>
-                <li class="overallBtmBoder1px">7"</li>
-                <li class="overallBtmBoder1px">43.3"</li>
-              </ul>
-            </div>
-				</div>
-				<div class="tabBtmNoteDiv"><ul><li>All measurements provided in inch unless otherwise noted.</li></ul></div>
-			</div>
-			<div class="folded" style="display: none;">
-				<div class="foldedWrapper">
-					<div>
-            <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/fashion_geometry_folded.jpg?v=1641969666" width="480" height="480" loading="lazy">
-          </div>
-          <div class="foldedWrapperData">
-            <ul class="foldedLeftColWidth">
-              <li class="overallBtBoder1px overallTopBoder1px foldedBgColor">A - Height</li>
-              <li class="overallBtBoder1px foldedBgColor">B - Width</li>
-            </ul>
-            <ul class="foldedRightColWidth">
-              <li class="overallBtmBoder1px overallTopBoder1px foldedBgColor">26"</li>
-              <li class="overallBtmBoder1px foldedBgColor">33"</li>
-            </ul>
-          </div>
-				</div>
-				<div class="tabBtmNoteDiv"><ul><li >All measurements provided in inch unless otherwise noted.</li></ul></div>
-			</div>
-		</div>
-	</div>
-  <div id="product_main">
-    <div class="roundCorner"></div>
-    <div class="bigMenuStyle" >Specification</div>
-    <div id="product_main_spe_Tech_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Technology</div>
-    </div>
-    <div id="product_main_spe_Tech" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Motor</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topLtBoder1px">45Nm / 350W motor</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px">Pedal Assist Levels</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">5 level</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px">Display</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">861 LCD display</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px">Battery</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Tianneng 48V/8A, removable, supports up to 22 miles</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px">Drive Mode</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">5-level Pedal-assist and thumb throttle</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div id="product_main_spe_Frame_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Frame</div>
-    </div>
-    <div id="product_main_spe_Frame" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Colors</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topLtBoder1px">Black</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px">Frame</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Nakto aluminum alloy step-thru frame</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px">Fork</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">DABI 82B Spring steel fork, 60mm travel, adjustable</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div id="product_main_spe_Components_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Components</div>
-    </div>
-    <div id="product_main_spe_Components" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Handle bars</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topLtBoder1px">Flat handlebar, aluminium alloy, 24" width</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px">Stem</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Aluminium alloy</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px">Seatpost</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Aluminium alloy dropper post, seat-height adjustability, 1" diameter</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Saddle</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Reinforced and ergonomic  in black, 2 damping spring</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Pedals</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Yonghua PA66</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div id="product_main_spe_Drivetrain_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Drivetrain</div>
-    </div>
-    <div id="product_main_spe_Drivetrain" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Shifters</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topRtBoder1px">Shimano 6-speed</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Rear Dearailleur</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Shimano, MF-TZ500-6</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Brakes</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Shimano, front and rear mechanical disc, steel</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Brake Levers</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Aluminium alloy, black</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Chain</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Rust resistant</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Cranket</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">44 teeth x 5.9" length</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Bottom Bracket</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Integral bottom bracket</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div id="product_main_spe_Wheels_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Wheels</div>
-    </div>
-    <div id="product_main_spe_Wheels" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Rims</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topLtBoder1px">Aluminium alloy, silver</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Hubs</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">45Nm / 350W motor, integrated into the rear wheel, geared brushless motor</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Spokes</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Carbon steel, silver</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Types</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">KENDA, 20 x 4", 29psi</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div id="product_main_spe_Accessories_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Accessories</div>
-    </div>
-    <div id="product_main_spe_Accessories" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Rear Rack</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topLtBoder1px">N/A</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px">Light</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px">Headlight - LED light, tail light - reflector</li>
-          </ul>
-        </li>
-      </ul>
-      
-    </div>
-
-    <div id="product_main_spe_Weight_Menu" class="detail_menu_style" onclick="speToggleMain(this.id)">
-      <div class="add"></div>
-      <div class="speMenu">Weight</div>
-    </div>
-    <div id="product_main_spe_Weight" style="height: 1px; padding-top: 0px; position:relative; width: 100%;">
-      <ul>
-        <li>
-          <ul class="product_main_lfUl_with product_main_ul_floatClear ">
-            <li class="rtBoder1px btBoder1px topRtBoder1px">Weight</li>
-          </ul>
-          <ul class="product_main_rtUl_with">
-            <li class="btBoder1px topLtBoder1px">72 lbs.</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-  
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
     <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
       <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>

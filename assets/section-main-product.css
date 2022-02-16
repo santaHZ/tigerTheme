@@ -914,6 +914,7 @@ a.product__text {
   box-shadow: none !important;
   font-weight: bold;
   /* color: black; */
+  margin-top: 0.5em;
 }
 
 .shopify-payment-button .shopify-payment-button__button:hover{
@@ -965,13 +966,21 @@ button[name=minus]:hover{
 
 div[id^=price-]{
   display: flex;
+  justify-content: space-between;
   align-items: center;
   color: black;
+  /* border: 1px solid chartreuse; */
+}
+
+div[id^=price-] > img.paymentOptionStyle{
+  width: 70px;
+  display: block;
+  /* border: 1px solid cornflowerblue; */
 }
 
 .klarnaDes{
   font-size: 15px;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   line-height: 15px;
 }
 
