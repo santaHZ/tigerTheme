@@ -423,24 +423,28 @@
           </ul>
           <div class="accountDiv"><a href="/account/login">Account</a></div>
       </div>
+
+      {%- if request.page_type == 'product' -%}
+      <div class="productStickyMenu" id="productStickyMenuForStaticChange">
+          {% if product.has_only_default_variant %}
+              <div class="productStickyMenuContent">{{ product.title }}</div>
+              <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+                  <input type="submit" value="BUY NOW" class="rightContentbtn" />
+              </form>
+          {% else %}
+              <div class="productStickyMenuContent">{{ product.title }} - {{ product.selected_or_first_available_variant.title }}</div>
+              <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+                  <input type="submit" value="BUY NOW" class="rightContentbtn" />
+              </form>
+          {% endif %}
+      </div>
+      {%- endif -%}
+
+
     </div>
-    {%- if request.page_type == 'product' -%}
-    <div class="productStickyMenu" id="productStickyMenuForStaticChange">
-        {% if product.has_only_default_variant %}
-            <div class="productStickyMenuContent">{{ product.title }}</div>
-            <form method="post" action="/cart/add">
-                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
-                <input type="submit" value="BUY NOW" class="rightContentbtn" />
-            </form>
-        {% else %}
-            <div class="productStickyMenuContent">{{ product.title }} - {{ product.selected_or_first_available_variant.title }}</div>
-            <form method="post" action="/cart/add">
-                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
-                <input type="submit" value="BUY NOW" class="rightContentbtn" />
-            </form>
-        {% endif %}
-    </div>
-    {%- endif -%}
+
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}

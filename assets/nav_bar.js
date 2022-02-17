@@ -117,7 +117,7 @@ if (productStickyMenuDiv != null){
             /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
             if(window.pageYOffset >= 850) {
                     if(currentScroll > lastScroll){ //scroll down
-                        productStickyMenuDiv.setAttribute('style','transform: translateY(59px); display: flex;');
+                        productStickyMenuDiv.setAttribute('style','transform: translateY(59px);');
                     }
 
             }else{
@@ -126,20 +126,21 @@ if (productStickyMenuDiv != null){
     
         }else{
             stickyMenuDiv.classList.remove("stickyStyle");
-            productStickyMenuDiv.setAttribute('style','transform: translateY(-200px); display: none;');
+            // productStickyMenuDiv.setAttribute('style','transform: translateY(-20px);');
             /* console.log('window_pageYOffset2:' + window.pageYOffset);
             console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
         }
     
         if(window.pageYOffset == 0){
             stickyMenuDiv.classList.remove("stickyStyle");
+            // productStickyMenuDiv.setAttribute('style','transform: translateY(-60px);');
             
             /* console.log('window_pageYOffset2:' + window.pageYOffset);
             console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
         }
     
         if(currentScroll < lastScroll){ //scroll up
-            productStickyMenuDiv.setAttribute('style','transform: translateY(-200px); display: none;');
+            productStickyMenuDiv.setAttribute('style','transform: translateY(-60px);');
             
         }else{
     
