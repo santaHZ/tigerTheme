@@ -34,6 +34,11 @@ console.log(dropdown2Nodes); */
 
 // console.log(stickyMenuDiv.clientHeight);
 
+if (productStickyMenuDiv != null){
+    // console.log(productStickyMenuDiv);
+    productStickyMenuDiv.classList.add("productStickyStyleHide");
+}
+
 allBikesMenu.addEventListener("mouseover", function(event){
     if(initFlag == 1){
         dropdown2Nodes[0].classList.remove('setInvisible');
@@ -103,7 +108,7 @@ let lastScroll = 0;
 
 if (productStickyMenuDiv != null){
     // console.log(productStickyMenuDiv);
-    productStickyMenuDiv.classList.add("productStickyStyleHide");
+    // productStickyMenuDiv.classList.add("productStickyStyleHide");
 
     window.onscroll = function(){
         const currentScroll = window.pageYOffset;

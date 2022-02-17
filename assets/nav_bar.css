@@ -514,43 +514,38 @@ div.productStickyMenu{
     align-items: center;
     position: sticky;
     position: -webkit-sticky; /* FOR Safari*/
+    top: -100%;
     width: 100%;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.7s ease-in-out;
+    visibility: visible;
     /* visibility: hidden; */
-    /* background-color: rgba(122, 122, 122, 0.8); */
-    background: rgb(222,222,222);
     background: linear-gradient(90deg, rgba(222,222,222,0.5) 0%, rgba(255,255,255,1) 50%, rgba(222,222,222,0.5) 100%);
     text-align: center;
-    font-size: medium;
-    font-weight: bold;
-    /* border: 1px solid chartreuse; */
     color: #000;
-    top: -100%;
     height: 100px;
     font-size: 1.5em;
     font-weight: 800;
 }
 
 div.productStickyStyle{
+    visibility: visible;
     position: sticky;
     position: -webkit-sticky; /* FOR Safari*/
     left: 0;
     top: 59px;
     /* top: 90px; */
     width: 100%;
-    visibility: visible;
     z-index: 3;
 
 }
 
 div.productStickyStyleUp{
+    visibility: visible;
     position: sticky;
     position: -webkit-sticky; /* FOR Safari*/
     left: 0;
     top: -100%;
-    /* top: 90px; */
     width: 100%;
-    /* visibility: hidden; */
     z-index: 3;
 
 }
