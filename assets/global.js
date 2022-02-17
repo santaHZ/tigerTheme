@@ -729,18 +729,32 @@ class VariantSelects extends HTMLElement {
         const html = new DOMParser().parseFromString(responseText, 'text/html')
         const destination = document.getElementById(id);
         const source = html.getElementById(id);
+        if (source && destination) destination.innerHTML = source.innerHTML;
 
         const stockId = `stockNum-${this.dataset.section}`;
         const destinationStock = document.getElementById(stockId);
         const sourceStock = html.getElementById(stockId);
         if (sourceStock && destinationStock) destinationStock.innerHTML = sourceStock.innerHTML;
 
-        if (source && destination) destination.innerHTML = source.innerHTML;
+
+
 
         const price = document.getElementById(`price-${this.dataset.section}`);
-
         if (price) price.classList.remove('visibility-hidden');
         this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
+      });
+
+    fetch(`${this.dataset.url}?variant=${this.currentVariant.id}`)
+      .then((response) => response.text())
+      .then((responseText) => {
+        const html = new DOMParser().parseFromString(responseText, 'text/html')
+        const quickBuyId = "productStickyMenuForStaticChange";
+        const destinationQuickBuy = document.getElementById(quickBuyId);
+        // console.log(destinationQuickBuy);
+        // console.log(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.section}`)
+        const sourceQuickBuy = html.getElementById(quickBuyId);
+        // console.log(sourceQuickBuy);
+        if (sourceQuickBuy && destinationQuickBuy) destinationQuickBuy.innerHTML = sourceQuickBuy.innerHTML;
       });
   }
 

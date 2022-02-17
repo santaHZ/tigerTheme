@@ -19,6 +19,9 @@ let viewAllLi = document.querySelector('.dropdownPro').firstElementChild;
 //get stickyMenu div object
 let stickyMenuDiv = document.querySelector('.stickyMenu');
 
+//get productStickyMenu  div object
+let productStickyMenuDiv = document.querySelector('.productStickyMenu');
+
 let topMenuUl = document.querySelector('.topMenu > .topMenuUl');
 
 // set initFlag
@@ -28,6 +31,8 @@ let initFlag = 1;
 console.log(allBikesMenu);
 console.log(dropdownNodes);
 console.log(dropdown2Nodes); */
+
+// console.log(stickyMenuDiv.clientHeight);
 
 allBikesMenu.addEventListener("mouseover", function(event){
     if(initFlag == 1){
@@ -94,21 +99,74 @@ dropdownNodes.forEach((node, index)=>{
     });
 });
 
+let lastScroll = 0;
 
-window.onscroll = function(){
-    if(window.pageYOffset >= topMenuUl.offsetTop){
-        stickyMenuDiv.classList.add("stickyStyle");
-        /* console.log('window_pageYOffset:' + window.pageYOffset);
-        console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
-    }else{
-        stickyMenuDiv.classList.remove("stickyStyle");
-        /* console.log('window_pageYOffset2:' + window.pageYOffset);
-        console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+if (productStickyMenuDiv != null){
+    // console.log(productStickyMenuDiv);
+    productStickyMenuDiv.classList.add("productStickyStyleHide");
+
+    window.onscroll = function(){
+        const currentScroll = window.pageYOffset;
+        if(window.pageYOffset >= topMenuUl.offsetTop){
+            stickyMenuDiv.classList.add("stickyStyle");
+            
+            /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
+            if(window.pageYOffset >= 850) {
+                if(currentScroll > lastScroll){
+                    productStickyMenuDiv.classList.remove("productStickyStyleUp");
+                    productStickyMenuDiv.classList.remove("productStickyStyleHide");
+                    productStickyMenuDiv.classList.add("productStickyStyle");
+                }
+            }else{
+                productStickyMenuDiv.classList.remove("productStickyStyle");
+                // productStickyMenuDiv.classList.add("productStickyStyleUp");
+                productStickyMenuDiv.classList.add("productStickyStyleHide");
+    
+            }
+    
+        }else{
+            stickyMenuDiv.classList.remove("stickyStyle");
+            productStickyMenuDiv.classList.remove("productStickyStyle");
+            /* console.log('window_pageYOffset2:' + window.pageYOffset);
+            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+        }
+    
+        if(window.pageYOffset == 0){
+            stickyMenuDiv.classList.remove("stickyStyle");
+            productStickyMenuDiv.classList.remove("productStickyStyle");
+            productStickyMenuDiv.classList.add("productStickyStyleUp");
+            
+            /* console.log('window_pageYOffset2:' + window.pageYOffset);
+            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+        }
+    
+        if(currentScroll < lastScroll){ //scroll up
+    
+            productStickyMenuDiv.classList.remove("productStickyStyle");
+            productStickyMenuDiv.classList.add("productStickyStyleUp");
+        }else{
+    
+    
+        }
+        lastScroll = currentScroll;
     }
-
-    if(window.pageYOffset == 0){
-        stickyMenuDiv.classList.remove("stickyStyle");
-        /* console.log('window_pageYOffset2:' + window.pageYOffset);
-        console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+}else{
+    window.onscroll = function(){
+        if(window.pageYOffset >= topMenuUl.offsetTop){
+            stickyMenuDiv.classList.add("stickyStyle");
+            /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
+    
+        }else{
+            stickyMenuDiv.classList.remove("stickyStyle");
+            /* console.log('window_pageYOffset2:' + window.pageYOffset);
+            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+        }
+    
+        if(window.pageYOffset == 0){
+            stickyMenuDiv.classList.remove("stickyStyle");
+            /* console.log('window_pageYOffset2:' + window.pageYOffset);
+            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+        }
+    
     }
 }
