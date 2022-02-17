@@ -505,7 +505,7 @@ div.stickyStyle{
     top: 0;
     /* top: 90px; */
     width: 100%;
-    z-index: 3;
+    z-index: 4;
 }
 
 div.productStickyMenu{
