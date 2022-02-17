@@ -425,7 +425,7 @@
       </div>
     </div>
     {%- if request.page_type == 'product' -%}
-    <div class="productStickyMenu productStickyStyleHide" id="productStickyMenuForStaticChange">
+    <div class="productStickyMenu" id="productStickyMenuForStaticChange">
         {% if product.has_only_default_variant %}
             <div class="productStickyMenuContent">{{ product.title }}</div>
             <form method="post" action="/cart/add">
