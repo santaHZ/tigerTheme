@@ -108,73 +108,50 @@ dropdownNodes.forEach((node, index)=>{
 });
 
 let lastScroll = 0;
-console.log(productInfoWrapper);
-console.log(productInfoWrapper.clientHeight);
+// console.log(productInfoWrapper);
 
-if (productStickyMenuDiv != null){
-    // console.log(productStickyMenuDiv);
-    // productStickyMenuDiv.classList.add("productStickyStyleHide");
-
-    window.onscroll = function(){
-        const currentScroll = window.pageYOffset;
-        if(window.pageYOffset >= topMenuUl.offsetTop){
-            // stickyMenuDiv.classList.add("stickyStyle");
-            stickyMenuDiv.setAttribute('style','position: sticky; position: -webkit-sticky;')
-            /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
+window.onscroll = function(){
+    const currentScroll = window.pageYOffset;
+    if(window.pageYOffset >= topMenuUl.offsetTop){
+        stickyMenuDiv.setAttribute('style','position: sticky; position: -webkit-sticky;'); //setting normal navigator bar
+        if (productStickyMenuDiv != null){
             if(window.pageYOffset >= (productInfoWrapper.clientHeight + 50)) {
-                    if(currentScroll > lastScroll){ //scroll down
-                        productStickyMenuDiv.setAttribute('style','transform: translateY(59px);');
-                    }
-
+                if(currentScroll > lastScroll){ //scroll down
+                    productStickyMenuDiv.style.display = "flex";
+                    setTimeout("productStickyMenuDiv.setAttribute('style','transform: translateY(59px); ')", 100);
+                }
             }else{
-    
+                if (productStickyMenuDiv != null){
+                    if(window.pageYOffset < (productInfoWrapper.clientHeight + 50)) {
+                        if(currentScroll < lastScroll){ //scroll up
+                            productStickyMenuDiv.setAttribute('style','transform: translateY(-60px); ');
+                            productStickyMenuDiv.style.display = "none";
+                        }
+                    }
+                }
+
+
+
             }
-    
-        }else{
-            stickyMenuDiv.setAttribute('style','position: static;');
-            // stickyMenuDiv.classList.remove("stickyStyle");
-            // productStickyMenuDiv.setAttribute('style','transform: translateY(-20px);');
-            /* console.log('window_pageYOffset2:' + window.pageYOffset);
-            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
         }
-    
-        if(window.pageYOffset == 0){
-            // stickyMenuDiv.classList.remove("stickyStyle");
-            // stickyMenuDiv.setAttribute('style','position: static;');
-            productStickyMenuDiv.setAttribute('style','transform: translateY(-60px);');
-            
-            /* console.log('window_pageYOffset2:' + window.pageYOffset);
-            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
-        }
-    
-        if(currentScroll < lastScroll){ //scroll up
-            productStickyMenuDiv.setAttribute('style','transform: translateY(-60px);');
-            
-        }else{
-    
-        }
-        lastScroll = currentScroll;
+    }else{
+        stickyMenuDiv.setAttribute('style','position: static;'); //setting normal navigator bar
+
     }
-}else{
-    window.onscroll = function(){
-        if(window.pageYOffset >= topMenuUl.offsetTop){
-            // stickyMenuDiv.classList.add("stickyStyle");
-            stickyMenuDiv.setAttribute('style','position: sticky; position: -webkit-sticky;')
-            /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
-    
-        }else{
-            // stickyMenuDiv.classList.remove("stickyStyle");
-            stickyMenuDiv.setAttribute('style','position: static;');
-            /* console.log('window_pageYOffset2:' + window.pageYOffset);
-            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
+
+    if(window.pageYOffset == 0){
+        if (productStickyMenuDiv != null){
+            productStickyMenuDiv.style.display = "none";
         }
-    
-        if(window.pageYOffset == 0){
-            // stickyMenuDiv.classList.remove("stickyStyle");
-            stickyMenuDiv.setAttribute('style','position: static;');
-            /* console.log('window_pageYOffset2:' + window.pageYOffset);
-            console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
-        }
-    
     }
+
+    if(currentScroll < lastScroll){ //scroll up
+        if (productStickyMenuDiv != null){
+            productStickyMenuDiv.setAttribute('style','transform: translateY(-60px); ');
+            setTimeout("productStickyMenuDiv.style.display = 'none'", 1000);
+            // productStickyMenuDiv.style.display = "none";
+        }
+    }
+
+    lastScroll = currentScroll;
 }

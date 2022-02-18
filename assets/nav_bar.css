@@ -498,7 +498,6 @@ div.stickyMenu{
     z-index: 3;
     /* top: 0px; */
     position: static;
-    position: -webkit-sticky; /* FOR Safari*/
     left: 0;
     top: 0;
 }
