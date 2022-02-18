@@ -929,6 +929,7 @@ a.product__text {
   box-shadow: none !important;
   color: black;
   width: 100%;
+  transition: all 0.3s ease-in-out;
   /* width: auto; */
   /* margin-left: 5px; */
 }
@@ -950,6 +951,7 @@ a.product__text {
 
 button[name=plus]{
   border-left: 1px solid lightgray;
+  transition: all 0.3s ease-in-out;
 }
 
 button[name=plus]:hover{
@@ -958,6 +960,7 @@ button[name=plus]:hover{
 
 button[name=minus]{
   border-right: 1px solid lightgray;
+  transition: all 0.3s ease-in-out;
 }
 
 button[name=minus]:hover{

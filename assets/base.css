@@ -1848,7 +1848,7 @@ input[type='checkbox'] {
 }
 
 #shopify-section-header.animate {
-  transition: transform 0.15s ease-out;
+  transition: all 1s ease-in-out;
 }
 
 /* Main Header Layout */

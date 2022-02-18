@@ -497,16 +497,10 @@ div.stickyMenu{
     width: 100%;
     z-index: 3;
     /* top: 0px; */
-}
-
-div.stickyStyle{
-    position: sticky;
+    position: static;
     position: -webkit-sticky; /* FOR Safari*/
     left: 0;
     top: 0;
-    /* top: 90px; */
-    width: 100%;
-    z-index: 3;
 }
 
 div.productStickyMenu{
@@ -545,7 +539,7 @@ div.productStickyMenu > form > input{
     font-size: 1.0em;
     word-spacing: 0.5em;
     transition: all 0.2s ease-in-out;
-    z-index: 3;
+    z-index: 0;
 }
 
 div.productStickyMenu > form > input:hover{

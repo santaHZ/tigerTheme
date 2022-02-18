@@ -22,6 +22,9 @@ let stickyMenuDiv = document.querySelector('.stickyMenu');
 //get productStickyMenu  div object
 let productStickyMenuDiv = document.querySelector('.productStickyMenu');
 
+//get product payment button
+let productInfoWrapper = document.querySelector('.product__info-wrapper.grid__item');
+
 let topMenuUl = document.querySelector('.topMenu > .topMenuUl');
 
 // set initFlag
@@ -105,6 +108,8 @@ dropdownNodes.forEach((node, index)=>{
 });
 
 let lastScroll = 0;
+console.log(productInfoWrapper);
+console.log(productInfoWrapper.clientHeight);
 
 if (productStickyMenuDiv != null){
     // console.log(productStickyMenuDiv);
@@ -113,9 +118,10 @@ if (productStickyMenuDiv != null){
     window.onscroll = function(){
         const currentScroll = window.pageYOffset;
         if(window.pageYOffset >= topMenuUl.offsetTop){
-            stickyMenuDiv.classList.add("stickyStyle");
+            // stickyMenuDiv.classList.add("stickyStyle");
+            stickyMenuDiv.setAttribute('style','position: sticky; position: -webkit-sticky;')
             /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
-            if(window.pageYOffset >= 850) {
+            if(window.pageYOffset >= (productInfoWrapper.clientHeight + 50)) {
                     if(currentScroll > lastScroll){ //scroll down
                         productStickyMenuDiv.setAttribute('style','transform: translateY(59px);');
                     }
@@ -125,15 +131,17 @@ if (productStickyMenuDiv != null){
             }
     
         }else{
-            stickyMenuDiv.classList.remove("stickyStyle");
+            stickyMenuDiv.setAttribute('style','position: static;');
+            // stickyMenuDiv.classList.remove("stickyStyle");
             // productStickyMenuDiv.setAttribute('style','transform: translateY(-20px);');
             /* console.log('window_pageYOffset2:' + window.pageYOffset);
             console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
         }
     
         if(window.pageYOffset == 0){
-            stickyMenuDiv.classList.remove("stickyStyle");
-            // productStickyMenuDiv.setAttribute('style','transform: translateY(-60px);');
+            // stickyMenuDiv.classList.remove("stickyStyle");
+            // stickyMenuDiv.setAttribute('style','position: static;');
+            productStickyMenuDiv.setAttribute('style','transform: translateY(-60px);');
             
             /* console.log('window_pageYOffset2:' + window.pageYOffset);
             console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
@@ -150,17 +158,20 @@ if (productStickyMenuDiv != null){
 }else{
     window.onscroll = function(){
         if(window.pageYOffset >= topMenuUl.offsetTop){
-            stickyMenuDiv.classList.add("stickyStyle");
+            // stickyMenuDiv.classList.add("stickyStyle");
+            stickyMenuDiv.setAttribute('style','position: sticky; position: -webkit-sticky;')
             /* console.log('menu_offsetTop:' + topMenuUl.offsetTop); */
     
         }else{
-            stickyMenuDiv.classList.remove("stickyStyle");
+            // stickyMenuDiv.classList.remove("stickyStyle");
+            stickyMenuDiv.setAttribute('style','position: static;');
             /* console.log('window_pageYOffset2:' + window.pageYOffset);
             console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
         }
     
         if(window.pageYOffset == 0){
-            stickyMenuDiv.classList.remove("stickyStyle");
+            // stickyMenuDiv.classList.remove("stickyStyle");
+            stickyMenuDiv.setAttribute('style','position: static;');
             /* console.log('window_pageYOffset2:' + window.pageYOffset);
             console.log('menu_offsetTop2:' + topMenuUl.offsetTop); */
         }
