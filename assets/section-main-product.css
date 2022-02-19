@@ -1041,3 +1041,7 @@ div.addBtnWrapper{
 button[name='add'].product-form__submit.button{
   margin-bottom: 0 !important;
 }
+
+#cart-notification-form{
+  background-color: #A4DE2F;
+}
