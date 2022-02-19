@@ -133,8 +133,8 @@ function userfly_dotBtnFunReset(){
 	curDotClkObj.setAttribute("class","buttonDotSolid");
 	let idString = curDotClkObj.getAttribute("id");
 	let idStringIndex = idString.charAt(idString.length-1);
-	console.log(idString);
-	console.log(idStringIndex);
+	// console.log(idString);
+	// console.log(idStringIndex);
 
 	let btnNodes =Array.from(userfly_btn.children);
 
