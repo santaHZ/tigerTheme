@@ -923,9 +923,11 @@ a.product__text {
   /* color: black; */
 }
 
-.product-form__submit.button{
+button.product-form__submit.button{
+  display: block;
   font-weight: bold;
   border: 1px solid lightgray !important;;
+  background-color: white;
   box-shadow: none !important;
   color: black;
   width: 100%;
@@ -934,7 +936,7 @@ a.product__text {
   /* margin-left: 5px; */
 }
 
-.product-form__submit.button:hover{
+button.product-form__submit.button:hover{
   border: 1px solid lightgray !important;;
   box-shadow: none !important;
   background-color: black;
@@ -1014,7 +1016,7 @@ div.overViewStyle{
   justify-content:center; 
   align-items:center; 
   /* border: 1px solid cadetblue;  */
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 
@@ -1023,6 +1025,16 @@ div.overViewStyle{
   margin-right: 10px;
 }
 
-.addBtnWrapper{
+div.addBtnWrapper{
   width: 50%;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid chocolate; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+button[name='add'].product-form__submit.button{
+  margin-bottom: 0 !important;
 }
