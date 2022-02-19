@@ -1,0 +1,175 @@
+.chargerSlogan{
+    margin-top: 5em;
+    font-size: medium;
+    color: #000;
+    font-weight: 300;
+}
+
+.chargerSlogan p span{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.howToUnlodBattery{
+    margin-top: 3em;
+    font-size: medium;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 3em;
+}
+
+.productListWrapper{
+    width: 70%;
+    /* border: 1px solid cornflowerblue; */
+    margin: 5em auto;
+}
+
+.productList{
+    width: 100%;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.productList > ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    float: left;
+    /* width: 12vw; */
+    /* height: 15vw; */
+    /* height: 210px; */
+}
+
+.clearFloatP{
+    clear: both;
+    padding-top: 5em;
+}
+
+.productList > ul > li{
+    text-align: center;
+}
+
+.productList > ul > li:nth-child(1){
+    height: 10vw;
+}
+
+.productList > ul > li:nth-child(2){
+    height: 2vw;
+}
+
+.productList > ul > li:nth-child(2) > a{
+    display: block;
+    text-decoration: none;
+    font-size: 0.6vw;
+    line-height: 0.6vw;
+    word-wrap: normal;
+    word-break: break-all;
+    padding: 0.4vw 0.4vw;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    /* border: 1px solid #555; */
+    transition: all 0.2s ease-in-out;
+}
+
+.productList > ul > li:nth-child(2) > a:hover{
+    color: #78a61a;
+}
+
+.productList > ul > li:nth-child(1) > a > img{
+    display: block;
+    width: 100%;
+    padding: 0.2vw 0;
+    border: 0;
+}
+
+.borderLeft{
+    border-left: 1px solid #222;
+}
+.borderRight{
+    border-right: 1px solid #222;
+}
+.borderTop{
+    border-top: 1px solid #222;
+}
+.borderBottom{
+    border-bottom: 1px solid #222;
+}
+
+p > span{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #000;
+}
+
+p > a{
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    color: #a4de2f;
+    transition: all 0.2s ease-in-out;
+}
+
+p > a:hover{
+    color: #78a61a;
+}
+
+
+p > img{
+    display: inline-block;
+    width: 350px;
+    height: auto;
+}
+
+
+@media screen and (max-width: 749px) {
+    .productListWrapper{
+        width: 100%;
+    }
+
+    .productList > ul > li:nth-child(1){
+        height: 15vw;
+    }
+    
+    .productList > ul > li:nth-child(2){
+        height: 5vw;
+    }
+
+    .productList > ul > li:nth-child(2) > a{
+        font-size: 1.5vw;
+        line-height: 1.5vw;
+        padding: 1vw 1vw;
+    }
+
+}
+
+/* 1792x828px at 326ppi iphone11*/
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) { 
+
+        .productListWrapper{
+            width: 100%;
+        }
+
+        .productList > ul > li:nth-child(1){
+            height: 15vw;
+        }
+        
+        .productList > ul > li:nth-child(2){
+            height: 5vw;
+        }
+
+        .productList > ul > li:nth-child(2) > a{
+            font-size: 1.5vw;
+            line-height: 1.5vw;
+            padding: 1vw 1vw;
+        }
+
+
+    }
+
+
