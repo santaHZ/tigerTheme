@@ -1,8 +1,10 @@
 {
   "sections": {
-    "main_index":{
-      "type":"main-index",
-      "settings":{}
+    "main_index": {
+      "type": "main-index",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/white-bridge-over-calm-lake.jpg"
+      }
     }
   },
   "order": [
