@@ -3,7 +3,8 @@
 
 <div class="mainIndex">
     <div>
-        <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage">
+        <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
+        <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage">
     </div>
     <div class="advertingBlock">
         <ul>
@@ -310,14 +311,18 @@
 
 {% schema %}
 {
-    "name": "Slider",
-    "settings": [
-        {
-            "type": "text",
-            "id": "slider_text",
-            "label": "slider text",
-            "default": "This is a default text"
-        }
-    ]
+  "name": "homepage-slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "image_2"
+    }
+  ]
 }
 {% endschema %}
