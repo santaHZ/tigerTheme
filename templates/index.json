@@ -10,6 +10,7 @@
     }
   },
   "order": [
-    "main_index"
+    "main_index",
+    "main-index-header-banner"
   ]
 }
