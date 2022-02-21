@@ -1,6 +1,18 @@
-{{ 'main-index-section-header-banner.css' | asset_url | stylesheet_tag }}
 {%- if section.settings.image != blank -%}
     {%- style -%}
+    .sectionMainIndex{
+      width: 100%;
+      border: 1px solid #222;
+      position: relative;
+    }
+
+    .sectionMainIndex > .advertingBlock{
+      postion: absolute;
+      top: 30px;
+      left: 50px;
+      border: 1px solid #a4de2f;
+    }
+
     {%- endstyle -%}
 {%- endif -%}
 
