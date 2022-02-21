@@ -6,6 +6,7 @@
         <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" >
     </div>
     <div class="advertingBlock" >
+      <div class="middleWareDiv" style="height: 300px; width: 300px; border: 1px solid chartreuse;">
         <ul style="margin: 0; padding: 0; list-style: none;">
           <!-- style="top:{{ section.settings.top_position }}; left:{{ section.settings.left_position }};" -->
             <!-- <li class="textProductName"></li> -->
@@ -13,15 +14,10 @@
             {%- case block.type -%}
               {%- when 'heading' -%}
                 <li id="block.id" class="textProductName-{{ block.id }}" style="margin:0; padding:0; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">{{ block.settings.text | escape }}</li>
-                {%- style -%}
-                #{{ block.id }}{
-                  margin: 0;
-                  padding: 0;
-                }
-                {%- endstyle -%}
             {%- endcase -%}
             {%- endfor -%}
         </ul>
+      </div>
     </div>
 </div>
 
@@ -82,19 +78,19 @@
       "label": "Vertical alignment",
       "options": [
         {
-          "value": "top",
+          "value": "flex-start",
           "label": "Top"
         },
         {
-          "value": "middle",
+          "value": "center",
           "label": "Middle"
         },
         {
-          "value": "bottom",
+          "value": "flex-end",
           "label": "Bottom"
         }
       ],
-      "default": "middle"
+      "default": "center"
     }
   ],
   "blocks": [
@@ -162,12 +158,14 @@
 #sectionMainIndex-{{ section.id }} > .advertingBlock{
   postion: absolute;
   width: 100%;
-  top: 0;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
   display: flex;
   justify-content: {{ section.settings.horizontal_alignment }};
-  align-items: {{ section.settings.vertical_alignment }};
-
+  align-items: center;
   border: 1px solid #a4de2f;
 }
+
+
 {%- endstyle -%}
