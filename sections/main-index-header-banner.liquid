@@ -13,6 +13,10 @@
       border: 1px solid #a4de2f;
     }
 
+    .sectionMainIndex > .advertingBlock > .textProductName{
+      color: {{ block.settings.text_color }}
+    }
+
     {%- endstyle -%}
 {%- endif -%}
 
@@ -54,6 +58,20 @@
         "type": "text",
         "id": "text",
         "label": "text"
+      },
+      {
+        "type": "range",
+        "id": "text_size",
+        "label": "text_size",
+        "min": 10,
+        "max": 50,
+        "default": 10
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "text_color",
+        "default": "#222"
       }
     ]
   }
