@@ -5,8 +5,9 @@
         <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
         <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage">
     </div>
-    <div class="advertingBlock" style="top:{{ section.settings.top_position }}; left:{{ section.settings.left_position }};">
+    <div class="advertingBlock" >
         <ul>
+          <!-- style="top:{{ section.settings.top_position }}; left:{{ section.settings.left_position }};" -->
             <!-- <li class="textProductName"></li> -->
             {%- for block in section.blocks -%}
             {%- case block.type -%}
@@ -45,6 +46,16 @@
       "type": "text",
       "id": "homepage-slider_text",
       "label": "homepage-slider text"
+    },
+    {
+      "type": "range",
+      "id": "text_left",
+      "label": "text left",
+      "default": 10,
+      "min": 10,
+      "max": 500,
+      "step": 1,
+      "unit": "px"
     }
   ],
   "blocks": [
@@ -73,7 +84,6 @@
         "max": 50,
         "step": 1,
         "unit": "px"
-
       },
       {
         "type": "range",
@@ -110,7 +120,7 @@
 #sectionMainIndex-{{ section.id }} > .advertingBlock{
   postion: absolute;
   top: 30px;
-  left: 30px;
+  left: {{ section.settings.text_left }};
   border: 1px solid #a4de2f;
 }
 {%- endstyle -%}
