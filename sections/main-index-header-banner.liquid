@@ -1,26 +1,24 @@
-{%- if section.settings.image != blank -%}
-    {%- style -%}
-    .sectionMainIndex{
-      width: 100%;
-      border: 1px solid #222;
-      position: relative;
-    }
 
-    .sectionMainIndex > .advertingBlock{
-      postion: absolute;
-      top: 30px;
-      left: 50px;
-      border: 1px solid #a4de2f;
-    }
 
-    .sectionMainIndex > .advertingBlock > .textProductName{
-      color: {{ block.settings.text_color }}
-    }
+{%- style -%}
+.sectionMainIndex{
+  width: 100%;
+  border: 1px solid #222;
+  position: relative;
+}
 
-    {%- endstyle -%}
-{%- endif -%}
+#sectionMainIndex-{{ section.id }} > .advertingBlock{
+  postion: absolute;
+  top: 30px;
+  left: 50px;
+  border: 1px solid #a4de2f;
+}
 
-<div class="sectionMainIndex">
+
+
+{%- endstyle -%}
+
+<div id="sectionMainIndex-{{ section.id }}" class="sectionMainIndex">
     <div>
         <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
         <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage">
@@ -29,14 +27,21 @@
         <ul>
             <!-- <li class="textProductName"></li> -->
             {%- for block in section.blocks -%}
-                {%- case block.type -%}
-                {%- when 'heading' -%}
-                    <li class="textProductName">{{ block.settings.text | escape }}</li>
-                {%- endcase -%}
+            {%- case block.type -%}
+              {%- when 'heading' -%}
+                <li class="textProductName-{{ block.id }}">{{ block.settings.text | escape }}</li>
+                {%- style -%}
+                #sectionMainIndex-{{ section.id }} > .advertingBlock > .textProductName-{{ block.id }}{
+                  color: {{ block.settings.text_color }};
+                }
+                {%- endstyle -%}
+            {%- endcase -%}
             {%- endfor -%}
         </ul>
     </div>
 </div>
+
+
 
 {% schema %}
 {
