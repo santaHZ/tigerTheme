@@ -3,8 +3,7 @@
 
 <div class="mainIndex">
     <div>
-        <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
-        <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage">
+        <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage" loading="lazy">
     </div>
     <div class="advertingBlock">
         <ul>
@@ -306,23 +305,4 @@
         <div><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/icon3.png?v=1641618866" width="65" height="auto" alt=""></div>
         <div><h3>One Year Limited Warranty</h3><p>We provide up to one year limited warranty on our electric bikes.</p></div>
     </div>
-
 </div>
-
-{% schema %}
-{
-  "name": "homepage-slider",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "image_2"
-    }
-  ]
-}
-{% endschema %}

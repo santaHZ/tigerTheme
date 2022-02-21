@@ -1042,6 +1042,6 @@ button[name='add'].product-form__submit.button{
   margin-bottom: 0 !important;
 }
 
-#cart-notification-form{
+#cart-notification-form > button[name='checkout']{
   background-color: #A4DE2F;
 }

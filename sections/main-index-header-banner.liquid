@@ -1,0 +1,49 @@
+{%- if section.settings.image != blank -%}
+    {%- style -%}
+    {%- endstyle -%}
+{%- endif -%}
+
+<div class="mainIndex">
+    <div>
+        <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
+        <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage">
+    </div>
+    <div class="advertingBlock">
+        <ul>
+            <!-- <li class="textProductName"></li> -->
+            {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                {%- when 'heading' -%}
+                    <li class="textProductName">{{ block.settings.heading | escape }}</li>
+                {%- endcase -%}
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "homepage-slider",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "image"
+  }
+  ],
+  "blocks": [
+  {
+      "type": "heading",
+      "name": "heading_text",
+      "limit": 3,
+      "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "text"
+      }
+      ]
+  }
+  ]
+}
+{% endschema %}

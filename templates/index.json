@@ -2,12 +2,15 @@
   "sections": {
     "main_index": {
       "type": "main-index",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/white-bridge-over-calm-lake.jpg"
-      }
+      "settings": {}
+    },
+    "header_banner":{
+      "type": "main-index-header-banner",
+      "settings":{}
     }
   },
   "order": [
-    "main_index"
+    "main_index",
+    "header_banner"
   ]
 }
