@@ -1,10 +1,10 @@
-{{ 'main-index.css' | asset_url | stylesheet_tag }}
+{{ 'main-index-section-header-banner.css' | asset_url | stylesheet_tag }}
 {%- if section.settings.image != blank -%}
     {%- style -%}
     {%- endstyle -%}
 {%- endif -%}
 
-<div class="mainIndex">
+<div class="sectionMainIndex">
     <div>
         <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
         <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage">
