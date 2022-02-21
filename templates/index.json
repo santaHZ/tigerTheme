@@ -3,6 +3,10 @@
     "main_index": {
       "type": "main-index",
       "settings": {}
+    },
+    "main-index-header-banner":{
+      "type": "main-index-header-banner",
+      "settings": {}
     }
   },
   "order": [
