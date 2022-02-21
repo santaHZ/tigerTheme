@@ -3,14 +3,9 @@
     "main_index": {
       "type": "main-index",
       "settings": {}
-    },
-    "header_banner":{
-      "type": "main-index-header-banner",
-      "settings":{}
     }
   },
   "order": [
-    "main_index",
-    "header_banner"
+    "main_index"
   ]
 }
