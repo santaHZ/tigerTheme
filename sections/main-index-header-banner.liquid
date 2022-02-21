@@ -6,7 +6,7 @@
         <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" >
     </div>
     <div class="advertingBlock" >
-      <div class="middleWareDiv" style="height: 300px; width: 300px; border: 1px solid chartreuse;">
+      <div class="middleWareDiv" style="height: 300px; border: 1px solid chartreuse;">
         <ul style="margin: 0; padding: 0; list-style: none;">
           <!-- style="top:{{ section.settings.top_position }}; left:{{ section.settings.left_position }};" -->
             <!-- <li class="textProductName"></li> -->
@@ -39,20 +39,6 @@
       "label": "slider image2"
     },
     {
-      "type": "text",
-      "id": "homepage-slider_text",
-      "label": "homepage-slider text"
-    },
-    {
-      "type": "range",
-      "id": "text_left",
-      "label": "text left",
-      "default": 10,
-      "min": 10,
-      "max": 500,
-      "step": 10
-    },
-    {
       "type": "select",
       "id": "horizontal_alignment",
       "label": "Horizontal alignment",
@@ -71,38 +57,19 @@
         }
       ],
       "default": "center"
-    },
-    {
-      "type": "select",
-      "id": "vertical_alignment",
-      "label": "Vertical alignment",
-      "options": [
-        {
-          "value": "flex-start",
-          "label": "Top"
-        },
-        {
-          "value": "center",
-          "label": "Middle"
-        },
-        {
-          "value": "flex-end",
-          "label": "Bottom"
-        }
-      ],
-      "default": "center"
     }
   ],
   "blocks": [
   {
     "type": "heading",
     "name": "heading_text",
-    "limit": 3,
+    "limit": 6,
     "settings": [
       {
-        "type": "text",
+        "type": "textarea",
         "id": "text",
-        "label": "text"
+        "label": "text",
+        "default": "Welcome to my shop!"
       },
       {
         "type": "color",
