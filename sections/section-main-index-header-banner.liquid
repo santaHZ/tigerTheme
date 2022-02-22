@@ -71,6 +71,12 @@
       "default": "#121212"
     },
     {
+      "type": "checkbox",
+      "id": "bgcolor_opacity",
+      "label": "Background color opacity",
+      "default": true
+    },
+    {
       "type": "range",
       "id": "box_bgcolor_opacity",
       "label": "Text box background color opacity",
@@ -435,7 +441,7 @@
   <!-- border: 1px solid yellow; -->
   justify-content: flex-start;
   align-items: {{ section.settings.text_alignment }};
-  background-color: {{ section.settings.box_bgcolor | color_modify: 'alpha', 0.2 }};
+  background-color: {% if section.settings.bgcolor_opacity %} {{ section.settings.box_bgcolor | color_modify: 'alpha', 0.2 }} {% else %} {{ section.settings.box_bgcolor }} {% endif %};
 
 }
 
