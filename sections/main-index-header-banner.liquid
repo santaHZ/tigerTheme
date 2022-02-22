@@ -53,6 +53,26 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
     }
   ],
   "blocks": [
@@ -109,7 +129,7 @@
 {% endschema %}
 
 {%- style -%}
-#sectionMainIndex{{ section.id }}{
+#sectionMainIndex-{{ section.id }}{
   margin:0;
   padding:0;
   width: 100%;
@@ -118,15 +138,16 @@
   <!-- margin: 0 auto; -->
 }
 
-#sectionMainIndex-{{ section.id }} > .advertingBlock{
+#sectionMainIndex-{{ section.id }} > div.advertingBlock{
   postion: absolute;
   width: 100%;
-  top: 50%;
+  <!-- top: 50%; -->
   left: 0;
-  transform: translateY(-50%);
+  top: 0;
+  <!-- transform: translateY(-50%); -->
   display: flex;
   justify-content: {{ section.settings.horizontal_alignment }};
-  align-items: center;
+  align-items: {{ section.settings.vertical_alignment }};
   border: 1px solid #a4de2f;
 }
 {%- endstyle -%}
