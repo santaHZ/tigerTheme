@@ -32,7 +32,7 @@
       "type": "text",
       "id": "box_width",
       "label": "Text box width",
-      "default": "420"
+      "default": "550"
     },
     {
       "type": "text",
@@ -50,13 +50,34 @@
       "type": "text",
       "id": "box_left",
       "label": "Text box left(%)",
-      "default": "65"
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "box_right",
+      "label": "Text box right(%)",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "box_bottom",
+      "label": "Text box bottom(%)",
+      "default": "0"
     },
     {
       "type": "color",
       "id": "box_bgcolor",
       "label": "text box background color",
       "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "box_bgcolor_opacity",
+      "label": "Text box background color opacity",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1
     },
     {
       "type": "select",
@@ -82,7 +103,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "Learn More"
+      "default": "LEARN MORE"
     },
     {
       "type": "text",
@@ -109,10 +130,14 @@
       "default": "0"
     },
     {
-      "type": "text",
+      "type": "range",
       "id": "button_width",
       "label": "Button width(%)",
-      "default": "50"
+      "default": 75,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
     },
     {
       "type": "header",
@@ -128,7 +153,7 @@
       "type": "text",
       "id": "mobile_box_height",
       "label": "Text box height(Mobile)",
-      "default": "155"
+      "default": "120"
     },
     {
       "type": "text",
@@ -140,38 +165,21 @@
       "type": "text",
       "id": "mobile_box_left",
       "label": "Text box left(%)(Mobile)",
-      "default": "50"
-    },
-    {
-      "type": "text",
-      "id": "mobile_button_text_size",
-      "label": "Button text size(Mobile)",
-      "default": "30"
-    },
-    {
-      "type": "text",
-      "id": "mobile_button_text_line_height",
-      "label": "Button text height(Mobile)",
-      "default": "45"
-    },
-    {
-      "type": "text",
-      "id": "mobile_button_padding",
-      "label": "Button padding(Mobile)",
-      "default": "0 0 20px 0"
-    },
-    {
-      "type": "text",
-      "id": "mobile_button_margin",
-      "label": "Button margin(Mobile)",
       "default": "0"
     },
     {
       "type": "text",
-      "id": "mobile_button_width",
-      "label": "Button width(%)(Mobile)",
-      "default": "50"
+      "id": "mobile_box_right",
+      "label": "Text box right(%)(Mobile)",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "mobile_box_bottom",
+      "label": "Text box bottom(%)(Mobile)",
+      "default": "0"
     }
+
   ],
   "blocks": [
   {
@@ -201,7 +209,7 @@
         "type": "text",
         "id": "text_margin",
         "label": "Text margin",
-        "default": "0"
+        "default": "0 0 40px 0"
       },
       {
         "type": "color",
@@ -231,7 +239,7 @@
         "label": "text size",
         "default": 20,
         "min": 10,
-        "max": 50,
+        "max": 100,
         "step": 1,
         "unit": "px"
       },
@@ -240,7 +248,7 @@
         "id": "text_weight",
         "label": "text weight",
         "default": 600,
-        "min": 300,
+        "min": 200,
         "max": 900,
         "step": 100
       }
@@ -261,7 +269,7 @@
         "type": "text",
         "id": "text_line_height",
         "label": "Text line height",
-        "default": "40"
+        "default": "55"
       },
       {
         "type": "text",
@@ -273,7 +281,7 @@
         "type": "text",
         "id": "text_margin",
         "label": "Text margin",
-        "default": "0"
+        "default": "0 0 10px 0"
       },
       {
         "type": "color",
@@ -285,9 +293,9 @@
         "type": "range",
         "id": "text_size",
         "label": "text size",
-        "default": 35,
+        "default": 53,
         "min": 10,
-        "max": 50,
+        "max": 100,
         "step": 1,
         "unit": "px"
       },
@@ -341,7 +349,7 @@
         "type": "text",
         "id": "text_margin",
         "label": "Text margin",
-        "default": "0"
+        "default": "0 0 30px 0"
       },
       {
         "type": "color",
@@ -355,7 +363,7 @@
         "label": "text size",
         "default": 15,
         "min": 10,
-        "max": 50,
+        "max": 100,
         "step": 1,
         "unit": "px"
       },
@@ -396,6 +404,10 @@
 }
 {% endschema %}
 
+{%- capture rgb -%}
+
+{%- endcapture -%}
+
 {%- style -%}
 #sectionMainIndex-{{ section.id }}{
   dispaly: block;
@@ -418,9 +430,13 @@
   position: absolute;
   top: {{ section.settings.box_top }}%;
   left: {{ section.settings.box_left }}%;
+  right: {{ section.settings.box_right }}%;
+  bottom: {{ section.settings.box_bottom }}%;
   <!-- border: 1px solid yellow; -->
   justify-content: flex-start;
   align-items: {{ section.settings.text_alignment }};
+  background-color: {{ section.settings.box_bgcolor | color_modify: 'alpha', 0.2 }};
+
 }
 
 .sectionMainIndexBtn{
@@ -445,7 +461,9 @@
     position: absolute;
     top: {{ section.settings.mobile_box_top }}%;
     left: {{ section.settings.mobile_box_left }}%;
-    border: 1px solid yellow;
+    right: {{ section.settings.mobile_box_right }}%;
+    bottom: {{ section.settings.mobile_box_bottom }}%;
+    border: 0px solid yellow;
     justify-content: flex-start;
     align-items: {{ section.settings.mobile_text_alignment }};
   }
