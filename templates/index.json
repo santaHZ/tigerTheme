@@ -1,16 +1,11 @@
 {
   "sections": {
     "main_index": {
-      "type": "main-index",
-      "settings": {}
-    },
-    "main-index-header-banner":{
-      "type": "main-index-header-banner",
+      "type": "main-index-for-sections-20220222",
       "settings": {}
     }
   },
   "order": [
-    "main_index",
-    "main-index-header-banner"
+    "main_index"
   ]
 }

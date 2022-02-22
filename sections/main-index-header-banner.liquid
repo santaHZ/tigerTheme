@@ -4,24 +4,23 @@
         <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" >
     </div>
     <div class="advertingBlock" >
-      <div class="middleWareDiv" style="height: 300px; border: 1px solid chartreuse;">
-        <ul style="margin: 0; padding: 0; list-style: none;">
-          <!-- style="top:{{ section.settings.top_position }}; left:{{ section.settings.left_position }};" -->
-            <!-- <li class="textProductName"></li> -->
             {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'heading' -%}
-                <li id="block.id" class="textProductName-{{ block.id }}" style="margin:0; padding:0; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">{{ block.settings.text | escape }}</li>
-            {%- endcase -%}
+              {%- case block.type -%}
+                {%- when 'heading' -%}
+                  <div class="sectionMainIndex-heading" style="margin: {{ block.settings.text_margin }}; font-style: {{ block.settings.font_style }}; border: 0px solid blue; line-height: {{ block.settings.text_line_height }}px; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">{{ block.settings.text | newline_to_br}}</div>
+                {%- when 'bannerInfo' -%}
+                  <div class="sectionMainIndex-bannerInfo" style="padding: {{ block.settings.text_padding }}; margin: {{ block.settings.text_margin }}; border: 0px solid blue; line-height: {{ block.settings.text_line_height }}px; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">{{ block.settings.text | newline_to_br}}</div>
+                {%- when 'text_with_dot' -%}
+                  <div class="sectionMainIndex-text_with_dot" style="padding: {{ block.settings.text_padding }}; margin: {{ block.settings.text_margin }}; line-height: {{ block.settings.text_line_height }}px; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};"><sapn style="color:#a4de2f;">•</sapn>{{ block.settings.text1 | newline_to_br}}<sapn style="color:#a4de2f;">•</sapn>{{ block.settings.text2 | newline_to_br}}<sapn style="color:#a4de2f;">•</sapn>{{ block.settings.text3 | newline_to_br}}<sapn style="color:#a4de2f;">•</sapn>{{ block.settings.text4 | newline_to_br}}</div>
+                {%- endcase -%}
             {%- endfor -%}
-        </ul>
-      </div>
+          <a href="/collections/all-bikes" class="sectionMainIndexBtn"><span>{{ section.settings.button_text }}</span></a>
     </div>
 </div>
 
 {% schema %}
 {
-  "name": "homepage-slider",
+  "name": "Homepage Image Banner",
   "max_blocks": 30,
   "settings": [
     {
@@ -30,17 +29,42 @@
       "label": "slider image"
     },
     {
-      "type": "image_picker",
-      "id": "image2",
-      "label": "slider image2"
+      "type": "text",
+      "id": "box_width",
+      "label": "Text box width",
+      "default": "420"
+    },
+    {
+      "type": "text",
+      "id": "box_height",
+      "label": "Text box height",
+      "default": "260"
+    },
+    {
+      "type": "text",
+      "id": "box_top",
+      "label": "Text box top(%)",
+      "default": "35"
+    },
+    {
+      "type": "text",
+      "id": "box_left",
+      "label": "Text box left(%)",
+      "default": "65"
+    },
+    {
+      "type": "color",
+      "id": "box_bgcolor",
+      "label": "text box background color",
+      "default": "#121212"
     },
     {
       "type": "select",
-      "id": "horizontal_alignment",
-      "label": "Horizontal alignment",
+      "id": "text_alignment",
+      "label": "Text alignment",
       "options": [
         {
-          "value": "left",
+          "value": "flex-start",
           "label": "Left"
         },
         {
@@ -48,31 +72,105 @@
           "label": "Center"
         },
         {
-          "value": "right",
+          "value": "flex-end",
           "label": "Right"
         }
       ],
-      "default": "center"
+      "default": "flex-start"
     },
     {
-      "type": "select",
-      "id": "vertical_alignment",
-      "label": "Vertical alignment",
-      "options": [
-        {
-          "value": "flex start",
-          "label": "Top"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "flex end",
-          "label": "Bottom"
-        }
-      ],
-      "default": "center"
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "text",
+      "id": "button_text_size",
+      "label": "Button text size",
+      "default": "30"
+    },
+    {
+      "type": "text",
+      "id": "button_text_line_height",
+      "label": "Button text height",
+      "default": "45"
+    },
+    {
+      "type": "text",
+      "id": "button_padding",
+      "label": "Button padding",
+      "default": "0 0 20px 0"
+    },
+    {
+      "type": "text",
+      "id": "button_margin",
+      "label": "Button margin",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "button_width",
+      "label": "Button width(%)",
+      "default": "50"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "text",
+      "id": "mobile_box_width",
+      "label": "Text box width(Mobile)",
+      "default": "175"
+    },
+    {
+      "type": "text",
+      "id": "mobile_box_height",
+      "label": "Text box height(Mobile)",
+      "default": "155"
+    },
+    {
+      "type": "text",
+      "id": "mobile_box_top",
+      "label": "Text box top(%)(Mobile)",
+      "default": "35"
+    },
+    {
+      "type": "text",
+      "id": "mobile_box_left",
+      "label": "Text box left(%)(Mobile)",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_text_size",
+      "label": "Button text size(Mobile)",
+      "default": "30"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_text_line_height",
+      "label": "Button text height(Mobile)",
+      "default": "45"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_padding",
+      "label": "Button padding(Mobile)",
+      "default": "0 0 20px 0"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_margin",
+      "label": "Button margin(Mobile)",
+      "default": "0"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_width",
+      "label": "Button width(%)(Mobile)",
+      "default": "50"
     }
   ],
   "blocks": [
@@ -82,22 +180,56 @@
     "limit": 6,
     "settings": [
       {
-        "type": "textarea",
+        "type": "text",
         "id": "text",
         "label": "text",
-        "default": "Welcome to my shop!"
+        "default": "Santa Monica"
+      },
+      {
+        "type": "text",
+        "id": "text_line_height",
+        "label": "Text line height",
+        "default": "25"
+      },
+      {
+        "type": "text",
+        "id": "text_padding",
+        "label": "Text padding",
+        "default": "0 0 20px 0"
+      },
+      {
+        "type": "text",
+        "id": "text_margin",
+        "label": "Text margin",
+        "default": "0"
       },
       {
         "type": "color",
         "id": "text_color",
         "label": "text color",
-        "default": "#000000"
+        "default": "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "font_style",
+        "label": "Font style",
+        "options": [
+          {
+            "value": "italic",
+            "label": "Italic"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          }
+        ],
+        "default": "italic"
       },
       {
         "type": "range",
         "id": "text_size",
         "label": "text size",
-        "default": 10,
+        "default": 20,
         "min": 10,
         "max": 50,
         "step": 1,
@@ -107,7 +239,137 @@
         "type": "range",
         "id": "text_weight",
         "label": "text weight",
-        "default": 300,
+        "default": 600,
+        "min": 300,
+        "max": 900,
+        "step": 100
+      }
+    ]
+  },
+  {
+    "type": "bannerInfo",
+    "name": "banner_info_text",
+    "limit": 6,
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "text",
+        "default": "Have Fun <br> Out On The Town"
+      },
+      {
+        "type": "text",
+        "id": "text_line_height",
+        "label": "Text line height",
+        "default": "40"
+      },
+      {
+        "type": "text",
+        "id": "text_padding",
+        "label": "Text padding",
+        "default": "0 0 20px 0"
+      },
+      {
+        "type": "text",
+        "id": "text_margin",
+        "label": "Text margin",
+        "default": "0"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "text_size",
+        "label": "text size",
+        "default": 35,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "text_weight",
+        "label": "text weight",
+        "default": 800,
+        "min": 300,
+        "max": 900,
+        "step": 100
+      }
+    ]
+  },
+  {
+    "type": "text_with_dot",
+    "name": "Text with dot",
+    "limit": 6,
+    "settings": [
+      {
+        "type": "text",
+        "id": "text1",
+        "label": "Text1",
+        "default": "Fat Tire eBike"
+      },
+      {
+        "type": "text",
+        "id": "text2",
+        "label": "Text2",
+        "default": "Pedal Assit"
+      },
+      {
+        "type": "text",
+        "id": "text3",
+        "label": "Text3",
+        "default": "Twist Throttle"
+      },
+      {
+        "type": "text",
+        "id": "text4",
+        "label": "Text4",
+        "default": "500W Brushless Motor"
+      },
+      {
+        "type": "text",
+        "id": "text_padding",
+        "label": "Text padding",
+        "default": "0 0 20px 0"
+      },
+      {
+        "type": "text",
+        "id": "text_margin",
+        "label": "Text margin",
+        "default": "0"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "text_size",
+        "label": "text size",
+        "default": 15,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "text_line_height",
+        "label": "Text line height",
+        "default": "17"
+      },
+      {
+        "type": "range",
+        "id": "text_weight",
+        "label": "text weight",
+        "default": 600,
         "min": 300,
         "max": 900,
         "step": 100
@@ -117,10 +379,16 @@
   ],
   "presets":[
     {
-      "name": "homepage-slider",
+      "name": "Homepage Banner",
       "blocks":[
         {
           "type": "heading"
+        },
+        {
+          "type": "bannerInfo"
+        },
+        {
+          "type": "text_with_dot"
         }
       ]
     }
@@ -130,24 +398,117 @@
 
 {%- style -%}
 #sectionMainIndex-{{ section.id }}{
-  margin:0;
-  padding:0;
+  dispaly: block;
   width: 100%;
-  border: 3px solid red;
   position: relative;
-  <!-- margin: 0 auto; -->
+  height: auto;
 }
 
-#sectionMainIndex-{{ section.id }} > div.advertingBlock{
-  postion: absolute;
+#sectionMainIndex-{{ section.id }} > div > img{
+  display: block;
   width: 100%;
-  <!-- top: 50%; -->
-  left: 0;
-  top: 0;
-  <!-- transform: translateY(-50%); -->
-  display: flex;
-  justify-content: {{ section.settings.horizontal_alignment }};
-  align-items: {{ section.settings.vertical_alignment }};
-  border: 1px solid #a4de2f;
+  height: auto;
 }
+
+#sectionMainIndex-{{ section.id }} > div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  width: {{ section.settings.box_width }}px;
+  height: {{ section.settings.box_height }}px;
+  position: absolute;
+  top: {{ section.settings.box_top }}%;
+  left: {{ section.settings.box_left }}%;
+  border: 1px solid yellow;
+  justify-content: flex-start;
+  align-items: {{ section.settings.text_alignment }};
+}
+
+.sectionMainIndexBtn{
+  display: block;
+  background-color: #EF6B24;
+  color: white;
+  font-size: {{ section.settings.button_text_size }}px;
+  font-weight: bolder;
+  line-height: {{ section.settings.button_text_line_height }}px;
+  text-decoration: none;
+  width: {{ section.settings.button_width }}%;
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+@media screen and (max-width: 749px){
+  #sectionMainIndex-{{ section.id }} > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    width: {{ section.settings.mobile_box_width }}px;
+    height: {{ section.settings.mobile_box_height }}px;
+    position: absolute;
+    top: {{ section.settings.mobile_box_top }}%;
+    left: {{ section.settings.mobile_box_left }}%;
+    border: 1px solid yellow;
+    justify-content: flex-start;
+    align-items: {{ section.settings.mobile_text_alignment }};
+  }
+  
+  .sectionMainIndexBtn{
+    display: block;
+    background-color: #EF6B24;
+    color: white;
+    font-size: {{ section.settings.mobile_button_text_size }}px;
+    font-weight: bolder;
+    line-height: {{ section.settings.mobile_button_text_line_height }}px;
+    text-decoration: none;
+    width: {{ section.settings.mobile_button_width }}%;
+    /* margin: 0 auto; */
+    text-align: center;
+  }
+}
+
 {%- endstyle -%}
+<style>
+@media screen and (max-width: 749px){
+  .sectionMainIndex-heading{
+    font-size: 10px !important;
+    line-height: 10px !important;
+    font-weight: bold !important;
+    font-style: italic !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+  }
+  .sectionMainIndex-bannerInfo{
+    font-size: 12px !important;
+    line-height: 12px !important;
+    font-weight: bolder !important;
+    line-height: 16px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+  }
+
+  .sectionMainIndex-text_with_dot{
+    font-size: 10px !important;
+    line-height: 10px !important;
+    font-weight: 500 !important;
+    margin-bottom: 5px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 90% !important;
+  }
+
+  .sectionMainIndexBtn{
+    display: block !important;
+    background-color: #EF6B24 !important;
+    color: white !important;
+    font-size: 8px !important;
+    font-weight: bolder !important;
+    line-height: 20px !important;
+    text-decoration: none !important;
+    width: 70% !important;
+    /* margin: 0 auto; */
+    text-align: center !important;
+  }
+
+}
+
+</style>
