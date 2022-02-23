@@ -57,9 +57,9 @@
             "mobile_text_padding": "0 0 5px 0",
             "mobile_text_margin": "0 0 5px 0",
             "mobile_text_color": "#ffffff",
-            "mobile_text_size": 8,
-            "mobile_text_line_height": "10",
-            "mobile_text_weight": 600
+            "mobile_text_size": 11,
+            "mobile_text_line_height": "12",
+            "mobile_text_weight": 500
           }
         }
       },
@@ -93,7 +93,7 @@
         "mobile_box_bottom": "0",
         "mobile_button_text_size": "13",
         "mobile_button_text_line_height": "15",
-        "mobile_button_padding": "0 0 20px 0",
+        "mobile_button_padding": "0 0 3px 0",
         "mobile_button_margin": "0",
         "mobile_button_width": 75
       }
