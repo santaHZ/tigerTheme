@@ -1,11 +1,87 @@
 {
   "sections": {
+    "1645533275dd771094": {
+      "type": "section-main-index-header-banner",
+      "blocks": {
+        "1645533275fb614bc1-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Santa Monica",
+            "text_line_height": "25",
+            "text_padding": "0 0 20px 0",
+            "text_margin": "0 0 40px 0",
+            "text_color": "#ffffff",
+            "font_style": "italic",
+            "text_size": 20,
+            "text_weight": 600
+          }
+        },
+        "1645533275fb614bc1-1": {
+          "type": "bannerInfo",
+          "settings": {
+            "text": "Have Fun <br> Out On The Town",
+            "text_line_height": "55",
+            "text_padding": "0 0 20px 0",
+            "text_margin": "0 0 10px 0",
+            "text_color": "#ffffff",
+            "text_size": 53,
+            "text_weight": 800
+          }
+        },
+        "1645533275fb614bc1-2": {
+          "type": "text_with_dot",
+          "settings": {
+            "text1": "Fat Tire eBike",
+            "text2": "Pedal Assit",
+            "text3": "Twist Throttle",
+            "text4": "500W Brushless Motor",
+            "text_padding": "0 0 20px 0",
+            "text_margin": "0 0 30px 0",
+            "text_color": "#ffffff",
+            "text_size": 15,
+            "text_line_height": "17",
+            "text_weight": 600
+          }
+        }
+      },
+      "block_order": [
+        "1645533275fb614bc1-0",
+        "1645533275fb614bc1-1",
+        "1645533275fb614bc1-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/main1_dbb7f68c-34f1-4e24-a667-6144a987f6ca.jpg",
+        "box_width": "550",
+        "box_height": "260",
+        "box_top": "35",
+        "box_left": "",
+        "box_right": "6",
+        "box_bottom": "0",
+        "box_bgcolor": "rgba(0,0,0,0)",
+        "bgcolor_opacity": false,
+        "text_alignment": "flex-start",
+        "button_text": "LEARN MORE",
+        "button_text_size": "30",
+        "button_text_line_height": "45",
+        "button_padding": "0 0 20px 0",
+        "button_margin": "0",
+        "button_width": 75,
+        "mobile_box_width": "175",
+        "mobile_box_height": "120",
+        "mobile_box_top": "30",
+        "mobile_box_left": "",
+        "mobile_box_right": "6",
+        "mobile_box_bottom": "0"
+      }
+    },
     "main_index": {
       "type": "main-index-suit-sections-20220222",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
+    "1645533275dd771094",
     "main_index"
   ]
 }
