@@ -145,8 +145,8 @@
 }
 
 .shopify-payment-button__button--hidden {
-  /* display: none; */
-  display: block;
+  display: none;
+  /* display: block; */
 }
 
 /* Product form */
