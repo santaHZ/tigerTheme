@@ -1,7 +1,7 @@
 <div id="sectionMainIndex-{{ section.id }}" class="sectionMainIndex">
     <div>
         <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
-        <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" loading="lazy">
+        <img src="{{ section.settings.image | file_img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" loading="lazy">
     </div>
     <div class="advertingBlock" >
             {%- for block in section.blocks -%}
@@ -246,7 +246,41 @@
       "id": "mobile_box_bottom",
       "label": "Text box bottom(%)(Mobile)",
       "default": "0"
-    }
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_text_size",
+      "label": "Button text size(Mobile)",
+      "default": "13"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_text_line_height",
+      "label": "Button text height(Mobile)",
+      "default": "15"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_padding",
+      "label": "Button padding(Mobile)",
+      "default": "0 0 20px 0"
+    },
+    {
+      "type": "text",
+      "id": "mobile_button_margin",
+      "label": "Button margin(Mobile)",
+      "default": "0"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_width",
+      "label": "Button width(%)(Mobile)",
+      "default": 75,
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
+    },
 
   ],
   "blocks": [
@@ -702,7 +736,8 @@
     line-height: {{ section.settings.mobile_button_text_line_height }}px;
     text-decoration: none;
     width: {{ section.settings.mobile_button_width }}%;
-    /* margin: 0 auto; */
+    padding: {{ section.settings.mobile_button_padding }}px;
+    margin: {{ section.settings.mobile_button_margin }}px;
     text-align: center;
   }
 }
