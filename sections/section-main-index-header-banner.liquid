@@ -85,13 +85,14 @@
                   {%- endstyle -%}
                 {%- endcase -%}
             {%- endfor -%}
-          <a href="/collections/all-bikes" class="sectionMainIndexBtn"><span>{{ section.settings.button_text }}</span></a>
+          <a id="sectionMainIndexBtn-{{ section.id }}" href="/collections/all-bikes" class="sectionMainIndexBtn"><span>{{ section.settings.button_text }}</span></a>
     </div>
 </div>
 
 {% schema %}
 {
   "name": "Homepage Banner",
+  "tag": "section",
   "max_blocks": 30,
   "settings": [
     {
@@ -696,7 +697,7 @@
 
 }
 
-.sectionMainIndexBtn{
+#sectionMainIndexBtn-{{ section.id }}{
   display: block;
   background-color: #EF6B24;
   color: white;
@@ -725,7 +726,7 @@
     align-items: {{ section.settings.mobile_text_alignment }};
   }
   
-  .sectionMainIndexBtn{
+  #sectionMainIndexBtn-{{ section.id }}{
     display: block;
     background-color: #EF6B24;
     color: white;
@@ -771,19 +772,5 @@
     width: 90% !important;
 
   } */
-
-  /* .sectionMainIndexBtn{
-    display: block !important;
-    background-color: #EF6B24 !important;
-    color: white !important;
-    font-size: 8px !important;
-    font-weight: bolder !important;
-    line-height: 20px !important;
-    text-decoration: none !important;
-    width: 70% !important;
-    text-align: center !important;
-  } */
-
 }
-
 </style>
