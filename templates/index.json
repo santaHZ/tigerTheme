@@ -9,11 +9,18 @@
             "text": "Santa Monica",
             "text_line_height": "25",
             "text_padding": "0 0 20px 0",
-            "text_margin": "0 0 40px 0",
+            "text_margin": "0 0 30px 0",
             "text_color": "#ffffff",
             "font_style": "italic",
             "text_size": 20,
-            "text_weight": 600
+            "text_weight": 600,
+            "mobile_text_line_height": "12",
+            "mobile_text_padding": "0 0 5px 0",
+            "mobile_text_margin": "0 0 5px 0",
+            "mobile_text_color": "#ffffff",
+            "mobile_font_style": "italic",
+            "mobile_text_size": 10,
+            "mobile_text_weight": 600
           }
         },
         "1645533275fb614bc1-1": {
@@ -25,7 +32,13 @@
             "text_margin": "0 0 10px 0",
             "text_color": "#ffffff",
             "text_size": 53,
-            "text_weight": 800
+            "text_weight": 800,
+            "mobile_text_line_height": "15",
+            "mobile_text_padding": "0 0 0px 0",
+            "mobile_text_margin": "0 0 10px 0",
+            "mobile_text_color": "#ffffff",
+            "mobile_text_size": 14,
+            "mobile_text_weight": 800
           }
         },
         "1645533275fb614bc1-2": {
@@ -40,7 +53,13 @@
             "text_color": "#ffffff",
             "text_size": 15,
             "text_line_height": "17",
-            "text_weight": 600
+            "text_weight": 600,
+            "mobile_text_padding": "0 0 5px 0",
+            "mobile_text_margin": "0 0 5px 0",
+            "mobile_text_color": "#ffffff",
+            "mobile_text_size": 8,
+            "mobile_text_line_height": "10",
+            "mobile_text_weight": 600
           }
         }
       },
@@ -71,7 +90,12 @@
         "mobile_box_top": "30",
         "mobile_box_left": "",
         "mobile_box_right": "6",
-        "mobile_box_bottom": "0"
+        "mobile_box_bottom": "0",
+        "mobile_button_text_size": "13",
+        "mobile_button_text_line_height": "15",
+        "mobile_button_padding": "0 0 20px 0",
+        "mobile_button_margin": "0",
+        "mobile_button_width": 75
       }
     },
     "main_index": {
