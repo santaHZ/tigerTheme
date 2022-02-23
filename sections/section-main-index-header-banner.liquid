@@ -7,7 +7,32 @@
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when 'heading' -%}
-                  <div class="sectionMainIndex-heading" style="margin: {{ block.settings.text_margin }}; font-style: {{ block.settings.font_style }}; border: 0px solid blue; line-height: {{ block.settings.text_line_height }}px; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">{{ block.settings.text | newline_to_br}}</div>
+                  <div class="sectionMainIndex-heading">{{ block.settings.text | newline_to_br}}</div>
+                  {%- style -%}
+                    .sectionMainIndex-heading{
+                      margin: {{ block.settings.text_margin }}; 
+                      padding: {{ block.settings.text_padding }}; 
+                      font-style: {{ block.settings.font_style }}; 
+                      border: 0px solid blue; 
+                      line-height: {{ block.settings.text_line_height }}px; 
+                      color: {{ block.settings.text_color }}; 
+                      font-size: {{ block.settings.text_size }}px; 
+                      font-weight: {{ block.settings.text_weight }};
+                    }
+                    @media screen and (max-width: 749px){
+                      .sectionMainIndex-heading{
+                        margin: {{ block.settings.mobile_text_margin }}; 
+                        padding: {{ block.settings.mobile_text_padding }};
+                        font-style: {{ block.settings.mobile_font_style }}; 
+                        border: 0px solid blue; 
+                        line-height: {{ block.settings.mobile_text_line_height }}px; 
+                        color: {{ block.settings.mobile_text_color }}; 
+                        font-size: {{ block.settings.mobile_text_size }}px; 
+                        font-weight: {{ block.settings.mobile_text_weight }};
+                      }
+                    }
+                  {%- endstyle -%}
+                
                 {%- when 'bannerInfo' -%}
                   <div class="sectionMainIndex-bannerInfo" style="padding: {{ block.settings.text_padding }}; margin: {{ block.settings.text_margin }}; border: 0px solid blue; line-height: {{ block.settings.text_line_height }}px; color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size }}px; font-weight: {{ block.settings.text_weight }};">{{ block.settings.text | newline_to_br}}</div>
                 {%- when 'text_with_dot' -%}
@@ -248,6 +273,69 @@
         "min": 200,
         "max": 900,
         "step": 100
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "text",
+        "id": "mobile_text_line_height",
+        "label": "Mobile Text line height",
+        "default": "25"
+      },
+      {
+        "type": "text",
+        "id": "mobile_text_padding",
+        "label": "Mobile Text padding",
+        "default": "0 0 20px 0"
+      },
+      {
+        "type": "text",
+        "id": "mobile_text_margin",
+        "label": "Mobile Text margin",
+        "default": "0 0 40px 0"
+      },
+      {
+        "type": "color",
+        "id": "mobile_text_color",
+        "label": "Mobile text color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "mobile_font_style",
+        "label": "Mobile Font style",
+        "options": [
+          {
+            "value": "italic",
+            "label": "Italic"
+          },
+          {
+            "value": "normal",
+            "label": "Normal"
+          }
+        ],
+        "default": "italic"
+      },
+      {
+        "type": "range",
+        "id": "mobile_text_size",
+        "label": "Mobile text size",
+        "default": 20,
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "mobile_text_weight",
+        "label": "Mobile text weight",
+        "default": 600,
+        "min": 200,
+        "max": 900,
+        "step": 100
       }
     ]
   },
@@ -484,18 +572,17 @@
 @media screen and (max-width: 749px){
   .sectionMainIndex-heading{
     font-size: 10px !important;
-    line-height: 10px !important;
+    line-height: 12px !important;
     font-weight: bold !important;
     font-style: italic !important;
     padding: 0 !important;
     margin: 0 !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 12px !important;
   }
   .sectionMainIndex-bannerInfo{
-    font-size: 12px !important;
-    line-height: 12px !important;
+    font-size: 18px !important;
+    line-height: 20px !important;
     font-weight: bolder !important;
-    line-height: 16px !important;
     padding: 0 !important;
     margin: 0 !important;
     margin-bottom: 5px !important;
@@ -503,12 +590,13 @@
 
   .sectionMainIndex-text_with_dot{
     font-size: 10px !important;
-    line-height: 10px !important;
+    line-height: 12px !important;
     font-weight: 500 !important;
-    margin-bottom: 5px !important;
     padding: 0 !important;
     margin: 0 !important;
+    margin-bottom: 12px !important;
     width: 90% !important;
+
   }
 
   .sectionMainIndexBtn{
