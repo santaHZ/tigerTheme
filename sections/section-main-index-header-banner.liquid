@@ -1,7 +1,7 @@
 <div id="sectionMainIndex-{{ section.id }}" class="sectionMainIndex">
     <div>
         <!-- <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/main1_4628ffd7-bb2a-45f5-81c8-67c0943fd354.jpg?v=1641362325" class="bannerMainImage"> -->
-        <img src="{{ section.settings.image | file_img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" loading="lazy">
+        <img src="{{ section.settings.image | img_url: '1500x' }}" class="bannerMainImage" width="300" height="auto" loading="lazy">
     </div>
     <div class="advertingBlock" >
             {%- for block in section.blocks -%}
