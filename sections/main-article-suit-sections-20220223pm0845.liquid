@@ -1,64 +1,58 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
-{{ 'section-blog-post-20220113.css' | asset_url | stylesheet_tag }}
+{{ 'section-blog-post-suit-sections-20220223pm0845.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'social_share_btn.js' | asset_url }}" defer="defer"></script>
 
 <div class="pageMainLayout">
   <div class="mainBanner">
-    <img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20220113-banner-img.jpg?v=1642665255" width="80%" alt="">
+    <img src="{{ section.settings.image | img_url: '1500x' }}" width="300" height="auto" loading="lazy">
   </div>
   <div class="mainContent">
     <div class="leftContent">
-      <div class="leftContentTitle">Simon's Cycling Adventure</div>
+      <div class="leftContentTitle">{{ section.settings.post_title }}</div>
       <div class="leftContentSubtitle">
-        <div>JANUARY 13, 2022</div><div>Share:<a href="#" class="facebookBtn"><i class="fa fa-facebook"></i></a><a href="" class="twitterBtn"><i class="fa fa-twitter"></i></a><a href="" class="pinterestBtn"><i class="fa fa-pinterest"></i></a><a href="" class="envelopeBtn"><i class="fa fa-envelope-o"></i></a><a href="#" class="linkedinBtn"><i class="fa fa-linkedin"></i></a></div>
+        <div>{{ section.settings.pub_date }} Author: {{ section.settings.author }}</div><div>Share:<a href="#" class="facebookBtn"><i class="fa fa-facebook"></i></a><a href="" class="twitterBtn"><i class="fa fa-twitter"></i></a><a href="" class="pinterestBtn"><i class="fa fa-pinterest"></i></a><a href="" class="envelopeBtn"><i class="fa fa-envelope-o"></i></a><a href="#" class="linkedinBtn"><i class="fa fa-linkedin"></i></a></div>
       </div>
       <div class="leftContentBriefContent">
-        <p>Trekking and touring have never been thrilling and satisfying with an electric bike. You don't need to get sweaty to experience the breathtaking views of every trail you'll go.But there are times when you still need to take a deep breath and pedal. Although compared to regular bikes. adventure rides with an e-bike are more convenient.</p>
-        <p>However,the level of convenience when riding an e-bike depends on the kind of trail you want to journey through. Some routes might be steep or sandy; which can add challenge to the ride experience. So. in this article. Il let you tag along with my e-bike adventure at one of the worth-the-ride trails of Moab. Utah. at the Flat Iron Mesa.</p>
+        {{ section.settings.brief }}
       </div>
-      <div class="contentNavigator">
-        <ul>
-          <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20210916-icon1.png?v=1642494870" width="100%" alt=""></li>
-        </ul>
-        <ul>
-          <li></li>
-          <li class="girlComment"><p>Grab a mountain electric bike, pick a route, feel the breeze pass by my face, nothing bothers me as I embark on this adventure</p></li>
-          <li class="girlBlock">
-            <ul class="girlImg">
-              <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20220113-comment-img1.jpg?v=1642665433" width="100%" height="auto" alt=""></li>
-            </ul>
-            <ul>
-              <li>
-                <p style="padding: 0; margin: 0;">Simon</p>
-                <p style="padding: 0; margin: 0; line-height: 6px; color: red;"><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i></p>
-              </li>
-            </ul>
-          </li>
-          <li></li>
-        </ul>
-      </div>
-      <p style="padding:0 15px;">Flat ron Mesa trail is one of the stunning and beginner-friendly routes ltook at Moab. lts scenic landscapes are the reasons why many hikers and riders claim it as their favorite riding spot. Most of the incredible viewpoints of Moab are along this route. such as the Hatch Watch Canvon and other picturesque rock formations. Furthermore.this Moab trail route is rated moderate since it's a fun loop ride with a few steep and challenging areas. You can choose to take either the beginner or advanced course.</p>
-      <div class="subNavigator1">Trailhead Access</div>
-      <div class="subNavigator1_a">
-        <div>
-          <div>
-            <p><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20220113-trailhead-access-img.jpg?v=1642665675" width="100%" alt=""></p>
-            <p>Flat Iron Mesa trailhead is difficult to find since it is not signed from the highway,So, to make it easier for you to find the trailhead, you can follow my starting point. Istart riding from Center St, and Main St of Moab, going south to Highway 191, From there. Iturned right after lcrossed over the Mule Shoe Canyon and went to part at the parking area just around the corner.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="subNavigator1">The Adventure Ride</div>
-      <div class="subNavigator1_a">
-        <div>
-          <div>
-            <p><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20220113-adventure-ride-img.jpg?v=1642665757" width="100%" alt=""></p>
-            <p>Upon arriving at the entrance of the 4x4 road. it's where the adventure ride will begin. From there. I started to traverse the 15.5-mile trail by following the 4x4 road going back north out of the wash. Then. Icontinue to drive on the road west following the Flat Iron Mesa Rd. for 2.1 miles untilIreach a split. At this point,Iturned left to travel 0.85 miles while riding through the Flat Iron Mesa 4x4 Trail, then turned right to follow the Flat lron Mesa 4x4 Trail. You'll definitely spot this trail as you will see signposts with FI' on them.</p>
-            <p>Then I followed the trail loop going south and turning west again.which afterward starts heading north near the rim of the famous Moab rock formation--Hatch Watch. After riding 6.7 miles,Iintersected at the Flat Iron Mesa Rd to head Northwest and enjoy the overlooking view of Kane Creek Canyon along with the breathtaking Hatch Watch Canyon.I suggest you take a break here and fill your eyes with the stunning scenery of rock formations. forests. and amazing landscapes.</p>
-            <p>When returning to the trailhead,Iturned right at the southeast part of the trail and headed on the Flat lron Mesa Rd for 2.3 miles. Then,Iturned left to find my way back to the trailhead. It's not that hard to find the trail's starting point since it's a loop.<br>The Flat lron Mesa trail is ideal for everyone using an e-bike and 4x4 vehicles to get the most out of enioying Moa.Utah. So.what are you waiting for?Explore the scenic landscapes of the place and feast your eyes with its beauty and wonder.</p>
-          </div>
-        </div>
-      </div>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'customer_message' -%}
+            <div class="contentNavigator">
+              <ul>
+                <li><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20210916-icon1.png?v=1642494870" width="100%" alt=""></li>
+              </ul>
+              <ul>
+                <li></li>
+                <li class="girlComment">{{ block.settings.text_message }}</li>
+                <li class="girlBlock">
+                  <ul class="girlImg">
+                    <li><img src="{{ block.settings.image | img_url: '1500x' }}" width="300" height="auto" loading="lazy"></li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <p style="padding: 0; margin: 0;">{{ block.settings.text1 }}</p>
+                      <p style="padding: 0; margin: 0; line-height: 6px; color: red;"><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i><i class="fa fa-heart"></i></p>
+                    </li>
+                  </ul>
+                </li>
+                <li></li>
+              </ul>
+            </div>
+            {%- when 'single_text' -%}
+              <div style="padding:0 15px;">{{ block.settings.text1 }}</div>
+            {%- when 'img_text_v' -%}
+              <div class="subNavigator1">{{ block.settings.title }}</div>
+              <div class="subNavigator1_a">
+                <div>
+                  <div>
+                    <p><img src="{{ block.settings.image | img_url: '1500x' }}" width="100" height="auto" loading="lazy" alt=""></p>
+                    {{ block.settings.text1 }}
+                  </div>
+                </div>
+              </div>
+        {%- endcase -%}
+      {%- endfor -%}
 
       <div><hr></div>
     </div>
@@ -83,18 +77,25 @@
           </div>
         </form>
       </div>
-      <div>
-        <ul>
-          <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/mainPage_camel_women_img.png?v=1642402428" width="100%"></a></li>
-          <li>Camel Women 26"</li>
-          <li>$739.00</li>
-          <li>
-            <form method="post" action="/cart/add">
-              <input type="hidden" name="id" value="40227828531360" />
-              <input type="submit" value="BUY NOW" class="rightContentbtn" />
-            </form>
-          </li>
-        </ul>
+      <div class="productSuggested">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'suggest_product' -%}
+              <ul>
+                <li><a><img src="{{ block.settings.product.first_available_variant.image | img_url: '500x' }}" width="300" height="auto" loading="lazy"></a></li>
+                <li>{{ block.settings.product.title }}</li>
+                <li>{{ block.settings.product.first_available_variant.price | money }}</li>
+                <li>
+                  <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ block.settings.product.first_available_variant.id }}" />
+                    <input type="submit" value="BUY NOW" class="rightContentbtn" />
+                  </form>
+                </li>
+              </ul>
+
+          {%- endcase -%}
+        {%- endfor -%}
+
         <ul>
           <li><a><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/elegance.png?v=1641290141" width="100%"></a></li>
           <li>Elegance</li>
@@ -358,7 +359,7 @@
 
 {% schema %}
 {
-  "name": "Blog post spring template 2",
+  "name": "Spring template 2",
   "tag": "section",
   "max_blocks": 30,
   "settings": [
@@ -371,13 +372,13 @@
       "type": "text",
       "id": "post_title",
       "label": "Post title",
-      "default": "Why the Nakto Super Cruiser is so impressive?"
+      "default": "Simon's Cycling Adventure"
     },
     {
       "type": "text",
       "id": "pub_date",
       "label": "Publish date",
-      "default": "2022-2-23"
+      "default": "JANUARY 13, 2022"
     },
     {
       "type": "text",
@@ -389,52 +390,80 @@
       "type": "richtext",
       "id": "brief",
       "label": "Post brief introduction",
-      "default": "<p></p>"
+      "default": "<p>Trekking and touring have never been thrilling and satisfying with an electric bike. You don't need to get sweaty to experience the breathtaking views of every trail you'll go.But there are times when you still need to take a deep breath and pedal. Although compared to regular bikes. adventure rides with an e-bike are more convenient.</p>"
     }
   ],
   "blocks": [
     {
-      "type": "title",
-      "name": "t:sections.main-article.blocks.title.name",
-      "limit": 1,
+      "type": "customer_message",
+      "name": "Customer message",
+      "limit": 10,
       "settings": [
         {
-          "type": "checkbox",
-          "id": "blog_show_date",
-          "default": true,
-          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Featured image"
         },
         {
-          "type": "checkbox",
-          "id": "blog_show_author",
-          "default": false,
-          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+          "type": "textarea",
+          "id": "text_message",
+          "label": "Text message",
+          "default": "Grab a mountain electric bike, pick a route, feel the breeze pass by my face, nothing bothers me as I embark on this adventure"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text1",
+          "default": "Will"
         }
       ]
     },
     {
-      "type": "content",
-      "name": "t:sections.main-article.blocks.content.name",
-      "limit": 1
+      "type": "single_text",
+      "name": "Paragraph Text",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text1",
+          "label": "Text message",
+          "default": "<p>Flat ron Mesa trail is one of the stunning and beginner-friendly routes ltook at Moab. lts scenic landscapes are the reasons why many hikers and riders claim it as their favorite riding spot. Most of the incredible viewpoints of Moab are along this route. such as the Hatch Watch Canvon and other picturesque rock formations. Furthermore.this Moab trail route is rated moderate since it's a fun loop ride with a few steep and challenging areas. You can choose to take either the beginner or advanced course.</p>"
+        }
+      ]
     },
     {
-      "type": "share",
-      "name": "t:sections.main-article.blocks.share.name",
-      "limit": 2,
+      "type": "img_text_v",
+      "name": "Image text vertical",
+      "limit": 10,
       "settings": [
         {
           "type": "text",
-          "id": "share_label",
-          "label": "t:sections.main-article.blocks.share.settings.text.label",
-          "default": "Share"
+          "id": "title",
+          "label": "Title",
+          "default": "This is the title"
         },
         {
-          "type": "paragraph",
-          "content": "t:sections.main-article.blocks.share.settings.featured_image_info.content"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
         {
-          "type": "paragraph",
-          "content": "t:sections.main-article.blocks.share.settings.title_info.content"
+          "type": "richtext",
+          "id": "text1",
+          "label": "Text message",
+          "default": "<p>Flat Iron Mesa trailhead is difficult to find since it is not signed from the highway,So, to make it easier for you to find the trailhead, you can follow my starting point. Istart riding from Center St, and Main St of Moab, going south to Highway 191, From there. Iturned right after lcrossed over the Mule Shoe Canyon and went to part at the parking area just around the corner.</p>"
+        }
+      ]
+    },
+    {
+      "type": "suggest_product",
+      "name": "Suggest product",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
         }
       ]
     }
