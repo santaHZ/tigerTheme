@@ -82,7 +82,11 @@
           {%- case block.type -%}
             {%- when 'suggest_product' -%}
               <ul>
+                {%- if product.selected_or_first_available_variant.featured_media != null -%}
                 <li><a><img src="{{ block.settings.product.first_available_variant.image | img_url: '500x' }}" width="300" height="auto" loading="lazy"></a></li>
+                {%- else -%}
+                <li><a><img src="{{ block.settings.product.featured_image | img_url: '500x' }}" width="300" height="auto" loading="lazy"></a></li>
+                {%- endif -%}
                 <li>{{ block.settings.product.title }}</li>
                 <li>{{ block.settings.product.first_available_variant.price | money }}</li>
                 <li>
