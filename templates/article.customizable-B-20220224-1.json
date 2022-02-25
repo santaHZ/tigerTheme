@@ -44,6 +44,12 @@
           "settings": {
             "product": "foldingoxw"
           }
+        },
+        "4b2c2a18-6768-466b-b102-01df1a1216bc": {
+          "type": "suggest_article",
+          "settings": {
+            "article": "news\/nakto-electric-bike-help-center-user-guide"
+          }
         }
       },
       "block_order": [
@@ -52,7 +58,8 @@
         "81523fcd-fe42-42e8-be34-5455245f5b39",
         "c06f0623-19c0-4c81-98e6-68200bcf1494",
         "9c0154f0-55cf-432a-bca3-1f465f738ea6",
-        "8bb5d1d8-264c-40f1-9d4e-2cae438a11a3"
+        "8bb5d1d8-264c-40f1-9d4e-2cae438a11a3",
+        "4b2c2a18-6768-466b-b102-01df1a1216bc"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/article-20220113-banner-img_a675dd0e-5f73-4acd-a99c-1bf2aa6b286b.jpg",
