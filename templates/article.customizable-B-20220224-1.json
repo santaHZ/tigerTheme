@@ -68,6 +68,30 @@
           "settings": {
             "article": "news\/nakto-electric-bike-help-center-user-guide"
           }
+        },
+        "c66aee1d-ac64-45ef-9cdc-5102000804e9": {
+          "type": "suggest_article",
+          "settings": {
+            "article": "cycling-life\/simon-ebike-adventure"
+          }
+        },
+        "61f69073-8cfd-4950-b063-e694154fa950": {
+          "type": "suggest_article",
+          "settings": {
+            "article": "cycling-life\/top-electric-cycling-routes-in-the-us"
+          }
+        },
+        "c7418211-d2b6-4fc8-9ae3-400ab10f9961": {
+          "type": "suggest_article",
+          "settings": {
+            "article": "cycling-life\/how-to-choose-electric-bike-for-women-2022"
+          }
+        },
+        "49df9286-4c9c-40a0-a4d1-f94770efec85": {
+          "type": "suggest_article",
+          "settings": {
+            "article": "cycling-life\/all-you-need-to-know-about-class-2-bike"
+          }
         }
       },
       "block_order": [
@@ -80,7 +104,11 @@
         "7e2f267e-ed61-4f14-8c23-99e3e0c2c495",
         "bb02eb3a-67b6-40d7-ae82-6308a29f3d3a",
         "8bb5d1d8-264c-40f1-9d4e-2cae438a11a3",
-        "4b2c2a18-6768-466b-b102-01df1a1216bc"
+        "4b2c2a18-6768-466b-b102-01df1a1216bc",
+        "c66aee1d-ac64-45ef-9cdc-5102000804e9",
+        "61f69073-8cfd-4950-b063-e694154fa950",
+        "c7418211-d2b6-4fc8-9ae3-400ab10f9961",
+        "49df9286-4c9c-40a0-a4d1-f94770efec85"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/article-20220113-banner-img_a675dd0e-5f73-4acd-a99c-1bf2aa6b286b.jpg",
