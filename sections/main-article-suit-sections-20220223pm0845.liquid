@@ -107,14 +107,11 @@
               <ul>
                 <li><a href="{{ block.settings.article.url }}"><img src="{{ block.settings.article.image.src | img_url: '500x' }}" width="300" height="auto" loading="lazy"></a></li>
                 <li class="textLink"><a href="{{ block.settings.article.url }}">{{ block.settings.article.title }}</a></li>
-                <li>{{ block.settings.article.content | truncatewords: 10}}</li>
+                <li>{{ block.settings.article.content | truncatewords: 10 }}</li>
                 <li><hr style="height: 1px; padding: 0; margin: 0; color: black !important;"></li>
               </ul>
           {%- endcase -%}
         {%- endfor -%}
-
-
-
         <ul>
           <li><a href="/blogs/cycling-life/simon-ebike-adventure"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/article-20220113-banner-img.jpg?v=1642665255" width="100%"></a></li>
           <li class="textLink"><a href="/blogs/cycling-life/simon-ebike-adventure">Simon's Cycling Adventure</a></li>
