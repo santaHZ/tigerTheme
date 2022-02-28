@@ -109,20 +109,21 @@
         "1646017508f5b9a6ee-0": {
           "type": "single_Column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/classic_mainIndex_600x600_9701f720-b794-410b-b2ba-7a275a9875e3.jpg",
+            "image": "shopify:\/\/shop_images\/1_3322bd0e-234e-440e-ad25-dba2a32fded6.jpg",
             "block_padding": "",
             "text1": "Fat tire",
             "text2": "Fat tire fun.Safety.Versatility.",
             "text_top": "10",
             "text_right": "10",
-            "text_size": 16,
-            "text_weight": 300,
+            "text_size": 71,
+            "text_weight": 900,
             "line_height": ""
           }
         },
         "8563f57d-b24d-4cc3-bdd7-3956d539394e": {
           "type": "single_Column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/classic_mainIndex_600x600_e2c20505-b40a-42be-94e7-85162cf30a98.jpg",
             "block_padding": "",
             "text1": "",
             "text2": "",
@@ -136,6 +137,7 @@
         "aa71c410-4372-40e7-a95a-85e40fb5c3cc": {
           "type": "single_Column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/ranger_mainIndex_600x600_4f26b44f-b3c7-4a04-9c5d-e408db317d50.jpg",
             "block_padding": "",
             "text1": "",
             "text2": "",
