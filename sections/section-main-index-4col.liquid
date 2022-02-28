@@ -1,30 +1,118 @@
-<div class="popularEBikes">
+<div class="popularEBikesColHeader">
   <ul>
-      <a href="/products/santa-monica"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/index_santaMonica.png?v=1641451688" width="90%" height="auto"></a>
-      <li class="popularEBikesTitle">Santa Monica</li>
-      <li class="popularEBikesStar"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
-      <li class="popularEBikesPrice">$1099.00</li>
-      <li><a href="/products/santa-monica">Shop Now</a></li>
-  </ul>
-  <ul>
-      <a href="/products/classic"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/index_classic.png?v=1641451688" width="90%" height="auto"></a>
-      <li class="popularEBikesTitle">Classic</li>
-      <li class="popularEBikesStar"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></li>
-      <li class="popularEBikesPrice">$859.00</li>
-      <li><a href="/products/classic">Shop Now</a></li>
-  </ul>
-  <ul>
-      <a href="/products/super-cruiser"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/index_superCruiser.png?v=1641451689" width="90%" height="auto"></a>
-      <li class="popularEBikesTitle">Super Cruiser</li>
-      <li class="popularEBikesStar"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></li>
-      <li class="popularEBikesPrice">$1299.00</li>
-      <li><a href="/products/super-cruiser">Shop Now</a></li>
-  </ul>
-  <ul>
-      <a href="/products/foldingoxw"><img src="https://cdn.shopify.com/s/files/1/0556/1253/9040/files/index_foldingOX.png?v=1641451688" width="90%" height="auto"></a>
-      <li class="popularEBikesTitle">Folding OX</li>
-      <li class="popularEBikesStar"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-empty"></i></li>
-      <li class="popularEBikesPrice">$1099.00</li>
-      <li><a href="/products/foldingoxw">Shop Now</a></li>
+      <li>{{ section.settings.text1 }}</li>
+      <li><p>{{ section.settings.text2 }}<a href="{{ section.settings.clickHere_link }}">click here</a></p><a href="{{ section.settings.viewAll_link }}">View all</a></li>
   </ul>
 </div>
+<div class="popularEBikes">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'product_card' -%}
+        <ul>
+          {%- if product.selected_or_first_available_variant.featured_media != null -%}
+          <li><a href="{{ block.settings.product.url }}"><img src="{{ block.settings.product.first_available_variant.image | img_url: '500x' }}" width="300" height="auto" loading="lazy"></a></li>
+          {%- else -%}
+          <li><a href="{{ block.settings.product.url }}"><img src="{{ block.settings.product.featured_image | img_url: '500x' }}" width="300" height="auto" loading="lazy"></a></li>
+          {%- endif -%}
+          <li class="popularEBikesTitle">{{ block.settings.text1 }}</li>
+          <li class="popularEBikesStar"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+          <li class="popularEBikesPrice">{{ block.settings.product.first_available_variant.price | money }}</li>
+          <li><a href="{{ block.settings.product.url }}">Shop Now</a></li>
+        </ul>
+        {%- style -%}
+
+        {%- endstyle -%}
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+{% schema %}
+{
+  "name": "Homepage 4 Column",
+  "tag": "section",
+  "max_blocks": 10,
+  "settings":[
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "text1"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "text2"
+    },
+    {
+      "type": "url",
+      "id": "clickHere_link",
+      "label": "Click here link"
+    },
+    {
+      "type": "url",
+      "id": "viewAll_link",
+      "label": "View all link"
+    }
+  ],
+  "blocks":[
+    {
+      "type": "product_card",
+      "name": "Product Card",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Product Name"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name": "Homepage 4 Column",
+      "blocks":[
+        {
+          "type": "product_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+{%- style -%}
+.popularEBikes{
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: center;
+  margin: 0 50px;
+  margin-top: 20px;
+  /* border: 1px solid crimson; */
+}
+
+.popularEBikes > ul > li:first-child > a{
+  display: block;
+  <!-- border: 1px solid blue; -->
+  width: 100%;
+  align-items: center;
+}
+
+.popularEBikes > ul > li:first-child{
+  padding-top: 90px;
+  padding-bottom: 50px;
+}
+
+.popularEBikes > ul > li:first-child > a > img{
+  dispaly: block;
+  width: 90%;
+  height: auto;
+  <!-- border: 1px solid red; -->
+  margin: 0px auto;
+  transition: transform ease-in-out 0.3s;
+}
+{%- endstyle -%}

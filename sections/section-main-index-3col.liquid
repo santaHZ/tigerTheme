@@ -20,7 +20,7 @@
             text-decoration: none;
             color: black;
             transition: transform 0.3s ease-in-out;
-            border: 1px solid red;
+            <!-- border: 1px solid red; -->
           }
 
           #mainIndex3Col_1-{{ block.id }} > ul{
@@ -30,7 +30,7 @@
             top: {{ block.settings.text_top }}px;
             left: {{ block.settings.text_left }}px;
             list-style: none;
-            border: 1px solid #000;
+            <!-- border: 1px solid #000; -->
           }
 
           #mainIndex3Col_1-{{ block.id }} > img{
@@ -41,7 +41,7 @@
           #mainIndex3Col_1-{{ block.id }} > ul > li{
             padding: 0;
             margin: 0;
-            border: 1px solid #a4de2f;
+            <!-- border: 1px solid #a4de2f; -->
           }
 
           #mainIndex3Col_1-{{ block.id }} > ul > li:first-child{
@@ -60,7 +60,6 @@
     {%- endcase -%}
   {%- endfor -%}
 </div>
-
 {% schema %}
 {
   "name": "3Col product",
@@ -154,7 +153,7 @@
   display: flex;
   flex-direction: row;
   margin: {{ section.settings.col_margin }}px;
-  border: 1px solid #a4de2f;
+  <!-- border: 1px solid #a4de2f; -->
 }
 
 #mainIndex3Col-{{ section.id }} >a:first-child{
@@ -178,6 +177,20 @@
         margin-top: 10px;
       }
 
+      #mainIndex3Col-{{ section.id }} > a{
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 10px
+      }
+
+      #mainIndex3Col-{{ section.id }} >a:first-child{
+        margin-left: 0px;
+      }
+
+      #mainIndex3Col-{{ section.id }} >a:last-child{
+        margin-bottom: 0px;
+      }
+
     }
 
 @media screen and (max-width: 749px){
@@ -190,5 +203,20 @@
     margin: 0 5px;
     margin-top: 10px;
   }
+
+  #mainIndex3Col-{{ section.id }} > a{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px
+  }
+
+  #mainIndex3Col-{{ section.id }} >a:first-child{
+    margin-left: 0px;
+  }
+
+  #mainIndex3Col-{{ section.id }} >a:last-child{
+    margin-bottom: 0px;
+  }
+
 }
 {%- endstyle -%}

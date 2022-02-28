@@ -150,31 +150,6 @@
     transform: scale(1.0);
 }
 
-/* .mainIndex3Col_1.zoomImgIn{
-    transform: scale(1.05);
-}
-
-.mainIndex3Col_1.zoomImgOut{
-    transform: scale(1.0);
-}
-
-.mainIndex3Col_2.zoomImgIn{
-    transform: scale(1.05);
-}
-
-.mainIndex3Col_2.zoomImgOut{
-    transform: scale(1.0);
-}
-
-.mainIndex3Col_3.zoomImgIn{
-    transform: scale(1.05);
-}
-
-.mainIndex3Col_3.zoomImgOut{
-    transform: scale(1.0);
-} */
-
-
 
 /* popular E-Bikes row */
 .popularEBikesColHeader{
@@ -309,13 +284,14 @@
 }
 
 .popularEBikes > ul > li:last-child a{
+    display: block;
     padding: 0;
     margin: 0;
     text-decoration: none;
     color: #222;
 }
 
-.popularEBikes > ul > a{
+.popularEBikes > ul > li > a{
     padding: 0;
     margin: 0;
     /* border: 1px solid coral; */
@@ -323,13 +299,13 @@
     text-align: center;
 }
 
-.popularEBikes > ul > a > img{
-    display: block;
+.popularEBikes > ul > li > a > img{
+    /* display: block; */
     /* border: 1px solid cornsilk; */
     /* margin-top: 20px; */
-    margin: 0 auto;
-    margin-top: 20px;
-    transition: transform ease-in-out 0.3s;
+    /* margin: 0 auto; */
+    /* margin-top: 20px; */
+    /* transition: transform ease-in-out 0.3s; */
 }
 
 
@@ -1568,7 +1544,6 @@
         padding: 0;
         margin: 0;
         /* border: 1px solid cornflowerblue; */
-        ali
     }
     
     .textProductName{

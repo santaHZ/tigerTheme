@@ -17,7 +17,7 @@ imageImg.forEach((imageImgchild,index)=> {
     })
 })
 
-var imagePopularEBikes = document.querySelectorAll('.popularEBikes > ul > a > img');
+var imagePopularEBikes = document.querySelectorAll('.popularEBikes > ul > li > a > img');
 
 imagePopularEBikes.forEach((imageImgchild,index)=> {
     imagePopularEBikes[index].addEventListener('mouseover', function(){
