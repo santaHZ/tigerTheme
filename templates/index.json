@@ -110,13 +110,13 @@
           "type": "single_Column",
           "settings": {
             "image": "shopify:\/\/shop_images\/1_3322bd0e-234e-440e-ad25-dba2a32fded6.jpg",
-            "block_padding": "",
+            "block_padding": "0",
             "text1": "Fat tire",
             "text2": "Fat tire fun.Safety.Versatility.",
             "text_top": "10",
-            "text_right": "10",
-            "text_size": 71,
-            "text_weight": 900,
+            "text_left": "10",
+            "text_size": 22,
+            "text_weight": 800,
             "line_height": ""
           }
         },
@@ -125,12 +125,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/classic_mainIndex_600x600_e2c20505-b40a-42be-94e7-85162cf30a98.jpg",
             "block_padding": "",
-            "text1": "",
-            "text2": "",
-            "text_top": "",
-            "text_right": "",
-            "text_size": 16,
-            "text_weight": 300,
+            "text1": "City",
+            "text2": "Urban exploration.Distance.Comfort.",
+            "text_top": "10",
+            "text_left": "10",
+            "text_size": 22,
+            "text_weight": 800,
             "line_height": ""
           }
         },
@@ -139,12 +139,12 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/ranger_mainIndex_600x600_4f26b44f-b3c7-4a04-9c5d-e408db317d50.jpg",
             "block_padding": "",
-            "text1": "",
-            "text2": "",
-            "text_top": "",
-            "text_right": "",
-            "text_size": 16,
-            "text_weight": 300,
+            "text1": "Mountain",
+            "text2": "Everyday practically.Agility.Freedom.",
+            "text_top": "10",
+            "text_left": "10",
+            "text_size": 21,
+            "text_weight": 800,
             "line_height": ""
           }
         }
