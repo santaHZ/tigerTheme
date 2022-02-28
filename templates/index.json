@@ -102,10 +102,64 @@
       "type": "main-index-suit-sections-20220222",
       "settings": {
       }
+    },
+    "1646017509b992a9b5": {
+      "type": "section-main-index-3col",
+      "blocks": {
+        "1646017508f5b9a6ee-0": {
+          "type": "single_Column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/classic_mainIndex_600x600_9701f720-b794-410b-b2ba-7a275a9875e3.jpg",
+            "block_padding": "",
+            "text1": "Fat tire",
+            "text2": "Fat tire fun.Safety.Versatility.",
+            "text_top": "10",
+            "text_right": "10",
+            "text_size": 16,
+            "text_weight": 300,
+            "line_height": ""
+          }
+        },
+        "8563f57d-b24d-4cc3-bdd7-3956d539394e": {
+          "type": "single_Column",
+          "settings": {
+            "block_padding": "",
+            "text1": "",
+            "text2": "",
+            "text_top": "",
+            "text_right": "",
+            "text_size": 16,
+            "text_weight": 300,
+            "line_height": ""
+          }
+        },
+        "aa71c410-4372-40e7-a95a-85e40fb5c3cc": {
+          "type": "single_Column",
+          "settings": {
+            "block_padding": "",
+            "text1": "",
+            "text2": "",
+            "text_top": "",
+            "text_right": "",
+            "text_size": 16,
+            "text_weight": 300,
+            "line_height": ""
+          }
+        }
+      },
+      "block_order": [
+        "1646017508f5b9a6ee-0",
+        "8563f57d-b24d-4cc3-bdd7-3956d539394e",
+        "aa71c410-4372-40e7-a95a-85e40fb5c3cc"
+      ],
+      "settings": {
+        "col_margin": "20"
+      }
     }
   },
   "order": [
     "1645533275dd771094",
-    "main_index"
+    "main_index",
+    "1646017509b992a9b5"
   ]
 }
