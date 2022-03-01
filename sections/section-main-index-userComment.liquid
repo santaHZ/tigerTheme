@@ -1,0 +1,67 @@
+<div class="userComment">
+  <div id="userReview">
+      <div id="userReview_wrapper">
+          <div class="uni_imgSlider">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'user_review' -%}
+                  <div class="item">
+                      <ul>
+                          <li><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
+                          <li>
+                              {{ block.settings.text1 }}
+                          </li>
+                          <li>{{ block.settings.text2 }}</li>
+                          <li>{{ block.settings.text3 }}</li>
+                      </ul>
+                  </div>
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>	
+      </div>
+      <div id="userReview_ctlBtn1">
+        <div class="leftBtns"></div>
+      </div>
+  </div>
+  <div class="userReviwImg">
+      <img src="{{ sction.settings.image | img_url: '300x' }}" width="100" height="auto" loading="lazy" alt="">
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Homepage userComment",
+  "tag": "section",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "userReviewImg"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "user_review",
+      "name": "User Review",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text1",
+          "label": "Text1"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text2"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Text3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
