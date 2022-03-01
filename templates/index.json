@@ -216,6 +216,52 @@
         "text5": "About us",
         "button_link": "shopify:\/\/pages\/about-us"
       }
+    },
+    "1646134592063370e4": {
+      "type": "section-main-index-userComment",
+      "blocks": {
+        "164613459223c9948e-0": {
+          "type": "user_review",
+          "settings": {
+            "text1": "<p>\"The Nakto Camel is a value priced cruiser ebike with fenders, suspension fork, rear rack, front basket, and battery integrated headlight.<\/p><p>Driven by a 250 watt rear hub-motor with both throttle and cadence based pedal assist, features a 36v 10 a battery and easy to controls. 6 speed Shimano derailleur, rim brake in the front and drum brake in the rear.\"<\/p>",
+            "text2": "ElectricBikeReview",
+            "text3": "October 1st, 2019"
+          }
+        },
+        "d28ab09f-0950-4c7d-a337-ca45b6c5bef1": {
+          "type": "user_review",
+          "settings": {
+            "text1": "<p>\"My friend's daughter takes out the Nakto Classic E-Bike for a review and ride on a beautiful bike trail with a 250 watt more 1 level pedal assist with throttle, the Classic EBike is a great electrical bike for beginners.\"<\/p>",
+            "text2": "GreenMotion Ebikes",
+            "text3": "August 23, 2020"
+          }
+        },
+        "13c7cb46-3f7a-43ae-89d5-3e9226aa2166": {
+          "type": "user_review",
+          "settings": {
+            "text1": "<p>\"The coolest fat tire cruiser electric bike on the market, the Nakto Cruiser 26'' fat tire is powerful and the perfect long range all terrain journey bike. With an excellent max mileage of 28 miles, powered by a rear hub 36V 300W motor and a lithium powered electric bike battery...make your life more cost efficient.\"<\/p>",
+            "text2": "Larry Lynch",
+            "text3": "May 28, 2021"
+          }
+        },
+        "53e7df95-5780-47cb-b646-2077beffb588": {
+          "type": "user_review",
+          "settings": {
+            "text1": "<p>\"The Nakto Classic is a new step through cruiser ebike from a company looking to take over the entry level market, with bikes such as this their focus seems to be extremely competitive price points matched with a list of features and customer support and a US headquarters for peace of mind with fenders, rear rack, front basket, and battery integrated headlight\"<\/p>",
+            "text2": "ElectricBike Review",
+            "text3": "May 28, 2021"
+          }
+        }
+      },
+      "block_order": [
+        "164613459223c9948e-0",
+        "d28ab09f-0950-4c7d-a337-ca45b6c5bef1",
+        "13c7cb46-3f7a-43ae-89d5-3e9226aa2166",
+        "53e7df95-5780-47cb-b646-2077beffb588"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/userCommentImg_a355f20c-34bc-4a04-96a2-f150ab830b30.jpg"
+      }
     }
   },
   "order": [
@@ -223,6 +269,7 @@
     "1646017509b992a9b5",
     "1646099392c3f5ff2c",
     "main_index",
-    "1646112805757ad9e1"
+    "1646112805757ad9e1",
+    "1646134592063370e4"
   ]
 }
