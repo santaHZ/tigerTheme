@@ -153,6 +153,51 @@
         "col_margin": "20"
       }
     },
+    "1646099392c3f5ff2c": {
+      "type": "section-main-index-4col",
+      "blocks": {
+        "164609939290653b26-0": {
+          "type": "product_card",
+          "settings": {
+            "product": "santa-monica",
+            "text1": "Santa Monica"
+          }
+        },
+        "bc49ed17-eafa-4d05-a016-720f1b1266e3": {
+          "type": "product_card",
+          "settings": {
+            "product": "classic",
+            "text1": "Classic"
+          }
+        },
+        "ab3a2b07-649d-4d5c-a7d8-c57b0811c8c6": {
+          "type": "product_card",
+          "settings": {
+            "product": "super-cruiser-ebike",
+            "text1": "Super Cruiser"
+          }
+        },
+        "d8f9216b-082c-4420-8b81-ae7b87d34a44": {
+          "type": "product_card",
+          "settings": {
+            "product": "foldingoxw",
+            "text1": "Folding OX"
+          }
+        }
+      },
+      "block_order": [
+        "164609939290653b26-0",
+        "bc49ed17-eafa-4d05-a016-720f1b1266e3",
+        "ab3a2b07-649d-4d5c-a7d8-c57b0811c8c6",
+        "d8f9216b-082c-4420-8b81-ae7b87d34a44"
+      ],
+      "settings": {
+        "text1": "",
+        "text2": "",
+        "clickHere_link": "",
+        "viewAll_link": ""
+      }
+    },
     "16460978500abee008": {
       "type": "section-main-index-aboutUs",
       "settings": {
@@ -176,6 +221,7 @@
   "order": [
     "1645533275dd771094",
     "1646017509b992a9b5",
+    "1646099392c3f5ff2c",
     "16460978500abee008",
     "main_index"
   ]
