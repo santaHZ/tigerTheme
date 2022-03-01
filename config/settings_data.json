@@ -58,11 +58,74 @@
               "heading": "Heading",
               "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
             }
+          },
+          "ffca00d9-953d-4e9f-95e9-8ee6990608e3": {
+            "type": "customized_menu_block",
+            "settings": {
+              "text1": "Buy with Us",
+              "text2": "Fat Tire E-Bikes",
+              "item1_url": "shopify:\/\/collections\/fat-tire-ebike",
+              "text3": "City E-Bikes",
+              "item2_url": "shopify:\/\/collections\/city-ebike",
+              "text4": "Mountain E-Bikes",
+              "item3_url": "shopify:\/\/collections\/mountain-ebike",
+              "text5": "",
+              "item4_url": "",
+              "text6": "",
+              "item5_url": ""
+            }
+          },
+          "b7dc701a-4822-4de2-8b8f-711f23d3f7d6": {
+            "type": "customized_menu_block",
+            "settings": {
+              "text1": "Support",
+              "text2": "About Nakto",
+              "item1_url": "shopify:\/\/pages\/about-us",
+              "text3": "Shipping Policy",
+              "item2_url": "shopify:\/\/pages\/shipping-policy",
+              "text4": "Return & Refund Policy",
+              "item3_url": "shopify:\/\/pages\/return-and-refund-policy",
+              "text5": "Blogs",
+              "item4_url": "shopify:\/\/pages\/nakto-blog",
+              "text6": "",
+              "item5_url": ""
+            }
+          },
+          "d7de73de-4e01-439a-9d66-ffe0a6576db4": {
+            "type": "customized_menu_block",
+            "settings": {
+              "text1": "Legal",
+              "text2": "Warranty Information",
+              "item1_url": "shopify:\/\/pages\/warranty",
+              "text3": "Privacy Policy",
+              "item2_url": "shopify:\/\/pages\/privacy-policy",
+              "text4": "Terms and Conditions",
+              "item3_url": "shopify:\/\/pages\/terms-and-conditions",
+              "text5": "Intellectual Property Rights",
+              "item4_url": "shopify:\/\/pages\/intellectual-property-rights",
+              "text6": "",
+              "item5_url": ""
+            }
+          },
+          "232679a5-5652-488f-9ea0-46469427dc3f": {
+            "type": "contact_info",
+            "settings": {
+              "text1": "<p>Contact Us<\/p>",
+              "text2": "<p><strong>EMAIL:<\/strong> <a href=\"mailto:support@nakto.com\">support@nakto.com<\/a><\/p><p><strong>CUSTOMER SERVICE:<\/strong><\/p><p>703-270-0055 (6 Days from 9:00 am to 6:00<br\/>pm)<\/p><p><strong>ADDRESS:<\/strong><\/p><p>Warehouse:<br\/>1683 Sierra Madre cir Placentia, CA 92870, USA<\/p>",
+              "text3": "",
+              "text4": "",
+              "text5": "",
+              "text6": ""
+            }
           }
         },
         "block_order": [
           "footer-0",
-          "footer-1"
+          "footer-1",
+          "ffca00d9-953d-4e9f-95e9-8ee6990608e3",
+          "b7dc701a-4822-4de2-8b8f-711f23d3f7d6",
+          "d7de73de-4e01-439a-9d66-ffe0a6576db4",
+          "232679a5-5652-488f-9ea0-46469427dc3f"
         ],
         "settings": {
           "color_scheme": "inverse",

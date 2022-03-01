@@ -378,6 +378,51 @@
         "text4": "SHOP NOW",
         "button_url": "shopify:\/\/collections\/all-bikes"
       }
+    },
+    "16461352037c9ff8da": {
+      "type": "section-main-index-youAreSupported",
+      "settings": {
+        "text1": "You're Supported",
+        "text2": "Which type of electric bikes should you buy? How to access your shipping information? We like to spend our time delivering supportive services and the best electric bikes to satisfy our customers.",
+        "text3": "GET SUPPORT",
+        "button_url": "shopify:\/\/pages\/contact-us"
+      }
+    },
+    "16461352575cffc8a9": {
+      "type": "section-main-index-freeDelivery",
+      "blocks": {
+        "1646135257679de19a-0": {
+          "type": "freeDeliveryCard",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon1_1d5dcf58-a6d0-4234-ae0d-ff31c4cadcae.png",
+            "text1": "Fast & Free U.S. Delivery",
+            "text2": "We offer free standard shipping over $50 in the continental U.S."
+          }
+        },
+        "5586390c-6d95-49d8-a9d8-d81453c76379": {
+          "type": "freeDeliveryCard",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon2_4f8e0add-74b8-4829-bb30-e9bd482f677c.png",
+            "text1": "Price Guarantee",
+            "text2": "You would enjoy the lowest price guarantee! We provide the best price for our e-bikes."
+          }
+        },
+        "d8d40db0-8bf7-45c8-a89d-12c1daef06dc": {
+          "type": "freeDeliveryCard",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icon3_fd728a05-af0c-4100-9e84-6e3e90f0fec7.png",
+            "text1": "One Year Limited Warranty",
+            "text2": "We provide up to one year limited warranty on our electric bikes."
+          }
+        }
+      },
+      "block_order": [
+        "1646135257679de19a-0",
+        "5586390c-6d95-49d8-a9d8-d81453c76379",
+        "d8d40db0-8bf7-45c8-a89d-12c1daef06dc"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -391,6 +436,8 @@
     "16461348122c598dee",
     "1646134886e05c426d",
     "1646134961533ee312",
-    "164613505892afe885"
+    "164613505892afe885",
+    "16461352037c9ff8da",
+    "16461352575cffc8a9"
   ]
 }
