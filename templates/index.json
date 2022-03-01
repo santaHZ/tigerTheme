@@ -322,6 +322,62 @@
       ],
       "settings": {
       }
+    },
+    "1646134886e05c426d": {
+      "type": "section-main-index-NaktoKlarna",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/naktoKlarnaBgImg_5b543ff4-80e4-449e-a8b9-caa073757045.jpg",
+        "image2": "shopify:\/\/shop_images\/naktoKlarnaBgImg-mobile_6dde8e79-a3f1-45ac-af6b-5993fb612867.jpg",
+        "image3": "shopify:\/\/shop_images\/nakto_klarna_58adf1c5-0806-453b-8d99-729a9a3731cf.png",
+        "text1": "Ride Now, Pay Later",
+        "text2": "<p>We're partnered with Klarna now to provide smooth and effortless<\/p><p>shopping experience for our customers. Enjoy the flexibility to shop the<\/p><p>electric bike you want and pay over time. <strong>Pay in 4 with interest-free.<\/strong><\/p>",
+        "text3": "SHOP NOW",
+        "button_url": "shopify:\/\/collections\/all-bikes"
+      }
+    },
+    "1646134961533ee312": {
+      "type": "section-main-index-ourBlogs",
+      "blocks": {
+        "164613496153b0a2e6-0": {
+          "type": "article_card",
+          "settings": {
+            "article": "cycling-life\/how-to-choose-electric-bike-for-women-2022"
+          }
+        },
+        "3acbbcd9-0090-4466-b150-bd1fa409f348": {
+          "type": "article_card",
+          "settings": {
+            "article": "cycling-life\/why-is-nakto-santamonica-so-impressive"
+          }
+        },
+        "95512349-795d-4f07-8e66-30fdfbf2f069": {
+          "type": "article_card",
+          "settings": {
+            "article": "cycling-life\/all-you-need-to-know-about-class-2-bike"
+          }
+        }
+      },
+      "block_order": [
+        "164613496153b0a2e6-0",
+        "3acbbcd9-0090-4466-b150-bd1fa409f348",
+        "95512349-795d-4f07-8e66-30fdfbf2f069"
+      ],
+      "settings": {
+        "text1": "Our Latest Blog",
+        "text2": "View All",
+        "button_link": "shopify:\/\/collections"
+      }
+    },
+    "164613505892afe885": {
+      "type": "section-main-index-happyRide",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Instagram_Nakto_2db5bc6b-daab-4be9-ac79-bf369db5d728.jpg",
+        "text1": "#Havingfunriding",
+        "text2": "with Nakto",
+        "text3": "Tag us on Instagram with #Havingfunriding to be featured in our gallery",
+        "text4": "SHOP NOW",
+        "button_url": "shopify:\/\/collections\/all-bikes"
+      }
     }
   },
   "order": [
@@ -332,6 +388,9 @@
     "1646112805757ad9e1",
     "1646134592063370e4",
     "1646134798b2485c33",
-    "16461348122c598dee"
+    "16461348122c598dee",
+    "1646134886e05c426d",
+    "1646134961533ee312",
+    "164613505892afe885"
   ]
 }
