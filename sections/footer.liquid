@@ -182,16 +182,17 @@
               <li>{{ block.settings.text5 }}</li>
               <li>{{ block.settings.text6 }}</li>
             </ul>
+            {%- style -%}
+            .footerCustomize > ul > li > p{
+              padding: 0;
+              margin: 0;
+              line-height: {{ block.settings.lien_height }}px;
+            }
+            {%- endstyle -%}
           {%- endcase -%}
         {%- endfor -%}
       </div>
-      {% style %}
-      .footerCustomize > ul > li > p{
-        padding: 0;
-        margin: 0;
-        line-height: 18px;
-      }
-      {% endstyle %}
+
     </div>
   {%- endif -%}
 
@@ -457,6 +458,14 @@
           "type": "richtext",
           "id": "text6",
           "label": "Menu Item5"
+        },
+        {
+          "type": "range",
+          "id": "line_height",
+          "label": "Line height",
+          "min": 10,
+          "max": 50,
+          "default": 20
         }
       ]
     },
