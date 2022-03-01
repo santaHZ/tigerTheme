@@ -1,0 +1,75 @@
+<div class="mainIndexAboutUs">
+  <img src="{{ section.settings.image | img_url: '1500x' }}" width="1500" height="auto" loading="lazy" class="mainIndexAboutUsBgImg" >
+  <img src="{{ section.settings.image_half | img_url: '800x' }}"  width="800" height="auto" loading="lazy" >
+  <div class="mainIndexAboutUsTop">
+      <ul>
+          <img src="{{ section.settings.small_image | img_url: '200x' }}" width="200" height="auto" loading="lazy" alt="" >
+          <li>{{ section.settings.text1 }}</li>
+          <li>
+              <p>{{ section.settings.text2 }}</p>
+              <p>{{ section.settings.text3 }}</p>
+              <p>{{ section.settings.text4 }}</p>
+          </li>
+          <li><a href="{{ section.settings.button_link }}" class="mainIndexAboutUsBtn"><span>{{ section.settings.text5 }}</span></a></li>
+      </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Homepage Aboutus",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_half",
+      "label": "Background mobile image"
+    },
+    {
+      "type": "image_picker",
+      "id": "small_image",
+      "label": "Small image"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Text1"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Text2"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Text3"
+    },
+    {
+      "type": "text",
+      "id": "text4",
+      "label": "Text4"
+    },
+    {
+      "type": "text",
+      "id": "text5",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Aboutus",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
