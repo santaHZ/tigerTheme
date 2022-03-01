@@ -262,6 +262,66 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/userCommentImg_a355f20c-34bc-4a04-96a2-f150ab830b30.jpg"
       }
+    },
+    "1646134798b2485c33": {
+      "type": "section-main-index-videoSlide1",
+      "blocks": {
+        "16461347980455fd76-0": {
+          "type": "video_slide",
+          "settings": {
+            "text": "0FbPPYHGVSw"
+          }
+        },
+        "c3806aae-21a9-453e-aea7-f857147f187f": {
+          "type": "video_slide",
+          "settings": {
+            "text": "ZFUAT6Mymp4"
+          }
+        },
+        "119825e2-d7fd-4b0c-88cf-222a1416d926": {
+          "type": "video_slide",
+          "settings": {
+            "text": "D9A9_6K0a_I"
+          }
+        }
+      },
+      "block_order": [
+        "16461347980455fd76-0",
+        "c3806aae-21a9-453e-aea7-f857147f187f",
+        "119825e2-d7fd-4b0c-88cf-222a1416d926"
+      ],
+      "settings": {
+      }
+    },
+    "16461348122c598dee": {
+      "type": "section-main-index-videoSlide2",
+      "blocks": {
+        "1646134812e8be0024-0": {
+          "type": "video_slide",
+          "settings": {
+            "text": "ZRZD0oNOkD4"
+          }
+        },
+        "bb582906-1e4c-4c56-9d14-a2b72692e8be": {
+          "type": "video_slide",
+          "settings": {
+            "text": "CDe9zmBMMPU"
+          }
+        },
+        "c6089b85-a58b-45f0-a351-795cbcf39e19": {
+          "type": "video_slide",
+          "settings": {
+            "text": "HaPv7mLm420"
+          }
+        }
+      },
+      "block_order": [
+        "1646134812e8be0024-0",
+        "bb582906-1e4c-4c56-9d14-a2b72692e8be",
+        "c6089b85-a58b-45f0-a351-795cbcf39e19"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -270,6 +330,8 @@
     "1646099392c3f5ff2c",
     "main_index",
     "1646112805757ad9e1",
-    "1646134592063370e4"
+    "1646134592063370e4",
+    "1646134798b2485c33",
+    "16461348122c598dee"
   ]
 }
