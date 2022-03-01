@@ -162,36 +162,34 @@
       </div>
 
       <div class="footerCustomize">
-        <ul>
-          <li class="footerBigFont">Buy with Us</li>
-          <li><a href="/collections/fat-tire-ebike">Fat Tire E-Bikes</a></li>
-          <li><a href="/collections/city-ebike">City E-Bikes</a></li>
-          <li><a href="/collections/mountain-ebike">Mountain E-Bikes</a></li>
-        </ul>
-        <ul>
-          <li class="footerBigFont">Support</li>
-          <li><a href="/pages/about-us">About Nakto</a></li>
-          <li><a href="/pages/contact-us">Contact Us</a></li>
-          <li><a href="/pages/shipping-policy">Shipping Policy</a></li>
-          <li><a href="/pages/return-and-refund-policy">Return & Refund Policy</a></li>
-          <li><a href="/pages/nakto-blog">Blogs</a></li>
-      </ul>
-        <ul>
-          <li class="footerBigFont">Legal</li>
-          <li><a href="/pages/warranty">Warranty Information</a></li>
-          <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/pages/terms-and-conditions">Terms and Conditions</a></li>
-          <li><a href="/pages/intellectual-property-rights">Intellectual Property Rights</a></li>
-        </ul>
-        <ul>
-          <li class="footerBigFont">Contact Us</li>
-          <li><strong>EMAIL:</strong> support@nakto.com</li>
-          <li><strong>CUSTOMER SERVICE:</strong></li>
-          <li>703-270-0055 (6 Days from 9:00 am to 6:00 pm)</li>
-          <li><strong>ADDRESS:</strong></li>
-          <li>Warehouse: 1683 Sierra Madre cir Placentia, CA 92870, USA</li>
-        </ul>
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'customized_menu_block' -%}
+            <ul>
+              <li class="footerBigFont">{{ block.settings.text1 }}</li>
+              <li><a href="{{ block.settings.item1_url }}">{{ block.settings.text2 }}</a></li>
+              <li><a href="{{ block.settings.item2_url }}">{{ block.settings.text3 }}</a></li>
+              <li><a href="{{ block.settings.item3_url }}">{{ block.settings.text4 }}</a></li>
+              <li><a href="{{ block.settings.item4_url }}">{{ block.settings.text5 }}</a></li>
+              <li><a href="{{ block.settings.item5_url }}">{{ block.settings.text6 }}</a></li>
+            </ul>
+            {%- when 'contact_info' -%}
+            <ul>
+              <li class="footerBigFont">{{ block.settings.text1 }}</li>
+              <li>{{ block.settings.text2 }}</li>
+              <li>{{ block.settings.text3 }}</li>
+              <li>{{ block.settings.text4 }}</li>
+              <li>{{ block.settings.text5 }}</li>
+              <li>{{ block.settings.text6 }}</li>
+            </ul>
+          {%- endcase -%}
+        {%- endfor -%}
       </div>
+      {% style %}
+      .footerCustomize > ul > li > p{
+        line-height: 16px;
+      }
+      {% endstyle %}
     </div>
   {%- endif -%}
 
@@ -361,6 +359,105 @@
 {
   "name": "t:sections.footer.name",
   "blocks": [
+    {
+      "type": "customized_menu_block",
+      "name": "Customized Menu",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Top Menu"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Menu Item1"
+        },
+        {
+          "type": "url",
+          "id": "item1_url",
+          "label": "Item1 Url"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Menu Item2"
+        },
+        {
+          "type": "url",
+          "id": "item2_url",
+          "label": "Item2 Url"
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "label": "Menu Item3"
+        },
+        {
+          "type": "url",
+          "id": "item3_url",
+          "label": "Item3 Url"
+        },
+        {
+          "type": "text",
+          "id": "text5",
+          "label": "Menu Item4"
+        },
+        {
+          "type": "url",
+          "id": "item4_url",
+          "label": "Item4 Url"
+        },
+        {
+          "type": "text",
+          "id": "text6",
+          "label": "Menu Item5"
+        },
+        {
+          "type": "url",
+          "id": "item5_url",
+          "label": "Item5 Url"
+        }
+      ]
+    },
+    {
+      "type": "contact_info",
+      "name": "Contact Info",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text1",
+          "label": "Top Menu"
+        },
+        {
+          "type": "richtext",
+          "id": "text2",
+          "label": "Menu Item1"
+        },
+        {
+          "type": "richtext",
+          "id": "text3",
+          "label": "Menu Item2"
+        },
+        {
+          "type": "richtext",
+          "id": "text4",
+          "label": "Menu Item3"
+        },
+        {
+          "type": "richtext",
+          "id": "text5",
+          "label": "Menu Item4"
+        },
+        {
+          "type": "richtext",
+          "id": "text6",
+          "label": "Menu Item5"
+        }
+      ]
+    },
     {
       "type": "link_list",
       "name": "t:sections.footer.blocks.link_list.name",
