@@ -1,0 +1,64 @@
+<div class="ourBlogsHeader">
+  <ul>
+      <li><p>{{ section.settings.text1 }}</p><a href="{{ section.settings.button_link }}">{{ section.settings.text2 }}</a></li>
+  </ul>
+</div>
+<div class="ourBlogs">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'article_card' -%}
+      <ul>
+          <a href="{{ block.settings.article.url }}"><img src="{{ block.settings.article.image.src | img_url: '500x' }}" width="300" height="auto" loading="lazy" ></a>
+          <li class="ourBlogsTitle"><a href="{{ block.settings.article.url }}">{{ block.settings.article.title }}</a></li>
+          <li class="ourBlogsBriefContent">{{ block.settings.article.content | truncatewords: 15 }}</li>
+      </ul>
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+{% schema %}
+{
+  "name": "Homepage Our Blogs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Text1"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Text2"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article_card",
+      "name": "Article Card",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Our Blogs",
+      "blocks": [
+        {
+          "type": "article_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

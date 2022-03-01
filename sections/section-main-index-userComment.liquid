@@ -24,7 +24,7 @@
       </div>
   </div>
   <div class="userReviwImg">
-      <img src="{{ sction.settings.image | img_url: '300x' }}" width="100" height="auto" loading="lazy" alt="">
+      <img src="{{ section.settings.image | img_url: '300x' }}" width="100" height="auto" loading="lazy" alt="">
   </div>
 </div>
 {% schema %}
@@ -62,6 +62,22 @@
         }
       ]
     }
+  ],
+  "presets": [
+    {
+      "name": "Homepage userComment",
+      "blocks": [
+        {
+          "type": "user_review"
+        }
+      ]
+    }
   ]
 }
 {% endschema %}
+{% style %}
+.userReviwImg > img{
+  display: block;
+  width: 100%;
+}
+{% endstyle %}

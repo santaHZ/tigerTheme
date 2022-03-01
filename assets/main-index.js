@@ -72,7 +72,7 @@ for (let i=0; i < (userReview_slides.length - 0); i++){
 
 // initialize uniCounter
 if (uniCounter.hasOwnProperty("userReview")){
-		
+	uniCounter["userReview"] = 1;
 }else{
 	uniCounter["userReview"] = 1;
 	// console.log(uniCounter);
@@ -108,7 +108,7 @@ settingBtnPosition();
 const startSlide = ()=>{
     slideId = setInterval(()=>{
         uniCounter["userReview"] += 1;
-        if(uniCounter["userReview"] >= 6){
+        if(uniCounter["userReview"] >= (userReview_slides.length + 2)){
             uniCounter["userReview"] = 1;
             // userReview_slider.style.transition = 'none';
             // userReview_slider.style.transform = `translateX(${-userReview_size * uniCounter["userReview"]}px)`;
@@ -124,7 +124,7 @@ const startSlide = ()=>{
 
 userReview_slider.addEventListener('transitionend', ()=>{
     // console.log(uniCounter["userReview"]);
-    if (Number(uniCounter["userReview"]) >= 5){
+    if (Number(uniCounter["userReview"]) >= (userReview_slides.length + 1)){
         uniCounter["userReview"] = 1;
         settingBtnPosition();
         userReview_slider.style.transition = 'none';
@@ -267,9 +267,7 @@ let dotBtnFun = function(dotBtnId){
 	switch(counterId){
         case "userReview":
             userReview_setPositionByIndex();
-			
 	}
-
 }
 
 
@@ -305,13 +303,29 @@ function userReview_dotBtnFunReset(){
 // **************  video slider _1  ******************//
 
 const videoSlideContainer_1 = document.getElementById('videoRow1_wrapper');
-const videoSlider_1 = document.querySelector('.uni_videoSlider');
+const videoSlider_1 = videoSlideContainer_1.querySelector('.uni_videoSlider');
 
 const videoSlider_1_interval = 2000;
 
 let videoSlides_1 = document.querySelectorAll('.videoSlider_item');
 let videoSlide_1_index = 1;
 let videoSliderId_1;
+
+
+
+const videoSlides_1_1 = videoSlides_1[0].cloneNode(true);
+const videoSlides_1_2 = videoSlides_1[1].cloneNode(true);
+const videoSlides_1_lastClone1 = videoSlides_1[videoSlides_1.length -1].cloneNode(true);
+const videoSlides_1_lastClone2 = videoSlides_1[videoSlides_1.length -2].cloneNode(true);
+
+// firstClone.id = 'first-clone';
+// lastClone.id = 'last-clone';
+
+videoSlider_1.append(videoSlides_1_1);
+videoSlider_1.append(videoSlides_1_2);
+videoSlider_1.prepend(videoSlides_1_lastClone1);  //this appending action is happened after DOM is loaded
+videoSlider_1.prepend(videoSlides_1_lastClone2);
+
 
 const videoSlideWidth_1 = videoSlides_1[videoSlide_1_index].clientWidth;
 
@@ -357,6 +371,7 @@ videoSlideContainer_1.addEventListener('mouseleave', startVideoSlide_1);
 startVideoSlide_1();
 
 
+
 // **************  video slider _2  ******************//
 
 const videoSlideContainer_2 = document.getElementById('videoRow2_wrapper');
@@ -367,6 +382,23 @@ const videoSlider_2_interval = 3000;
 let videoSlides_2 = document.querySelectorAll('#videoRow2_wrapper .uni_videoSlider .videoSlider_item');
 let videoSlide_2_index = 1;
 let videoSliderId_2;
+
+
+const videoSlides_2_1 = videoSlides_2[0].cloneNode(true);
+const videoSlides_2_2 = videoSlides_2[1].cloneNode(true);
+const videoSlides_2_lastClone1 = videoSlides_2[videoSlides_2.length -1].cloneNode(true);
+const videoSlides_2_lastClone2 = videoSlides_2[videoSlides_2.length -2].cloneNode(true);
+
+// firstClone.id = 'first-clone';
+// lastClone.id = 'last-clone';
+
+videoSlider_2.append(videoSlides_2_1);
+videoSlider_2.append(videoSlides_2_2);
+videoSlider_2.prepend(videoSlides_2_lastClone1);  //this appending action is happened after DOM is loaded
+videoSlider_2.prepend(videoSlides_2_lastClone2);
+
+
+
 
 const videoSlideWidth_2 = videoSlides_2[0].clientWidth;
 

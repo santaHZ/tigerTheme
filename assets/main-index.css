@@ -653,10 +653,12 @@
 
 .mainIndexNaktoKlarna > img:first-child{
     display: block;
+    width: 100%;
 }
 
 .mainIndexNaktoKlarna > img:nth-child(2){
     display: none;
+    width: 100%;
 }
 
 .mainIndexNaktoKlarnaTop ul{
@@ -762,10 +764,11 @@
 
 }
 
-.ourBlogs ul a img{
+.ourBlogs > ul > a > img{
     display: block;
     margin: 0;
     padding: 0;
+    width: 100%;
 
 }
 
@@ -815,6 +818,11 @@
     padding: 0;
     margin-top: 100px;
     /* background-image: url('https://cdn.shopify.com/s/files/1/0556/1253/9040/files/warehouse_to_customers_background_21-9.jpg?v=1641522418'); */
+}
+
+.havingFunRidingNakto > img{
+    display: block;
+    width: 100%;
 }
 
 .havingFunRidingNaktoTop{

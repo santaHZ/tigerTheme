@@ -1,0 +1,57 @@
+<div class="havingFunRidingNakto">
+  <img src="{{ section.settings.image | img_url: '1500x' }}" width="1000" height="auto" loading="lazy" class="havingFunRidingNaktoBgImg">
+  <div class="havingFunRidingNaktoTop">
+      <ul>
+          <li>{{ section.settings.text1 }}</li>
+          <li>{{ section.settings.text2 }}</li>
+          <li>
+              <p>{{ section.settings.text3 }}</p>
+          </li>
+          <li><a href="{{ section.settings.button_url }}" class="havingFunRidingNaktoBtn"><span>{{ section.settings.text4 }}</span></a></li>
+      </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Homepage Happy Ride",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Text 1"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Text 2"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Text 3"
+    },
+    {
+      "type": "text",
+      "id": "text4",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Happy Ride",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

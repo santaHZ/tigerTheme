@@ -1,0 +1,43 @@
+<div class="youAreSupported">
+  <ul>
+      <li>{{ section.settings.text1 }}</li>
+      <li>
+          <p>{{ section.settings.text2 }}</p>
+      </li>
+      <li><a href="{{ section.settings.button_url }}" class="youAreSupportedBtn"><span>{{ section.settings.text3 }}</span></a></li>
+  </ul>
+</div>
+{% schema %}
+{
+  "name": "Homepage Supported",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Text1"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Text2"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Text3"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Supported",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

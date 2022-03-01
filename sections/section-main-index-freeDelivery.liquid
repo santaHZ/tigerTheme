@@ -1,0 +1,51 @@
+<div class="freeDelivery">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'freeDeliveryCard' -%}
+      <div class="freeDelivery3Col">
+          <div><img src="{{ block.settings.image | img_url: '500x' }}" width="65" height="auto" loading="lazy" alt=""></div>
+          <div><h3>{{ block.settings.text1 }}</h3><p>{{ block.settings.text2 }}</p></div>
+      </div>
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+{% schema %}
+{
+  "name": "Homepage freeDelivery",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+  {
+    "type": "freeDeliveryCard",
+    "name": "Free Delivery Card",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Card Image"
+      },
+      {
+        "type": "text",
+        "id": "text1",
+        "label": "Text1"
+      },
+      {
+        "type": "text",
+        "id": "text2",
+        "label": "Text2"
+      }
+    ]
+  }
+  ],
+  "presets": [
+    {
+      "name": "Homepage freeDelivery",
+      "blocks": [
+        {
+          "type": "freeDeliveryCard"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

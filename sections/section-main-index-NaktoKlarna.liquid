@@ -1,0 +1,65 @@
+<div class="mainIndexNaktoKlarna">
+  <img src="{{ section.settings.image | img_url: '1500x' }}" width="500" height="auto" loading="lazy" class="mainIndexNaktoKlarnaBgImg">
+  <img src="{{ section.settings.image2 | img_url: '600x' }}" width="200" height="auto" loading="lazy" alt="">
+  <div class="mainIndexNaktoKlarnaTop">
+      <ul>
+          <img src="{{ section.settings.image3 | img_url: '600x' }}" width="200" height="auto" loading="lazy" alt="">
+          <li>{{ section.settings.text1 }}</li>
+          <li>{{ section.settings.text2 }}</li>
+          <li><a href="{{ section.settings.button_url }}" class="mainIndexNaktoKlarnaBtn"><span>{{ section.settings.text3 }}</span></a></li>
+      </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Homepage Klarna",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "text1"
+    },
+    {
+      "type": "richtext",
+      "id": "text2",
+      "label": "text2"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    }
+  ],
+  "presets":[
+    {
+      "name": "Homepage Klarna",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+{% style %}
+
+
+{% endstyle %}

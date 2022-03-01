@@ -1,0 +1,47 @@
+<div class="videoRow2">
+  <div id="videoRow2_wrapper">
+      <div class="uni_videoSlider">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'video_slide' -%}
+              <div class="videoSlider_item">
+                  <ul>
+                      <li><iframe width="620" height="350" src="https://www.youtube.com/embed/{{ block.settings.text }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                  </ul>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>	
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Homepage video slide2",
+  "tag": "section",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "video_slide",
+      "name": "Video Slide",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Video embed code"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage video slider2",
+      "blocks": [
+        {
+          "type": "video_slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
