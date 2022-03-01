@@ -157,11 +157,26 @@
       "settings": {
         "col_margin": "20"
       }
+    },
+    "16460978500abee008": {
+      "type": "section-main-index-aboutUs",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/warehouse_to_customers_background_21-9_ab9d9e9a-a40f-439b-b41b-5d86ce67ed9f.jpg",
+        "image_half": "shopify:\/\/shop_images\/warehouse_to_customers_background_21-9-half_a9031545-16d5-4207-9bc4-4bb5664c350e.jpg",
+        "small_image": "shopify:\/\/shop_images\/warehouse2customerSmall_bc261b2c-bdee-4833-a092-89d80db82d94.png",
+        "text1": "Direct To You Pricing",
+        "text2": "Nakto Ebike,affordable ebike for everyone !",
+        "text3": "You will never pay for a salesperson's commission, high retail rent and high retail advertising cost when buying electric bikes. We have our own factory with rigid quality standards. We have a tremendous amount of ebikes at our warehouse facility in U.S.",
+        "text4": "NAKTO ebikes and accessories have already been inspected and are ready for immediate delivery.",
+        "text5": "About Us",
+        "button_link": "shopify:\/\/pages\/about-us"
+      }
     }
   },
   "order": [
     "1645533275dd771094",
     "main_index",
-    "1646017509b992a9b5"
+    "1646017509b992a9b5",
+    "16460978500abee008"
   ]
 }
