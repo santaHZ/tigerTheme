@@ -35,10 +35,10 @@
       </div>
     </div>
     <div id="perf_wrapper">
+      <div class="uni_imgSlider"></div>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'performance_detail' -%}
-          <div class="uni_imgSlider">
             <div class="item">
               <ul>
                 <li><img src="{{ block.settings.image | img_url: '500x' }}" width="450" height="300"></li>
@@ -46,9 +46,9 @@
                 <li>{{ block.settings.text2 }}</li>
               </ul>
             </div>
-          </div>
         {%- endcase -%}
       {%- endfor -%}
+    </div>
 		</div>
     <div id="perf_ctlBtn1">
       <div class="leftBtns"></div>
