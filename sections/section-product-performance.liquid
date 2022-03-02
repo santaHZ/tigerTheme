@@ -1,35 +1,35 @@
 <section class="page-width">
   <div id="performance">
     <div class="tabRoundCorner"></div>
-    <div class="bigMenuStyle" >Performance</div>
-    <div class="performance_desc">Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.</div>
+    <div class="bigMenuStyle" >{{ section.settings.text1 }}</div>
+    <div class="performance_desc">{{ section.settings.text2 }}</div>
 		<div class="performance_main_desc">
       <div class="performance_main_desc_img">
-        <img id="performanceMainImg" width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-00.png?v=1639133555" >
+        <img id="performanceMainImg" width="100%" height="100%" src="{{ section.settings.image | img_url: '1600x' }}" >
       </div>
       <div id="performanceMainDescData" class="performance_main_desc_data">
         <div>
           <ul class="performance_main_desc_data_ul">
-            <li id="gearHub" class="perf_big">0W</li>
-            <li class="perf_bold">Geared Hub Motor</li>
+            <li id="gearHub" class="perf_big">{{ section.settings.text3 }}</li>
+            <li class="perf_bold">{{ section.settings.text4 }}</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li id="milesPerCharge" class="perf_big">0+</li>
-            <li class="perf_bold">Miles per Charge</li>
+            <li id="milesPerCharge" class="perf_big">{{ section.settings.text5 }}</li>
+            <li class="perf_bold">{{ section.settings.text6 }}</li>
           </ul>
         </div>
         <div class="columnSplitMiddle">
           <ul>
-            <li id="maxTorque" class="perf_big">0Nm</li>
-            <li class="perf_bold">Max Torque</li>
+            <li id="maxTorque" class="perf_big">{{ section.settings.text7 }}</li>
+            <li class="perf_bold">{{ section.settings.text8 }}</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li id="perdalAssLevel" class="perf_big">0</li>
-          <li class="perf_bold">Pedal Assist Levels</li>
+            <li id="perdalAssLevel" class="perf_big">{{ section.settings.text9 }}</li>
+          <li class="perf_bold">{{ section.settings.text10 }}</li>
           </ul>
         </div>
       </div>
@@ -38,9 +38,9 @@
 			<div class="uni_imgSlider">
 				<div class="item">
 					<ul>
-						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-01.jpg?v=1639133554" width="450" height="300"></li>
-						<li class="titleStyle">Rear Geared Motor</li>
-						<li>Rear hub motor delivers up to 500W of peak power and 52Nm torque ensuring controlled acceleration.</li>
+						<li><img src="{{ section.settings.image | img_url: '500x' }}" width="450" height="300"></li>
+						<li class="titleStyle">{{ section.settings.text1 }}</li>
+						<li>{{ section.settings.text2 }}</li>
 					</ul>
 				</div>
 			</div>	
@@ -118,7 +118,25 @@
   "blocks": [
     {
       "type": "performance_detail",
-      "name": "Performance Detail"
+      "name": "Performance Detail",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text 1"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text 2"
+        }
+      ]
     }
   ],
   "presets": [
