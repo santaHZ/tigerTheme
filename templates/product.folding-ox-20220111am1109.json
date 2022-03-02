@@ -117,10 +117,19 @@
             "text1": "Motor",
             "text2": "500W brushless geared hub motor with max torque of up to 52Nm"
           }
+        },
+        "dc045824-9547-4b0c-aa72-10445a08aad2": {
+          "type": "main_top_banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main_top_2.png",
+            "text1": "Range",
+            "text2": "A fully charged battery can last up to 22 miles and 4 hours to juice up fully"
+          }
         }
       },
       "block_order": [
-        "1646186453e8df02a7-0"
+        "1646186453e8df02a7-0",
+        "dc045824-9547-4b0c-aa72-10445a08aad2"
       ],
       "settings": {
       }
