@@ -125,11 +125,20 @@
             "text1": "Range",
             "text2": "A fully charged battery can last up to 22 miles and 4 hours to juice up fully"
           }
+        },
+        "3516450f-2d27-4fa3-9ab1-9c4b0e418faa": {
+          "type": "main_top_banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main_top_3.png",
+            "text1": "Battery",
+            "text2": "48V\/10A Li-ion Battery on frame for better weight distribution"
+          }
         }
       },
       "block_order": [
         "1646186453e8df02a7-0",
-        "dc045824-9547-4b0c-aa72-10445a08aad2"
+        "dc045824-9547-4b0c-aa72-10445a08aad2",
+        "3516450f-2d27-4fa3-9ab1-9c4b0e418faa"
       ],
       "settings": {
       }
