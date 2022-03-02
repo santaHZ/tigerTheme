@@ -172,6 +172,34 @@
         "text2": "“I will be showing you the beautiful new Nakto Elegance E-Bike it has recently been upgraded with a 5 level pedal assist! So we are taking it for a ride today ...”",
         "text3": "GreenMotion Ebikes"
       }
+    },
+    "1646208364b03c3c12": {
+      "type": "section-product-performance",
+      "blocks": {
+        "16462083642fb305d4-0": {
+          "type": "performance_detail",
+          "settings": {
+            "text1": "",
+            "text2": ""
+          }
+        }
+      },
+      "block_order": [
+        "16462083642fb305d4-0"
+      ],
+      "settings": {
+        "text1": "Performance",
+        "text2": "Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.",
+        "image": "shopify:\/\/shop_images\/Performance-00.png",
+        "text3": "0W",
+        "text4": "Geared Hub Motor",
+        "text5": "0+",
+        "text6": "Miles per Charge",
+        "text7": "0Nm",
+        "text8": "Max Torque",
+        "text9": "0",
+        "text10": "Pedal Assist Levels"
+      }
     }
   },
   "order": [
@@ -180,6 +208,7 @@
     "product-recommendations",
     "1646186453449fcaaa",
     "16461869943893a803",
-    "1646197645d71c8ec2"
+    "1646197645d71c8ec2",
+    "1646208364b03c3c12"
   ]
 }
