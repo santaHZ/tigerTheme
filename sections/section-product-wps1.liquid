@@ -196,20 +196,21 @@
 }
 {% endstyle %}
 
-{% javascript %}
-function wpas1_toggle(){
-  var trailer1 = document.querySelector(".trailer1");
-  trailer1.classList.toggle("active");
-}
-var wpas_content1Btn = document.querySelector('.wpasContent1Btn');
-wpas_content1Btn.addEventListener('mouseover', function(){
-  wpas_content1Btn.classList.remove('zoomImgOut');
-  wpas_content1Btn.classList.add('zoomImgIn');
-  // console.log('mouse over');
-  setTimeout(() => {
-    // console.log('mouse out');
-    wpas_content1Btn.classList.remove('zoomImgIn');
-    wpas_content1Btn.classList.add('zoomImgOut');
-  }, 300);
-})
-{% endjavascript %}
+{%- javascript -%}
+  function wpas1_toggle(){
+    var trailer1 = document.querySelector(".trailer1");
+    trailer1.classList.toggle("active");
+  }
+
+  var wpas_content1Btn = document.querySelector('.wpasContent1Btn');
+  wpas_content1Btn.addEventListener('mouseover', function(){
+    wpas_content1Btn.classList.remove('zoomImgOut');
+    wpas_content1Btn.classList.add('zoomImgIn');
+    // console.log('mouse over');
+    setTimeout(() => {
+      // console.log('mouse out');
+      wpas_content1Btn.classList.remove('zoomImgIn');
+      wpas_content1Btn.classList.add('zoomImgOut');
+    }, 300);
+  })
+{%- endjavascript -%}
