@@ -1,10 +1,12 @@
-<div class="main_banner">
-  <img id="mainBannerImg" class="main_banner_img" width="1500" src="{{ section.settings.image | img_url: '1600x' }}"  loading="lazy">
-  <div class="main_banner_name" id="mainBannerName">{{ section.settings.text1 }}</div>
-  <div class="main_banner_f1" id="mainBannerF1">{{ section.settings.text2 }}</div>
-  <div class="main_banner_f2 MoreContent" id="mainBannerF2">{{ section.settings.text3 }}</div>
-  <div class="main_banner_f2 LessContent" id="mainBannerF2">{{ section.settings.text4 }}</div>
-</div>
+<section class="page-width">
+  <div class="main_banner">
+    <img id="mainBannerImg" class="main_banner_img" width="1500" src="{{ section.settings.image | img_url: '1600x' }}"  loading="lazy">
+    <div class="main_banner_name" id="mainBannerName">{{ section.settings.text1 }}</div>
+    <div class="main_banner_f1" id="mainBannerF1">{{ section.settings.text2 }}</div>
+    <div class="main_banner_f2 MoreContent" id="mainBannerF2">{{ section.settings.text3 }}</div>
+    <div class="main_banner_f2 LessContent" id="mainBannerF2">{{ section.settings.text4 }}</div>
+  </div>
+</section>
 {% schema %}
 {
   "name": "Product Main Banner",

@@ -1,17 +1,19 @@
-<div class="main_top_banner">
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {%- when 'main_top_banner' -%}
-      <div>
-        <ul>
-          <li><img src="{{ block.settings.image | img_url: '500x' }}" width="50" height="50" loading="lazy"></li>
-          <li class="main_top_bold">{{ block.settings.text1 }}</li>
-          <li class="main_top_light">{{ block.settings.text2 }}</li>
-        </ul>
-      </div>
-    {%- endcase -%}
-  {%- endfor -%}
-</div>
+<section class="page-width">
+  <div class="main_top_banner page-width">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'main_top_banner' -%}
+        <div>
+          <ul>
+            <li><img src="{{ block.settings.image | img_url: '500x' }}" width="50" height="50" loading="lazy"></li>
+            <li class="main_top_bold">{{ block.settings.text1 }}</li>
+            <li class="main_top_light">{{ block.settings.text2 }}</li>
+          </ul>
+        </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</section>
 {% schema %}
 {
   "name": "Product Main Top Banner",
