@@ -1,0 +1,56 @@
+<div class="main_top_banner">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'main_top_banner' -%}
+      <div>
+        <ul>
+          <li><img src="{{ block.settings.image | img_url: '500x' }}" width="50" height="50" loading="lazy"></li>
+          <li class="main_top_bold">{{ block.settings.text1 }}</li>
+          <li class="main_top_light">{{ block.settings.text2 }}</li>
+        </ul>
+      </div>
+    {%- endcase -%}
+  {%- endfor -%}
+</div>
+{% schema %}
+{
+  "name": "Product Main Top Banner",
+  "tag": "section",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "main_top_banner",
+      "name": " Main top banner",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Top banner image"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text1"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Main Top Banner",
+      "blocks": [
+        {
+          "type": "main_top_banner"
+        }
+      ]
+    }
+  ],
+  "templates": ["product"]
+}
+{% endschema %}

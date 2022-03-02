@@ -1,0 +1,47 @@
+<div class="main_banner">
+  <img id="mainBannerImg" class="main_banner_img" width="1500" src="{{ section.settings.image | img_url: '1600x' }}"  loading="lazy">
+  <div class="main_banner_name" id="mainBannerName">{{ section.settings.text1 }}</div>
+  <div class="main_banner_f1" id="mainBannerF1">{{ section.settings.text2 }}</div>
+  <div class="main_banner_f2 MoreContent" id="mainBannerF2">{{ section.settings.text3 }}</div>
+  <div class="main_banner_f2 LessContent" id="mainBannerF2">{{ section.settings.text4 }}</div>
+</div>
+{% schema %}
+{
+  "name": "Product Main Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main banner background"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Main banner bike name"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Main banner slogan1"
+    },
+    {
+      "type": "richtext",
+      "id": "text3",
+      "label": "Main banner slogan2"
+    },
+    {
+      "type": "richtext",
+      "id": "text4",
+      "label": "Mobile banner slogan"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product main banner",
+      "blocks": []
+    }
+  ],
+  "templates": ["product"]
+}
+{% endschema %}
