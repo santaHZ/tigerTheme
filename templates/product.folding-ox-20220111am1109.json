@@ -161,6 +161,17 @@
         "text3": "<p>Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!<\/p>",
         "text4": "<p>Folding OX with you wherever you go. It truly makes cycling a viable option every day!<\/p>"
       }
+    },
+    "164619290536291d5a": {
+      "type": "section-product-wps",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/elegance_video_banner1_f4dac494-2115-4f50-80dd-1c1ddce59e18.jpg",
+        "image2": "shopify:\/\/shop_images\/camel_men_play_btn_a51c6630-a489-4163-a648-5fb06cff4c75.png",
+        "image3": "shopify:\/\/shop_images\/elegance_video_icon1.jpg",
+        "text1": "htKlyNsjdnE",
+        "text2": "“I will be showing you the beautiful new Nakto Elegance E-Bike it has recently been upgraded with a 5 level pedal assist! So we are taking it for a ride today ...”",
+        "text3": "GreenMotion Ebikes"
+      }
     }
   },
   "order": [
@@ -168,6 +179,7 @@
     "1643191569f3eb7571",
     "product-recommendations",
     "1646186453449fcaaa",
-    "16461869943893a803"
+    "16461869943893a803",
+    "164619290536291d5a"
   ]
 }
