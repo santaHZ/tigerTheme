@@ -151,12 +151,23 @@
       ],
       "settings": {
       }
+    },
+    "16461869943893a803": {
+      "type": "section-product-mainBanner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/main02.jpg",
+        "text1": "FOLDING OX",
+        "text2": "Cycling with Stability",
+        "text3": "<p>Who says fat tire e-bike have to be heavy and bulky? A small yet wide wheel allows you to get where you want to go safely while an easy-to-fold design makes it convenient to take the electric bike - Folding OX with you wherever you go. It truly makes cycling a viable option every day!<\/p>",
+        "text4": "<p>Folding OX with you wherever you go. It truly makes cycling a viable option every day!<\/p>"
+      }
     }
   },
   "order": [
     "main",
     "1643191569f3eb7571",
     "product-recommendations",
-    "1646186453449fcaaa"
+    "1646186453449fcaaa",
+    "16461869943893a803"
   ]
 }
