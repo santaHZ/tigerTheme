@@ -106,11 +106,30 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "1646186453449fcaaa": {
+      "type": "section-product-mainTopBanner",
+      "blocks": {
+        "1646186453e8df02a7-0": {
+          "type": "main_top_banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main_top_1.png",
+            "text1": "Motor",
+            "text2": "500W brushless geared hub motor with max torque of up to 52Nm"
+          }
+        }
+      },
+      "block_order": [
+        "1646186453e8df02a7-0"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "1643191569f3eb7571",
-    "product-recommendations"
+    "product-recommendations",
+    "1646186453449fcaaa"
   ]
 }
