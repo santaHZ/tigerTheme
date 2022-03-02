@@ -133,12 +133,21 @@
             "text1": "Battery",
             "text2": "48V\/10A Li-ion Battery on frame for better weight distribution"
           }
+        },
+        "76a66fa0-cbf1-4f40-ae10-e0c85501e44b": {
+          "type": "main_top_banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main_top_4.png",
+            "text1": "Pedal Level",
+            "text2": "Variable  speed levels from level 1 to level 5 to provide a smoother assistance"
+          }
         }
       },
       "block_order": [
         "1646186453e8df02a7-0",
         "dc045824-9547-4b0c-aa72-10445a08aad2",
-        "3516450f-2d27-4fa3-9ab1-9c4b0e418faa"
+        "3516450f-2d27-4fa3-9ab1-9c4b0e418faa",
+        "76a66fa0-cbf1-4f40-ae10-e0c85501e44b"
       ],
       "settings": {
       }
