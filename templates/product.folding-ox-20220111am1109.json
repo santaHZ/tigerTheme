@@ -172,6 +172,71 @@
         "text2": "“I will be showing you the beautiful new Nakto Elegance E-Bike it has recently been upgraded with a 5 level pedal assist! So we are taking it for a ride today ...”",
         "text3": "GreenMotion Ebikes"
       }
+    },
+    "1646208364b03c3c12": {
+      "type": "section-product-performance",
+      "blocks": {
+        "16462083642fb305d4-0": {
+          "type": "performance_detail",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Performance-01.jpg",
+            "text1": "Rear Geared Motor",
+            "text2": "Rear hub motor delivers up to 500W of peak power and 52Nm torque ensuring controlled acceleration."
+          }
+        },
+        "e431d258-f510-405b-9875-759c4b40fe0d": {
+          "type": "performance_detail",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Performance-02.jpg",
+            "text1": "Pedal Assist System",
+            "text2": "The pedal assist system gives you power with each pedal stroke. 5 levels at your disposal to help getting where you want to go."
+          }
+        },
+        "7b450ec2-8ec2-48f6-b2a2-cd64a6d541e5": {
+          "type": "performance_detail",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Performance-03.jpg",
+            "text1": "Li-ion Battery",
+            "text2": "Located on the down tube of the eBike for better weight distribution. Delivers a range on a single charge up to 22 miles."
+          }
+        },
+        "15ed7e54-c255-4b60-98e3-4770ea0409d4": {
+          "type": "performance_detail",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Performance-04.jpg",
+            "text1": "LCD Display",
+            "text2": "The LCD screen gives you all the information you care about before next exploration with peace of mind."
+          }
+        },
+        "e38a1d97-bb38-49f5-939a-725158ad226b": {
+          "type": "performance_detail",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Performance-05.jpg",
+            "text1": "Mechanical Disc Brake",
+            "text2": "A wire cable from the lever to the calliper to activate the disc-brake. Reliable stopping power provided by Shimano, perfect for both wet and dry conditions."
+          }
+        }
+      },
+      "block_order": [
+        "16462083642fb305d4-0",
+        "e431d258-f510-405b-9875-759c4b40fe0d",
+        "7b450ec2-8ec2-48f6-b2a2-cd64a6d541e5",
+        "15ed7e54-c255-4b60-98e3-4770ea0409d4",
+        "e38a1d97-bb38-49f5-939a-725158ad226b"
+      ],
+      "settings": {
+        "text1": "Performance",
+        "text2": "Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.",
+        "image": "shopify:\/\/shop_images\/Performance-00.png",
+        "text3": "0W",
+        "text4": "Geared Hub Motor",
+        "text5": "0+",
+        "text6": "Miles per Charge",
+        "text7": "0Nm",
+        "text8": "Max Torque",
+        "text9": "0",
+        "text10": "Pedal Assist Levels"
+      }
     }
   },
   "order": [
@@ -180,6 +245,7 @@
     "product-recommendations",
     "1646186453449fcaaa",
     "16461869943893a803",
-    "1646197645d71c8ec2"
+    "1646197645d71c8ec2",
+    "1646208364b03c3c12"
   ]
 }
