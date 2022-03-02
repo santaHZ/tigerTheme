@@ -1,0 +1,135 @@
+<section class="page-width">
+  <div id="performance">
+    <div class="tabRoundCorner"></div>
+    <div class="bigMenuStyle" >Performance</div>
+    <div class="performance_desc">Exploring around town quickly and easily can be both fun and safe. Its powerful rear hub geared brushless motor meshes seamlessly with Shimano gears to make easy work of any journey. A reliable mechanical disc brake ensures you can stop in all weather with low maintenance.</div>
+		<div class="performance_main_desc">
+      <div class="performance_main_desc_img">
+        <img id="performanceMainImg" width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-00.png?v=1639133555" >
+      </div>
+      <div id="performanceMainDescData" class="performance_main_desc_data">
+        <div>
+          <ul class="performance_main_desc_data_ul">
+            <li id="gearHub" class="perf_big">0W</li>
+            <li class="perf_bold">Geared Hub Motor</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li id="milesPerCharge" class="perf_big">0+</li>
+            <li class="perf_bold">Miles per Charge</li>
+          </ul>
+        </div>
+        <div class="columnSplitMiddle">
+          <ul>
+            <li id="maxTorque" class="perf_big">0Nm</li>
+            <li class="perf_bold">Max Torque</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li id="perdalAssLevel" class="perf_big">0</li>
+          <li class="perf_bold">Pedal Assist Levels</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="perf_wrapper">
+			<div class="uni_imgSlider">
+				<div class="item">
+					<ul>
+						<li><img src="https://cdn.shopify.com/s/files/1/0614/0490/5716/files/Performance-01.jpg?v=1639133554" width="450" height="300"></li>
+						<li class="titleStyle">Rear Geared Motor</li>
+						<li>Rear hub motor delivers up to 500W of peak power and 52Nm torque ensuring controlled acceleration.</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+    <div id="perf_ctlBtn1">
+      <div class="leftBtns"></div>
+      <div class="rightBtns">
+        <div id="fun_perf_prevBtn2" class="arrow left" onclick="fun_Uni_prevBtn2(this.id)"></div>
+        <div id="fun_perf_nextBtn2" class="arrow right" onclick="fun_Uni_nextBtn2(this.id)"></div>
+      </div>
+    </div>
+	</div>
+</section>
+{% schema %}
+{
+  "name": "Product Performance Block",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Block Name"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Block Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Performance Main Image"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Value 1"
+    },
+    {
+      "type": "text",
+      "id": "text4",
+      "label": "Text 1"
+    },
+    {
+      "type": "text",
+      "id": "text5",
+      "label": "Value 2"
+    },
+    {
+      "type": "text",
+      "id": "text6",
+      "label": "Text 2"
+    },
+    {
+      "type": "text",
+      "id": "text7",
+      "label": "Value 3"
+    },
+    {
+      "type": "text",
+      "id": "text8",
+      "label": "Text 3"
+    },
+    {
+      "type": "text",
+      "id": "text9",
+      "label": "Value 4"
+    },
+    {
+      "type": "text",
+      "id": "text10",
+      "label": "Text 4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "performance_detail",
+      "name": "Performance Detail"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Performance Block",
+      "blocks": [
+        {
+          "type": "performance_detail"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

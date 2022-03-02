@@ -1,8 +1,8 @@
 <section class="page-width">
-  <div class="wpas_content1">
+  <div class="wpas_content2">
     <div>
       <img src="{{ section.settings.image | img_url: '1000x' }}" width="300" height="auto" loading="lazy" alt="">
-      <div><a onclick="wpas1_toggle();"><img src="{{ section.settings.image2 | img_url: '100x' }}" width="80" class="wpas_content1Btn" ></a></div>
+      <div><a onclick="wpas2_toggle();"><img src="{{ section.settings.image2 | img_url: '100x' }}" width="80" class="wpas_content2Btn" ></a></div>
     </div>
     <div>
       <p>{{ section.settings.text2 }}</p>
@@ -11,33 +11,33 @@
       <p>{{ section.settings.text3 }}</p>
     </div>
   </div>
-  <div class="trailer1">
+  <div class="trailer2">
       <iframe width="900" height="506" src="https://www.youtube.com/embed/{{ section.settings.text1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div class="close1"><i class="fas fa-times-circle" onclick="wpas1_toggle();"></i></div>
+      <div class="close2"><i class="fas fa-times-circle" onclick="wpas2_toggle();"></i></div>
   </div>
 </section>
 <script>
-function wpas1_toggle(){
-  var trailer1 = document.querySelector(".trailer1");
-  trailer1.classList.toggle("active");
+function wpas2_toggle(){
+  var trailer2 = document.querySelector(".trailer2");
+  trailer2.classList.toggle("active");
 }
 
-var wpas_content1Btn = document.querySelector('.wpasContent1Btn');
-wpas_content1Btn.addEventListener('mouseover', function(){
-  wpas_content1Btn.classList.remove('zoomImgOut');
-  wpas_content1Btn.classList.add('zoomImgIn');
-  // console.log('mouse over');
-  setTimeout(() => {
-    // console.log('mouse out');
-    wpas_content1Btn.classList.remove('zoomImgIn');
-    wpas_content1Btn.classList.add('zoomImgOut');
-  }, 300);
+var wpas_content2Btn = document.querySelector('.wpas_content2Btn');
+wpas_content2Btn.addEventListener('mouseover', function(){
+	wpas_content2Btn.classList.remove('zoomImgOut');
+	wpas_content2Btn.classList.add('zoomImgIn');
+	// console.log('mouse over');
+	setTimeout(() => {
+		// console.log('mouse out');
+		wpas_content2Btn.classList.remove('zoomImgIn');
+		wpas_content2Btn.classList.add('zoomImgOut');
+	}, 300);
 })
 </script>
 
 {% schema %}
 {
-  "name": "Procudt People Say1",
+  "name": "Procudt People Say2",
   "tag": "section",
   "limit": 1,
   "settings": [
@@ -74,15 +74,15 @@ wpas_content1Btn.addEventListener('mouseover', function(){
   ],
   "presets": [
     {
-      "name": "Procudt People Say1",
+      "name": "Procudt People Say2",
       "blocks": []
     }
   ]
 }
 {% endschema %}
 {% style %}
-/******what people are saying  content1*********/
-.wpas_content1{
+/**********what people are saying  content2******************/
+.wpas_content2{
   margin: 0;
   padding: 0;
   width: 100%;
@@ -94,12 +94,12 @@ wpas_content1Btn.addEventListener('mouseover', function(){
   margin-bottom: 20px;
 }
 
-.wpas_content1 div:first-child{
+.wpas_content2 div:first-child{
   width: 50%;
   position: relative;
 }
 
-.wpas_content1 div:first-child > div{
+.wpas_content2 div:first-child > div{
   position: absolute;
   /* top: calc(50% - 25px);
   left: calc(50% -25px); */
@@ -110,68 +110,51 @@ wpas_content1Btn.addEventListener('mouseover', function(){
   text-align: center;
 }
 
-.wpas_content1 > div:first-child > img{
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.wpas_content1 div:first-child > div > a > img{
+.wpas_content2 div:first-child > div > a > img{
   display: block;
   margin: 0 auto;
   transition: all ease-in-out 0.3s; /* here must use all not scale */
 }
 
-.wpas_content1 div:first-child > div > a > img:hover{
+.wpas_content2 div:first-child > div > a > img:hover{
   cursor: pointer;
 }
 
-.zoomImgIn{
-  transform: scale(1.05);
-}
 
-.zoomImgOut{
-  transform: scale(1.0);
-}
-
-
-.wpas_content1 div:first-child img{
+.wpas_content2 div:first-child img{
   display: block;
 }
 
-.wpas_content1 div:nth-child(2){
+.wpas_content2 div:nth-child(2){
   margin: 0 20px;
   width: 50%;
 }
 
-.wpas_content1 div:nth-child(2) p{
+.wpas_content2 div:nth-child(2) p{
   width: 60%;
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 10px;
 }
 
-.wpas_content1 div:nth-child(2) p:first-child{
+.wpas_content2 div:nth-child(2) p:first-child{
   width: 80%;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bolder;
   color: black;
 }
 
-.wpas_content1 div:nth-child(2) p:nth-child(2){
+.wpas_content2 div:nth-child(2) p:nth-child(2){
   font-size: 20px;
   color: #a4de2f;
 }
 
-.wpas_content1 div:nth-child(2) p img{
-  border: 0;
+.wpas_content2 div:nth-child(2) p img{
   width: 80px;
-  border-radius: 50%; /* clip-path:circle() is not right*/
+  border-radius: 50%;
 }
 
 /******** pop up video -begin- ******/
-.trailer1{
+.trailer2{
   position: fixed;
   top: 50%;
   left: 50%;
@@ -189,12 +172,12 @@ wpas_content1Btn.addEventListener('mouseover', function(){
   /* border: 1px solid crimson; */
 }
 
-.trailer1.active{
+.trailer2.active{
   visibility: visible;
   opacity: 1;
 }
 
-.close1{
+.close2{
   position: absolute;
   top: 30px;
   right: 30px;
@@ -203,16 +186,16 @@ wpas_content1Btn.addEventListener('mouseover', function(){
   /* border: 1px solid chocolate; */
 }
 
-.close1 i{
+.close2 i{
   color: #a4de2f;
 }
 
-.trailer1 iframe{
+.trailer2 iframe{
   position: relative;
   max-width: 900px;
   /* outline: none; */
   border: 1px solid #666;
 }
+
+/******** pop up video -end- ******/
 {% endstyle %}
-
-
